@@ -82,8 +82,8 @@ df <- df1[myvars]
 names(df)[1]<-"ID"
 names(df)[3]<-"GDP"
 
-df <- df %>%
-  mutate(GDP = log(GDP))
+#df <- df %>%
+#  mutate(GDP = log(GDP))
 
 from=c("AUT","AUS","BEL","BRA","CAN","CHE","CHL","CHN","COL","CRI","CZE","DEU","DNK","ESP","EST","FIN","FRA","GBR","GRC","HUN","IND","IDN","IRL","ISL","ISR","ITA","JPN","KOR","LTU","LUX","LVA","MEX","NLD","NOR","NZL","POL","PRT","ROU","RUS","SAU","SRB","SVK","SVN","SWE","TUR","USA","ZAF")
 to=c("AT","AU","BE","BR","CA","CH","CL","CN","CO","CR","CZ","DE","DK","ES","EE","FI","FR","GB","GR","HU","ID","IN","IE","IS","IL","IT","JP","KR","LT","LU","LV","MX","NL","NO","NZ","PL","PT","RO","RU","SA","RS","SK","SI","SE","TR","US","ZA")
@@ -96,7 +96,7 @@ str(to)
 #\r\n to replace new line with comma
 
 write.table(df, "GDP.txt", sep=",")
-
+table(df$ID)
 length(table(df$ID))
 
 ##Graphing
@@ -108,5 +108,21 @@ ggplot(df, aes(date, GDP, color = ID)) +
   theme_light() +
   theme(panel.grid = element_blank()) +
   labs(x = NULL, y = NULL,
-       title = "log GDP percapita",
+       title = "Nominal GDP",
        subtitle = "quarterly data")
+
+
+#Log graphing
+df2 <- df %>%
+  mutate(GDP = log(GDP))
+
+ggplot(df2, aes(date, GDP, color = ID)) +
+  geom_hline(yintercept = 8, linetype = "dashed",
+             color = "grey70", size = 0.02) +
+  geom_line(show.legend = FALSE) +
+  facet_wrap(~ID) +
+  theme_light() +
+  theme(panel.grid = element_blank()) +
+  labs(x = NULL, y = NULL,
+       title = "Log Nominal GDP",
+       subtitle = "quarterly data - OECD")
