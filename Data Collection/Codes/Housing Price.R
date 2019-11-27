@@ -3,6 +3,8 @@ library(ggplot2)
 library(zoo)
 library(BIS)
 
+setwd("~/GitHub/HPCredit/Data Collection")
+
 #Preparing Dataset
 detach("package:OECD", unload = TRUE)
 get_datasets = BIS::get_datasets
@@ -62,10 +64,14 @@ rates_plot <- rates %>%
   filter(grepl(clist, borrowers_cty))%>%
   filter(grepl("^(H)", tc_borrowers))%>%
   filter(grepl("^(All sectors)", lending_sector))%>%
-  filter(grepl("^(XDC)", unit_type))%>%
-  filter(grepl("^(U)", tc_adjust))%>%
-  group_by(borrowers_cty) %>%
-  mutate(growth = c(NA,diff(obs_value, lag = 4))*100/obs_value)
+  filter(grepl("^(770)", unit_type))
+
+  #%>%
+  #filter(grepl("^(U)", tc_adjust)) 
+
+  #%>%
+  #group_by(borrowers_cty) %>%
+  #mutate(growth = c(NA,diff(obs_value, lag = 4))*100/obs_value)
 
 table(rates_plot$ref_area)
 table(rates_plot$date)

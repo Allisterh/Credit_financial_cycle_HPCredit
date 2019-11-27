@@ -1,0 +1,29 @@
+> summary(myprobit)
+
+Call:
+glm(formula = FCdummy ~ PrCredit + HHCredit_GDP_gap + NFECredit_GDP_gap + 
+    GDP_gap + HP_inc_gap, family = binomial(link = "probit"), 
+    data = df1)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.8422  -0.4518  -0.3707  -0.2981   2.6525  
+
+Coefficients:
+                    Estimate Std. Error z value Pr(>|z|)    
+(Intercept)       -1.859e+00  1.228e-01 -15.143  < 2e-16 ***
+PrCredit           8.518e+00  1.721e+00   4.951 7.39e-07 ***
+HHCredit_GDP_gap   2.254e-03  8.829e-03   0.255    0.798    
+NFECredit_GDP_gap  1.654e-03  4.823e-03   0.343    0.732    
+GDP_gap           -1.385e-09  9.373e-10  -1.478    0.139    
+HP_inc_gap        -3.087e-01  5.561e-01  -0.555    0.579    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 602.64  on 1037  degrees of freedom
+Residual deviance: 573.26  on 1032  degrees of freedom
+AIC: 585.26
+
+Number of Fisher Scoring iterations: 7
