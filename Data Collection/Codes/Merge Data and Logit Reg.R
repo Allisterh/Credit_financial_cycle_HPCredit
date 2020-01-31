@@ -1,11 +1,15 @@
 #Merge Data
 library("DataCombine")
+library(dplyr)
 
 #Merge Data
 
-setwd("~/GitHub/HPCredit/Data Collection")
+setwd("D:/GitHub/HPCredit/Data Collection")
 
 df1 <- read.table("FCdummy.txt", header=TRUE, sep=",")
+as.Date(df1$date)
+min(as.Date((df1$date))
+
 df2 <- read.table("PrCredit.txt", header=TRUE, sep=",")
 df3 <- read.table("HHCredit_GDP_gap.txt", header=TRUE, sep=",")
 df4 <- read.table("NFECredit_GDP_gap.txt", header=TRUE, sep=",")
@@ -47,4 +51,12 @@ myprobit <- glm(FCdummy ~ PrCredit + HHCredit_GDP_gap + NFECredit_GDP_gap + GDP_
 summary(myprobit)
 
 #BE DE DK ES FI FR GB IT JP KR NL NO US 13 countries
+
+
+#List earliest date by ID
+df6$date = as.Date(df6$date)
+
+df6 %>% 
+  group_by(ID) %>%
+  filter(date == min(date))
 
