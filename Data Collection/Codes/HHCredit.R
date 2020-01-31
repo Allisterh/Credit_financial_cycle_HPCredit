@@ -2,8 +2,10 @@ library(dplyr)
 library(ggplot2)
 library(zoo)
 library(BIS)
+library(quantmod)
+library(plm)
 
-setwd("~/GitHub/HPCredit/Data Collection")
+setwd("D:/GitHub/HPCredit/Data Collection/")
 
 datasets <- BIS::get_datasets()
 #head(datasets, 20)
@@ -21,6 +23,9 @@ rates_plot <- rates %>%
   filter(grepl("^(H)", tc_borrowers))%>%
   filter(grepl("^(All sectors)", lending_sector))%>%
   filter(grepl("^(770)", unit_type))
+
+#770 : Percentage of GDP
+#USD and XDC is also available
 
 #%>%
 #filter(grepl("^(U)", tc_adjust)) 
@@ -119,6 +124,14 @@ df6 <- df5 %>% group_by(variable) %>%
   pdata.frame(., index = c("variable","date")) %>% 
   mutate(HHCredit_GDP_gap = value-mFilter::hpfilter(value, type = "lambda", freq = 400000)$trend)
 
+names(df)[1] = "variable"
+names(df)[3] = "value"
+
+df7 <- df %>% group_by(variable) %>% 
+  pdata.frame(., index = c("variable","date")) %>% 
+  mutate(HHCredit_GDP_gap = value-mFilter::hpfilter(value, type = "lambda", freq = 400000)$trend)
+
+
 names(df6)[2] = "ID"
 names(df6)[4] = "HHCredit_GDP_gap"
 
@@ -138,3 +151,23 @@ ggplot(df6, aes(date, HHCredit_GDP_gap, color = ID)) +
   labs(x = NULL, y = NULL,
        title = "Household Credit",
        subtitle = "as percentage of disposible income - HP decomp cycle | lambda=400000")
+
+
+#full sample
+
+
+names(df7)[1] = "ID"
+names(df7)[2] = "date"
+names(df7)[4] = "HHCredit_GDP_gap"
+
+df7$date = as.Date(df7$date)
+ggplot(df7, aes(date, HHCredit_GDP_gap, color = ID)) +
+  geom_hline(yintercept = 0, linetype = "dashed",
+             color = "grey70", size = 0.02) +
+  geom_line(show.legend = FALSE) +
+  facet_wrap(~ID) +
+  theme_light() +
+  theme(panel.grid = element_blank()) +
+  labs(x = NULL, y = NULL,
+       title = "Household Credit as percentage of GDP",
+       subtitle = "Detrend gap - HP decomp | lambda=400000")
