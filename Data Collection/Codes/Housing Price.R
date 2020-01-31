@@ -3,7 +3,7 @@ library(ggplot2)
 library(zoo)
 library(BIS)
 
-setwd("~/GitHub/HPCredit/Data Collection")
+setwd("D:/GitHub/HPCredit/Data Collection")
 
 #Preparing Dataset
 detach("package:OECD", unload = TRUE)
@@ -28,12 +28,14 @@ rates_plot <- rates %>%
   mutate(date = as.Date(as.yearqtr(date, "%Y-q%q"))) %>%
   filter(grepl(clist, ref_area))%>%
   filter(grepl("^(R)", value))%>%
-  filter(grepl("^(Index, 2010 = 100)", unit_of_measure)) #771 vs 628
+  filter(grepl("^(Index, 2010 = 100)", unit_of_measure)) 
+
+#771 vs 628
 
 #table(rates_plot$ref_area)
 #table(rates_plot$date)
 #table(rates_plot$freq)
-#table(rates_plot$value)
+#table(rates$value)
 #table(rates_plot$unit_of_measure)
 
 table(rates$unit_of_measure)
@@ -141,3 +143,49 @@ View(Grunfeld1)
 View(Grunfeld2)
 
 
+#Full sample HP filter
+
+myvars <- c("ref_area", "date", "obs_value")
+df <- rates_plot[myvars]
+
+names(df)[1]<-"ID"
+names(df)[3]<-"HHCredit"
+
+names(df)[1] = "variable"
+names(df)[3] = "value"
+
+df7 <- df %>% group_by(variable) %>% 
+  pdata.frame(., index = c("variable","date")) %>%
+  mutate(HHCredit_GDP_trend = mFilter::hpfilter(value, type = "lambda", freq = 400000)$trend)%>%
+  mutate(HHCredit_GDP_gap = value-HHCredit_GDP_trend)
+
+names(df7)[1] = "ID"
+names(df7)[2] = "date"
+names(df7)[4] = "HP_trend"
+names(df7)[5] = "HP_gap"
+
+df7$date = as.Date(df7$date)
+
+df7$date = as.Date(df7$date)
+ggplot(df7, aes(date, HP_gap, color = ID)) +
+  geom_hline(yintercept = 0, linetype = "dashed",
+             color = "grey70", size = 0.02) +
+  geom_line(show.legend = FALSE) +
+  facet_wrap(~ID) +
+  theme_light() +
+  theme(panel.grid = element_blank()) +
+  labs(x = NULL, y = NULL,
+       title = "House Price index 2010 = 100",
+       subtitle = "Detrended Gap - HPfilter | lambda=400000")
+
+df7$date = as.Date(df7$date)
+ggplot(df7, aes(date, HP_trend, color = ID)) +
+  geom_hline(yintercept = 0, linetype = "dashed",
+             color = "grey70", size = 0.02) +
+  geom_line(show.legend = FALSE) +
+  facet_wrap(~ID) +
+  theme_light() +
+  theme(panel.grid = element_blank()) +
+  labs(x = NULL, y = NULL,
+       title = "House Price index 2010 = 100",
+       subtitle = "Trend - HPfilter | lambda=400000")

@@ -128,9 +128,9 @@ names(df)[1] = "variable"
 names(df)[3] = "value"
 
 df7 <- df %>% group_by(variable) %>% 
-  pdata.frame(., index = c("variable","date")) %>% 
-  mutate(HHCredit_GDP_gap = value-mFilter::hpfilter(value, type = "lambda", freq = 400000)$trend)
-
+  pdata.frame(., index = c("variable","date")) %>%
+  mutate(HHCredit_GDP_trend = mFilter::hpfilter(value, type = "lambda", freq = 400000)$trend)%>%
+  mutate(HHCredit_GDP_gap = value-HHCredit_GDP_trend)
 
 names(df6)[2] = "ID"
 names(df6)[4] = "HHCredit_GDP_gap"
