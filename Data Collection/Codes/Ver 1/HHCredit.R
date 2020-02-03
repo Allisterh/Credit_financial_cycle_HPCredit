@@ -2,17 +2,17 @@ library(dplyr)
 library(ggplot2)
 library(zoo)
 library(BIS)
-library(quantmod)
 library(plm)
 
 setwd("D:/GitHub/HPCredit/Data Collection/")
 
+#Set up definition for get dataset function
 datasets <- BIS::get_datasets()
-#head(datasets, 20)
 
-#country list (with HP available) 
+#All avaiable country list (with HP available) 
 #clist = "^(AT|AU|BE|BR|CA|CH|CL|CN|CO|CR|CZ|DE|DK|ES|EE|FI|FR|GB|GR|HU|ID|IN|IE|IS|IL|IT|JP|KR|LT|LU|LV|MX|NL|NO|NZ|PL|PT|RO|RU|SA|RS|SK|SI|SE|TR|US|ZA)"
 
+#Country 
 
 clist = "^(AT|AU|BE|BR|CA|CH|CL|CN|CO|CR|CZ|DE|DK|ES|EE|FI|FR|GB|GR|HU|ID|IN|IE|IS|IL|IT|JP|KR|LT|LU|LV|MX|NL|NO|NZ|PL|PT|RO|RU|RS|SK|SI|SE|TR|US)"
 rates <- get_bis(datasets$url[datasets$name == "Credit to the non-financial sector"], quiet = TRUE)
