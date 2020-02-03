@@ -64,6 +64,9 @@ write.table(df, "HHCredit.txt", sep=",")
 df$ID = as.factor(df$ID)
 
 df2 <- df
+
+df2 <- df
+#This is to limit range of data, but it should be done after merging
 #df2 = as.ts(df2, c(2009, 1), end=c(2014, 12), frequency=12)
 
 #How to make data equal length across country
