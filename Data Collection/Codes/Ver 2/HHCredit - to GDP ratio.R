@@ -63,26 +63,25 @@ df$ID = as.factor(df$ID)
 #3. Data inference
 #Extract trends and cycles series from data
 library(plm)
+library(pipeR)
 
 names(df)[4] = "value"
 
 df7 <- df %>% group_by(ID) %>% 
   pdata.frame(., index = c("ID","date")) %>%
-  mutate(HHCredit_GDP_trend = mFilter::hpfilter(value, type = "lambda", freq = 1600)$trend)%>%
-  mutate(HHCredit_GDP_cycle = mFilter::hpfilter(value, type = "lambda", freq = 1600)$cycle)%>%
-  mutate(HHCredit_GDP_gap = value - mFilter::hpfilter(value, type = "lambda", freq = 1600)$trend)
+  mutate(HHCredit_GDP_trend_1600 = mFilter::hpfilter(value, type = "lambda", freq = 1600)$trend)%>%
+  mutate(HHCredit_GDP_cycle_1600 = value - HHCredit_GDP_trend_1600) %>%
+  mutate(HHCredit_GDP_trend_400k = mFilter::hpfilter(value, type = "lambda", freq = 400000)$trend)%>%
+  mutate(HHCredit_GDP_cycle_400k = value - HHCredit_GDP_trend_400k)
 
 
-df7 <- df %>% group_by(ID) %>% 
-  pdata.frame(., index = c("ID","date")) %>%
-  mutate(HHCredit_GDP_trend = mFilter::hpfilter(value, type = "lambda", freq = 1600)$trend)
 
-
-write.table
-write.table(df7, "HHCredit_GDP_HPfilter.txt", sep=',' )
 
 names(df)[4] = "HHcredit"
 df7$date = as.Date(df7$date)
+
+write.table(df7, "HHCredit_GDP_HPfilter.txt", sep=',' )
+
 #names(df7)[4] = "HHCredit_GDP_trend"
 #names(df7)[5] = "HHCredit_GDP_cycle"
 #names(df7)[7] = "HHCredit_GDP_gap"
@@ -90,37 +89,70 @@ df7$date = as.Date(df7$date)
 #Graph the extracted series
 
 #Cycle
-ggplot(df7, aes(date, HHCredit_GDP_cycle, color = ID)) +
+ggplot(df7, aes(date, HHCredit_GDP_cycle_1600, color = ID)) +
   geom_hline(yintercept = 0, linetype = "dashed",
              color = "grey70", size = 0.02) +
   geom_line(show.legend = FALSE) +
-  facet_wrap(~ID) +
+  facet_wrap(~borrowers_country) +
   theme_light() +
   theme(panel.grid = element_blank()) +
   labs(x = NULL, y = NULL,
        title = "Household Credit as percentage of GDP",
-       subtitle = "cycle - HP decomp | lambda=1600")
+       subtitle = "cycle - HP filter decomp | lambda=1600")
+ggsave("./graphs/hhcredit_GDP_cycle.pdf", width=11, height=8.5)
 
 #Trend
-ggplot(df7, aes(date, HHCredit_GDP_trend, color = ID)) +
+ggplot(melt(df7[,c(1:5)], c(1,2,3)), aes(date, value, color = variable)) +
   geom_hline(yintercept = 0, linetype = "dashed",
              color = "grey70", size = 0.02) +
-  geom_line(show.legend = FALSE) +
-  facet_wrap(~ID) +
+  geom_line(show.legend = TRUE) +
+  facet_wrap(~borrowers_country) +
   theme_light() +
   theme(panel.grid = element_blank()) +
   labs(x = NULL, y = NULL,
        title = "Household Credit as percentage of GDP",
-       subtitle = "Trend - HP decomp | lambda=1600")
+       subtitle = "Trend - HP filter decomp | lambda=1600")
+ggsave("./graphs/hhcredit_GDP_trend.pdf", width=11, height=8.5)
 
-#Gap
-ggplot(df7, aes(date, HHCredit_GDP_gap, color = ID)) +
+
+#This part of code is to shape series into one graphs
+df7$date = as.Date(df7$date)
+
+
+df8 <- df7[,c(1,2,3,4,5,7)]
+df9 <- df7[,c(1,2,3,6,8)]
+
+df8 <- melt(df8, c(1,2,3))
+df9 <- melt(df9, c(1,2,3))
+
+#head(df8)
+#table(df8$variable)
+
+#Trend
+ggplot(df8, aes(date, value, color = variable)) +
   geom_hline(yintercept = 0, linetype = "dashed",
              color = "grey70", size = 0.02) +
-  geom_line(show.legend = FALSE) +
-  facet_wrap(~ID) +
+  geom_line(show.legend = TRUE) +
+  facet_wrap(~borrowers_country) +
   theme_light() +
   theme(panel.grid = element_blank()) +
   labs(x = NULL, y = NULL,
        title = "Household Credit as percentage of GDP",
-       subtitle = "Gap = observed value - HP filter trend | lambda=1600")
+       subtitle = "Trend  vs observed value | lambda=1600 | 400k")
+ggsave("./graphs/hhcredit_GDP_trend_compare.pdf", width=11, height=8.5)
+
+
+#Cycle
+ggplot(df9, aes(date, value, color = variable)) +
+  geom_hline(yintercept = 0, linetype = "dashed",
+             color = "grey70", size = 0.02) +
+  geom_line(show.legend = TRUE) +
+  facet_wrap(~borrowers_country) +
+  theme_light() +
+  theme(panel.grid = element_blank()) +
+  labs(x = NULL, y = NULL,
+       title = "Household Credit as percentage of GDP",
+       subtitle = "Cycle component | lambda=1600 | 400k")
+
+
+ggsave("./graphs/hhcredit_GDP_cycle_compare.pdf", width=11, height=8.5)

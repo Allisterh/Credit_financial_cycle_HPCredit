@@ -1,0 +1,72 @@
+   borrowers_country correlation1600 correlation400k
+   <fct>                       <dbl>           <dbl>
+ 1 Australia                 0.904           0.945  
+ 2 Austria                   0.860           0.545  
+ 3 Belgium                   0.521           0.768  
+ 4 Brazil                   -0.755           0.934  
+ 5 Canada                    0.00635         0.00313
+ 6 Chile                     0.569           0.905  
+ 7 China                     0.834           0.959  
+ 8 Colombia                  0.355           0.894  
+ 9 Czech Republic           -0.612          -0.539  
+10 Denmark                   0.798           0.710  
+11 Finland                   0.646           0.680  
+12 France                    0.490           0.666  
+13 Germany                  -0.779          -0.746  
+14 Greece                   -0.907          -0.848  
+15 Hungary                   0.0188         -0.155  
+16 India                     0.676           0.993  
+17 Indonesia                -0.917          -0.542  
+18 Ireland                  -0.330          -0.112  
+19 Israel                    0.753           0.461  
+20 Italy                     0.723           0.672  
+21 Japan                     0.488           0.154  
+22 Korea                     0.153           0.284  
+23 Luxembourg                0.953           0.887  
+24 Mexico                   -0.906          -0.965  
+25 Netherlands               0.773           0.490  
+26 New Zealand               0.734           0.681  
+27 Norway                    0.660           0.755  
+28 Poland                    0.384           0.276  
+29 Portugal                  0.955          -0.358  
+30 Russia                   -0.0275          0.870  
+31 Spain                     0.343           0.563  
+32 Sweden                    0.703           0.866  
+33 Switzerland               0.959           0.903  
+34 Turkey                   -0.483          -0.744  
+35 United Kingdom            0.135           0.603  
+36 United States             0.309           0.423  
+Granger causality test
+
+Model 1: HHCredit_GDP_cycle_1600 ~ Lags(HHCredit_GDP_cycle_1600, 1:5) + Lags(HPIndex_cycle_1600, 1:5)
+Model 2: HHCredit_GDP_cycle_1600 ~ Lags(HHCredit_GDP_cycle_1600, 1:5)
+  Res.Df Df      F Pr(>F)
+1   4092                 
+2   4097 -5 0.7313 0.5999
+Granger causality test
+
+Model 1: HPIndex_cycle_1600 ~ Lags(HPIndex_cycle_1600, 1:5) + Lags(HHCredit_GDP_cycle_1600, 1:5)
+Model 2: HPIndex_cycle_1600 ~ Lags(HPIndex_cycle_1600, 1:5)
+  Res.Df Df      F   Pr(>F)   
+1   4092                      
+2   4097 -5 3.2274 0.006534 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Granger causality test
+
+Model 1: HHCredit_GDP_cycle_400k ~ Lags(HHCredit_GDP_cycle_400k, 1:5) + Lags(HPIndex_cycle_400k, 1:5)
+Model 2: HHCredit_GDP_cycle_400k ~ Lags(HHCredit_GDP_cycle_400k, 1:5)
+  Res.Df Df    F Pr(>F)
+1   4092               
+2   4097 -5 0.61 0.6923
+Granger causality test
+
+Model 1: HPIndex_cycle_400k ~ Lags(HPIndex_cycle_400k, 1:5) + Lags(HHCredit_GDP_cycle_400k, 1:5)
+Model 2: HPIndex_cycle_400k ~ Lags(HPIndex_cycle_400k, 1:5)
+  Res.Df Df      F  Pr(>F)  
+1   4092                    
+2   4097 -5 1.9698 0.07987 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+null device 
+          1 

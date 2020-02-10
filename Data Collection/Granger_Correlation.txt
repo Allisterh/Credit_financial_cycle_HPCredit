@@ -1,0 +1,190 @@
+# A tibble: 36 x 3
+   borrowers_country correlation1600 correlation400k
+   <fct>                       <dbl>           <dbl>
+ 1 Australia                 0.904           0.945  
+ 2 Austria                   0.860           0.545  
+ 3 Belgium                   0.521           0.768  
+ 4 Brazil                   -0.755           0.934  
+ 5 Canada                    0.00635         0.00313
+ 6 Chile                     0.569           0.905  
+ 7 China                     0.834           0.959  
+ 8 Colombia                  0.355           0.894  
+ 9 Czech Republic           -0.612          -0.539  
+10 Denmark                   0.798           0.710  
+# ... with 26 more rows
+# A tibble: 36 x 3
+   borrowers_country correlation1600 correlation400k
+   <fct>                       <dbl>           <dbl>
+ 1 Australia                 0.904           0.945  
+ 2 Austria                   0.860           0.545  
+ 3 Belgium                   0.521           0.768  
+ 4 Brazil                   -0.755           0.934  
+ 5 Canada                    0.00635         0.00313
+ 6 Chile                     0.569           0.905  
+ 7 China                     0.834           0.959  
+ 8 Colombia                  0.355           0.894  
+ 9 Czech Republic           -0.612          -0.539  
+10 Denmark                   0.798           0.710  
+# ... with 26 more rows
+# A tibble: 36 x 3
+   borrowers_country correlation1600 correlation400k
+   <fct>                       <dbl>           <dbl>
+ 1 Australia                 0.904           0.945  
+ 2 Austria                   0.860           0.545  
+ 3 Belgium                   0.521           0.768  
+ 4 Brazil                   -0.755           0.934  
+ 5 Canada                    0.00635         0.00313
+ 6 Chile                     0.569           0.905  
+ 7 China                     0.834           0.959  
+ 8 Colombia                  0.355           0.894  
+ 9 Czech Republic           -0.612          -0.539  
+10 Denmark                   0.798           0.710  
+# ... with 26 more rows
+# A tibble: 36 x 3
+   borrowers_country correlation1600 correlation400k
+   <fct>                       <dbl>           <dbl>
+ 1 Australia                 0.904           0.945  
+ 2 Austria                   0.860           0.545  
+ 3 Belgium                   0.521           0.768  
+ 4 Brazil                   -0.755           0.934  
+ 5 Canada                    0.00635         0.00313
+ 6 Chile                     0.569           0.905  
+ 7 China                     0.834           0.959  
+ 8 Colombia                  0.355           0.894  
+ 9 Czech Republic           -0.612          -0.539  
+10 Denmark                   0.798           0.710  
+# ... with 26 more rows
+# A tibble: 36 x 3
+   borrowers_country correlation1600 correlation400k
+   <fct>                       <dbl>           <dbl>
+ 1 Australia                 0.904           0.945  
+ 2 Austria                   0.860           0.545  
+ 3 Belgium                   0.521           0.768  
+ 4 Brazil                   -0.755           0.934  
+ 5 Canada                    0.00635         0.00313
+ 6 Chile                     0.569           0.905  
+ 7 China                     0.834           0.959  
+ 8 Colombia                  0.355           0.894  
+ 9 Czech Republic           -0.612          -0.539  
+10 Denmark                   0.798           0.710  
+11 Finland                   0.646           0.680  
+12 France                    0.490           0.666  
+13 Germany                  -0.779          -0.746  
+14 Greece                   -0.907          -0.848  
+15 Hungary                   0.0188         -0.155  
+16 India                     0.676           0.993  
+17 Indonesia                -0.917          -0.542  
+18 Ireland                  -0.330          -0.112  
+19 Israel                    0.753           0.461  
+20 Italy                     0.723           0.672  
+21 Japan                     0.488           0.154  
+22 Korea                     0.153           0.284  
+23 Luxembourg                0.953           0.887  
+24 Mexico                   -0.906          -0.965  
+25 Netherlands               0.773           0.490  
+26 New Zealand               0.734           0.681  
+27 Norway                    0.660           0.755  
+28 Poland                    0.384           0.276  
+29 Portugal                  0.955          -0.358  
+30 Russia                   -0.0275          0.870  
+31 Spain                     0.343           0.563  
+32 Sweden                    0.703           0.866  
+33 Switzerland               0.959           0.903  
+34 Turkey                   -0.483          -0.744  
+35 United Kingdom            0.135           0.603  
+36 United States             0.309           0.423  
+Granger causality test
+
+Model 1: HHCredit_GDP_cycle_1600 ~ Lags(HHCredit_GDP_cycle_1600, 1:5) + Lags(HPIndex_cycle_1600, 1:5)
+Model 2: HHCredit_GDP_cycle_1600 ~ Lags(HHCredit_GDP_cycle_1600, 1:5)
+  Res.Df Df      F Pr(>F)
+1   4092                 
+2   4097 -5 0.7313 0.5999
+Granger causality test
+
+Model 1: HPIndex_cycle_1600 ~ Lags(HPIndex_cycle_1600, 1:5) + Lags(HHCredit_GDP_cycle_1600, 1:5)
+Model 2: HPIndex_cycle_1600 ~ Lags(HPIndex_cycle_1600, 1:5)
+  Res.Df Df      F   Pr(>F)   
+1   4092                      
+2   4097 -5 3.2274 0.006534 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Granger causality test
+
+Model 1: HHCredit_GDP_cycle_400k ~ Lags(HHCredit_GDP_cycle_400k, 1:5) + Lags(HPIndex_cycle_400k, 1:5)
+Model 2: HHCredit_GDP_cycle_400k ~ Lags(HHCredit_GDP_cycle_400k, 1:5)
+  Res.Df Df    F Pr(>F)
+1   4092               
+2   4097 -5 0.61 0.6923
+Granger causality test
+
+Model 1: HPIndex_cycle_400k ~ Lags(HPIndex_cycle_400k, 1:5) + Lags(HHCredit_GDP_cycle_400k, 1:5)
+Model 2: HPIndex_cycle_400k ~ Lags(HPIndex_cycle_400k, 1:5)
+  Res.Df Df      F  Pr(>F)  
+1   4092                    
+2   4097 -5 1.9698 0.07987 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+null device 
+          1 
+
+Autocorrelations of series ‘vardata2’, by lag
+
+, , HHCredit_GDP_cycle_400k
+
+ HHCredit_GDP_cycle_400k HPIndex_cycle_400k
+  1.000 ( 0.00)           0.423 ( 0.00)    
+  0.987 ( 0.25)           0.374 (-0.25)    
+  0.967 ( 0.50)           0.322 (-0.50)    
+  0.944 ( 0.75)           0.267 (-0.75)    
+  0.916 ( 1.00)           0.211 (-1.00)    
+  0.880 ( 1.25)           0.155 (-1.25)    
+  0.841 ( 1.50)           0.098 (-1.50)    
+  0.799 ( 1.75)           0.041 (-1.75)    
+  0.752 ( 2.00)          -0.013 (-2.00)    
+  0.699 ( 2.25)          -0.066 (-2.25)    
+  0.644 ( 2.50)          -0.118 (-2.50)    
+  0.587 ( 2.75)          -0.168 (-2.75)    
+  0.529 ( 3.00)          -0.215 (-3.00)    
+  0.466 ( 3.25)          -0.258 (-3.25)    
+  0.400 ( 3.50)          -0.298 (-3.50)    
+  0.335 ( 3.75)          -0.335 (-3.75)    
+  0.270 ( 4.00)          -0.366 (-4.00)    
+  0.203 ( 4.25)          -0.393 (-4.25)    
+  0.137 ( 4.50)          -0.416 (-4.50)    
+  0.073 ( 4.75)          -0.433 (-4.75)    
+  0.013 ( 5.00)          -0.444 (-5.00)    
+ -0.049 ( 5.25)          -0.448 (-5.25)    
+ -0.108 ( 5.50)          -0.447 (-5.50)    
+ -0.162 ( 5.75)          -0.442 (-5.75)    
+ -0.212 ( 6.00)          -0.432 (-6.00)    
+
+, , HPIndex_cycle_400k
+
+ HHCredit_GDP_cycle_400k HPIndex_cycle_400k
+  0.423 ( 0.00)           1.000 ( 0.00)    
+  0.472 ( 0.25)           0.980 ( 0.25)    
+  0.518 ( 0.50)           0.946 ( 0.50)    
+  0.559 ( 0.75)           0.901 ( 0.75)    
+  0.594 ( 1.00)           0.847 ( 1.00)    
+  0.623 ( 1.25)           0.785 ( 1.25)    
+  0.649 ( 1.50)           0.716 ( 1.50)    
+  0.669 ( 1.75)           0.644 ( 1.75)    
+  0.682 ( 2.00)           0.569 ( 2.00)    
+  0.689 ( 2.25)           0.492 ( 2.25)    
+  0.692 ( 2.50)           0.415 ( 2.50)    
+  0.690 ( 2.75)           0.340 ( 2.75)    
+  0.681 ( 3.00)           0.267 ( 3.00)    
+  0.666 ( 3.25)           0.197 ( 3.25)    
+  0.648 ( 3.50)           0.130 ( 3.50)    
+  0.626 ( 3.75)           0.066 ( 3.75)    
+  0.597 ( 4.00)           0.006 ( 4.00)    
+  0.563 ( 4.25)          -0.050 ( 4.25)    
+  0.528 ( 4.50)          -0.103 ( 4.50)    
+  0.489 ( 4.75)          -0.152 ( 4.75)    
+  0.446 ( 5.00)          -0.196 ( 5.00)    
+  0.400 ( 5.25)          -0.236 ( 5.25)    
+  0.354 ( 5.50)          -0.270 ( 5.50)    
+  0.308 ( 5.75)          -0.300 ( 5.75)    
+  0.260 ( 6.00)          -0.325 ( 6.00)    
+
