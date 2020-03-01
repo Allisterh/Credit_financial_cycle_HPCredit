@@ -1,0 +1,48 @@
+                       ID t-stat value for z-hat
+1  critical value for 95%                  -1.62
+2               Australia      -1.78141776449608
+3                 Austria      0.877812665141592
+4                 Belgium      -1.24119046334504
+5                  Brazil      -0.90210468619844
+6                  Canada      -1.62081394000381
+7                   Chile      -1.35015750700129
+8                   China      -1.52763329971915
+9                Colombia      -2.30551755330326
+10         Czech Republic       1.47387370772278
+11                Denmark     -0.614910411811626
+12                Finland      -1.31420967473981
+13                 France       -1.8645930721153
+14                Germany     -0.836179406023365
+15                 Greece     0.0959285538337775
+16                Hungary     -0.353551358459552
+17                  India      -3.57331835244124
+18              Indonesia      -1.19231832092006
+19                Ireland     -0.626891406845205
+20                 Israel       -1.7292190821175
+21                  Italy      -0.66000071538132
+22                  Japan      -1.00911658040391
+23                  Korea      -2.83422661699972
+24             Luxembourg     -0.709632194747938
+25                 Mexico     -0.969283660921726
+26            Netherlands     -0.634359264902214
+27            New Zealand       -0.8905833343744
+28                 Norway     -0.982573974093739
+29                 Poland     -0.785486377375224
+30               Portugal     -0.635420504123723
+31                 Russia     -0.232089398583169
+32                  Spain      -1.03010205075658
+33                 Sweden      -1.38199082378782
+34            Switzerland      -1.67809486513278
+35                 Turkey     -0.880939259896879
+36         United Kingdom      -1.77781473233571
+No documentation for ‘ucminf’ in specified packages and libraries:
+you could try ‘??ucminf’
+No documentation for ‘maxeval’ in specified packages and libraries:
+you could try ‘??maxeval’
+package ‘rprojroot’ successfully unpacked and MD5 sums checked
+package ‘here’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\nam40\AppData\Local\Temp\RtmpS63k0w\downloaded_packages
+[1] "D:/Github/HPCredit"
+[1] "D:/Github/HPCredit"
