@@ -18,7 +18,7 @@ lik_fcn <- function(prmtr){
   sig_nhh = prmtr[11]^2 # s.e. of HP permanent component
   sig_ncc = prmtr[12]^2 # s.e. of credit permanent component
   sig_ehh = prmtr[13]^2 # s.e. of the HP AR component
-  sig_ecc = prmtr[14]^2 # s.e. of the HP AR component
+  sig_ecc = prmtr[14]^2 # s.e. of the credit AR component
   sig_nhnc = prmtr[15]*sqrt(sig_nhh*sig_ncc)
   sig_ehec = prmtr[16]*sqrt(sig_ehh*sig_ecc)
 
