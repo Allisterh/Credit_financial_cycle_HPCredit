@@ -1,13 +1,11 @@
+library(tidyverse)
+
 # Replicates Table 3 from Morley, 2007 JMCB
 #
 #
 # rm(list = ls())
 # setwd("put working directory here")
-
-setwd("D:/Github/HPCredit/Data Collection/Codes/Ver 2/State Space/")
-
-library(numDeriv)
-library(ucminf)
+ 
 
 data_im <- read.table("MergedData-Raw.txt", header=TRUE, sep=",")
 data_im = na.omit(data_im)
@@ -34,8 +32,9 @@ prior <- 100
 #=========================================================================#
 
 # Initial values for optimisation routine
-prmtr_in = c(1,-4,0.74382,-5.07080,0.51159,-0.25900,0.41104,7.31927,
-              1.02369,-1.50885,-0.76931,-0.16347,0.96781)
+prmtr_in = c(1,-4,0.74382,-5.07080,1,-4,0.74382,-5.07080,
+             0.51159,0.51159,-0.25900,0.41104,0.41104,0.41104,
+             -1.50885,-0.76931)
 prmtr_in = t(prmtr_in)
 
 # Initial paramter values
