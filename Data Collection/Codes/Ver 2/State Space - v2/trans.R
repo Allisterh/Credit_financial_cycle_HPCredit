@@ -17,7 +17,7 @@ trans <-  function(c0){
   #create var covar matrix
   ggg = matrix(0,4,4)
   ggg[1,1] = c11
-  ggg[2,] = c(c21,c22,0)
+  ggg[2,] = c(c21,c22,0,0)
   ggg[3,] = c(0,0,c33,0)
   ggg[4,] = c(0,0,c43,c44)
   

@@ -1,17 +1,19 @@
 library(tidyverse)
+library(tictoc)
+library(ucminf)
 
 # Replicates Table 3 from Morley, 2007 JMCB
 #
 #
 # rm(list = ls())
 # setwd("put working directory here")
- 
+# setwd("D:/GitHub/HPCredit/Data Collection/Codes/Ver 2/State Space - v2") 
 
 data_im <- read.table("MergedData-Raw.txt", header=TRUE, sep=",")
 data_im = na.omit(data_im)
 
 data_im <- data_im %>%
-    filter(ID=="US")
+  filter(ID=="US")
 
 data <- cbind(data_im$HPIndex,data_im$value)
 
@@ -37,8 +39,12 @@ prmtr_in = c(1,-4,0.74382,-5.07080,1,-4,0.74382,-5.07080,
              -1.50885,-0.76931)
 prmtr_in = t(prmtr_in)
 
+tic("ucminf")
 # Initial paramter values
 model = ucminf(prmtr_in,lik_fcn,hessian = TRUE,control = list(maxeval = 3000))
+# Returns paramter estimates, -LL value, code
+toc()
+
 # Returns paramter estimates, -LL value, code
 
 # Final parameter values
