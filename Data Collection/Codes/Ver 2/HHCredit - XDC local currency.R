@@ -24,6 +24,7 @@ rates_plot <- rates %>%
   filter(grepl(clist, borrowers_cty))%>%
   filter(grepl("^(H)", tc_borrowers))%>%
   filter(grepl("^(All sectors)", lending_sector))%>%
+  filter(grepl("^(A)", tc_adjust))%>%
   filter(grepl("^(XDC)", unit_type))
 
 #770 : Percentage of GDP

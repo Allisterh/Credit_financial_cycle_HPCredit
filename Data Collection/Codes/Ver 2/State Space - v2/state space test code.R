@@ -1,6 +1,7 @@
 library(tidyverse)
 library(tictoc)
 library(ucminf)
+library(numDeriv)
 
 # Replicates Table 3 from Morley, 2007 JMCB
 #
@@ -9,7 +10,7 @@ rm(list = ls())
 # setwd("put working directory here")
 setwd("D:/GitHub/HPCredit/Data Collection/Codes/Ver 2/State Space - v2") 
 
-data_im <- read.table("MergedData-Raw.txt", header=TRUE, sep=",")
+data_im <- read.table("D:/GitHub/HPCredit/Data Collection/MergedData-Raw.txt", header=TRUE, sep=",")
 data_im = na.omit(data_im)
 
 data_im <- data_im %>%
@@ -21,6 +22,7 @@ source("trans.R") # Parameter constraints
 source("lik_fcn.R") # Negative log likelihood function
 source("filter_fcn.R") # Filter function
 
+data = na.omit(data)
 y <- 100*log(data)
 
 T <- nrow(y)
@@ -36,11 +38,11 @@ prior <- 100
 
 # Initial values for optimisation routine
 
-prmtr_in = c(1,-4,0.74382,-5.07080,
-             1.2,-5,0.44382,-4.57080,
-             0.65159,4.5,
-             -0.25900,0.31104,0.51104,0.41104,
-             -1.50885,-0.76931)
+prmtr_in = c(-3.08,-24.92,-0.011,0.24649,
+             -0.2259,0.53124,1.98897,-3.2913,
+             0.0028,0.0005,
+             -1.236,0.8003,9.4251,4.6742,
+             -1.052,0.84236)
 
 prmtr_in = runif(16, min=-1, max=1)
 
@@ -50,12 +52,12 @@ trans(prmtr_in)
 
 tic("ucminf")
 # Initial paramter values
-model = ucminf(prmtr_in,lik_fcn,hessian = TRUE,control = list(maxeval = 500))
+model = ucminf(prmtr_in,lik_fcn,hessian = TRUE,control = list(maxeval = 3000))
 # Returns paramter estimates, -LL value, code
 toc()
 
 model$hessian
-
+solve(model$hessian)
 # Returns paramter estimates, -LL value, code
 
 # Final parameter values
@@ -75,13 +77,13 @@ sd_out = sqrt(abs(diag(cov0)))
  
 # Create output file to store results
 results = file("results.txt")
-writeLines(c("Starting values:", prmtr_in),results)
 
 # Final Output
 writeLines(c("Likelihood value is ", -model$value, 
              "code ", model$convergence, "",
              "Estimated parameters are:", c(t(prm_fnl),t(sd_fnl)), "",
-             "Pre-transformed estimates are:", model$par),results)
+             "Pre-transformed estimates are:", model$par,"",
+             "Starting values:", prmtr_in), results)
 close(results)
 
 

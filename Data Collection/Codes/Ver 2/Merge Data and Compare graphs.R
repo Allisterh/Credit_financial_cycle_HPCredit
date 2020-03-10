@@ -7,7 +7,7 @@ library(dplyr)
 setwd("D:/GitHub/HPCredit/Data Collection")
 
 
-df2 <- read.table("HHCredit_localXDC_HPfilter.txt", header=TRUE, sep=",")
+df2 <- read.table("HHCredit.txt", header=TRUE, sep=",")
 df3 <- read.table("HPindex_HPfilter.txt", header=TRUE, sep=",")
 
 
@@ -19,10 +19,6 @@ df3$date=as.Date(df3$date)
 df <- merge(df2, df3, by=c("ID","date"), all.x=TRUE)
 
 names(df)[4]="HHCredit"
-names(df)[11]="HPIndex_trend_1600"
-names(df)[12]="HPIndex_cycle_1600"
-names(df)[13]="HPIndex_trend_400k"
-names(df)[14]="HPIndex_cycle_400k"
 
 write.table(df, "MergedData-Raw.txt", sep=",")
 

@@ -5,29 +5,29 @@ lik_fcn <- function(prmtr){
   phi_h11 = prmtr[1]
   phi_h12 = prmtr[2]
   phi_h21 = prmtr[3]
-  phi_h22 = prmtr[4]
+  #phi_h22 = prmtr[4]
   
-  phi_c11 = prmtr[5]
-  phi_c12 = prmtr[6]
-  phi_c21 = prmtr[7]
-  phi_c22 = prmtr[8]
+  phi_c11 = prmtr[4]
+  #phi_c12 = prmtr[5]
+  phi_c21 = prmtr[5]
+  phi_c22 = prmtr[6]
   
-  mu_h = prmtr[9]
-  mu_c = prmtr[10]
+  mu_h = prmtr[7]
+  mu_c = prmtr[8]
     
-  sig_nhh = prmtr[11]^2 # s.e. of HP permanent component
-  sig_ncc = prmtr[12]^2 # s.e. of credit permanent component
-  sig_ehh = prmtr[13]^2 # s.e. of the HP AR component
-  sig_ecc = prmtr[14]^2 # s.e. of the credit AR component
-  sig_nhnc = prmtr[15]*sqrt(sig_nhh*sig_ncc)
-  sig_ehec = prmtr[16]*sqrt(sig_ehh*sig_ecc)
+  sig_nhh = prmtr[9]^2 # s.e. of HP permanent component
+  sig_ncc = prmtr[10]^2 # s.e. of credit permanent component
+  sig_ehh = prmtr[11]^2 # s.e. of the HP AR component
+  sig_ecc = prmtr[12]^2 # s.e. of the credit AR component
+  sig_nhnc = prmtr[13]*sqrt(sig_nhh*sig_ncc)
+  sig_ehec = prmtr[14]*sqrt(sig_ehh*sig_ecc)
 
   F = matrix(0,6,6) # Transition matrix
   F[1,] = c(1,0,0,0,0,0)
-  F[2,] = c(0,phi_h11,phi_h12,0,phi_h21,phi_h22)
+  F[2,] = c(0,phi_h11,phi_h12,0,phi_h21,0)
   F[3,] = c(0,1,0,0,0,0)
   F[4,] = c(0,0,0,1,0,0)
-  F[5,] = c(0,phi_c11,phi_c12,0,phi_c21, phi_c22)
+  F[5,] = c(0,phi_c11,0,0,phi_c21, phi_c22)
   F[6,] = c(0,0,0,0,1,0)
   
   Fstar = F[-c(1, 4), -c(1,4)]
@@ -48,7 +48,7 @@ lik_fcn <- function(prmtr){
   
   A = matrix(c(0,0),2,1)
   
-  beta_ll = matrix(c(62,0,0,43 ,0,0),6,1) 
+  beta_ll = matrix(c(62,0,0,445 ,0,0),6,1) 
     # Starting values, need to adjust, these are random numbers, need to find proper prior
   
   vecQstar = matrix(Qstar,ncol = 1)
@@ -63,7 +63,7 @@ lik_fcn <- function(prmtr){
   P_ll = matrix(0,6,6)
   P_ll[1,] = c(100,0,0,50,0,0)
   P_ll[2,] = c(0,vecP_ll[1,1],0,0,vecP_ll[3,1],0)
-  P_ll[4,] = c(70,0,0,200,0,0)
+  P_ll[4,] = c(51,0,0,101,0,0)
   P_ll[5,] = c(0,vecP_ll[9,1],0,0,vecP_ll[11,1],0)
   
   lik_mat = matrix(0,T,1)
