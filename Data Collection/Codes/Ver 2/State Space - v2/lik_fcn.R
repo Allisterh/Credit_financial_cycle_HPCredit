@@ -27,8 +27,10 @@ lik_fcn <- function(prmtr){
   F[2,] = c(0,phi_h11,phi_h12,0,phi_h21,phi_h22)
   F[3,] = c(0,1,0,0,0,0)
   F[4,] = c(0,0,0,1,0,0)
-  F[5,] = c(0,phi_c11,phi_c12,0,phi_c21, phi_c22)
+  F[5,] = c(0,phi_c11,phi_c22,0,phi_c21, phi_c22)
   F[6,] = c(0,0,0,0,1,0)
+  
+  Fstar = F[-c(1, 4), -c(1,4)]
   
   muvec = matrix(c(mu_h,0,0,mu_c,0,0),6,1) # Drift vector
   
@@ -42,13 +44,16 @@ lik_fcn <- function(prmtr){
   Q[4,] = c(sig_nhnc, 0, 0, sig_ncc, 0, 0)
   Q[5,] = c(0, sig_ehec, 0, 0, sig_ecc, 0)
   
+  Qstar = Q[-c(1,4), -c(1,4)]
+  
   A = matrix(c(0,0),2,1)
   
-  beta_ll = matrix(c(947.5,0,0,946.5,0,0),6,1) 
+  beta_ll = matrix(c(62,0,0,445 ,0,0),6,1) 
     # Starting values, need to adjust, these are random numbers, need to find proper prior
   
-  vecQstar = matrix(Q,ncol = 1)
-  vecP_ll = solve(diag(36) - F%x%F)%*%vecQstar
+  vecQstar = matrix(Qstar,ncol = 1)
+  kappa(diag(16) - Fstar %x% Fstar)
+  vecP_ll = solve(diag(16) - Fstar%x%Fstar)%*%vecQstar
     #b is unit matrix if not specified ( solve(a,b) is find a*x =b)
     #solve() is used to produce invert of a variable
 
@@ -56,10 +61,10 @@ lik_fcn <- function(prmtr){
   
     # Var matrix of initial state vector
   P_ll = matrix(0,6,6)
-  P_ll[1,] = c(vecP_ll[1,1],0,0,vecP_ll[19,1],0,0)
-  P_ll[2,] = c(0,vecP_ll[8,1],0,0,vecP_ll[26,1],0,)
-  P_ll[4,] = c(vecP_ll[4,1],0,0,vecP_ll[22,1],0,0)
-  P_ll[5,] = c(0,vecP_ll[11,1],0,0,vecP_ll[29,1],0)
+  P_ll[1,] = c(100,0,0,50,0,0)
+  P_ll[2,] = c(0,vecP_ll[1,1],0,0,vecP_ll[3,1],0)
+  P_ll[4,] = c(51,0,0,101,0,0)
+  P_ll[5,] = c(0,vecP_ll[9,1],0,0,vecP_ll[11,1],0)
   
   lik_mat = matrix(0,T,1)
   

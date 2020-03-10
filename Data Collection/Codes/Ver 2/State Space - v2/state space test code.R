@@ -5,9 +5,9 @@ library(ucminf)
 # Replicates Table 3 from Morley, 2007 JMCB
 #
 #
-# rm(list = ls())
+rm(list = ls())
 # setwd("put working directory here")
-# setwd("D:/GitHub/HPCredit/Data Collection/Codes/Ver 2/State Space - v2") 
+setwd("D:/GitHub/HPCredit/Data Collection/Codes/Ver 2/State Space - v2") 
 
 data_im <- read.table("MergedData-Raw.txt", header=TRUE, sep=",")
 data_im = na.omit(data_im)
@@ -15,7 +15,7 @@ data_im = na.omit(data_im)
 data_im <- data_im %>%
   filter(ID=="US")
 
-data <- cbind(data_im$HPIndex,data_im$value)
+data <- cbind(data_im$HPIndex,data_im$HHCredit)
 
 source("trans.R") # Parameter constraints
 source("lik_fcn.R") # Negative log likelihood function
@@ -24,6 +24,7 @@ source("filter_fcn.R") # Filter function
 y <- 100*log(data)
 
 T <- nrow(y)
+#T <-49
 
 START <- 2
 
@@ -34,21 +35,34 @@ prior <- 100
 #=========================================================================#
 
 # Initial values for optimisation routine
-prmtr_in = c(1,-4,0.74382,-5.07080,1,-4,0.74382,-5.07080,
-             0.51159,0.51159,-0.25900,0.41104,0.41104,0.41104,
+
+prmtr_in = c(1,-4,0.74382,-5.07080,
+             1.2,-5,0.44382,-4.57080,
+             0.65159,4.5,
+             -0.25900,0.31104,0.51104,0.41104,
              -1.50885,-0.76931)
+
+prmtr_in = runif(16, min=-1, max=1)
+
 prmtr_in = t(prmtr_in)
+
+trans(prmtr_in)
 
 tic("ucminf")
 # Initial paramter values
-model = ucminf(prmtr_in,lik_fcn,hessian = TRUE,control = list(maxeval = 3000))
+model = ucminf(prmtr_in,lik_fcn,hessian = TRUE,control = list(maxeval = 500))
 # Returns paramter estimates, -LL value, code
 toc()
+
+model$hessian
 
 # Returns paramter estimates, -LL value, code
 
 # Final parameter values
 prm_fnl = t(trans(model$par))
+
+model$par
+prm_fnl
 
 # Use Hessian to find parameter standard errors
 hessn0 = model$hessian

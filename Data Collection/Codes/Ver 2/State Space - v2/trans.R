@@ -2,6 +2,10 @@ trans <-  function(c0){
   
   c1 = c0
   
+  #drift
+  c1[9] = 100*c0[9]
+  c1[10] = 100*c0[10]
+  
   #variance para
   c11 = exp(-c0[11])
   c22 = exp(-c0[12])

@@ -1,8 +1,9 @@
 # Replicates Table 3 from Morley, 2007 JMCB
 #
 #
-# rm(list = ls())
+rm(list = ls())
 # setwd("put working directory here")
+library(tictoc)
 
 setwd("D:/Github/HPCredit/Data Collection/Codes/Ver 2/State Space/")
 
@@ -29,13 +30,22 @@ prior <- 100
 #=========================================================================#
 
 # Initial values for optimisation routine
-prmtr_in = c(1,-4,0.74382,-5.07080,0.51159,-0.25900,0.41104,7.31927,
-              1.02369,-1.50885,-0.76931,-0.16347,0.96781)
+prmtr_in = c(1,-4,0.74382,-5.07080,
+             0.51159,
+             -0.25900,0.41104,7.31927,
+              1.02369,-1.50885,-0.76931,
+             -0.16347,0.96781)
 prmtr_in = t(prmtr_in)
 
+trans(prmtr_in)
+
+
+tic("ucminf model")
 # Initial paramter values
 model = ucminf(prmtr_in,lik_fcn,hessian = TRUE,control = list(maxeval = 3000))
 # Returns paramter estimates, -LL value, code
+toc()
+
 
 # Final parameter values
 prm_fnl = t(trans(model$par))

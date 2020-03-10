@@ -7,7 +7,7 @@ library(dplyr)
 setwd("D:/GitHub/HPCredit/Data Collection")
 
 
-df2 <- read.table("HHCredit_GDP_HPfilter.txt", header=TRUE, sep=",")
+df2 <- read.table("HHCredit_localXDC_HPfilter.txt", header=TRUE, sep=",")
 df3 <- read.table("HPindex_HPfilter.txt", header=TRUE, sep=",")
 
 
