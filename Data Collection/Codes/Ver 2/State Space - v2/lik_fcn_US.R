@@ -48,10 +48,11 @@ lik_fcn <- function(prmtr){
   
   A = matrix(c(0,0),2,1)
   
-  beta_ll = matrix(c(t_h_prior,0,0,t_c_prior ,0,0),6,1) 
+  beta_ll = matrix(c(312,0,0,412 ,0,0),6,1) 
     # Starting values, need to adjust, these are random numbers, need to find proper prior
   
   vecQstar = matrix(Qstar,ncol = 1)
+  kappa(diag(16) - Fstar %x% Fstar)
   vecP_ll = solve(diag(16) - Fstar%x%Fstar)%*%vecQstar
     #b is unit matrix if not specified ( solve(a,b) is find a*x =b)
     #solve() is used to produce invert of a variable
@@ -77,8 +78,8 @@ lik_fcn <- function(prmtr){
     beta_tt = beta_tl + P_tl%*%t(H)%*%solve(ft)%*%vt
     P_tt = P_tl - P_tl%*%t(H)%*%solve(ft)%*%H%*%P_tl
     
-    lik_mat[j_iter,1] =  0.5*t(vt)%*%solve(ft)%*%vt
-    #0.5*log(((2*pi)^2)*det(ft)) +
+    lik_mat[j_iter,1] = 0.5*log(((2*pi)^2)*det(ft)) + 0.5*t(vt)%*%solve(ft)%*%vt
+    
     beta_ll = beta_tt
     P_ll = P_tt
   }

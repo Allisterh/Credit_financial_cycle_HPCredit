@@ -14,7 +14,7 @@ data_im <- read.table("D:/GitHub/HPCredit/Data Collection/MergedData-Raw.txt", h
 data_im = na.omit(data_im)
 
 data_im <- data_im %>%
-  filter(ID=="US")
+  filter(ID=="DE")
 
 data <- cbind(data_im$HPIndex,data_im$HHCredit)
 
@@ -25,12 +25,16 @@ source("filter_fcn.R") # Filter function
 data = na.omit(data)
 y <- 100*log(data)
 
+#setting mu_h 0|0 values, first value in the series
+t_h_prior = 482
+t_c_prior = 356
+
 T <- nrow(y)
 #T <-49
 
 START <- 2
 
-prior <- 100
+#prior <- 100
 
 #=========================================================================#
 # Maximum Likelihood Estimation
@@ -52,7 +56,7 @@ trans(prmtr_in)
 
 tic("ucminf")
 # Initial paramter values
-model = ucminf(prmtr_in,lik_fcn,hessian = TRUE,control = list(maxeval = 3000))
+model = ucminf(prmtr_in,lik_fcn,hessian = TRUE,control = list(maxeval = 1000))
 # Returns paramter estimates, -LL value, code
 toc()
 
