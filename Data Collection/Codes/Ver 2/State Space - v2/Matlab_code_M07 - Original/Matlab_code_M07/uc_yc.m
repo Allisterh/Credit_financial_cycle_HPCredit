@@ -1,39 +1,33 @@
 % Replicates Table 3 from Morley, 2007 JMCB
 %
 clear, clc
-cd('D:\Github\HPCredit\Data Collection\Codes\Ver 2\State Space - v2\Matlab_code_M07\Matlab_code_M07')
+cd('D:\Github\HPCredit\Data Collection\Codes\Ver 2\State Space - v2\Matlab_code_M07 - Original\Matlab_code_M07')
 
-data_im = dlmread('D:\GitHub\HPCredit\Data Collection\DEdata.txt',',',1,1);
-%data = [data_im(9:214,1),data_im(9:214,2)];
+data_im = dlmread('yc.txt');
+data = [data_im(9:214,1),data_im(9:214,3)];
 
-y = 100*log(data_im);
+y = 100*log(data);
 
 T = size(y,1); %Row dimension of y
 
 START = 2; %Start up values for the VEVD of likelihood
 
-t_h_prior = 482;
-t_c_prior = 356;
+prior = 100;
 
 %=========================================================================%
 % Maximum Likelihood Estimation
 %=========================================================================%
 
 %Initial values for  optimisation routine
-prmtr_in = [-3.08,-24.92,-0.011,0.24649, ...
-             -0.2259,0.53124,1.98897,-3.2913, ...
-             0.0028,0.0005, ...
-             -1.236,0.8003,8.4251,4.6742, ...
-             -1.052,0.84236]';
+prmtr_in = [1,-4,0.74382,-5.07080,0.51159,-0.25900,0.41104,7.31927, ...
+            1.02369,-1.50885,-0.76931,-0.16347,0.96781]';
 
-prmtr_in = -1 + 2*rand(16,1)         
 trans(prmtr_in)        
         
 %Initial paramter values
 options=optimoptions('fminunc','MaxfunctionEvaluations',10000,'FiniteDifferenceType','central');
-
 [xout,fout,cout,output,gout,hout] = ...
-    fminunc(@(prmtr)lik_fcn(prmtr,y,T,START,t_h_prior,t_c_prior),prmtr_in,options);
+    fminunc(@(prmtr)lik_fcn(prmtr,y,T,START,prior),prmtr_in,options);
 %Returns paramter estimates, -LL value, code
 
 %Final parameter values
@@ -43,7 +37,7 @@ prm_fnl = trans(xout);
 hessn0 = hout;
 cov0 = inv(hout);
 
-par = sym('p',[16 1]);
+par = sym('p',[13 1]);
 grdn_fnl = jacobian(trans(par),par); 
 grdn_fnl = eval(subs(grdn_fnl,par,xout));
 cov = grdn_fnl*cov0*grdn_fnl';

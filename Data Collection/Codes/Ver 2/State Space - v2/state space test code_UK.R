@@ -17,6 +17,8 @@ data_im <- data_im %>%
   filter(ID=="DE")
 
 data <- cbind(data_im$HPIndex,data_im$HHCredit)
+write.table(data, "D:/GitHub/HPCredit/Data Collection/DEdata.txt", sep=",")
+
 
 source("trans.R") # Parameter constraints
 source("lik_fcn.R") # Negative log likelihood function
@@ -26,8 +28,8 @@ data = na.omit(data)
 y <- 100*log(data)
 
 #setting mu_h 0|0 values, first value in the series
-t_h_prior = 482
-t_c_prior = 356
+t_h_prior = 483
+t_c_prior = 256
 
 T <- nrow(y)
 #T <-49

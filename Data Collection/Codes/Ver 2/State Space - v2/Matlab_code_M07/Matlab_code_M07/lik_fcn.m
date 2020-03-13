@@ -1,62 +1,73 @@
-function val = lik_fcn(prmtr,y,T,START,prior)
+function val = lik_fcn(prmtr,y,T,START,t_h_prior, t_c_prior)
 
     %Transform hyperparamters to impose constraints
-    prmtr = trans(prmtr);
+  prmtr = trans(prmtr);
     
-    phi_y1 = prmtr(1);
-    phi_y2 = prmtr(2);
-    phi_c1 = prmtr(3);
-    phi_c2 = prmtr(4);
-    mu = prmtr(5);
-    sig_yy = prmtr(6)^2; %s.e. of income AR component
-    sig_cc = prmtr(7)^2; %s.e. of consumption AR component
-    sig_vv = prmtr(8)^2; %s.e. of the random walk component
-    sig_yc = prmtr(9)*sqrt(sig_yy*sig_cc);
-    sig_yv = prmtr(10)*sqrt(sig_yy*sig_vv);
-    sig_cv = prmtr(11)*sqrt(sig_cc*sig_vv);
-    cbar = prmtr(12);
-    gamma = prmtr(13);
+  phi_h11 = prmtr(1);
+  phi_h12 = prmtr(2);
+  phi_h21 = prmtr(3);
+  phi_h22 = prmtr(4);
+  
+  phi_c11 = prmtr(5);
+  phi_c12 = prmtr(6);
+  phi_c21 = prmtr(7);
+  phi_c22 = prmtr(8);
+  
+  mu_h = prmtr(9);
+  mu_c = prmtr(10);
+    
+  sig_nhh = prmtr(11)^2; % s.e. of HP permanent component
+  sig_ncc = prmtr(12)^2; % s.e. of credit permanent component
+  sig_ehh = prmtr(13)^2; % s.e. of the HP AR component
+  sig_ecc = prmtr(14)^2; % s.e. of the credit AR component
+  sig_nhnc = prmtr(15)*sqrt(sig_nhh*sig_ncc);
+  sig_ehec = prmtr(16)*sqrt(sig_ehh*sig_ecc);
 
-    F = [phi_y1,phi_y2,0,0,0; %Transition matrix
-        1,0,0,0,0;
-        0,0,phi_c1,phi_c2,0;
-        0,0,1,0,0;
-        0,0,0,0,1];
+  
 
-    Fstar = [phi_y1,phi_y2,0,0; %Transition matrix of I(0) part
+    F = [1,0,0,0,0,0; %Transition matrix
+         0,phi_h11,phi_h12,0,phi_h21,phi_h22;
+         0,1,0,0,0,0;
+         0,0,0,1,0,0;
+         0,phi_c11,phi_c12,0,phi_c21, phi_c22;
+         0,0,0,0,1,0];
+
+    Fstar = [phi_h11,phi_h12,phi_h21,phi_h22;
             1,0,0,0;
-            0,0,phi_c1,phi_c2;
-            0,0,1,0];
+            phi_c11,phi_c12,phi_c21, phi_c22;
+            0,0,1,0]; %Transition matrix of I(0) part];
     
-    muvec = [0,0,0,0,mu]'; %Drift vector
+    muvec = [mu_h,0,0,mu_c,0,0]'; %Drift vector
 
-    H = [1,0,0,0,1; %Measurement equation
-        0,0,1,0,gamma];
+    H = [1,1,0,0,0,0; %Measurement equation
+        0,0,0,1,1,0];
 
-    Q = [sig_yy,0,sig_yc,0,sig_yv; %Cov matrix
-        0,0,0,0,0;
-        sig_yc,0,sig_cc,0,sig_cv;
-        0,0,0,0,0;
-        sig_yv,0,sig_cv,0,sig_vv];
+    Q = [sig_nhh,0,0,sig_nhnc,0,0; %Cov matrix
+        0, sig_ehh, 0, 0, sig_ehec, 0;
+        0,0,0,0,0,0;
+        sig_nhnc, 0, 0, sig_ncc, 0, 0;
+        0, sig_ehec, 0, 0, sig_ecc, 0;
+        0,0,0,0,0,0];
 
-    Qstar = [sig_yy,0,sig_yc,0; %Cov matrix of I(0) part
+    Qstar = [sig_ehh,0,sig_ehec,0; %Cov matrix of I(0) part
             0,0,0,0;
-            sig_yc,0,sig_cc,0;
+            sig_ehec, 0,sig_ecc, 0;
             0,0,0,0];
 
-    A = [0;cbar];
+    A = [0;0];
 
-    beta_ll = [0,0,0,0,947.5]'; %Starting values
+    beta_ll = [t_h_prior,0,0,t_c_prior,0,0]'; %Starting values
 
     vecQstar = reshape(Qstar,[numel(Qstar),1]);
     vecP_ll = inv(eye(16) - kron(Fstar,Fstar))*vecQstar;
     
     %Var matrix of initial state vector
-    P_ll = [vecP_ll(1,1),0,vecP_ll(3,1),0,0;
-            0,0,0,0,0;
-            vecP_ll(9,1),0,vecP_ll(11,1),0,0;
-            0,0,0,0,0;
-            0,0,0,0,prior];
+    P_ll = [100,0,0,50,0,0;
+            0,vecP_ll(1,1),0,0,vecP_ll(3,1),0;
+            0,0,0,0,0,0;
+            70,0,0,200,0,0;
+            0,vecP_ll(9,1),0,0,vecP_ll(11,1),0;
+            0,0,0,0,0,0];
 
     lik_mat = zeros(T,1);
     
