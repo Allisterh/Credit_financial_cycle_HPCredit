@@ -1,6 +1,6 @@
 lik_fcn <- function(prmtr){
   
-  prmtr = trans(prmtr)
+  prmtr = trans(prmtr_in)
   
   phi_h11 = prmtr[1]
   phi_h12 = prmtr[2]
@@ -62,7 +62,7 @@ lik_fcn <- function(prmtr){
   P_ll = matrix(0,6,6)
   P_ll[1,] = c(100,0,0,50,0,0)
   P_ll[2,] = c(0,vecP_ll[1,1],0,0,vecP_ll[3,1],0)
-  P_ll[4,] = c(70,0,0,200,0,0)
+  P_ll[4,] = c(50,0,0,200,0,0)
   P_ll[5,] = c(0,vecP_ll[9,1],0,0,vecP_ll[11,1],0)
   
   lik_mat = matrix(0,T,1)
@@ -77,8 +77,8 @@ lik_fcn <- function(prmtr){
     beta_tt = beta_tl + P_tl%*%t(H)%*%solve(ft)%*%vt
     P_tt = P_tl - P_tl%*%t(H)%*%solve(ft)%*%H%*%P_tl
     
-    lik_mat[j_iter,1] =  0.5*t(vt)%*%solve(ft)%*%vt
-    #0.5*log(((2*pi)^2)*det(ft)) +
+    lik_mat[j_iter,1] =  0.5*log(((2*pi)^2)*(abs(det(ft)))) + 0.5*t(vt)%*%solve(ft)%*%vt
+
     beta_ll = beta_tt
     P_ll = P_tt
   }

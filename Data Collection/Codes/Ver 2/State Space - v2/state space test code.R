@@ -2,6 +2,7 @@ library(tidyverse)
 library(tictoc)
 library(ucminf)
 library(numDeriv)
+library(matrixcalc)
 
 # Replicates Table 3 from Morley, 2007 JMCB
 #

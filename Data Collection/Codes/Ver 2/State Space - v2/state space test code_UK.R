@@ -29,7 +29,7 @@ y <- 100*log(data)
 
 #setting mu_h 0|0 values, first value in the series
 t_h_prior = 483
-t_c_prior = 256
+t_c_prior = 356
 
 T <- nrow(y)
 #T <-49
@@ -44,11 +44,22 @@ START <- 2
 
 # Initial values for optimisation routine
 
-prmtr_in = c(-3.08,-24.92,-0.011,0.24649,
-             -0.2259,0.53124,1.98897,-3.2913,
-             0.0028,0.0005,
-             -1.236,0.8003,8.4251,4.6742,
-             -1.052,0.84236)
+prmtr_in = c(0.648753, 
+             0.965327, 
+             0.460498, 
+             -0.312246, 
+             0.168139, 
+             -0.784462, 
+             0.812616, 
+             0.759307, 
+             0.635521, 
+             -0.478544, 
+             0.188713, 
+             -0.954975, 
+             -0.149481, 
+             -0.374562, 
+             -0.677031, 
+             -0.642468 )
 
 #prmtr_in = runif(16, min=-1, max=1)
 
@@ -56,14 +67,16 @@ prmtr_in = t(prmtr_in)
 
 trans(prmtr_in)
 
+
 tic("ucminf")
 # Initial paramter values
-model = ucminf(prmtr_in,lik_fcn,hessian = TRUE,control = list(maxeval = 1000))
+model = ucminf(prmtr_in,lik_fcn,hessian = TRUE,control = list(maxeval = 10000))
 # Returns paramter estimates, -LL value, code
 toc()
 
+model$value
 model$hessian
-solve(model$hessian)
+model$invhessian
 # Returns paramter estimates, -LL value, code
 
 # Final parameter values
@@ -80,13 +93,17 @@ grdn_fnl = jacobian(trans, model$par) #trans function used here
 cov = grdn_fnl%*%cov0%*%t(grdn_fnl)
 sd_fnl = sqrt(abs(diag(cov)))
 sd_out = sqrt(abs(diag(cov0)))
+
+#The square roots of the diagonal elements
+#of the inverse of the Hessian (or the negative Hessian)
+#are the estimated standard errors.
  
 # Create output file to store results
 results = file("results.txt")
 
 # Final Output
-writeLines(c("Likelihood value is ", -model$value, 
-             "code ", model$convergence, "",
+writeLines(c("Likelihood value is ", -model$value, "",
+             "code ", model$convergence, model$message, "",
              "Estimated parameters are:", c(t(prm_fnl),t(sd_fnl)), "",
              "Pre-transformed estimates are:", model$par,"",
              "Starting values:", prmtr_in), results)
