@@ -14,9 +14,11 @@ data_im <- read.table("D:/GitHub/HPCredit/Data Collection/MergedData-Raw.txt", h
 data_im = na.omit(data_im)
 
 data_im <- data_im %>%
-  filter(ID=="US")
+  filter(ID=="KR")
 
-data <- cbind(data_im$HPIndex,data_im$HHCredit)
+data <- cbind(data_im$HHCredit,data_im$HPIndex)
+
+write.table(data, "data_KR.txt", sep=",")
 
 source("trans.R") # Parameter constraints
 source("lik_fcn.R") # Negative log likelihood function
@@ -100,6 +102,8 @@ forcst = filter_out[[2]]
 
 # Creates output file to store filtered dataset
 write.csv(cbind(data[,1],data[,3],data[,5],forcst[,1:2]),"uc_yc.txt")
+
+
 
 phi_y1 = prm_fnl[1]
 phi_y2 = prm_fnl[2]

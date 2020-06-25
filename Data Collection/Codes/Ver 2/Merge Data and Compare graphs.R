@@ -1,13 +1,13 @@
 #Merge Data
 library("DataCombine")
 library(dplyr)
-
+library(reshape2)
 #Merge Data
 
 setwd("D:/GitHub/HPCredit/Data Collection")
 
 
-df2 <- read.table("HHCredit.txt", header=TRUE, sep=",")
+df2 <- read.table("HHCredit_GDP_HPfilter.txt", header=TRUE, sep=",")
 df3 <- read.table("HPindex_HPfilter.txt", header=TRUE, sep=",")
 
 
@@ -20,11 +20,11 @@ df <- merge(df2, df3, by=c("ID","date"), all.x=TRUE)
 
 names(df)[4]="HHCredit"
 
-write.table(df, "MergedData-Raw.txt", sep=",")
+write.table(df, "MergedData-Raw-1.txt", sep=",")
 
 
 #Read raw data
-df1 <- read.table("MergedData-Raw.txt", header=TRUE, sep=",")
+df1 <- read.table("MergedData-Raw-1.txt", header=TRUE, sep=",")
 
 df1 <- na.omit(df1) 
 
@@ -85,6 +85,5 @@ ggplot(melt(df3, c(1,2,3)), aes(date, value, color = variable)) +
        title = "HPIndex and Credit",
        subtitle = "cycle - HP filter decomp | lambda=400k")
 ggsave("./graphs/HPIndex_Credit_cycle_400k.pdf", width=11, height=8.5)
-
 
 

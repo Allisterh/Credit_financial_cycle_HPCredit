@@ -34,25 +34,25 @@ function c1 = trans(c0)
     aaa = c0(1)./(1 + abs(c0(1)));
     ccc = (1 - abs(aaa))*c0(2)./(1 + abs(c0(2))) + abs(aaa) - aaa^2;
 
-    c1(1) = 2*aaa;
+    c1(1) = 1*aaa;
     c1(2) = -1* (aaa^2 + ccc);
 
     aaa = c0(3)./(1 + abs(c0(3)));
     ccc = (1 - abs(aaa))*c0(4)./(1 + abs(c0(4))) + abs(aaa) - aaa^2;
 
-    c1(3) = 2*aaa;
+    c1(3) = 1*aaa;
     c1(4) = -1*(aaa^2 + ccc);
     
     aaa = c0(5)./(1 + abs(c0(5)));
     ccc = (1 - abs(aaa))*c0(6)./(1 + abs(c0(6))) + abs(aaa) - aaa^2;
 
-    c1(5) = 2*aaa;
+    c1(5) = 1*aaa;
     c1(6) = -1*(aaa^2 + ccc);
     
     aaa = c0(7)./(1 + abs(c0(7)));
     ccc = (1 - abs(aaa))*c0(8)./(1 + abs(c0(8))) + abs(aaa) - aaa^2;
 
-    c1(7) = 2*aaa;
+    c1(7) = 1*aaa;
     c1(8) = -1*(aaa^2 + ccc);
     
 end
