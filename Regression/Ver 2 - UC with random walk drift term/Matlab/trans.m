@@ -1,15 +1,17 @@
-function c1 = transUC(c0)
+function c1 = trans(c0)
 
     c1 = c0;
-
-    c1(5) = 100*c0(5);
-    c1(6) = 100*c0(6);
 
   %variance para
   c11 = exp(-c0(7));
   c22 = exp(-c0(8));
   c33 = exp(-c0(9));
   c44 = exp(-c0(10));
+  
+  c55 = exp(-c0(13));
+  c66 = exp(-c0(14));
+  c1(13) = c55;
+  c1(14) = c66;
   
   %covar para
   c21 = c0(11);
@@ -37,10 +39,10 @@ function c1 = transUC(c0)
     c1(1) = 2*aaa;
     c1(2) = -1* (aaa^2 + ccc);
 
-    aaa = c0(3)./(1 + abs(c0(3)));
-    ccc = (1 - abs(aaa))*c0(4)./(1 + abs(c0(4))) + abs(aaa) - aaa^2;
+    aaa = c0(4)./(1 + abs(c0(4)));
+    ccc = (1 - abs(aaa))*c0(5)./(1 + abs(c0(5))) + abs(aaa) - aaa^2;
 
-    c1(3) = 2*aaa;
-    c1(4) = -1*(aaa^2 + ccc);    
+    c1(4) = 2*aaa;
+    c1(5) = -1*(aaa^2 + ccc);    
     
 end

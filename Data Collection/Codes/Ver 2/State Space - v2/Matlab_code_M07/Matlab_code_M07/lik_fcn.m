@@ -35,7 +35,7 @@ function val = lik_fcn(prmtr,y,T,START,t_y_prior, t_h_prior)
     Fstar = [phi_y11,phi_y12,phi_y21,phi_y22;
             1,0,0,0;
             phi_h11,phi_h12,phi_h21, phi_h22;
-            0,0,1,0]; %Transition matrix of I(0) part];
+            0,0,1,0]; %Transition matrix of I(0) part;
     
     muvec = [mu_y,0,0,mu_h,0,0]'; %Drift vector
 
