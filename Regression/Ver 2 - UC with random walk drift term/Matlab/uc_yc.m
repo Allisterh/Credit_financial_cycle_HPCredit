@@ -4,23 +4,38 @@ clear, clc
 cd('D:\GitHub\HPCredit\Regression\Ver 2 - UC with random walk drift term\Matlab')
 
 country='US'
-input = ['..\Data\Input\data_' country '.txt']
+input_filepath = ['..\Data\Input\data_' country '.txt']
 
-data_im = dlmread(input,',',1,1);
+data_im = dlmread(input_filepath,',',1,1);
 %data = [data_im(9:214,1),data_im(9:214,2)]; Original code drop first 8
 %rows
 
 %Log Transformation
 y = 100*log(data_im);
 
-T = size(y,1); %Row dimension of y
-
 START = 2; %Start up values for the VEVD of likelihood
 
 %Setting prior for y and h
+
 t_y_prior = y(1,1);
 t_h_prior = y(1,2);
+    %remove first row of data to allow for prior setting
+y(1,:)=[];
 
+sig_ty_prior = 100+100*rand;
+sig_gy_prior = 100+100*rand;
+sig_th_prior = 100+100*rand; 
+sig_gh_prior = 100+100*rand;
+
+%randomize cross trend covariance to be large positive or negative number.
+m = randi(2,1)-1;
+m(~m) = -1;
+sig_tyth_prior = m*(50+50*rand);
+
+prior = [t_y_prior, t_h_prior, sig_ty_prior, sig_gy_prior, sig_th_prior, sig_gh_prior, sig_tyth_prior];
+
+
+T = size(y,1); %Row dimension of y
 %=========================================================================%
 % Maximum Likelihood Estimation
 %=========================================================================%
@@ -32,14 +47,14 @@ t_h_prior = y(1,2);
 %              -1.236,0.8003,8.4251,4.6742, ...
 %              -1.052,0.84236]';
 
-prmtr_in = -1 + 2*rand(14,1)         
+prmtr_in = 20-40*rand(12,1)         
 %trans(prmtr_in)        
         
 %Initial paramter values
 options=optimoptions('fminunc','MaxfunctionEvaluations',10000,'FiniteDifferenceType','central');
 
 [xout,fout,cout,output,gout,hout] = ...
-    fminunc(@(prmtr)lik_fcn(prmtr,y,T,START,t_y_prior,t_h_prior),prmtr_in,options);
+    fminunc(@(prmtr)lik_fcn(prmtr,y,T,START,prior),prmtr_in,options);
 %Returns paramter estimates, -LL value, code
 
 %Final parameter values
@@ -49,7 +64,7 @@ prm_fnl = trans(xout);
 hessn0 = hout;
 cov0 = inv(hout);
 
-par = sym('p',[14 1]);
+par = sym('p',[12 1]);
 grdn_fnl = jacobian(trans(par),par); 
 grdn_fnl = eval(subs(grdn_fnl,par,xout));
 cov = grdn_fnl*cov0*grdn_fnl';
@@ -62,6 +77,9 @@ results = fopen(results_filename,'w');
 
 fprintf(results, "Starting values:\n");
 fprintf(results,"%f \n",prmtr_in);
+
+fprintf(results, "Starting priors:\n");
+fprintf(results,"%f \n",prior);
 
 %Final Output
 fprintf(results,"\n Likelihood value is %f \n",-fout);
@@ -94,4 +112,4 @@ writetable(Reg,writedata,'Delimiter',',','WriteVariableNames',0)
 [data,forcst] = filter_fcn(xout,y,T,START,t_y_prior,t_h_prior);
 
 %Creates output file to store filtered dataset
-csvwrite(['..\Data\uc_yc_' country '.txt'],[data(:,1),data(:,3),data(:,5),data(:,7),forcst(:,1:2)]);
+csvwrite(['..\Data\uc_yc_' country '.txt'],[data(:,1),data(:,3),data(:,4),data(:,6),forcst(:,1:2)]);

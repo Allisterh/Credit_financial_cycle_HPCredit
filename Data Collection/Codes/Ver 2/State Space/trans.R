@@ -1,5 +1,6 @@
 trans <-  function(c0){
   
+  #c0 = prmtr_in
   c1 = c0
   
   c1[12] = 100*c0[12]

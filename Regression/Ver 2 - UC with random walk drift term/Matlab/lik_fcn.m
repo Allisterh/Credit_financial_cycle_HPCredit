@@ -1,73 +1,61 @@
-function val = lik_fcn(prmtr,y,T,START,t_y_prior, t_h_prior)
+function val = lik_fcn(prmtr,y,T,START,prior)
 
-    %Transform hyperparamters to impose constraints
-    
-  %prmtr = prmtr_in;    
+  %Transform hyperparamters to impose constraints
+     
   prmtr = trans(prmtr);
     
   phi_y1 = prmtr(1);
-  phi_y2 = prmtr(2);
-  phi_yh = prmtr(3);
-  phi_h1 = prmtr(4);
-  phi_h2 = prmtr(5);
-  phi_hy = prmtr(6);
+  phi_yh = prmtr(2);
+  phi_h1 = prmtr(3);
+  phi_hy = prmtr(4);
   
-  sig_nyy = prmtr(7)^2; % s.e. of HP permanent component
-  sig_nhh = prmtr(8)^2; % s.e. of credit permanent component
-  sig_eyy = prmtr(9)^2; % s.e. of the HP AR component
-  sig_ehh = prmtr(10)^2; % s.e. of the credit AR component
-  sig_nynh = prmtr(11)*sqrt(sig_nyy*sig_nhh);
-  sig_eyeh = prmtr(12)*sqrt(sig_eyy*sig_ehh);
-  sig_wyy = prmtr(13);
-  sig_whh = prmtr(14);
+  sig_nyy = prmtr(5)^2; % s.e. of HP permanent component
+  sig_nhh = prmtr(6)^2; % s.e. of credit permanent component
+  sig_eyy = prmtr(7)^2; % s.e. of the HP AR component
+  sig_ehh = prmtr(8)^2; % s.e. of the credit AR component
+  sig_nynh = prmtr(9)*sqrt(sig_nyy*sig_nhh);
+  sig_eyeh = prmtr(10)*sqrt(sig_eyy*sig_ehh);
+  
+  sig_wyy = prmtr(11);
+  sig_whh = prmtr(12);
 
-    F = [1,1,0,0,0,0,0,0; %Transition matrix
-         0,1,0,0,0,0,0,0;
-         0,0,phi_y1,phi_y2,0,0,phi_yh,0;
-         0,0,1,0,0,0,0,0;
-         0,0,0,0,1,1,0,0;
-         0,0,0,0,0,1,0,0;
-         0,0,phi_hy,0,0,0,phi_h1,phi_h2;
-         0,0,0,0,0,0,1,0];
+    F = [1,1,0,0,0,0; %Transition matrix
+         0,1,0,0,0,0;
+         0,0,phi_y1,0,0,phi_yh;
+         0,0,0,1,1,0;
+         0,0,0,0,1,0;
+         0,0,phi_hy,0,0,phi_h1];
 
-    Fstar = [phi_y1,phi_y2,phi_yh,0;
-            1,0,0,0;
-            phi_hy,0,phi_h1,phi_h2;
-            0,0,1,0]; %Transition matrix of I(0) part];
+    Fstar = [phi_y1,phi_yh;
+            phi_hy,phi_h1]; %Transition matrix of I(0) part];
     
-    H = [1,0,1,0,0,0,0,0; %Measurement equation
-        0,0,0,0,1,0,1,0];
+    H = [1,0,1,0,0,0; %Measurement equation
+        0,0,0,1,0,1];
 
-    Q = [sig_nyy,0,0,0,sig_nynh,0,0,0; %Cov matrix
-        0,sig_wyy,0,0,0,0,0,0,;
-        0, 0,sig_eyy,0, 0, 0, sig_eyeh, 0;
-        0,0,0,0,0,0,0,0;
-        sig_nynh, 0, 0,0, sig_nhh, 0, 0,0;
-        0,0,0,0,0,sig_whh,0,0;
-        0, 0,sig_eyeh, 0, 0, 0, sig_ehh, 0;
-        0,0,0,0,0,0,0,0];
+    Q = [sig_nyy,0,0,sig_nynh,0,0; %Cov matrix
+        0,sig_wyy,0,0,0,0;
+        0, 0,sig_eyy,0, 0, sig_eyeh;
+        sig_nynh, 0, 0, sig_nhh, 0, 0;
+        0,0,0,0,sig_whh,0;
+        0, 0,sig_eyeh, 0, 0, sig_ehh];
 
-    Qstar = [sig_eyy,0,sig_eyeh,0; %Cov matrix of I(0) part
-            0,0,0,0;
-            sig_eyeh, 0,sig_ehh, 0;
-            0,0,0,0];
+    Qstar = [sig_eyy,sig_eyeh; %Cov matrix of I(0) part
+            sig_eyeh,sig_ehh];
 
     A = [0;0];
 
-    beta_ll = [t_y_prior,0,0,0,t_h_prior,0,0,0]'; %Starting values
+    beta_ll = [prior(1),0,0,prior(2),0,0]'; %Starting values
 
     vecQstar = reshape(Qstar,[numel(Qstar),1]);
-    vecP_ll = inv(eye(16) - kron(Fstar,Fstar))*vecQstar;
+    vecP_ll = inv(eye(4) - kron(Fstar,Fstar))*vecQstar;
     
     %Var matrix of initial state vector
-    P_ll = [100,0,0,0,140,0,0,0;
-            0,150,0,0,0,0,0,0;
-            0,0,vecP_ll(1,1),0,0,0,vecP_ll(3,1),0;
-            0,0,0,0,0,0,0,0;
-            140,0,0,0,200,0,0,0;
-            0,0,0,0,0,160,0,0;
-            0,0,vecP_ll(9,1),0,0,0,vecP_ll(11,1),0;
-            0,0,0,0,0,0,0,0];
+    P_ll = [prior(3),0,0,prior(7),0,0;
+            0,prior(4),0,0,0,0;
+            0,0,vecP_ll(1,1),0,0,vecP_ll(2,1);
+            prior(7),0,0,prior(5),0,0;
+            0,0,0,0,prior(6),0;
+            0,0,vecP_ll(3,1),0,0,vecP_ll(4,1)];
                 
     lik_mat = zeros(T,1);
     
