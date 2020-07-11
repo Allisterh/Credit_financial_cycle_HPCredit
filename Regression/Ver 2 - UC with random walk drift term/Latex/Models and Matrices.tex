@@ -69,19 +69,17 @@ A random walk drift term $g_t$ is added in the stochastic trend inspired by Clar
 	\end{align}
 \textbf{\textit{Cycles:}}
 	\begin{align}
-	c_{yt} &= \phi^y_{1}c_{yt-1} + 
+	c_{yt} &= \phi^y_{1}c_{yt-1}  
 		   + \phi^y_{x}c_{ht-1} 
-		   + \varepsilon_{yt}
+		   + \varepsilon_{yt},
+		   &\varepsilon_{yt} \sim iidN(0,\sigma^2_{\varepsilon y})		   
 	\\
-	c_{ht} &= \phi^h_{1}c_{ht-1} + 
+	c_{ht} &= \phi^h_{1}c_{ht-1}  
 		   + \phi^h_{x}c_{yt-1}  
-	   	   + \varepsilon_{ht}
+	   	   + \varepsilon_{ht},
+	   	   	&\varepsilon_{ht} \sim iidN(0,\sigma^2_{\varepsilon h})
 	\end{align}
-	\begin{align*}
-	\varepsilon_{yt} \sim iidN(0,\sigma^2_{\varepsilon y})
-	\\
-	\varepsilon_{ht} \sim iidN(0,\sigma^2_{\varepsilon h})
-	\end{align*}
+
 
 \textbf{State-Space Model}
 
@@ -97,45 +95,37 @@ Where the transitory components are:
 \tau_{yt}	\\
 g_{yt}		\\
 c_{yt}		\\
-c_{yt-1}	\\
 \tau_{ht}	\\
 g_{ht}		\\
-c_{ht}		\\
-c_{ht-1}
+c_{ht}		
 \end{bmatrix}
 =
 %F matrix
 \begin{bmatrix}
-1	& 1	& 0	& 0	& 0	& 0	& 0 & 0	\\
-0	& 1	& 0	& 0	& 0	& 0	& 0 & 0	\\
-0	& 0	& \phi^y_{1}	& \phi^y_{2} & 0 & 0 & \phi^y_x &0 \\
-0	& 0	& 1	& 0	& 0	& 0	& 0 & 0 \\
-0	& 0	& 0	& 0	& 1	& 1	& 0 & 0	\\
-0	& 0	& 0	& 0	& 0	& 1	& 0 & 0	\\
-0	& 0	& \phi^h_{x}	& 0 & 0 & 0 & \phi^h_1 &\phi^h_2 \\
-0	& 0	& 0	& 0	& 0	& 0	& 1 & 0 \\
+1	& 1	& 0	& 0	& 0	& 0	\\
+0	& 1	& 0	& 0	& 0	& 0	\\
+0	& 0	& \phi^y_{1}	& 0 & 0 & \phi^y_x  \\
+0	& 0	& 0	& 1	& 1	& 0 \\
+0	& 0	& 0	& 0	& 1	& 0	\\
+0	& 0	& \phi^h_{x}	& 0 & 0 & \phi^h_1
 \end{bmatrix}
 %Bt-1 matrix
 \begin{bmatrix}
 \tau_{yt-1}	\\
 g_{yt-1}		\\
 c_{yt-1}		\\
-c_{yt-2}	\\
 \tau_{ht-1}	\\
 g_{ht-1}		\\
-c_{ht-1}		\\
-c_{ht-2}
+c_{ht-1}		
 \end{bmatrix}
 +
 \begin{bmatrix}
 \eta_{yt}	\\
 w_{yt}		\\
 \varepsilon_{yt}	\\
-0			\\
 \eta_{ht}	\\
 w_{ht}		\\
-\varepsilon_{ht}	\\
-0
+\varepsilon_{ht}	
 \end{bmatrix}
 \end{align}
 
@@ -143,13 +133,13 @@ w_{ht}		\\
 \begin{align}
 Q = 
 \begin{bmatrix}
-\sigma^2_{\eta y}	& 0	& 0	 &0 & \sigma_{\eta h \eta y}	& 0	& 0	& 0\\
-0	& 0	& 0	& 0	& 0	& 0	\\
-0	&	\sigma^2_{\varepsilon y}	& 0	& 0	& \sigma_{\varepsilon y \varepsilon h}	& 0	\\
-0	& 0	& 0	& 0	& 0	& 0	\\
+\sigma^2_{\eta y}	& 0	 &0 & \sigma_{\eta y \eta h}	& 0	& 0	\\
+0	& \sigma^2_{w y}	& 0	& 0	& 0	& 0	\\
+0	&	0	& \sigma^2_{\varepsilon y}	& 0	& 0	& \sigma_{\varepsilon y \varepsilon h}	\\
 \sigma_{\eta y \eta h}	& 0	& 0	& \sigma^2_{\eta h}	& 0	& 0	\\
-0	&	\sigma_{\varepsilon y \varepsilon h}	& 0	& 0	& \sigma^2_{\varepsilon h}	& 0	\\
-0	& 0	& 0	& 0	& 0	& 0	\\
+0	& 0	& 0	& 0	& \sigma^2_{w h}	& 0	\\
+0	&0	&\sigma_{\varepsilon y \varepsilon h}	& 0
+	& 0	& \sigma^2_{\varepsilon h}	
 \end{bmatrix}
 \end{align}
 
@@ -170,43 +160,36 @@ h_t
 \end{bmatrix}
 +
 \begin{bmatrix}
-1	& 1	& 0	& 0	& 0 & 0 \\
-0	& 0 & 0 & 1 & 1 & 0
+1	& 0	& 1	& 0	& 0 & 0 \\
+0	& 0 & 0 & 1 & 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
 \tau_{yt}	\\
-c_{yt}		\\
-c_{yt-1}	\\
+g_{yt}		\\
+c_{yt}	\\
 \tau_{ht}	\\
-c_{ht}		\\
-c_{ht-1}
+g_{ht}		\\
+c_{ht}
 \end{bmatrix}
 \end{align*}
-
+\pagebreak
 \section{Parameters constraints}
 
 The estimation of the unobserved component model uses a nonlinear log-likelihood function maximization. Estimating this function requires numerical optimization.
 
-\pagebreak
 
-Following Morley (2007), I set up the constraints on the autoregressive parameters to imply stationary as follow: ($\phi^{y0}_{11}$ and $\phi^{y0}_{12}$ are initial estimate values.)
+Following Kim \& Nelson Chap 2, I set up the constraints on the autoregressive parameters to imply stationary $0<\phi^{y}_{1}<1$ and $-1<\phi^{y}_{x}<1$ as follow:
 
 \begin{align*}
-aaa &= \frac{\phi^{y0}_{11}}{1+|{\phi^{y0}|}}
+\phi^{y}_{1} &= \frac{1}{1+exp((\phi^{y}_{1})^{-1})}
 \\
-ccc &=(1 - |aaa|)*\phi^{y0}_{12}/(1 + |\phi^{y0}_{11}|) + |aaa| - aaa^2
-\\
-\phi^{y}_{11} &= 1*aaa
-\\
-\phi^{y}_{12} &= -1* (aaa^2 + ccc)
+\phi^{y}_{x} &= \frac{\phi^{y}_{x}}{1+|{\phi^{y}_{x}|}}
 \end{align*}
 
-The same applies for the next 3 pairs: $\phi^{y}_{21}$ \& $\phi^{y}_{22}$, $\phi^{h}_{11}$ \& $\phi^{y}_{12}$, $\phi^{h}_{21}$ \& $\phi^{h}_{22}$.
+The same applies for $\phi^{h}_{1}$ \& $\phi^{h}_{x}$.
 \vspace{5mm} %5mm vertical space
 
-The main difference in my constraint compared to Morley 2007 is that I chose $\phi^{y}_{11} = 1*aaa$ instead of  $\phi^{y}_{11} = 2*aaa$ to account for the additional term in the transitory components. This allows the autoregressive parameters to be stationary. 
-
-However, the lower factor might take away variation in the transitory components as seen in the cases of France, Germany and Japan in the graphs section.
+Regarding constraints on covariance matrix, I applied the same constraints as in Morley 2007 to imply for positive definite matrix, in order to ensure feasible maximum likelihood estimation process.
 
 \section{Regression results}
 
@@ -229,25 +212,23 @@ The estimated parameters vary greatly as I uniformly randomized priors for the M
 		Description\\
 		\midrule
 		$\phi^y_{1}$ \\
-		$\phi^y_{2}$ \\
-		$\phi^y_{h}$ \\		
+		$\phi^y_{x}$ \\		
 		$\phi^h_{1}$ \\
-		$\phi^h_{2}$ \\
-		$\phi^h_{y}$ \\
+		$\phi^h_{x}$ \\
+		$\sigma^2_{ny}$\\
+		$\sigma^2_{wy}$\\
+		$\sigma^2_{ey}$\\
 		$\sigma^2_{nh}$\\
-		$\sigma^2_{nc}$\\
+		$\sigma^2_{wh}$\\
 		$\sigma^2_{eh}$\\
-		$\sigma^2_{ec}$\\
 		$\sigma_{nhnc}$\\
 		$\sigma_{ehec}$\\
-		$\sigma_{wyy}$\\
-		$\sigma_{whh}$\\
 		Log-likelihood value\\
 		\bottomrule
 	\end{tabular}%
         \pgfplotstabletypeset[
         multicolumn names, % allows to have multicolumn names
-        col sep=comma, % the seperator in our .csv file
+        col sep= space, % the seperator in our .csv file
         display columns/0/.style={
         	column name=Estimate, % name of first column
         	column type={S},string type},  % use siunitx for formatting
@@ -269,29 +250,27 @@ The estimated parameters vary greatly as I uniformly randomized priors for the M
 	\begin{center}
 		\caption{Correlated UC model Estimates: UK data}
 		\begin{tabular}{c}
-			\toprule
-			Description\\
-			\midrule
-			$\phi^y_{1}$ \\
-			$\phi^y_{2}$ \\
-			$\phi^y_{h}$ \\		
-			$\phi^h_{1}$ \\
-			$\phi^h_{2}$ \\
-			$\phi^h_{y}$ \\
-			$\sigma^2_{nh}$\\
-			$\sigma^2_{nc}$\\
-			$\sigma^2_{eh}$\\
-			$\sigma^2_{ec}$\\
-			$\sigma_{nhnc}$\\
-			$\sigma_{ehec}$\\
-			$\sigma_{wyy}$\\
-			$\sigma_{whh}$\\
-			Log-likelihood value\\
-			\bottomrule
+		\toprule
+		Description\\
+		\midrule
+		$\phi^y_{1}$ \\
+		$\phi^y_{x}$ \\		
+		$\phi^h_{1}$ \\
+		$\phi^h_{x}$ \\
+		$\sigma^2_{ny}$\\
+		$\sigma^2_{wy}$\\
+		$\sigma^2_{ey}$\\
+		$\sigma^2_{nh}$\\
+		$\sigma^2_{wh}$\\
+		$\sigma^2_{eh}$\\
+		$\sigma_{nhnc}$\\
+		$\sigma_{ehec}$\\
+		Log-likelihood value\\
+		\bottomrule
 		\end{tabular}%
 		\pgfplotstabletypeset[
 		multicolumn names, % allows to have multicolumn names
-		col sep=comma, % the seperator in our .csv file
+		col sep= space, % the seperator in our .csv file
 		display columns/0/.style={
 			column name=Estimate, % name of first column
 			column type={S},string type},  % use siunitx for formatting
@@ -317,25 +296,23 @@ The estimated parameters vary greatly as I uniformly randomized priors for the M
 			Description\\
 			\midrule
 			$\phi^y_{1}$ \\
-			$\phi^y_{2}$ \\
-			$\phi^y_{h}$ \\		
+			$\phi^y_{x}$ \\		
 			$\phi^h_{1}$ \\
-			$\phi^h_{2}$ \\
-			$\phi^h_{y}$ \\
+			$\phi^h_{x}$ \\
+			$\sigma^2_{ny}$\\
+			$\sigma^2_{wy}$\\
+			$\sigma^2_{ey}$\\
 			$\sigma^2_{nh}$\\
-			$\sigma^2_{nc}$\\
+			$\sigma^2_{wh}$\\
 			$\sigma^2_{eh}$\\
-			$\sigma^2_{ec}$\\
 			$\sigma_{nhnc}$\\
 			$\sigma_{ehec}$\\
-			$\sigma_{wyy}$\\
-			$\sigma_{whh}$\\
 			Log-likelihood value\\
 			\bottomrule
 		\end{tabular}%
 		\pgfplotstabletypeset[
 		multicolumn names, % allows to have multicolumn names
-		col sep=comma, % the seperator in our .csv file
+		col sep= space, % the seperator in our .csv file
 		display columns/0/.style={
 			column name=Estimate, % name of first column
 			column type={S},string type},  % use siunitx for formatting
@@ -361,25 +338,23 @@ The estimated parameters vary greatly as I uniformly randomized priors for the M
 			Description\\
 			\midrule
 			$\phi^y_{1}$ \\
-			$\phi^y_{2}$ \\
-			$\phi^y_{h}$ \\		
+			$\phi^y_{x}$ \\		
 			$\phi^h_{1}$ \\
-			$\phi^h_{2}$ \\
-			$\phi^h_{y}$ \\
+			$\phi^h_{x}$ \\
+			$\sigma^2_{ny}$\\
+			$\sigma^2_{wy}$\\
+			$\sigma^2_{ey}$\\
 			$\sigma^2_{nh}$\\
-			$\sigma^2_{nc}$\\
+			$\sigma^2_{wh}$\\
 			$\sigma^2_{eh}$\\
-			$\sigma^2_{ec}$\\
 			$\sigma_{nhnc}$\\
 			$\sigma_{ehec}$\\
-			$\sigma_{wyy}$\\
-			$\sigma_{whh}$\\
 			Log-likelihood value\\
 			\bottomrule
 		\end{tabular}%
 		\pgfplotstabletypeset[
 		multicolumn names, % allows to have multicolumn names
-		col sep=comma, % the seperator in our .csv file
+		col sep= space, % the seperator in our .csv file
 		display columns/0/.style={
 			column name=Estimate, % name of first column
 			column type={S},string type},  % use siunitx for formatting
@@ -405,25 +380,23 @@ The estimated parameters vary greatly as I uniformly randomized priors for the M
 			Description\\
 			\midrule
 			$\phi^y_{1}$ \\
-			$\phi^y_{2}$ \\
-			$\phi^y_{h}$ \\		
+			$\phi^y_{x}$ \\		
 			$\phi^h_{1}$ \\
-			$\phi^h_{2}$ \\
-			$\phi^h_{y}$ \\
+			$\phi^h_{x}$ \\
+			$\sigma^2_{ny}$\\
+			$\sigma^2_{wy}$\\
+			$\sigma^2_{ey}$\\
 			$\sigma^2_{nh}$\\
-			$\sigma^2_{nc}$\\
+			$\sigma^2_{wh}$\\
 			$\sigma^2_{eh}$\\
-			$\sigma^2_{ec}$\\
 			$\sigma_{nhnc}$\\
 			$\sigma_{ehec}$\\
-			$\sigma_{wyy}$\\
-			$\sigma_{whh}$\\
 			Log-likelihood value\\
 			\bottomrule
 		\end{tabular}%
 		\pgfplotstabletypeset[
 		multicolumn names, % allows to have multicolumn names
-		col sep=comma, % the seperator in our .csv file
+		col sep= space, % the seperator in our .csv file
 		display columns/0/.style={
 			column name=Estimate, % name of first column
 			column type={S},string type},  % use siunitx for formatting
@@ -449,25 +422,23 @@ The estimated parameters vary greatly as I uniformly randomized priors for the M
 			Description\\
 			\midrule
 			$\phi^y_{1}$ \\
-			$\phi^y_{2}$ \\
-			$\phi^y_{h}$ \\		
+			$\phi^y_{x}$ \\		
 			$\phi^h_{1}$ \\
-			$\phi^h_{2}$ \\
-			$\phi^h_{y}$ \\
+			$\phi^h_{x}$ \\
+			$\sigma^2_{ny}$\\
+			$\sigma^2_{wy}$\\
+			$\sigma^2_{ey}$\\
 			$\sigma^2_{nh}$\\
-			$\sigma^2_{nc}$\\
+			$\sigma^2_{wh}$\\
 			$\sigma^2_{eh}$\\
-			$\sigma^2_{ec}$\\
 			$\sigma_{nhnc}$\\
 			$\sigma_{ehec}$\\
-			$\sigma_{wyy}$\\
-			$\sigma_{whh}$\\
 			Log-likelihood value\\
 			\bottomrule
 		\end{tabular}%
 		\pgfplotstabletypeset[
 		multicolumn names, % allows to have multicolumn names
-		col sep=comma, % the seperator in our .csv file
+		col sep= space, % the seperator in our .csv file
 		display columns/0/.style={
 			column name=Estimate, % name of first column
 			column type={S},string type},  % use siunitx for formatting

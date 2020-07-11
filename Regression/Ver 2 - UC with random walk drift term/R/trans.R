@@ -2,7 +2,9 @@ trans <-  function(c0){
   
   #c0 = prmtr_in
   c1 = c0
-  
+  #================================================================#
+  # 1. Constraint for positive definite covariance matrix
+  #================================================================#
   #variance para
   c11 = exp(-c0[5])
   c22 = exp(-c0[6])
@@ -38,20 +40,51 @@ trans <-  function(c0){
   c1[11] = qqq[4,1]/sqrt(qqq[1,1]*qqq[4,4])
   c1[12] = qqq[6,3]/sqrt(qqq[3,3]*qqq[6,6])
   
-  #This makes sure aaa is smaller than 1
-  aaa = c0[1]/(1 + abs(c0[1]))
-    #define relationship between aaa and ccc
-  ccc = (1 - abs(aaa))*c0[2]/(1 + abs(c0[2])) + abs(aaa) - aaa^2
+  #================================================================#
+  # 2.1. Constraints on coefficients used in Morley 2007 to imply
+  #      for stationary on transitory components
+  #================================================================#
+  # aaa = c0[1]/(1 + abs(c0[1]))
+  # ccc = (1 - abs(aaa))*c0[2]/(1 + abs(c0[2])) + abs(aaa) - aaa^2
+  # 
+  # c1[1] = 2*aaa
+  # c1[2] = -1* (aaa^2 + ccc)
+  # 
+  # aaa = c0[3]/(1 + abs(c0[3]))
+  # ccc = (1 - abs(aaa))*c0[4]/(1 + abs(c0[4])) + abs(aaa) - aaa^2
+  # 
+  # c1[3] = 2*aaa
+  # c1[4] = -1*(aaa^2 + ccc)
   
-  c1[1] = 2*aaa
-  c1[2] = -1* (aaa^2 + ccc) 
+  #================================================================#
+  # 2.2 Constraint for AR(1), -1<phi<+1 | Ref: Kim & Nelson (Chap 2.3.1)
+  #================================================================#
+  # aaa = c0[1]/(1 + abs(c0[1]))
+  # ccc = c0[2]/(1 + abs(c0[2]))
+  # 
+  # c1[1] = aaa
+  # c1[2] = ccc
+  # 
+  # aaa = c0[3]/(1 + abs(c0[3]))
+  # ccc = c0[4]/(1 + abs(c0[4]))
+  # 
+  # c1[3] = aaa
+  # c1[4] = ccc
+
+  #================================================================#
+  # 2.3 Constraint for AR(1), 0<phi_y1<+1 , -1<phi_yh<+1  
+  #================================================================#
+  aaa = 1/(1 + exp((c0[1])^(-1)))
+  ccc = c0[2]/(1 + abs(c0[2]))
   
-  #same for coeff 3 and 4
-  aaa = c0[3]/(1 + abs(c0[3]))
-  ccc = (1 - abs(aaa))*c0[4]/(1 + abs(c0[4])) + abs(aaa) - aaa^2
+  c1[1] = aaa
+  c1[2] = ccc
   
-  c1[3] = 2*aaa
-  c1[4] = -1*(aaa^2 + ccc) 
+  aaa = 1/(1 + exp((c0[3])^(-1)))
+  ccc = c0[4]/(1 + abs(c0[4]))
+  
+  c1[3] = aaa
+  c1[4] = ccc
   
   return(c1) 
 }

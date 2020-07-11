@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.17)  26 JUN 2020 09:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.17)  6 JUL 2020 08:20
 entering extended mode
 **"./Models and Matrices.tex"
 ("Models and Matrices.tex"
@@ -749,36 +749,36 @@ your preamble.
 
 [1
 
-{C:/Users/nam400/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Overfull \hbox (6.94513pt too wide) in paragraph at lines 188--189
+{C:/Users/nam400/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+Overfull \hbox (6.94513pt too wide) in paragraph at lines 178--179
 \OT1/cmr/m/n/10 The es-ti-ma-tion of the un-ob-served com-po-nent model uses a 
 non-lin-ear log-likelihood
  []
 
-[2] [3]
+[3]
 PGFPlots: reading {../Output/Reg_US.csv}
-
-Overfull \hbox (4.00049pt too wide) in paragraph at lines 227--265
- [][] 
- []
-
 PGFPlots: reading {../Output/Reg_GB.csv}
 PGFPlots: reading {../Output/Reg_DE.csv}
 PGFPlots: reading {../Output/Reg_FR.csv}
 PGFPlots: reading {../Output/Reg_JP.csv}
+
+Overfull \hbox (4.00049pt too wide) in paragraph at lines 378--414
+ [][] 
+ []
+
 PGFPlots: reading {../Output/Reg_KR.csv}
 [4] [5] [6]
 <../Output/Graphs/Credit_cycle_US.pdf, id=36, 578.16pt x 361.35pt>
 File: ../Output/Graphs/Credit_cycle_US.pdf Graphic file (type pdf)
 <use ../Output/Graphs/Credit_cycle_US.pdf>
 Package pdftex.def Info: ../Output/Graphs/Credit_cycle_US.pdf  used on input li
-ne 500.
+ne 471.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../Output/Graphs/Credit_trend_US.pdf, id=37, 578.16pt x 361.35pt>
 File: ../Output/Graphs/Credit_trend_US.pdf Graphic file (type pdf)
 <use ../Output/Graphs/Credit_trend_US.pdf>
 Package pdftex.def Info: ../Output/Graphs/Credit_trend_US.pdf  used on input li
-ne 501.
+ne 472.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 
@@ -787,14 +787,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <../Output/Graphs/HP_cycle_US.pdf, id=38, 578.16pt x 361.35pt>
 File: ../Output/Graphs/HP_cycle_US.pdf Graphic file (type pdf)
 <use ../Output/Graphs/HP_cycle_US.pdf>
-Package pdftex.def Info: ../Output/Graphs/HP_cycle_US.pdf  used on input line 5
-06.
+Package pdftex.def Info: ../Output/Graphs/HP_cycle_US.pdf  used on input line 4
+77.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../Output/Graphs/HP_trend_US.pdf, id=39, 578.16pt x 361.35pt>
 File: ../Output/Graphs/HP_trend_US.pdf Graphic file (type pdf)
 <use ../Output/Graphs/HP_trend_US.pdf>
-Package pdftex.def Info: ../Output/Graphs/HP_trend_US.pdf  used on input line 5
-07.
+Package pdftex.def Info: ../Output/Graphs/HP_trend_US.pdf  used on input line 4
+78.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -803,13 +803,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ../Output/Graphs/Credit_cycle_GB.pdf Graphic file (type pdf)
 <use ../Output/Graphs/Credit_cycle_GB.pdf>
 Package pdftex.def Info: ../Output/Graphs/Credit_cycle_GB.pdf  used on input li
-ne 512.
+ne 483.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../Output/Graphs/Credit_trend_GB.pdf, id=41, 578.16pt x 361.35pt>
 File: ../Output/Graphs/Credit_trend_GB.pdf Graphic file (type pdf)
 <use ../Output/Graphs/Credit_trend_GB.pdf>
 Package pdftex.def Info: ../Output/Graphs/Credit_trend_GB.pdf  used on input li
-ne 513.
+ne 484.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -817,14 +817,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <../Output/Graphs/HP_cycle_GB.pdf, id=42, 578.16pt x 361.35pt>
 File: ../Output/Graphs/HP_cycle_GB.pdf Graphic file (type pdf)
 <use ../Output/Graphs/HP_cycle_GB.pdf>
-Package pdftex.def Info: ../Output/Graphs/HP_cycle_GB.pdf  used on input line 5
-18.
+Package pdftex.def Info: ../Output/Graphs/HP_cycle_GB.pdf  used on input line 4
+89.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../Output/Graphs/HP_trend_GB.pdf, id=43, 578.16pt x 361.35pt>
 File: ../Output/Graphs/HP_trend_GB.pdf Graphic file (type pdf)
 <use ../Output/Graphs/HP_trend_GB.pdf>
-Package pdftex.def Info: ../Output/Graphs/HP_trend_GB.pdf  used on input line 5
-19.
+Package pdftex.def Info: ../Output/Graphs/HP_trend_GB.pdf  used on input line 4
+90.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -833,13 +833,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ../Output/Graphs/Credit_cycle_DE.pdf Graphic file (type pdf)
 <use ../Output/Graphs/Credit_cycle_DE.pdf>
 Package pdftex.def Info: ../Output/Graphs/Credit_cycle_DE.pdf  used on input li
-ne 525.
+ne 496.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../Output/Graphs/Credit_trend_DE.pdf, id=45, 578.16pt x 361.35pt>
 File: ../Output/Graphs/Credit_trend_DE.pdf Graphic file (type pdf)
 <use ../Output/Graphs/Credit_trend_DE.pdf>
 Package pdftex.def Info: ../Output/Graphs/Credit_trend_DE.pdf  used on input li
-ne 526.
+ne 497.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -848,13 +848,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ../Output/Graphs/HP_cycle_DE.pdf Graphic file (type pdf)
 <use ../Output/Graphs/HP_cycle_DE.pdf>
 Package pdftex.def Info: ../Output/Graphs/HP_cycle_DE.pdf  used on input line 5
-31.
+02.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../Output/Graphs/HP_trend_DE.pdf, id=47, 578.16pt x 361.35pt>
 File: ../Output/Graphs/HP_trend_DE.pdf Graphic file (type pdf)
 <use ../Output/Graphs/HP_trend_DE.pdf>
 Package pdftex.def Info: ../Output/Graphs/HP_trend_DE.pdf  used on input line 5
-32.
+03.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -863,13 +863,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ../Output/Graphs/Credit_cycle_FR.pdf Graphic file (type pdf)
 <use ../Output/Graphs/Credit_cycle_FR.pdf>
 Package pdftex.def Info: ../Output/Graphs/Credit_cycle_FR.pdf  used on input li
-ne 538.
+ne 509.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../Output/Graphs/Credit_trend_FR.pdf, id=49, 578.16pt x 361.35pt>
 File: ../Output/Graphs/Credit_trend_FR.pdf Graphic file (type pdf)
 <use ../Output/Graphs/Credit_trend_FR.pdf>
 Package pdftex.def Info: ../Output/Graphs/Credit_trend_FR.pdf  used on input li
-ne 539.
+ne 510.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -878,13 +878,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ../Output/Graphs/HP_cycle_FR.pdf Graphic file (type pdf)
 <use ../Output/Graphs/HP_cycle_FR.pdf>
 Package pdftex.def Info: ../Output/Graphs/HP_cycle_FR.pdf  used on input line 5
-44.
+15.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../Output/Graphs/HP_trend_FR.pdf, id=51, 578.16pt x 361.35pt>
 File: ../Output/Graphs/HP_trend_FR.pdf Graphic file (type pdf)
 <use ../Output/Graphs/HP_trend_FR.pdf>
 Package pdftex.def Info: ../Output/Graphs/HP_trend_FR.pdf  used on input line 5
-45.
+16.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -893,13 +893,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ../Output/Graphs/Credit_cycle_JP.pdf Graphic file (type pdf)
 <use ../Output/Graphs/Credit_cycle_JP.pdf>
 Package pdftex.def Info: ../Output/Graphs/Credit_cycle_JP.pdf  used on input li
-ne 551.
+ne 522.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../Output/Graphs/Credit_trend_JP.pdf, id=53, 578.16pt x 361.35pt>
 File: ../Output/Graphs/Credit_trend_JP.pdf Graphic file (type pdf)
 <use ../Output/Graphs/Credit_trend_JP.pdf>
 Package pdftex.def Info: ../Output/Graphs/Credit_trend_JP.pdf  used on input li
-ne 552.
+ne 523.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -908,13 +908,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ../Output/Graphs/HP_cycle_JP.pdf Graphic file (type pdf)
 <use ../Output/Graphs/HP_cycle_JP.pdf>
 Package pdftex.def Info: ../Output/Graphs/HP_cycle_JP.pdf  used on input line 5
-57.
+28.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../Output/Graphs/HP_trend_JP.pdf, id=55, 578.16pt x 361.35pt>
 File: ../Output/Graphs/HP_trend_JP.pdf Graphic file (type pdf)
 <use ../Output/Graphs/HP_trend_JP.pdf>
 Package pdftex.def Info: ../Output/Graphs/HP_trend_JP.pdf  used on input line 5
-58.
+29.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -923,13 +923,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ../Output/Graphs/Credit_cycle_KR.pdf Graphic file (type pdf)
 <use ../Output/Graphs/Credit_cycle_KR.pdf>
 Package pdftex.def Info: ../Output/Graphs/Credit_cycle_KR.pdf  used on input li
-ne 564.
+ne 535.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../Output/Graphs/Credit_trend_KR.pdf, id=57, 578.16pt x 361.35pt>
 File: ../Output/Graphs/Credit_trend_KR.pdf Graphic file (type pdf)
 <use ../Output/Graphs/Credit_trend_KR.pdf>
 Package pdftex.def Info: ../Output/Graphs/Credit_trend_KR.pdf  used on input li
-ne 565.
+ne 536.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -938,13 +938,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ../Output/Graphs/HP_cycle_KR.pdf Graphic file (type pdf)
 <use ../Output/Graphs/HP_cycle_KR.pdf>
 Package pdftex.def Info: ../Output/Graphs/HP_cycle_KR.pdf  used on input line 5
-70.
+41.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../Output/Graphs/HP_trend_KR.pdf, id=59, 578.16pt x 361.35pt>
 File: ../Output/Graphs/HP_trend_KR.pdf Graphic file (type pdf)
 <use ../Output/Graphs/HP_trend_KR.pdf>
 Package pdftex.def Info: ../Output/Graphs/HP_trend_KR.pdf  used on input line 5
-71.
+42.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1057,12 +1057,12 @@ Overfull \vbox (2.66429pt too high) has occurred while \output is active []
 <../Output/Graphs/IRF_US.pdf, id=222, 505.89pt x 505.89pt>
 File: ../Output/Graphs/IRF_US.pdf Graphic file (type pdf)
 <use ../Output/Graphs/IRF_US.pdf>
-Package pdftex.def Info: ../Output/Graphs/IRF_US.pdf  used on input line 591.
+Package pdftex.def Info: ../Output/Graphs/IRF_US.pdf  used on input line 562.
 (pdftex.def)             Requested size: 354.12057pt x 354.12057pt.
 <../Output/Graphs/IRF_GB.pdf, id=223, 505.89pt x 505.89pt>
 File: ../Output/Graphs/IRF_GB.pdf Graphic file (type pdf)
 <use ../Output/Graphs/IRF_GB.pdf>
-Package pdftex.def Info: ../Output/Graphs/IRF_GB.pdf  used on input line 596.
+Package pdftex.def Info: ../Output/Graphs/IRF_GB.pdf  used on input line 567.
 (pdftex.def)             Requested size: 354.12057pt x 354.12057pt.
 
 
@@ -1071,7 +1071,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <../Output/Graphs/IRF_DE.pdf, id=224, 505.89pt x 505.89pt>
 File: ../Output/Graphs/IRF_DE.pdf Graphic file (type pdf)
 <use ../Output/Graphs/IRF_DE.pdf>
-Package pdftex.def Info: ../Output/Graphs/IRF_DE.pdf  used on input line 601.
+Package pdftex.def Info: ../Output/Graphs/IRF_DE.pdf  used on input line 572.
 (pdftex.def)             Requested size: 354.12057pt x 354.12057pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1079,7 +1079,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <../Output/Graphs/IRF_FR.pdf, id=225, 505.89pt x 505.89pt>
 File: ../Output/Graphs/IRF_FR.pdf Graphic file (type pdf)
 <use ../Output/Graphs/IRF_FR.pdf>
-Package pdftex.def Info: ../Output/Graphs/IRF_FR.pdf  used on input line 606.
+Package pdftex.def Info: ../Output/Graphs/IRF_FR.pdf  used on input line 577.
 (pdftex.def)             Requested size: 354.12057pt x 354.12057pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1087,7 +1087,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <../Output/Graphs/IRF_JP.pdf, id=226, 505.89pt x 505.89pt>
 File: ../Output/Graphs/IRF_JP.pdf Graphic file (type pdf)
 <use ../Output/Graphs/IRF_JP.pdf>
-Package pdftex.def Info: ../Output/Graphs/IRF_JP.pdf  used on input line 611.
+Package pdftex.def Info: ../Output/Graphs/IRF_JP.pdf  used on input line 582.
 (pdftex.def)             Requested size: 354.12057pt x 354.12057pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1095,7 +1095,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <../Output/Graphs/IRF_KR.pdf, id=227, 505.89pt x 505.89pt>
 File: ../Output/Graphs/IRF_KR.pdf Graphic file (type pdf)
 <use ../Output/Graphs/IRF_KR.pdf>
-Package pdftex.def Info: ../Output/Graphs/IRF_KR.pdf  used on input line 616.
+Package pdftex.def Info: ../Output/Graphs/IRF_KR.pdf  used on input line 587.
 (pdftex.def)             Requested size: 354.12057pt x 354.12057pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1108,7 +1108,7 @@ ut/Graphs/IRF_DE.pdf>] [23 <../Output/Graphs/IRF_FR.pdf>] [24 <../Output/Graphs
 Here is how much of TeX's memory you used:
  27031 strings out of 480930
  709121 string characters out of 2908969
- 1087362 words of memory out of 3000000
+ 1084362 words of memory out of 3000000
  42443 multiletter control sequences out of 15000+200000
  540940 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1126,7 +1126,7 @@ pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Models and Matrices.pdf" (25 pages, 377841 bytes).
+Output written on "Models and Matrices.pdf" (25 pages, 375538 bytes).
 PDF statistics:
  324 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

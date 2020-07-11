@@ -1,15 +1,17 @@
 #Load libraries
 rm(list = ls())
 
+#Select country out of 6: US, GB, FR, DE, JP, KR
+country = 'KR'
+
 library(tidyverse)
 library(tictoc)
 library(ucminf)
 library(numDeriv)
-#library(matrixcalc)
 library(DataCombine)
-library(dplyr)
 library(reshape2)
-library(ggplot2)
+library(R.utils)
+
 
 source("trans.R") # Parameter constraints
 source("lik_fcn.R") # Negative log likelihood function
@@ -22,7 +24,7 @@ source("filter_fcn.R") # Filter function
 # setwd("put working directory here")
 setwd("D:/GitHub/HPCredit/Regression/Ver 2 - UC with random walk drift term/R") 
 
-country = 'GB'
+
 #automate file name  sprintf("input%s.txt",country)
 
 #Read raw data
@@ -30,56 +32,72 @@ data_filepath = sprintf("../Data/Input/data_%s.txt",country)
 data <- read.table(data_filepath, header=TRUE, sep=",")
 
 #=========================================================================#
-# UC model regression
+# UC model estimation
 #=========================================================================#
-
 data = na.omit(data)
 y <- 100*log(data)
+
 START = 2
 
 #Setting Priors
 
 t_y_prior = y[1,1]
 t_h_prior = y[1,2]
-y=y[-1,]
+y=y[-1,] #setting the first row of data as prior for trends
 T = nrow(y)
 
-  #Loop for solvable hessian matrix
+  #================================================================#
+  #Loops generating priors to get a solvable hessian matrix
+  #about 10 loops would work
+  #================================================================#
+  number = 0
+  det_model = TRUE
+  solve_hessian="try-error"
+  while ((det_model==TRUE) || (solve_hessian=="try-error")){
+    number = number + 1
+    print(paste("Loop", number))
+    
+    #Setting priors for trends variance
+    sig_ty_prior = as.numeric(100+sample(1:100, 1))
+    sig_gy_prior = as.numeric(sample(1:50, 1))
+    sig_th_prior = as.numeric(100+sample(1:100, 1))
+    sig_gh_prior = as.numeric(sample(1:50, 1))
+    #sig_tyth_prior = as.numeric(100+sample(1:100, 1))
+    #randomize cross trend covariance to be large positive or negative number.
+    m = sample(1:2,1)-1
+    if (m == 0) {m = -1}
+    sig_tyth_prior = as.numeric(m*(50+sample(1:50, 1)))
+  
+    prior = c(t_y_prior, t_h_prior, sig_ty_prior, sig_gy_prior, sig_th_prior, sig_gh_prior, sig_tyth_prior)
+    
+    # Randomize initial paramter values
+    prmtr_in = runif(12, min=-20, max=20)
+    
+    # stand alone unconstrained optimization code
+    # tic("ucminf") #time length of a loop
+    # model = ucminf(prmtr_in,lik_fcn,hessian = TRUE,control = list(maxeval = 3000))
+    # # Returns paramter estimates, -LL value, code
+    # toc()
+   
+    res <- NULL
+    tryCatch({
+      res <- withTimeout({
+        tic("ucminf")#time length of a loop
+        #================================================================#
+        # UC model estimation
+        #================================================================#
+        model = ucminf(prmtr_in,lik_fcn,hessian = TRUE,control = list(maxeval = 1000))
+        # Returns paramter estimates, -LL value, code
+        
+        solve_hessian = class(try(solve(model$hessian),TRUE))
+        det_model=is.nan(det(model$hessian))
+        toc()
+      }, timeout = 180, onTimeout = "warning")
+    },  error = function(ex) {
+      message("Time out. Skipping.")
+    }) 
+  }
 
-number = 1
-det_model = TRUE
-while (det_model==TRUE)
-{
-  #Setting priors
-  sig_ty_prior = as.numeric(100+sample(1:100, 1))
-  sig_gy_prior = as.numeric(sample(1:10, 1))
-  sig_th_prior = as.numeric(100+sample(1:100, 1))
-  sig_gh_prior = as.numeric(sample(1:10, 1))
-  sig_tyth_prior = as.numeric(sample(1:10, 1))
-  #randomize cross trend covariance to be large positive or negative number.
-  # m = sample(1:2,1)-1
-  # if (m == 0) {m = -1}
-  # sig_tyth_prior = as.numeric(m*(50+sample(1:50, 1)))
-
-  prior = c(t_y_prior, t_h_prior, sig_ty_prior, sig_gy_prior, sig_th_prior, sig_gh_prior, sig_tyth_prior)
-  
-  prmtr_in = runif(12, min=-20, max=20)
-  
-  # det_ft = prior_setting(prmtr_in,prior)
-  # det_ft
-  
-  tic("ucminf")
-  # Initial paramter values
-  model = ucminf(prmtr_in,lik_fcn,hessian = TRUE,control = list(maxeval = 3000))
-  # Returns paramter estimates, -LL value, code
-  toc()
-  
-  print(paste("Number of loops: ", number))
-  number = number + 1
-  det_model=is.nan(det(model$hessian))
-}
-
-# Returns paramter estimates, -LL value, code
 
 # Final parameter values
 prm_fnl = t(trans(model$par))
@@ -118,13 +136,12 @@ write.table(prior,sprintf("../Data/R_prior_%s.txt",country),col.names = FALSE, r
 #write regression results to csv
 reg = cbind(t(prm_fnl),matrix(sd_fnl,12,1))
 reg = rbind(reg,c(-model$value,0))
-write.table(reg,sprintf("../Output/Reg_%s.csv",country),col.names = FALSE, row.names = FALSE)
+write.table(reg,sprintf("../Output/Reg_%s.csv",country),sep=',',col.names = FALSE, row.names = FALSE)
 
 
 #=========================================================================#
 # Forecast data
 #=========================================================================#
-
 filter_out = filter_fcn(model$par)
 data = filter_out[[1]]
 forcst = filter_out[[2]]
@@ -137,7 +154,6 @@ write.table(cbind(data[,1],data[,3],data[,4],data[,6],forcst[,1:2]),sprintf("../
 # Impulse Response Functions
 #=========================================================================#
 
-# 
 # df1 <- read.table( sprintf("../Output/Reg_%s.csv",country) , header=FALSE, sep=",")
 # prm_fnl = df1[,1]
 
