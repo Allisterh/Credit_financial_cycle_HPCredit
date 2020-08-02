@@ -1,0 +1,1380 @@
+          ID t-stat value for z-hat
+1  Australia      -1.78141776449608
+2       <NA>                   <NA>
+3       <NA>                   <NA>
+4       <NA>                   <NA>
+5       <NA>                   <NA>
+6       <NA>                   <NA>
+7       <NA>                   <NA>
+8       <NA>                   <NA>
+9       <NA>                   <NA>
+10      <NA>                   <NA>
+11      <NA>                   <NA>
+12      <NA>                   <NA>
+13      <NA>                   <NA>
+14      <NA>                   <NA>
+15      <NA>                   <NA>
+16      <NA>                   <NA>
+17      <NA>                   <NA>
+18      <NA>                   <NA>
+19      <NA>                   <NA>
+20      <NA>                   <NA>
+21      <NA>                   <NA>
+22      <NA>                   <NA>
+23      <NA>                   <NA>
+24      <NA>                   <NA>
+25      <NA>                   <NA>
+26      <NA>                   <NA>
+27      <NA>                   <NA>
+28      <NA>                   <NA>
+29      <NA>                   <NA>
+30      <NA>                   <NA>
+31      <NA>                   <NA>
+32      <NA>                   <NA>
+33      <NA>                   <NA>
+34      <NA>                   <NA>
+35      <NA>                   <NA>
+36      <NA>                   <NA>
+[1] "Australia"         "-1.78141776449608"
+[1] "Austria"           "0.877812665141592"
+[1] "Belgium"           "-1.24119046334504"
+[1] "Brazil"            "-0.90210468619844"
+[1] "Canada"            "-1.62081394000381"
+[1] "Chile"             "-1.35015750700129"
+[1] "China"             "-1.52763329971915"
+[1] "Colombia"          "-2.30551755330326"
+[1] "Czech Republic"   "1.47387370772278"
+[1] "Denmark"            "-0.614910411811626"
+[1] "Finland"           "-1.31420967473981"
+[1] "France"           "-1.8645930721153"
+[1] "Germany"            "-0.836179406023365"
+[1] "Greece"             "0.0959285538337775"
+[1] "Hungary"            "-0.353551358459552"
+[1] "India"             "-3.57331835244124"
+[1] "Indonesia"         "-1.19231832092006"
+[1] "Ireland"            "-0.626891406845205"
+[1] "Israel"           "-1.7292190821175"
+[1] "Italy"             "-0.66000071538132"
+[1] "Japan"             "-1.00911658040391"
+[1] "Korea"             "-2.83422661699972"
+[1] "Luxembourg"         "-0.709632194747938"
+[1] "Mexico"             "-0.969283660921726"
+[1] "Netherlands"        "-0.634359264902214"
+[1] "New Zealand"      "-0.8905833343744"
+[1] "Norway"             "-0.982573974093739"
+[1] "Poland"             "-0.785486377375224"
+[1] "Portugal"           "-0.635420504123723"
+[1] "Russia"             "-0.232089398583169"
+[1] "Spain"             "-1.03010205075658"
+[1] "Sweden"            "-1.38199082378782"
+[1] "Switzerland"       "-1.67809486513278"
+[1] "Turkey"             "-0.880939259896879"
+[1] "United Kingdom"    "-1.77781473233571"
+[1] "United States"      "-0.297482653356369"
+Warning messages:
+1: In `[<-.factor`(`*tmp*`, ri, value = "Austria") :
+  invalid factor level, NA generated
+2: In `[<-.factor`(`*tmp*`, ri, value = "0.877812665141592") :
+  invalid factor level, NA generated
+3: In `[<-.factor`(`*tmp*`, ri, value = "Belgium") :
+  invalid factor level, NA generated
+4: In `[<-.factor`(`*tmp*`, ri, value = "-1.24119046334504") :
+  invalid factor level, NA generated
+5: In `[<-.factor`(`*tmp*`, ri, value = "Brazil") :
+  invalid factor level, NA generated
+6: In `[<-.factor`(`*tmp*`, ri, value = "-0.90210468619844") :
+  invalid factor level, NA generated
+7: In `[<-.factor`(`*tmp*`, ri, value = "Canada") :
+  invalid factor level, NA generated
+8: In `[<-.factor`(`*tmp*`, ri, value = "-1.62081394000381") :
+  invalid factor level, NA generated
+9: In `[<-.factor`(`*tmp*`, ri, value = "Chile") :
+  invalid factor level, NA generated
+10: In `[<-.factor`(`*tmp*`, ri, value = "-1.35015750700129") :
+  invalid factor level, NA generated
+11: In `[<-.factor`(`*tmp*`, ri, value = "China") :
+  invalid factor level, NA generated
+12: In `[<-.factor`(`*tmp*`, ri, value = "-1.52763329971915") :
+  invalid factor level, NA generated
+13: In `[<-.factor`(`*tmp*`, ri, value = "Colombia") :
+  invalid factor level, NA generated
+14: In `[<-.factor`(`*tmp*`, ri, value = "-2.30551755330326") :
+  invalid factor level, NA generated
+15: In `[<-.factor`(`*tmp*`, ri, value = "Czech Republic") :
+  invalid factor level, NA generated
+16: In `[<-.factor`(`*tmp*`, ri, value = "1.47387370772278") :
+  invalid factor level, NA generated
+17: In `[<-.factor`(`*tmp*`, ri, value = "Denmark") :
+  invalid factor level, NA generated
+18: In `[<-.factor`(`*tmp*`, ri, value = "-0.614910411811626") :
+  invalid factor level, NA generated
+19: In `[<-.factor`(`*tmp*`, ri, value = "Finland") :
+  invalid factor level, NA generated
+20: In `[<-.factor`(`*tmp*`, ri, value = "-1.31420967473981") :
+  invalid factor level, NA generated
+21: In `[<-.factor`(`*tmp*`, ri, value = "France") :
+  invalid factor level, NA generated
+22: In `[<-.factor`(`*tmp*`, ri, value = "-1.8645930721153") :
+  invalid factor level, NA generated
+23: In `[<-.factor`(`*tmp*`, ri, value = "Germany") :
+  invalid factor level, NA generated
+24: In `[<-.factor`(`*tmp*`, ri, value = "-0.836179406023365") :
+  invalid factor level, NA generated
+25: In `[<-.factor`(`*tmp*`, ri, value = "Greece") :
+  invalid factor level, NA generated
+26: In `[<-.factor`(`*tmp*`, ri, value = "0.0959285538337775") :
+  invalid factor level, NA generated
+27: In `[<-.factor`(`*tmp*`, ri, value = "Hungary") :
+  invalid factor level, NA generated
+28: In `[<-.factor`(`*tmp*`, ri, value = "-0.353551358459552") :
+  invalid factor level, NA generated
+29: In `[<-.factor`(`*tmp*`, ri, value = "India") :
+  invalid factor level, NA generated
+30: In `[<-.factor`(`*tmp*`, ri, value = "-3.57331835244124") :
+  invalid factor level, NA generated
+31: In `[<-.factor`(`*tmp*`, ri, value = "Indonesia") :
+  invalid factor level, NA generated
+32: In `[<-.factor`(`*tmp*`, ri, value = "-1.19231832092006") :
+  invalid factor level, NA generated
+33: In `[<-.factor`(`*tmp*`, ri, value = "Ireland") :
+  invalid factor level, NA generated
+34: In `[<-.factor`(`*tmp*`, ri, value = "-0.626891406845205") :
+  invalid factor level, NA generated
+35: In `[<-.factor`(`*tmp*`, ri, value = "Israel") :
+  invalid factor level, NA generated
+36: In `[<-.factor`(`*tmp*`, ri, value = "-1.7292190821175") :
+  invalid factor level, NA generated
+37: In `[<-.factor`(`*tmp*`, ri, value = "Italy") :
+  invalid factor level, NA generated
+38: In `[<-.factor`(`*tmp*`, ri, value = "-0.66000071538132") :
+  invalid factor level, NA generated
+39: In `[<-.factor`(`*tmp*`, ri, value = "Japan") :
+  invalid factor level, NA generated
+40: In `[<-.factor`(`*tmp*`, ri, value = "-1.00911658040391") :
+  invalid factor level, NA generated
+41: In `[<-.factor`(`*tmp*`, ri, value = "Korea") :
+  invalid factor level, NA generated
+42: In `[<-.factor`(`*tmp*`, ri, value = "-2.83422661699972") :
+  invalid factor level, NA generated
+43: In `[<-.factor`(`*tmp*`, ri, value = "Luxembourg") :
+  invalid factor level, NA generated
+44: In `[<-.factor`(`*tmp*`, ri, value = "-0.709632194747938") :
+  invalid factor level, NA generated
+45: In `[<-.factor`(`*tmp*`, ri, value = "Mexico") :
+  invalid factor level, NA generated
+46: In `[<-.factor`(`*tmp*`, ri, value = "-0.969283660921726") :
+  invalid factor level, NA generated
+47: In `[<-.factor`(`*tmp*`, ri, value = "Netherlands") :
+  invalid factor level, NA generated
+48: In `[<-.factor`(`*tmp*`, ri, value = "-0.634359264902214") :
+  invalid factor level, NA generated
+49: In `[<-.factor`(`*tmp*`, ri, value = "New Zealand") :
+  invalid factor level, NA generated
+50: In `[<-.factor`(`*tmp*`, ri, value = "-0.8905833343744") :
+  invalid factor level, NA generated
+[1] "Australia"         "-1.78141776449608"
+[1] "Austria"           "0.877812665141592"
+[1] "Belgium"           "-1.24119046334504"
+[1] "Brazil"            "-0.90210468619844"
+[1] "Canada"            "-1.62081394000381"
+[1] "Chile"             "-1.35015750700129"
+[1] "China"             "-1.52763329971915"
+[1] "Colombia"          "-2.30551755330326"
+[1] "Czech Republic"   "1.47387370772278"
+[1] "Denmark"            "-0.614910411811626"
+[1] "Finland"           "-1.31420967473981"
+[1] "France"           "-1.8645930721153"
+[1] "Germany"            "-0.836179406023365"
+[1] "Greece"             "0.0959285538337775"
+[1] "Hungary"            "-0.353551358459552"
+[1] "India"             "-3.57331835244124"
+[1] "Indonesia"         "-1.19231832092006"
+[1] "Ireland"            "-0.626891406845205"
+[1] "Israel"           "-1.7292190821175"
+[1] "Italy"             "-0.66000071538132"
+[1] "Japan"             "-1.00911658040391"
+[1] "Korea"             "-2.83422661699972"
+[1] "Luxembourg"         "-0.709632194747938"
+[1] "Mexico"             "-0.969283660921726"
+[1] "Netherlands"        "-0.634359264902214"
+[1] "New Zealand"      "-0.8905833343744"
+[1] "Norway"             "-0.982573974093739"
+[1] "Poland"             "-0.785486377375224"
+[1] "Portugal"           "-0.635420504123723"
+[1] "Russia"             "-0.232089398583169"
+[1] "Spain"             "-1.03010205075658"
+[1] "Sweden"            "-1.38199082378782"
+[1] "Switzerland"       "-1.67809486513278"
+[1] "Turkey"             "-0.880939259896879"
+[1] "United Kingdom"    "-1.77781473233571"
+[1] "United States"      "-0.297482653356369"
+   X.Australia. X..1.78141776449608.
+1     Australia    -1.78141776449608
+2          <NA>                 <NA>
+3          <NA>                 <NA>
+4          <NA>                 <NA>
+5          <NA>                 <NA>
+6          <NA>                 <NA>
+7          <NA>                 <NA>
+8          <NA>                 <NA>
+9          <NA>                 <NA>
+10         <NA>                 <NA>
+11         <NA>                 <NA>
+12         <NA>                 <NA>
+13         <NA>                 <NA>
+14         <NA>                 <NA>
+15         <NA>                 <NA>
+16         <NA>                 <NA>
+17         <NA>                 <NA>
+18         <NA>                 <NA>
+19         <NA>                 <NA>
+20         <NA>                 <NA>
+21         <NA>                 <NA>
+22         <NA>                 <NA>
+23         <NA>                 <NA>
+24         <NA>                 <NA>
+25         <NA>                 <NA>
+26         <NA>                 <NA>
+27         <NA>                 <NA>
+28         <NA>                 <NA>
+29         <NA>                 <NA>
+30         <NA>                 <NA>
+31         <NA>                 <NA>
+32         <NA>                 <NA>
+33         <NA>                 <NA>
+34         <NA>                 <NA>
+35         <NA>                 <NA>
+36         <NA>                 <NA>
+numeric(0)
+numeric(0)
+[1] "Australia"         "-1.78141776449608"
+[1] "Austria"           "0.877812665141592"
+[1] "Belgium"           "-1.24119046334504"
+[1] "Brazil"            "-0.90210468619844"
+[1] "Canada"            "-1.62081394000381"
+[1] "Chile"             "-1.35015750700129"
+[1] "China"             "-1.52763329971915"
+[1] "Colombia"          "-2.30551755330326"
+[1] "Czech Republic"   "1.47387370772278"
+[1] "Denmark"            "-0.614910411811626"
+[1] "Finland"           "-1.31420967473981"
+[1] "France"           "-1.8645930721153"
+[1] "Germany"            "-0.836179406023365"
+[1] "Greece"             "0.0959285538337775"
+[1] "Hungary"            "-0.353551358459552"
+[1] "India"             "-3.57331835244124"
+[1] "Indonesia"         "-1.19231832092006"
+[1] "Ireland"            "-0.626891406845205"
+[1] "Israel"           "-1.7292190821175"
+[1] "Italy"             "-0.66000071538132"
+[1] "Japan"             "-1.00911658040391"
+[1] "Korea"             "-2.83422661699972"
+[1] "Luxembourg"         "-0.709632194747938"
+[1] "Mexico"             "-0.969283660921726"
+[1] "Netherlands"        "-0.634359264902214"
+[1] "New Zealand"      "-0.8905833343744"
+[1] "Norway"             "-0.982573974093739"
+[1] "Poland"             "-0.785486377375224"
+[1] "Portugal"           "-0.635420504123723"
+[1] "Russia"             "-0.232089398583169"
+[1] "Spain"             "-1.03010205075658"
+[1] "Sweden"            "-1.38199082378782"
+[1] "Switzerland"       "-1.67809486513278"
+[1] "Turkey"             "-0.880939259896879"
+[1] "United Kingdom"    "-1.77781473233571"
+[1] "United States"      "-0.297482653356369"
+[1] "Australia"        "Min.   :-1.781  " "1st Qu.:-1.781  "
+[4] "Median :-1.781  " "Mean   :-1.781  " "3rd Qu.:-1.781  "
+[7] "Max.   :-1.781  "
+[1] "Austria"          "Min.   :0.8778  " "1st Qu.:0.8778  "
+[4] "Median :0.8778  " "Mean   :0.8778  " "3rd Qu.:0.8778  "
+[7] "Max.   :0.8778  "
+[1] "Belgium"          "Min.   :-1.241  " "1st Qu.:-1.241  "
+[4] "Median :-1.241  " "Mean   :-1.241  " "3rd Qu.:-1.241  "
+[7] "Max.   :-1.241  "
+[1] "Brazil"            "Min.   :-0.9021  " "1st Qu.:-0.9021  "
+[4] "Median :-0.9021  " "Mean   :-0.9021  " "3rd Qu.:-0.9021  "
+[7] "Max.   :-0.9021  "
+[1] "Canada"           "Min.   :-1.621  " "1st Qu.:-1.621  "
+[4] "Median :-1.621  " "Mean   :-1.621  " "3rd Qu.:-1.621  "
+[7] "Max.   :-1.621  "
+[1] "Chile"           "Min.   :-1.35  " "1st Qu.:-1.35  " "Median :-1.35  "
+[5] "Mean   :-1.35  " "3rd Qu.:-1.35  " "Max.   :-1.35  "
+[1] "China"            "Min.   :-1.528  " "1st Qu.:-1.528  "
+[4] "Median :-1.528  " "Mean   :-1.528  " "3rd Qu.:-1.528  "
+[7] "Max.   :-1.528  "
+[1] "Colombia"         "Min.   :-2.306  " "1st Qu.:-2.306  "
+[4] "Median :-2.306  " "Mean   :-2.306  " "3rd Qu.:-2.306  "
+[7] "Max.   :-2.306  "
+[1] "Czech Republic"  "Min.   :1.474  " "1st Qu.:1.474  " "Median :1.474  "
+[5] "Mean   :1.474  " "3rd Qu.:1.474  " "Max.   :1.474  "
+[1] "Denmark"           "Min.   :-0.6149  " "1st Qu.:-0.6149  "
+[4] "Median :-0.6149  " "Mean   :-0.6149  " "3rd Qu.:-0.6149  "
+[7] "Max.   :-0.6149  "
+[1] "Finland"          "Min.   :-1.314  " "1st Qu.:-1.314  "
+[4] "Median :-1.314  " "Mean   :-1.314  " "3rd Qu.:-1.314  "
+[7] "Max.   :-1.314  "
+[1] "France"           "Min.   :-1.865  " "1st Qu.:-1.865  "
+[4] "Median :-1.865  " "Mean   :-1.865  " "3rd Qu.:-1.865  "
+[7] "Max.   :-1.865  "
+[1] "Germany"           "Min.   :-0.8362  " "1st Qu.:-0.8362  "
+[4] "Median :-0.8362  " "Mean   :-0.8362  " "3rd Qu.:-0.8362  "
+[7] "Max.   :-0.8362  "
+[1] "Greece"            "Min.   :0.09593  " "1st Qu.:0.09593  "
+[4] "Median :0.09593  " "Mean   :0.09593  " "3rd Qu.:0.09593  "
+[7] "Max.   :0.09593  "
+[1] "Hungary"           "Min.   :-0.3536  " "1st Qu.:-0.3536  "
+[4] "Median :-0.3536  " "Mean   :-0.3536  " "3rd Qu.:-0.3536  "
+[7] "Max.   :-0.3536  "
+[1] "India"            "Min.   :-3.573  " "1st Qu.:-3.573  "
+[4] "Median :-3.573  " "Mean   :-3.573  " "3rd Qu.:-3.573  "
+[7] "Max.   :-3.573  "
+[1] "Indonesia"        "Min.   :-1.192  " "1st Qu.:-1.192  "
+[4] "Median :-1.192  " "Mean   :-1.192  " "3rd Qu.:-1.192  "
+[7] "Max.   :-1.192  "
+[1] "Ireland"           "Min.   :-0.6269  " "1st Qu.:-0.6269  "
+[4] "Median :-0.6269  " "Mean   :-0.6269  " "3rd Qu.:-0.6269  "
+[7] "Max.   :-0.6269  "
+[1] "Israel"           "Min.   :-1.729  " "1st Qu.:-1.729  "
+[4] "Median :-1.729  " "Mean   :-1.729  " "3rd Qu.:-1.729  "
+[7] "Max.   :-1.729  "
+[1] "Italy"           "Min.   :-0.66  " "1st Qu.:-0.66  " "Median :-0.66  "
+[5] "Mean   :-0.66  " "3rd Qu.:-0.66  " "Max.   :-0.66  "
+[1] "Japan"            "Min.   :-1.009  " "1st Qu.:-1.009  "
+[4] "Median :-1.009  " "Mean   :-1.009  " "3rd Qu.:-1.009  "
+[7] "Max.   :-1.009  "
+[1] "Korea"            "Min.   :-2.834  " "1st Qu.:-2.834  "
+[4] "Median :-2.834  " "Mean   :-2.834  " "3rd Qu.:-2.834  "
+[7] "Max.   :-2.834  "
+[1] "Luxembourg"        "Min.   :-0.7096  " "1st Qu.:-0.7096  "
+[4] "Median :-0.7096  " "Mean   :-0.7096  " "3rd Qu.:-0.7096  "
+[7] "Max.   :-0.7096  "
+[1] "Mexico"            "Min.   :-0.9693  " "1st Qu.:-0.9693  "
+[4] "Median :-0.9693  " "Mean   :-0.9693  " "3rd Qu.:-0.9693  "
+[7] "Max.   :-0.9693  "
+[1] "Netherlands"       "Min.   :-0.6344  " "1st Qu.:-0.6344  "
+[4] "Median :-0.6344  " "Mean   :-0.6344  " "3rd Qu.:-0.6344  "
+[7] "Max.   :-0.6344  "
+[1] "New Zealand"       "Min.   :-0.8906  " "1st Qu.:-0.8906  "
+[4] "Median :-0.8906  " "Mean   :-0.8906  " "3rd Qu.:-0.8906  "
+[7] "Max.   :-0.8906  "
+[1] "Norway"            "Min.   :-0.9826  " "1st Qu.:-0.9826  "
+[4] "Median :-0.9826  " "Mean   :-0.9826  " "3rd Qu.:-0.9826  "
+[7] "Max.   :-0.9826  "
+[1] "Poland"            "Min.   :-0.7855  " "1st Qu.:-0.7855  "
+[4] "Median :-0.7855  " "Mean   :-0.7855  " "3rd Qu.:-0.7855  "
+[7] "Max.   :-0.7855  "
+[1] "Portugal"          "Min.   :-0.6354  " "1st Qu.:-0.6354  "
+[4] "Median :-0.6354  " "Mean   :-0.6354  " "3rd Qu.:-0.6354  "
+[7] "Max.   :-0.6354  "
+[1] "Russia"            "Min.   :-0.2321  " "1st Qu.:-0.2321  "
+[4] "Median :-0.2321  " "Mean   :-0.2321  " "3rd Qu.:-0.2321  "
+[7] "Max.   :-0.2321  "
+[1] "Spain"           "Min.   :-1.03  " "1st Qu.:-1.03  " "Median :-1.03  "
+[5] "Mean   :-1.03  " "3rd Qu.:-1.03  " "Max.   :-1.03  "
+[1] "Sweden"           "Min.   :-1.382  " "1st Qu.:-1.382  "
+[4] "Median :-1.382  " "Mean   :-1.382  " "3rd Qu.:-1.382  "
+[7] "Max.   :-1.382  "
+[1] "Switzerland"      "Min.   :-1.678  " "1st Qu.:-1.678  "
+[4] "Median :-1.678  " "Mean   :-1.678  " "3rd Qu.:-1.678  "
+[7] "Max.   :-1.678  "
+[1] "Turkey"            "Min.   :-0.8809  " "1st Qu.:-0.8809  "
+[4] "Median :-0.8809  " "Mean   :-0.8809  " "3rd Qu.:-0.8809  "
+[7] "Max.   :-0.8809  "
+[1] "United Kingdom"   "Min.   :-1.778  " "1st Qu.:-1.778  "
+[4] "Median :-1.778  " "Mean   :-1.778  " "3rd Qu.:-1.778  "
+[7] "Max.   :-1.778  "
+[1] "United States"     "Min.   :-0.2975  " "1st Qu.:-0.2975  "
+[4] "Median :-0.2975  " "Mean   :-0.2975  " "3rd Qu.:-0.2975  "
+[7] "Max.   :-0.2975  "
+[1] "Australia"         "-1.78141776449608"
+[1] "Austria"           "0.877812665141592"
+[1] "Belgium"           "-1.24119046334504"
+[1] "Brazil"            "-0.90210468619844"
+[1] "Canada"            "-1.62081394000381"
+[1] "Chile"             "-1.35015750700129"
+[1] "China"             "-1.52763329971915"
+[1] "Colombia"          "-2.30551755330326"
+[1] "Czech Republic"   "1.47387370772278"
+[1] "Denmark"            "-0.614910411811626"
+[1] "Finland"           "-1.31420967473981"
+[1] "France"           "-1.8645930721153"
+[1] "Germany"            "-0.836179406023365"
+[1] "Greece"             "0.0959285538337775"
+[1] "Hungary"            "-0.353551358459552"
+[1] "India"             "-3.57331835244124"
+[1] "Indonesia"         "-1.19231832092006"
+[1] "Ireland"            "-0.626891406845205"
+[1] "Israel"           "-1.7292190821175"
+[1] "Italy"             "-0.66000071538132"
+[1] "Japan"             "-1.00911658040391"
+[1] "Korea"             "-2.83422661699972"
+[1] "Luxembourg"         "-0.709632194747938"
+[1] "Mexico"             "-0.969283660921726"
+[1] "Netherlands"        "-0.634359264902214"
+[1] "New Zealand"      "-0.8905833343744"
+[1] "Norway"             "-0.982573974093739"
+[1] "Poland"             "-0.785486377375224"
+[1] "Portugal"           "-0.635420504123723"
+[1] "Russia"             "-0.232089398583169"
+[1] "Spain"             "-1.03010205075658"
+[1] "Sweden"            "-1.38199082378782"
+[1] "Switzerland"       "-1.67809486513278"
+[1] "Turkey"             "-0.880939259896879"
+[1] "United Kingdom"    "-1.77781473233571"
+[1] "United States"      "-0.297482653356369"
+    X.Australia. X..1.78141776449608.
+1      Australia    -1.78141776449608
+2           <NA>                 <NA>
+3           <NA>                 <NA>
+4           <NA>                 <NA>
+5           <NA>                 <NA>
+6           <NA>                 <NA>
+7           <NA>                 <NA>
+8           <NA>                 <NA>
+9           <NA>                 <NA>
+10          <NA>                 <NA>
+11          <NA>                 <NA>
+12          <NA>                 <NA>
+13          <NA>                 <NA>
+14          <NA>                 <NA>
+15          <NA>                 <NA>
+16          <NA>                 <NA>
+17          <NA>                 <NA>
+18          <NA>                 <NA>
+19          <NA>                 <NA>
+20          <NA>                 <NA>
+21          <NA>                 <NA>
+22          <NA>                 <NA>
+23          <NA>                 <NA>
+24          <NA>                 <NA>
+25          <NA>                 <NA>
+26          <NA>                 <NA>
+27          <NA>                 <NA>
+28          <NA>                 <NA>
+29          <NA>                 <NA>
+30          <NA>                 <NA>
+31          <NA>                 <NA>
+32          <NA>                 <NA>
+33          <NA>                 <NA>
+34          <NA>                 <NA>
+35          <NA>                 <NA>
+36          <NA>                 <NA>
+37     Australia    -1.78141776449608
+38          <NA>                 <NA>
+39          <NA>                 <NA>
+40          <NA>                 <NA>
+41          <NA>                 <NA>
+42          <NA>                 <NA>
+43          <NA>                 <NA>
+44          <NA>                 <NA>
+45          <NA>                 <NA>
+46          <NA>                 <NA>
+47          <NA>                 <NA>
+48          <NA>                 <NA>
+49          <NA>                 <NA>
+50          <NA>                 <NA>
+51          <NA>                 <NA>
+52          <NA>                 <NA>
+53          <NA>                 <NA>
+54          <NA>                 <NA>
+55          <NA>                 <NA>
+56          <NA>                 <NA>
+57          <NA>                 <NA>
+58          <NA>                 <NA>
+59          <NA>                 <NA>
+60          <NA>                 <NA>
+61          <NA>                 <NA>
+62          <NA>                 <NA>
+63          <NA>                 <NA>
+64          <NA>                 <NA>
+65          <NA>                 <NA>
+66          <NA>                 <NA>
+67          <NA>                 <NA>
+68          <NA>                 <NA>
+69          <NA>                 <NA>
+70          <NA>                 <NA>
+71          <NA>                 <NA>
+72          <NA>                 <NA>
+73     Australia                 <NA>
+74          <NA>                 <NA>
+75          <NA>                 <NA>
+76          <NA>                 <NA>
+77          <NA>                 <NA>
+78          <NA>                 <NA>
+79          <NA>                 <NA>
+80          <NA>                 <NA>
+81          <NA>                 <NA>
+82          <NA>                 <NA>
+83          <NA>                 <NA>
+84          <NA>                 <NA>
+85          <NA>                 <NA>
+86          <NA>                 <NA>
+87          <NA>                 <NA>
+88          <NA>                 <NA>
+89          <NA>                 <NA>
+90          <NA>                 <NA>
+91          <NA>                 <NA>
+92          <NA>                 <NA>
+93          <NA>                 <NA>
+94          <NA>                 <NA>
+95          <NA>                 <NA>
+96          <NA>                 <NA>
+97          <NA>                 <NA>
+98          <NA>                 <NA>
+99          <NA>                 <NA>
+100         <NA>                 <NA>
+101         <NA>                 <NA>
+102         <NA>                 <NA>
+103         <NA>                 <NA>
+104         <NA>                 <NA>
+105         <NA>                 <NA>
+106         <NA>                 <NA>
+107         <NA>                 <NA>
+108         <NA>                 <NA>
+109    Australia    -1.78141776449608
+110         <NA>                 <NA>
+111         <NA>                 <NA>
+112         <NA>                 <NA>
+113         <NA>                 <NA>
+114         <NA>                 <NA>
+115         <NA>                 <NA>
+116         <NA>                 <NA>
+117         <NA>                 <NA>
+118         <NA>                 <NA>
+119         <NA>                 <NA>
+120         <NA>                 <NA>
+121         <NA>                 <NA>
+122         <NA>                 <NA>
+123         <NA>                 <NA>
+124         <NA>                 <NA>
+125         <NA>                 <NA>
+126         <NA>                 <NA>
+127         <NA>                 <NA>
+128         <NA>                 <NA>
+129         <NA>                 <NA>
+130         <NA>                 <NA>
+131         <NA>                 <NA>
+132         <NA>                 <NA>
+133         <NA>                 <NA>
+134         <NA>                 <NA>
+135         <NA>                 <NA>
+136         <NA>                 <NA>
+137         <NA>                 <NA>
+138         <NA>                 <NA>
+139         <NA>                 <NA>
+140         <NA>                 <NA>
+141         <NA>                 <NA>
+142         <NA>                 <NA>
+143         <NA>                 <NA>
+144         <NA>                 <NA>
+145         <NA>                 <NA>
+    X.Australia. X..1.78141776449608.
+1      Australia    -1.78141776449608
+2           <NA>                 <NA>
+3           <NA>                 <NA>
+4           <NA>                 <NA>
+5           <NA>                 <NA>
+6           <NA>                 <NA>
+7           <NA>                 <NA>
+8           <NA>                 <NA>
+9           <NA>                 <NA>
+10          <NA>                 <NA>
+11          <NA>                 <NA>
+12          <NA>                 <NA>
+13          <NA>                 <NA>
+14          <NA>                 <NA>
+15          <NA>                 <NA>
+16          <NA>                 <NA>
+17          <NA>                 <NA>
+18          <NA>                 <NA>
+19          <NA>                 <NA>
+20          <NA>                 <NA>
+21          <NA>                 <NA>
+22          <NA>                 <NA>
+23          <NA>                 <NA>
+24          <NA>                 <NA>
+25          <NA>                 <NA>
+26          <NA>                 <NA>
+27          <NA>                 <NA>
+28          <NA>                 <NA>
+29          <NA>                 <NA>
+30          <NA>                 <NA>
+31          <NA>                 <NA>
+32          <NA>                 <NA>
+33          <NA>                 <NA>
+34          <NA>                 <NA>
+35          <NA>                 <NA>
+36          <NA>                 <NA>
+37     Australia    -1.78141776449608
+38          <NA>                 <NA>
+39          <NA>                 <NA>
+40          <NA>                 <NA>
+41          <NA>                 <NA>
+42          <NA>                 <NA>
+43          <NA>                 <NA>
+44          <NA>                 <NA>
+45          <NA>                 <NA>
+46          <NA>                 <NA>
+47          <NA>                 <NA>
+48          <NA>                 <NA>
+49          <NA>                 <NA>
+50          <NA>                 <NA>
+51          <NA>                 <NA>
+52          <NA>                 <NA>
+53          <NA>                 <NA>
+54          <NA>                 <NA>
+55          <NA>                 <NA>
+56          <NA>                 <NA>
+57          <NA>                 <NA>
+58          <NA>                 <NA>
+59          <NA>                 <NA>
+60          <NA>                 <NA>
+61          <NA>                 <NA>
+62          <NA>                 <NA>
+63          <NA>                 <NA>
+64          <NA>                 <NA>
+65          <NA>                 <NA>
+66          <NA>                 <NA>
+67          <NA>                 <NA>
+68          <NA>                 <NA>
+69          <NA>                 <NA>
+70          <NA>                 <NA>
+71          <NA>                 <NA>
+72          <NA>                 <NA>
+73     Australia                 <NA>
+74          <NA>                 <NA>
+75          <NA>                 <NA>
+76          <NA>                 <NA>
+77          <NA>                 <NA>
+78          <NA>                 <NA>
+79          <NA>                 <NA>
+80          <NA>                 <NA>
+81          <NA>                 <NA>
+82          <NA>                 <NA>
+83          <NA>                 <NA>
+84          <NA>                 <NA>
+85          <NA>                 <NA>
+86          <NA>                 <NA>
+87          <NA>                 <NA>
+88          <NA>                 <NA>
+89          <NA>                 <NA>
+90          <NA>                 <NA>
+91          <NA>                 <NA>
+92          <NA>                 <NA>
+93          <NA>                 <NA>
+94          <NA>                 <NA>
+95          <NA>                 <NA>
+96          <NA>                 <NA>
+97          <NA>                 <NA>
+98          <NA>                 <NA>
+99          <NA>                 <NA>
+100         <NA>                 <NA>
+101         <NA>                 <NA>
+102         <NA>                 <NA>
+103         <NA>                 <NA>
+104         <NA>                 <NA>
+105         <NA>                 <NA>
+106         <NA>                 <NA>
+107         <NA>                 <NA>
+108         <NA>                 <NA>
+109    Australia    -1.78141776449608
+110         <NA>                 <NA>
+111         <NA>                 <NA>
+112         <NA>                 <NA>
+113         <NA>                 <NA>
+114         <NA>                 <NA>
+115         <NA>                 <NA>
+116         <NA>                 <NA>
+117         <NA>                 <NA>
+118         <NA>                 <NA>
+119         <NA>                 <NA>
+120         <NA>                 <NA>
+121         <NA>                 <NA>
+122         <NA>                 <NA>
+123         <NA>                 <NA>
+124         <NA>                 <NA>
+125         <NA>                 <NA>
+126         <NA>                 <NA>
+127         <NA>                 <NA>
+128         <NA>                 <NA>
+129         <NA>                 <NA>
+130         <NA>                 <NA>
+131         <NA>                 <NA>
+132         <NA>                 <NA>
+133         <NA>                 <NA>
+134         <NA>                 <NA>
+135         <NA>                 <NA>
+136         <NA>                 <NA>
+137         <NA>                 <NA>
+138         <NA>                 <NA>
+139         <NA>                 <NA>
+140         <NA>                 <NA>
+141         <NA>                 <NA>
+142         <NA>                 <NA>
+143         <NA>                 <NA>
+144         <NA>                 <NA>
+145         <NA>                 <NA>
+[1] X1 X2
+<0 rows> (or 0-length row.names)
+[1] "Australia"         "-1.78141776449608"
+[1] "Austria"           "0.877812665141592"
+[1] "Belgium"           "-1.24119046334504"
+[1] "Brazil"            "-0.90210468619844"
+[1] "Canada"            "-1.62081394000381"
+[1] "Chile"             "-1.35015750700129"
+[1] "China"             "-1.52763329971915"
+[1] "Colombia"          "-2.30551755330326"
+[1] "Czech Republic"   "1.47387370772278"
+[1] "Denmark"            "-0.614910411811626"
+[1] "Finland"           "-1.31420967473981"
+[1] "France"           "-1.8645930721153"
+[1] "Germany"            "-0.836179406023365"
+[1] "Greece"             "0.0959285538337775"
+[1] "Hungary"            "-0.353551358459552"
+[1] "India"             "-3.57331835244124"
+[1] "Indonesia"         "-1.19231832092006"
+[1] "Ireland"            "-0.626891406845205"
+[1] "Israel"           "-1.7292190821175"
+[1] "Italy"             "-0.66000071538132"
+[1] "Japan"             "-1.00911658040391"
+[1] "Korea"             "-2.83422661699972"
+[1] "Luxembourg"         "-0.709632194747938"
+[1] "Mexico"             "-0.969283660921726"
+[1] "Netherlands"        "-0.634359264902214"
+[1] "New Zealand"      "-0.8905833343744"
+[1] "Norway"             "-0.982573974093739"
+[1] "Poland"             "-0.785486377375224"
+[1] "Portugal"           "-0.635420504123723"
+[1] "Russia"             "-0.232089398583169"
+[1] "Spain"             "-1.03010205075658"
+[1] "Sweden"            "-1.38199082378782"
+[1] "Switzerland"       "-1.67809486513278"
+[1] "Turkey"             "-0.880939259896879"
+[1] "United Kingdom"    "-1.77781473233571"
+[1] "United States"      "-0.297482653356369"
+[1] X1 X2
+<0 rows> (or 0-length row.names)
+[1] "Australia"         "-1.78141776449608"
+[1] "Austria"           "0.877812665141592"
+[1] "Belgium"           "-1.24119046334504"
+[1] "Brazil"            "-0.90210468619844"
+[1] "Canada"            "-1.62081394000381"
+[1] "Chile"             "-1.35015750700129"
+[1] "China"             "-1.52763329971915"
+[1] "Colombia"          "-2.30551755330326"
+[1] "Czech Republic"   "1.47387370772278"
+[1] "Denmark"            "-0.614910411811626"
+[1] "Finland"           "-1.31420967473981"
+[1] "France"           "-1.8645930721153"
+[1] "Germany"            "-0.836179406023365"
+[1] "Greece"             "0.0959285538337775"
+[1] "Hungary"            "-0.353551358459552"
+[1] "India"             "-3.57331835244124"
+[1] "Indonesia"         "-1.19231832092006"
+[1] "Ireland"            "-0.626891406845205"
+[1] "Israel"           "-1.7292190821175"
+[1] "Italy"             "-0.66000071538132"
+[1] "Japan"             "-1.00911658040391"
+[1] "Korea"             "-2.83422661699972"
+[1] "Luxembourg"         "-0.709632194747938"
+[1] "Mexico"             "-0.969283660921726"
+[1] "Netherlands"        "-0.634359264902214"
+[1] "New Zealand"      "-0.8905833343744"
+[1] "Norway"             "-0.982573974093739"
+[1] "Poland"             "-0.785486377375224"
+[1] "Portugal"           "-0.635420504123723"
+[1] "Russia"             "-0.232089398583169"
+[1] "Spain"             "-1.03010205075658"
+[1] "Sweden"            "-1.38199082378782"
+[1] "Switzerland"       "-1.67809486513278"
+[1] "Turkey"             "-0.880939259896879"
+[1] "United Kingdom"    "-1.77781473233571"
+[1] "United States"      "-0.297482653356369"
+function (length = 0L) 
+.Internal(vector("double", length))
+<bytecode: 0x000001c9a8546700>
+<environment: namespace:base>
+[1] "Australia"         "-1.78141776449608"
+[1] "Austria"           "0.877812665141592"
+[1] "Belgium"           "-1.24119046334504"
+[1] "Brazil"            "-0.90210468619844"
+[1] "Canada"            "-1.62081394000381"
+[1] "Chile"             "-1.35015750700129"
+[1] "China"             "-1.52763329971915"
+[1] "Colombia"          "-2.30551755330326"
+[1] "Czech Republic"   "1.47387370772278"
+[1] "Denmark"            "-0.614910411811626"
+[1] "Finland"           "-1.31420967473981"
+[1] "France"           "-1.8645930721153"
+[1] "Germany"            "-0.836179406023365"
+[1] "Greece"             "0.0959285538337775"
+[1] "Hungary"            "-0.353551358459552"
+[1] "India"             "-3.57331835244124"
+[1] "Indonesia"         "-1.19231832092006"
+[1] "Ireland"            "-0.626891406845205"
+[1] "Israel"           "-1.7292190821175"
+[1] "Italy"             "-0.66000071538132"
+[1] "Japan"             "-1.00911658040391"
+[1] "Korea"             "-2.83422661699972"
+[1] "Luxembourg"         "-0.709632194747938"
+[1] "Mexico"             "-0.969283660921726"
+[1] "Netherlands"        "-0.634359264902214"
+[1] "New Zealand"      "-0.8905833343744"
+[1] "Norway"             "-0.982573974093739"
+[1] "Poland"             "-0.785486377375224"
+[1] "Portugal"           "-0.635420504123723"
+[1] "Russia"             "-0.232089398583169"
+[1] "Spain"             "-1.03010205075658"
+[1] "Sweden"            "-1.38199082378782"
+[1] "Switzerland"       "-1.67809486513278"
+[1] "Turkey"             "-0.880939259896879"
+[1] "United Kingdom"    "-1.77781473233571"
+[1] "United States"      "-0.297482653356369"
+                 ID             ID t-stat value for z-hat t-stat value for z-hat
+1 
+1               0              0                      0                      0
+2 
+2       Australia      Australia      -1.78141776449608      -1.78141776449608
+3 
+3         Austria        Austria      0.877812665141592      0.877812665141592
+4 
+4         Belgium        Belgium      -1.24119046334504      -1.24119046334504
+5 
+5          Brazil         Brazil      -0.90210468619844      -0.90210468619844
+6 
+6          Canada         Canada      -1.62081394000381      -1.62081394000381
+7 
+7           Chile          Chile      -1.35015750700129      -1.35015750700129
+8 
+8           China          China      -1.52763329971915      -1.52763329971915
+9 
+9        Colombia       Colombia      -2.30551755330326      -2.30551755330326
+10
+10 Czech Republic Czech Republic       1.47387370772278       1.47387370772278
+11
+11        Denmark        Denmark     -0.614910411811626     -0.614910411811626
+12
+12        Finland        Finland      -1.31420967473981      -1.31420967473981
+13
+13         France         France       -1.8645930721153       -1.8645930721153
+14
+14        Germany        Germany     -0.836179406023365     -0.836179406023365
+15
+15         Greece         Greece     0.0959285538337775     0.0959285538337775
+16
+16        Hungary        Hungary     -0.353551358459552     -0.353551358459552
+17
+17          India          India      -3.57331835244124      -3.57331835244124
+18
+18      Indonesia      Indonesia      -1.19231832092006      -1.19231832092006
+19
+19        Ireland        Ireland     -0.626891406845205     -0.626891406845205
+20
+20         Israel         Israel       -1.7292190821175       -1.7292190821175
+21
+21          Italy          Italy      -0.66000071538132      -0.66000071538132
+22
+22          Japan          Japan      -1.00911658040391      -1.00911658040391
+23
+23          Korea          Korea      -2.83422661699972      -2.83422661699972
+24
+24     Luxembourg     Luxembourg     -0.709632194747938     -0.709632194747938
+25
+25         Mexico         Mexico     -0.969283660921726     -0.969283660921726
+26
+26    Netherlands    Netherlands     -0.634359264902214     -0.634359264902214
+27
+27    New Zealand    New Zealand       -0.8905833343744       -0.8905833343744
+28
+28         Norway         Norway     -0.982573974093739     -0.982573974093739
+29
+29         Poland         Poland     -0.785486377375224     -0.785486377375224
+30
+30       Portugal       Portugal     -0.635420504123723     -0.635420504123723
+31
+31         Russia         Russia     -0.232089398583169     -0.232089398583169
+32
+32          Spain          Spain      -1.03010205075658      -1.03010205075658
+33
+33         Sweden         Sweden      -1.38199082378782      -1.38199082378782
+34
+34    Switzerland    Switzerland      -1.67809486513278      -1.67809486513278
+35
+35         Turkey         Turkey     -0.880939259896879     -0.880939259896879
+36
+36 United Kingdom United Kingdom      -1.77781473233571      -1.77781473233571
+
+                 ID             ID t-stat value for z-hat t-stat value for z-hat
+2 
+2       Australia      Australia      -1.78141776449608      -1.78141776449608
+3 
+3         Austria        Austria      0.877812665141592      0.877812665141592
+4 
+4         Belgium        Belgium      -1.24119046334504      -1.24119046334504
+5 
+5          Brazil         Brazil      -0.90210468619844      -0.90210468619844
+6 
+6          Canada         Canada      -1.62081394000381      -1.62081394000381
+7 
+7           Chile          Chile      -1.35015750700129      -1.35015750700129
+8 
+8           China          China      -1.52763329971915      -1.52763329971915
+9 
+9        Colombia       Colombia      -2.30551755330326      -2.30551755330326
+10
+10 Czech Republic Czech Republic       1.47387370772278       1.47387370772278
+11
+11        Denmark        Denmark     -0.614910411811626     -0.614910411811626
+12
+12        Finland        Finland      -1.31420967473981      -1.31420967473981
+13
+13         France         France       -1.8645930721153       -1.8645930721153
+14
+14        Germany        Germany     -0.836179406023365     -0.836179406023365
+15
+15         Greece         Greece     0.0959285538337775     0.0959285538337775
+16
+16        Hungary        Hungary     -0.353551358459552     -0.353551358459552
+17
+17          India          India      -3.57331835244124      -3.57331835244124
+18
+18      Indonesia      Indonesia      -1.19231832092006      -1.19231832092006
+19
+19        Ireland        Ireland     -0.626891406845205     -0.626891406845205
+20
+20         Israel         Israel       -1.7292190821175       -1.7292190821175
+21
+21          Italy          Italy      -0.66000071538132      -0.66000071538132
+22
+22          Japan          Japan      -1.00911658040391      -1.00911658040391
+23
+23          Korea          Korea      -2.83422661699972      -2.83422661699972
+24
+24     Luxembourg     Luxembourg     -0.709632194747938     -0.709632194747938
+25
+25         Mexico         Mexico     -0.969283660921726     -0.969283660921726
+26
+26    Netherlands    Netherlands     -0.634359264902214     -0.634359264902214
+27
+27    New Zealand    New Zealand       -0.8905833343744       -0.8905833343744
+28
+28         Norway         Norway     -0.982573974093739     -0.982573974093739
+29
+29         Poland         Poland     -0.785486377375224     -0.785486377375224
+30
+30       Portugal       Portugal     -0.635420504123723     -0.635420504123723
+31
+31         Russia         Russia     -0.232089398583169     -0.232089398583169
+32
+32          Spain          Spain      -1.03010205075658      -1.03010205075658
+33
+33         Sweden         Sweden      -1.38199082378782      -1.38199082378782
+34
+34    Switzerland    Switzerland      -1.67809486513278      -1.67809486513278
+35
+35         Turkey         Turkey     -0.880939259896879     -0.880939259896879
+36
+36 United Kingdom United Kingdom      -1.77781473233571      -1.77781473233571
+37
+37  United States  United States     -0.297482653356369     -0.297482653356369
+
+[1][1] "Australia"         "Australia"         "-1.78141776449608" "-1.78141776449608"
+
+[1][1] "Austria"           "Austria"           "0.877812665141592" "0.877812665141592"
+
+[1][1] "Belgium"           "Belgium"           "-1.24119046334504" "-1.24119046334504"
+
+[1][1] "Brazil"            "Brazil"            "-0.90210468619844" "-0.90210468619844"
+
+[1][1] "Canada"            "Canada"            "-1.62081394000381" "-1.62081394000381"
+
+[1][1] "Chile"             "Chile"             "-1.35015750700129" "-1.35015750700129"
+
+[1][1] "China"             "China"             "-1.52763329971915" "-1.52763329971915"
+
+[1][1] "Colombia"          "Colombia"          "-2.30551755330326" "-2.30551755330326"
+
+[1][1] "Czech Republic"   "Czech Republic"   "1.47387370772278" "1.47387370772278"
+
+[1][1] "Denmark"            "Denmark"            "-0.614910411811626" "-0.614910411811626"
+
+[1][1] "Finland"           "Finland"           "-1.31420967473981" "-1.31420967473981"
+
+[1][1] "France"           "France"           "-1.8645930721153" "-1.8645930721153"
+
+[1][1] "Germany"            "Germany"            "-0.836179406023365" "-0.836179406023365"
+
+[1][1] "Greece"             "Greece"             "0.0959285538337775" "0.0959285538337775"
+
+[1][1] "Hungary"            "Hungary"            "-0.353551358459552" "-0.353551358459552"
+
+[1][1] "India"             "India"             "-3.57331835244124" "-3.57331835244124"
+
+[1][1] "Indonesia"         "Indonesia"         "-1.19231832092006" "-1.19231832092006"
+
+[1][1] "Ireland"            "Ireland"            "-0.626891406845205" "-0.626891406845205"
+
+[1][1] "Israel"           "Israel"           "-1.7292190821175" "-1.7292190821175"
+
+[1][1] "Italy"             "Italy"             "-0.66000071538132" "-0.66000071538132"
+
+[1][1] "Japan"             "Japan"             "-1.00911658040391" "-1.00911658040391"
+
+[1][1] "Korea"             "Korea"             "-2.83422661699972" "-2.83422661699972"
+
+[1][1] "Luxembourg"         "Luxembourg"         "-0.709632194747938" "-0.709632194747938"
+
+[1][1] "Mexico"             "Mexico"             "-0.969283660921726" "-0.969283660921726"
+
+[1][1] "Netherlands"        "Netherlands"        "-0.634359264902214" "-0.634359264902214"
+
+[1][1] "New Zealand"      "New Zealand"      "-0.8905833343744" "-0.8905833343744"
+
+[1][1] "Norway"             "Norway"             "-0.982573974093739" "-0.982573974093739"
+
+[1][1] "Poland"             "Poland"             "-0.785486377375224" "-0.785486377375224"
+
+[1][1] "Portugal"           "Portugal"           "-0.635420504123723" "-0.635420504123723"
+
+[1][1] "Russia"             "Russia"             "-0.232089398583169" "-0.232089398583169"
+
+[1][1] "Spain"             "Spain"             "-1.03010205075658" "-1.03010205075658"
+
+[1][1] "Sweden"            "Sweden"            "-1.38199082378782" "-1.38199082378782"
+
+[1][1] "Switzerland"       "Switzerland"       "-1.67809486513278" "-1.67809486513278"
+
+[1][1] "Turkey"             "Turkey"             "-0.880939259896879" "-0.880939259896879"
+
+[1][1] "United Kingdom"    "United Kingdom"    "-1.77781473233571" "-1.77781473233571"
+
+[1][1] "United States"      "United States"      "-0.297482653356369" "-0.297482653356369"
+
+[1][1] "Australia"         "Australia"         "-1.78141776449608" "-1.78141776449608"
+
+[1][1] "Austria"           "Austria"           "0.877812665141592" "0.877812665141592"
+
+[1][1] "Belgium"           "Belgium"           "-1.24119046334504" "-1.24119046334504"
+
+[1][1] "Brazil"            "Brazil"            "-0.90210468619844" "-0.90210468619844"
+
+[1][1] "Canada"            "Canada"            "-1.62081394000381" "-1.62081394000381"
+
+[1][1] "Chile"             "Chile"             "-1.35015750700129" "-1.35015750700129"
+
+[1][1] "China"             "China"             "-1.52763329971915" "-1.52763329971915"
+
+[1][1] "Colombia"          "Colombia"          "-2.30551755330326" "-2.30551755330326"
+
+[1][1] "Czech Republic"   "Czech Republic"   "1.47387370772278" "1.47387370772278"
+
+[1][1] "Denmark"            "Denmark"            "-0.614910411811626" "-0.614910411811626"
+
+[1][1] "Finland"           "Finland"           "-1.31420967473981" "-1.31420967473981"
+
+[1][1] "France"           "France"           "-1.8645930721153" "-1.8645930721153"
+
+[1][1] "Germany"            "Germany"            "-0.836179406023365" "-0.836179406023365"
+
+[1][1] "Greece"             "Greece"             "0.0959285538337775" "0.0959285538337775"
+
+[1][1] "Hungary"            "Hungary"            "-0.353551358459552" "-0.353551358459552"
+
+[1][1] "India"             "India"             "-3.57331835244124" "-3.57331835244124"
+
+[1][1] "Indonesia"         "Indonesia"         "-1.19231832092006" "-1.19231832092006"
+
+[1][1] "Ireland"            "Ireland"            "-0.626891406845205" "-0.626891406845205"
+
+[1][1] "Israel"           "Israel"           "-1.7292190821175" "-1.7292190821175"
+
+[1][1] "Italy"             "Italy"             "-0.66000071538132" "-0.66000071538132"
+
+[1][1] "Japan"             "Japan"             "-1.00911658040391" "-1.00911658040391"
+
+[1][1] "Korea"             "Korea"             "-2.83422661699972" "-2.83422661699972"
+
+[1][1] "Luxembourg"         "Luxembourg"         "-0.709632194747938" "-0.709632194747938"
+
+[1][1] "Mexico"             "Mexico"             "-0.969283660921726" "-0.969283660921726"
+
+[1][1] "Netherlands"        "Netherlands"        "-0.634359264902214" "-0.634359264902214"
+
+[1][1] "New Zealand"      "New Zealand"      "-0.8905833343744" "-0.8905833343744"
+
+[1][1] "Norway"             "Norway"             "-0.982573974093739" "-0.982573974093739"
+
+[1][1] "Poland"             "Poland"             "-0.785486377375224" "-0.785486377375224"
+
+[1][1] "Portugal"           "Portugal"           "-0.635420504123723" "-0.635420504123723"
+
+[1][1] "Russia"             "Russia"             "-0.232089398583169" "-0.232089398583169"
+
+[1][1] "Spain"             "Spain"             "-1.03010205075658" "-1.03010205075658"
+
+[1][1] "Sweden"            "Sweden"            "-1.38199082378782" "-1.38199082378782"
+
+[1][1] "Switzerland"       "Switzerland"       "-1.67809486513278" "-1.67809486513278"
+
+[1][1] "Turkey"             "Turkey"             "-0.880939259896879" "-0.880939259896879"
+
+[1][1] "United Kingdom"    "United Kingdom"    "-1.77781473233571" "-1.77781473233571"
+
+[1][1] "United States"      "United States"      "-0.297482653356369" "-0.297482653356369"
+
+                           ID                     ID                     ID t-stat value for z-hat t-stat value for z-hat t-stat value for z-hat
+1 
+1 
+1  critical value for 95% critical value for 95% critical value for 95%                  -1.62                  -1.62                  -1.62
+2 
+2 
+2               Australia              Australia              Australia      -1.78141776449608      -1.78141776449608      -1.78141776449608
+3 
+3 
+3                 Austria                Austria                Austria      0.877812665141592      0.877812665141592      0.877812665141592
+4 
+4 
+4                 Belgium                Belgium                Belgium      -1.24119046334504      -1.24119046334504      -1.24119046334504
+5 
+5 
+5                  Brazil                 Brazil                 Brazil      -0.90210468619844      -0.90210468619844      -0.90210468619844
+6 
+6 
+6                  Canada                 Canada                 Canada      -1.62081394000381      -1.62081394000381      -1.62081394000381
+7 
+7 
+7                   Chile                  Chile                  Chile      -1.35015750700129      -1.35015750700129      -1.35015750700129
+8 
+8 
+8                   China                  China                  China      -1.52763329971915      -1.52763329971915      -1.52763329971915
+9 
+9 
+9                Colombia               Colombia               Colombia      -2.30551755330326      -2.30551755330326      -2.30551755330326
+10
+10
+10         Czech Republic         Czech Republic         Czech Republic       1.47387370772278       1.47387370772278       1.47387370772278
+11
+11
+11                Denmark                Denmark                Denmark     -0.614910411811626     -0.614910411811626     -0.614910411811626
+12
+12
+12                Finland                Finland                Finland      -1.31420967473981      -1.31420967473981      -1.31420967473981
+13
+13
+13                 France                 France                 France       -1.8645930721153       -1.8645930721153       -1.8645930721153
+14
+14
+14                Germany                Germany                Germany     -0.836179406023365     -0.836179406023365     -0.836179406023365
+15
+15
+15                 Greece                 Greece                 Greece     0.0959285538337775     0.0959285538337775     0.0959285538337775
+16
+16
+16                Hungary                Hungary                Hungary     -0.353551358459552     -0.353551358459552     -0.353551358459552
+17
+17
+17                  India                  India                  India      -3.57331835244124      -3.57331835244124      -3.57331835244124
+18
+18
+18              Indonesia              Indonesia              Indonesia      -1.19231832092006      -1.19231832092006      -1.19231832092006
+19
+19
+19                Ireland                Ireland                Ireland     -0.626891406845205     -0.626891406845205     -0.626891406845205
+20
+20
+20                 Israel                 Israel                 Israel       -1.7292190821175       -1.7292190821175       -1.7292190821175
+21
+21
+21                  Italy                  Italy                  Italy      -0.66000071538132      -0.66000071538132      -0.66000071538132
+22
+22
+22                  Japan                  Japan                  Japan      -1.00911658040391      -1.00911658040391      -1.00911658040391
+23
+23
+23                  Korea                  Korea                  Korea      -2.83422661699972      -2.83422661699972      -2.83422661699972
+24
+24
+24             Luxembourg             Luxembourg             Luxembourg     -0.709632194747938     -0.709632194747938     -0.709632194747938
+25
+25
+25                 Mexico                 Mexico                 Mexico     -0.969283660921726     -0.969283660921726     -0.969283660921726
+26
+26
+26            Netherlands            Netherlands            Netherlands     -0.634359264902214     -0.634359264902214     -0.634359264902214
+27
+27
+27            New Zealand            New Zealand            New Zealand       -0.8905833343744       -0.8905833343744       -0.8905833343744
+28
+28
+28                 Norway                 Norway                 Norway     -0.982573974093739     -0.982573974093739     -0.982573974093739
+29
+29
+29                 Poland                 Poland                 Poland     -0.785486377375224     -0.785486377375224     -0.785486377375224
+30
+30
+30               Portugal               Portugal               Portugal     -0.635420504123723     -0.635420504123723     -0.635420504123723
+31
+31
+31                 Russia                 Russia                 Russia     -0.232089398583169     -0.232089398583169     -0.232089398583169
+32
+32
+32                  Spain                  Spain                  Spain      -1.03010205075658      -1.03010205075658      -1.03010205075658
+33
+33
+33                 Sweden                 Sweden                 Sweden      -1.38199082378782      -1.38199082378782      -1.38199082378782
+34
+34
+34            Switzerland            Switzerland            Switzerland      -1.67809486513278      -1.67809486513278      -1.67809486513278
+35
+35
+35                 Turkey                 Turkey                 Turkey     -0.880939259896879     -0.880939259896879     -0.880939259896879
+36
+36
+36         United Kingdom         United Kingdom         United Kingdom      -1.77781473233571      -1.77781473233571      -1.77781473233571
+
+
+                           ID                     ID                     ID t-stat value for z-hat t-stat value for z-hat t-stat value for z-hat
+1 
+1 
+1  critical value for 95% critical value for 95% critical value for 95%                  -1.62                  -1.62                  -1.62
+2 
+2 
+2               Australia              Australia              Australia      -1.78141776449608      -1.78141776449608      -1.78141776449608
+3 
+3 
+3                 Austria                Austria                Austria      0.877812665141592      0.877812665141592      0.877812665141592
+4 
+4 
+4                 Belgium                Belgium                Belgium      -1.24119046334504      -1.24119046334504      -1.24119046334504
+5 
+5 
+5                  Brazil                 Brazil                 Brazil      -0.90210468619844      -0.90210468619844      -0.90210468619844
+6 
+6 
+6                  Canada                 Canada                 Canada      -1.62081394000381      -1.62081394000381      -1.62081394000381
+7 
+7 
+7                   Chile                  Chile                  Chile      -1.35015750700129      -1.35015750700129      -1.35015750700129
+8 
+8 
+8                   China                  China                  China      -1.52763329971915      -1.52763329971915      -1.52763329971915
+9 
+9 
+9                Colombia               Colombia               Colombia      -2.30551755330326      -2.30551755330326      -2.30551755330326
+10
+10
+10         Czech Republic         Czech Republic         Czech Republic       1.47387370772278       1.47387370772278       1.47387370772278
+11
+11
+11                Denmark                Denmark                Denmark     -0.614910411811626     -0.614910411811626     -0.614910411811626
+12
+12
+12                Finland                Finland                Finland      -1.31420967473981      -1.31420967473981      -1.31420967473981
+13
+13
+13                 France                 France                 France       -1.8645930721153       -1.8645930721153       -1.8645930721153
+14
+14
+14                Germany                Germany                Germany     -0.836179406023365     -0.836179406023365     -0.836179406023365
+15
+15
+15                 Greece                 Greece                 Greece     0.0959285538337775     0.0959285538337775     0.0959285538337775
+16
+16
+16                Hungary                Hungary                Hungary     -0.353551358459552     -0.353551358459552     -0.353551358459552
+17
+17
+17                  India                  India                  India      -3.57331835244124      -3.57331835244124      -3.57331835244124
+18
+18
+18              Indonesia              Indonesia              Indonesia      -1.19231832092006      -1.19231832092006      -1.19231832092006
+19
+19
+19                Ireland                Ireland                Ireland     -0.626891406845205     -0.626891406845205     -0.626891406845205
+20
+20
+20                 Israel                 Israel                 Israel       -1.7292190821175       -1.7292190821175       -1.7292190821175
+21
+21
+21                  Italy                  Italy                  Italy      -0.66000071538132      -0.66000071538132      -0.66000071538132
+22
+22
+22                  Japan                  Japan                  Japan      -1.00911658040391      -1.00911658040391      -1.00911658040391
+23
+23
+23                  Korea                  Korea                  Korea      -2.83422661699972      -2.83422661699972      -2.83422661699972
+24
+24
+24             Luxembourg             Luxembourg             Luxembourg     -0.709632194747938     -0.709632194747938     -0.709632194747938
+25
+25
+25                 Mexico                 Mexico                 Mexico     -0.969283660921726     -0.969283660921726     -0.969283660921726
+26
+26
+26            Netherlands            Netherlands            Netherlands     -0.634359264902214     -0.634359264902214     -0.634359264902214
+27
+27
+27            New Zealand            New Zealand            New Zealand       -0.8905833343744       -0.8905833343744       -0.8905833343744
+28
+28
+28                 Norway                 Norway                 Norway     -0.982573974093739     -0.982573974093739     -0.982573974093739
+29
+29
+29                 Poland                 Poland                 Poland     -0.785486377375224     -0.785486377375224     -0.785486377375224
+30
+30
+30               Portugal               Portugal               Portugal     -0.635420504123723     -0.635420504123723     -0.635420504123723
+31
+31
+31                 Russia                 Russia                 Russia     -0.232089398583169     -0.232089398583169     -0.232089398583169
+32
+32
+32                  Spain                  Spain                  Spain      -1.03010205075658      -1.03010205075658      -1.03010205075658
+33
+33
+33                 Sweden                 Sweden                 Sweden      -1.38199082378782      -1.38199082378782      -1.38199082378782
+34
+34
+34            Switzerland            Switzerland            Switzerland      -1.67809486513278      -1.67809486513278      -1.67809486513278
+35
+35
+35                 Turkey                 Turkey                 Turkey     -0.880939259896879     -0.880939259896879     -0.880939259896879
+36
+36
+36         United Kingdom         United Kingdom         United Kingdom      -1.77781473233571      -1.77781473233571      -1.77781473233571
+
+
+No documentation for ‘ucminf’ in specified packages and libraries:
+you could try ‘??ucminf’
+No documentation for ‘ucminf’ in specified packages and libraries:
+you could try ‘??ucminf’
+No documentation for ‘ucminf’ in specified packages and libraries:
+you could try ‘??ucminf’
+No documentation for ‘maxeval’ in specified packages and libraries:
+you could try ‘??maxeval’
+No documentation for ‘maxeval’ in specified packages and libraries:
+you could try ‘??maxeval’
+No documentation for ‘maxeval’ in specified packages and libraries:
+you could try ‘??maxeval’
+package ‘rprojroot’ successfully unpacked and MD5 sums checked
+package ‘rprojroot’ successfully unpacked and MD5 sums checked
+package ‘rprojroot’ successfully unpacked and MD5 sums checked
+package ‘here’ successfully unpacked and MD5 sums checked
+package ‘here’ successfully unpacked and MD5 sums checked
+package ‘here’ successfully unpacked and MD5 sums checked
+
+
+
+The downloaded binary packages are in
+	C:\Users\nam40\AppData\Local\Temp\RtmpS63k0w\downloaded_packagesThe downloaded binary packages are in
+	C:\Users\nam40\AppData\Local\Temp\RtmpS63k0w\downloaded_packagesThe downloaded binary packages are in
+	C:\Users\nam40\AppData\Local\Temp\RtmpS63k0w\downloaded_packages
+
+
+[1][1][1] "D:/Github/HPCredit" "D:/Github/HPCredit" "D:/Github/HPCredit"
+
+
+[1][1][1] "D:/Github/HPCredit" "D:/Github/HPCredit" "D:/Github/HPCredit"
+
+
