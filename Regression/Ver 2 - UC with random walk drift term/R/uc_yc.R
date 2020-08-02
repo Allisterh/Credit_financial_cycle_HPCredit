@@ -4,13 +4,13 @@ rm(list = ls())
 #Select country out of 6: US, GB, FR, DE, JP, KR
 country = 'KR'
 
-library(tidyverse)
-library(tictoc)
-library(ucminf)
-library(numDeriv)
-library(DataCombine)
-library(reshape2)
-library(R.utils)
+library(tidyverse)#Organize data
+library(tictoc)   #time functions process
+library(ucminf)   #unconstrained optimization function
+library(numDeriv) #for finding gradian / derivatives of matrix
+#library(DataCombine) 
+library(reshape2) #Melt and cast data
+library(R.utils)  #catch error and stop loop , tryCatch
 
 
 source("trans.R") # Parameter constraints
@@ -136,7 +136,7 @@ write.table(prior,sprintf("../Data/R_prior_%s.txt",country),col.names = FALSE, r
 #write regression results to csv
 reg = cbind(t(prm_fnl),matrix(sd_fnl,12,1))
 reg = rbind(reg,c(-model$value,0))
-write.table(reg,sprintf("../Output/Reg_%s.csv",country),sep=',',col.names = FALSE, row.names = FALSE)
+write.table(reg,sprintf("../Output/Reg_%s.csv",country),sep=',', col.names = FALSE, row.names = FALSE)
 
 
 #=========================================================================#
