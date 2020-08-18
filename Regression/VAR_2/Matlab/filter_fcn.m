@@ -25,15 +25,15 @@ function [beta_mat,fcst_mat] = filter_fcn(prmtr,y,T,START,prior)
   
     F = [1,0,0,0,0,0; %Transition matrix
          0,phi_y1,phi_y2,0,phi_yx,0;
-         0,0,0,0,0,0;
+         0,1,0,0,0,0;
          0,0,0,1,0,0;
          0,phi_hx,0,0,phi_h1,phi_h2;
-         0,0,0,0,0,0];
+         0,0,0,0,1,0];
 
     Fstar = [phi_y1,phi_y2,phi_yx,0;
-             0,0,0,0;
+             1,0,0,0;
              phi_hx,0,phi_h1,phi_h2;
-             0,0,0,0]; %Transition matrix of I(0) part, no trends;
+             0,0,1,0]; %Transition matrix of I(0) part, no trends;
     
     H = [1,1,0,0,0,0; %Measurement equation
         0,0,0,1,1,0];

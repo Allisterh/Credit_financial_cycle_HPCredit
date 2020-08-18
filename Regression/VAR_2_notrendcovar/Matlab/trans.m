@@ -31,23 +31,38 @@ function c1 = trans(c0)
     c1(9) = qqq(5,2)/sqrt(qqq(2,2)*qqq(5,5));
 %     c1(10) = qqq(4,1)/sqrt(qqq(1,1)*qqq(4,4));
     
-    %Constraints for stationarity, Ref: Morley(2007)
+%     %Constraints for stationarity, Ref: Morley(2007)
+%     aaa = c0(1)./(1 + abs(c0(1)));
+%     ccc = (1 - abs(aaa))*c0(2)./(1 + abs(c0(2))) + abs(aaa) - aaa^2;
+% 
+%     c1(1) = 2*aaa;
+%     c1(2) = -1* (aaa^2 + ccc);
+% 
+% %     ddd = c0(3)/(1 + abs(c0(3)));
+% %     c1(3) = ddd;
+% 
+%     aaa = c0(3)./(1 + abs(c0(3)));
+%     ccc = (1 - abs(aaa))*c0(4)./(1 + abs(c0(4))) + abs(aaa) - aaa^2;
+% 
+%     c1(3) = 2*aaa;
+%     c1(4) = -1*(aaa^2 + ccc);
+%     
+% %     ddd = c0(6)/(1 + abs(c0(6)));
+% %     c1(6) = ddd;
+
+%=========================================================================%
+%Kim & Nelson Constraints
+%=========================================================================%
     aaa = c0(1)./(1 + abs(c0(1)));
-    ccc = (1 - abs(aaa))*c0(2)./(1 + abs(c0(2))) + abs(aaa) - aaa^2;
+    ccc = c0(2)./(1 + abs(c0(2)));
 
-    c1(1) = 2*aaa;
-    c1(2) = -1* (aaa^2 + ccc);
-
-%     ddd = c0(3)/(1 + abs(c0(3)));
-%     c1(3) = ddd;
-
-    aaa = c0(3)./(1 + abs(c0(3)));
-    ccc = (1 - abs(aaa))*c0(4)./(1 + abs(c0(4))) + abs(aaa) - aaa^2;
-
-    c1(3) = 2*aaa;
-    c1(4) = -1*(aaa^2 + ccc);
+    c1(1) = aaa+ccc;
+    c1(2) = -1* (aaa*ccc);
     
-%     ddd = c0(6)/(1 + abs(c0(6)));
-%     c1(6) = ddd;
+    aaa = c0(3)./(1 + abs(c0(3)));
+    ccc = c0(4)./(1 + abs(c0(4)));
+
+    c1(3) = aaa+ccc;
+    c1(4) = -1* (aaa*ccc);
     
 end

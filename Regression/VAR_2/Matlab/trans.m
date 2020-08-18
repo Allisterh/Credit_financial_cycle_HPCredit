@@ -2,7 +2,7 @@ function c1 = trans(c0)
 
     c1 = c0;
 
-  %variance para
+  % variance para
   c11 = exp(-c0(5));
   c22 = exp(-c0(6));
   c44 = exp(-c0(7));
@@ -50,8 +50,8 @@ function c1 = trans(c0)
 %     ddd = c0(6)/(1 + abs(c0(6)));
 %     c1(6) = ddd;
 
-%Try Kim & Nelson Constraints
-% 
+% %Kim & Nelson Constraints
+% % 
 %     aaa = c0(1)./(1 + abs(c0(1)));
 %     ccc = c0(2)./(1 + abs(c0(2)));
 % 
