@@ -27,6 +27,7 @@ df2 <- read.table(Credit_filepath, header=TRUE, sep=",")
 df2 <- na.omit(df2[-c(2)]) #Remove country name column because redundancy
 
 df <- merge(df1, df2, by=c("ID","date"))
+df <-subset(df, date>as.Date("1989-12-30"))
 
 #------------------------------------------
 #GRAPH 2 series Lamda = 1600
@@ -50,8 +51,9 @@ df3 <- read.table(sprintf("../Output/OutputData/uc_yc_%s.txt",country), header=F
 
 df = df[-nrow(df),]
 df = df[-1,]
+df3 = df3[-lengths(df3),] #only for GB, mismatch on data collection, TBD
 df = cbind(df,df3)
-df$date = as.Date(df$date)
+df$date = as.Date(df$date) 
 
 #head(df8)
 #table(df8$variable)

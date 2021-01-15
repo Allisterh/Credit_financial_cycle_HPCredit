@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.11)  10 AUG 2020 09:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.11)  6 JAN 2021 19:56
 entering extended mode
 **"./Models and Matrices.tex"
 ("Models and Matrices.tex"
@@ -688,6 +688,17 @@ File: pgflibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 tex"
 ("C:\Program Files\MiKTeX 2.9\tex/generic/pgfplots/numtable\pgfplotstable.colty
 pe.code.tex")))
+(C:\Users\nam400\AppData\Roaming\MiKTeX\2.9\tex/latex/pdflscape\pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/iftex\iftex.sty"
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
 (C:\Users\nam400\AppData\Roaming\MiKTeX\2.9\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count315
@@ -699,20 +710,20 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 ("Models and Matrices.aux")
 \openout1 = `"Models and Matrices.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 
 ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -746,147 +757,370 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.17} into 
 your preamble.
- on input line 34.
+ on input line 35.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
+Underfull \hbox (badness 10000) in paragraph at lines 79--81
 
  []
 
 [1
 
 {C:/Users/nam400/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-Overfull \hbox (6.94513pt too wide) in paragraph at lines 176--177
+Overfull \hbox (6.94513pt too wide) in paragraph at lines 177--178
 \OT1/cmr/m/n/10 The es-ti-ma-tion of the un-ob-served com-po-nent model uses a 
 non-lin-ear log-likelihood
  []
 
 [3]
-PGFPlots: reading {../Output/Reg_US.csv}
-PGFPlots: reading {../Output/Reg_GB.csv}
- [4]
-<../Output/Graphs/Credit_cycle_US.pdf, id=30, 578.16pt x 361.35pt>
+<../Output/Graphs/Credit_cycle_US.pdf, id=27, 578.16pt x 361.35pt>
 File: ../Output/Graphs/Credit_cycle_US.pdf Graphic file (type pdf)
 <use ../Output/Graphs/Credit_cycle_US.pdf>
 Package pdftex.def Info: ../Output/Graphs/Credit_cycle_US.pdf  used on input li
-ne 470.
+ne 211.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-<../Output/Graphs/Credit_trend_US.pdf, id=31, 578.16pt x 361.35pt>
+<../Output/Graphs/Credit_trend_US.pdf, id=28, 578.16pt x 361.35pt>
 File: ../Output/Graphs/Credit_trend_US.pdf Graphic file (type pdf)
 <use ../Output/Graphs/Credit_trend_US.pdf>
 Package pdftex.def Info: ../Output/Graphs/Credit_trend_US.pdf  used on input li
-ne 471.
+ne 212.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../Output/Graphs/HP_cycle_US.pdf, id=32, 578.16pt x 361.35pt>
-File: ../Output/Graphs/HP_cycle_US.pdf Graphic file (type pdf)
-<use ../Output/Graphs/HP_cycle_US.pdf>
-Package pdftex.def Info: ../Output/Graphs/HP_cycle_US.pdf  used on input line 4
-76.
-(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-<../Output/Graphs/HP_trend_US.pdf, id=33, 578.16pt x 361.35pt>
-File: ../Output/Graphs/HP_trend_US.pdf Graphic file (type pdf)
-<use ../Output/Graphs/HP_trend_US.pdf>
-Package pdftex.def Info: ../Output/Graphs/HP_trend_US.pdf  used on input line 4
-77.
-(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../Output/Graphs/Credit_cycle_GB.pdf, id=34, 578.16pt x 361.35pt>
-File: ../Output/Graphs/Credit_cycle_GB.pdf Graphic file (type pdf)
-<use ../Output/Graphs/Credit_cycle_GB.pdf>
-Package pdftex.def Info: ../Output/Graphs/Credit_cycle_GB.pdf  used on input li
-ne 482.
-(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-<../Output/Graphs/Credit_trend_GB.pdf, id=35, 578.16pt x 361.35pt>
-File: ../Output/Graphs/Credit_trend_GB.pdf Graphic file (type pdf)
-<use ../Output/Graphs/Credit_trend_GB.pdf>
-Package pdftex.def Info: ../Output/Graphs/Credit_trend_GB.pdf  used on input li
-ne 483.
-(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../Output/Graphs/HP_cycle_GB.pdf, id=36, 578.16pt x 361.35pt>
-File: ../Output/Graphs/HP_cycle_GB.pdf Graphic file (type pdf)
-<use ../Output/Graphs/HP_cycle_GB.pdf>
-Package pdftex.def Info: ../Output/Graphs/HP_cycle_GB.pdf  used on input line 4
-88.
-(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-<../Output/Graphs/HP_trend_GB.pdf, id=37, 578.16pt x 361.35pt>
-File: ../Output/Graphs/HP_trend_GB.pdf Graphic file (type pdf)
-<use ../Output/Graphs/HP_trend_GB.pdf>
-Package pdftex.def Info: ../Output/Graphs/HP_trend_GB.pdf  used on input line 4
-89.
-(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[5
+[4
 
 ]
 
-LaTeX Warning: Text page 6 contains only floats.
+LaTeX Warning: Text page 5 contains only floats.
 
 
-Overfull \vbox (2.77542pt too high) has occurred while \output is active []
+Overfull \vbox (3.88654pt too high) has occurred while \output is active []
 
 
-[6 <../Output/Graphs/Credit_cycle_US.pdf> <../Output/Graphs/Credit_trend_US.pdf
->]
+[5 <../Output/Graphs/Credit_cycle_US.pdf> <../Output/Graphs/Credit_trend_US.pdf
+>] [6
 
-LaTeX Warning: Text page 7 contains only floats.
+]
+File: ../Output/Graphs/Credit_cycle_US.pdf Graphic file (type pdf)
+<use ../Output/Graphs/Credit_cycle_US.pdf>
+Package pdftex.def Info: ../Output/Graphs/Credit_cycle_US.pdf  used on input li
+ne 231.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+File: ../Output/Graphs/Credit_trend_US.pdf Graphic file (type pdf)
+<use ../Output/Graphs/Credit_trend_US.pdf>
+Package pdftex.def Info: ../Output/Graphs/Credit_trend_US.pdf  used on input li
+ne 232.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Output/Graphs/HP_cycle_US.pdf, id=48, 578.16pt x 361.35pt>
+File: ../Output/Graphs/HP_cycle_US.pdf Graphic file (type pdf)
+<use ../Output/Graphs/HP_cycle_US.pdf>
+Package pdftex.def Info: ../Output/Graphs/HP_cycle_US.pdf  used on input line 2
+37.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Output/Graphs/HP_trend_US.pdf, id=49, 578.16pt x 361.35pt>
+File: ../Output/Graphs/HP_trend_US.pdf Graphic file (type pdf)
+<use ../Output/Graphs/HP_trend_US.pdf>
+Package pdftex.def Info: ../Output/Graphs/HP_trend_US.pdf  used on input line 2
+38.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 
-Overfull \vbox (2.66429pt too high) has occurred while \output is active []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+<../Output/Graphs/Credit_cycle_GB.pdf, id=50, 578.16pt x 361.35pt>
+File: ../Output/Graphs/Credit_cycle_GB.pdf Graphic file (type pdf)
+<use ../Output/Graphs/Credit_cycle_GB.pdf>
+Package pdftex.def Info: ../Output/Graphs/Credit_cycle_GB.pdf  used on input li
+ne 243.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Output/Graphs/Credit_trend_GB.pdf, id=51, 578.16pt x 361.35pt>
+File: ../Output/Graphs/Credit_trend_GB.pdf Graphic file (type pdf)
+<use ../Output/Graphs/Credit_trend_GB.pdf>
+Package pdftex.def Info: ../Output/Graphs/Credit_trend_GB.pdf  used on input li
+ne 244.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
-[7 <../Output/Graphs/HP_cycle_US.pdf> <../Output/Graphs/HP_trend_US.pdf>]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../Output/Graphs/HP_cycle_GB.pdf, id=52, 578.16pt x 361.35pt>
+File: ../Output/Graphs/HP_cycle_GB.pdf Graphic file (type pdf)
+<use ../Output/Graphs/HP_cycle_GB.pdf>
+Package pdftex.def Info: ../Output/Graphs/HP_cycle_GB.pdf  used on input line 2
+49.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Output/Graphs/HP_trend_GB.pdf, id=53, 578.16pt x 361.35pt>
+File: ../Output/Graphs/HP_trend_GB.pdf Graphic file (type pdf)
+<use ../Output/Graphs/HP_trend_GB.pdf>
+Package pdftex.def Info: ../Output/Graphs/HP_trend_GB.pdf  used on input line 2
+50.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7
+
+]
 
 LaTeX Warning: Text page 8 contains only floats.
 
 
-Overfull \vbox (2.77542pt too high) has occurred while \output is active []
+Overfull \vbox (3.88654pt too high) has occurred while \output is active []
 
 
-[8 <../Output/Graphs/Credit_cycle_GB.pdf> <../Output/Graphs/Credit_trend_GB.pdf
->]
+[8 <../Output/Graphs/HP_cycle_US.pdf> <../Output/Graphs/HP_trend_US.pdf>]
 
 LaTeX Warning: Text page 9 contains only floats.
+
+
+Overfull \vbox (3.88654pt too high) has occurred while \output is active []
+
+
+[9 <../Output/Graphs/Credit_cycle_GB.pdf> <../Output/Graphs/Credit_trend_GB.pdf
+>]
+
+LaTeX Warning: Text page 10 contains only floats.
+
+
+Overfull \vbox (3.88654pt too high) has occurred while \output is active []
+
+
+[10 <../Output/Graphs/HP_cycle_GB.pdf> <../Output/Graphs/HP_trend_GB.pdf>]
+<../../VAR_2_notempcovar/Output/Graphs/Credit_cycle_US.pdf, id=97, 578.16pt x 3
+61.35pt>
+File: ../../VAR_2_notempcovar/Output/Graphs/Credit_cycle_US.pdf Graphic file (t
+ype pdf)
+<use ../../VAR_2_notempcovar/Output/Graphs/Credit_cycle_US.pdf>
+Package pdftex.def Info: ../../VAR_2_notempcovar/Output/Graphs/Credit_cycle_US.
+pdf  used on input line 358.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../../VAR_2_notempcovar/Output/Graphs/Credit_trend_US.pdf, id=98, 578.16pt x 3
+61.35pt>
+File: ../../VAR_2_notempcovar/Output/Graphs/Credit_trend_US.pdf Graphic file (t
+ype pdf)
+<use ../../VAR_2_notempcovar/Output/Graphs/Credit_trend_US.pdf>
+Package pdftex.def Info: ../../VAR_2_notempcovar/Output/Graphs/Credit_trend_US.
+pdf  used on input line 359.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../../VAR_2_notempcovar/Output/Graphs/HP_cycle_US.pdf, id=99, 578.16pt x 361.3
+5pt>
+File: ../../VAR_2_notempcovar/Output/Graphs/HP_cycle_US.pdf Graphic file (type 
+pdf)
+<use ../../VAR_2_notempcovar/Output/Graphs/HP_cycle_US.pdf>
+Package pdftex.def Info: ../../VAR_2_notempcovar/Output/Graphs/HP_cycle_US.pdf 
+ used on input line 364.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../../VAR_2_notempcovar/Output/Graphs/HP_trend_US.pdf, id=100, 578.16pt x 361.
+35pt>
+File: ../../VAR_2_notempcovar/Output/Graphs/HP_trend_US.pdf Graphic file (type 
+pdf)
+<use ../../VAR_2_notempcovar/Output/Graphs/HP_trend_US.pdf>
+Package pdftex.def Info: ../../VAR_2_notempcovar/Output/Graphs/HP_trend_US.pdf 
+ used on input line 365.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../../VAR_2_notempcovar/Output/Graphs/Credit_cycle_GB.pdf, id=101, 578.16pt x 
+361.35pt>
+File: ../../VAR_2_notempcovar/Output/Graphs/Credit_cycle_GB.pdf Graphic file (t
+ype pdf)
+<use ../../VAR_2_notempcovar/Output/Graphs/Credit_cycle_GB.pdf>
+Package pdftex.def Info: ../../VAR_2_notempcovar/Output/Graphs/Credit_cycle_GB.
+pdf  used on input line 370.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../../VAR_2_notempcovar/Output/Graphs/Credit_trend_GB.pdf, id=102, 578.16pt x 
+361.35pt>
+File: ../../VAR_2_notempcovar/Output/Graphs/Credit_trend_GB.pdf Graphic file (t
+ype pdf)
+<use ../../VAR_2_notempcovar/Output/Graphs/Credit_trend_GB.pdf>
+Package pdftex.def Info: ../../VAR_2_notempcovar/Output/Graphs/Credit_trend_GB.
+pdf  used on input line 371.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../../VAR_2_notempcovar/Output/Graphs/HP_cycle_GB.pdf, id=103, 578.16pt x 361.
+35pt>
+File: ../../VAR_2_notempcovar/Output/Graphs/HP_cycle_GB.pdf Graphic file (type 
+pdf)
+<use ../../VAR_2_notempcovar/Output/Graphs/HP_cycle_GB.pdf>
+Package pdftex.def Info: ../../VAR_2_notempcovar/Output/Graphs/HP_cycle_GB.pdf 
+ used on input line 376.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../../VAR_2_notempcovar/Output/Graphs/HP_trend_GB.pdf, id=104, 578.16pt x 361.
+35pt>
+File: ../../VAR_2_notempcovar/Output/Graphs/HP_trend_GB.pdf Graphic file (type 
+pdf)
+<use ../../VAR_2_notempcovar/Output/Graphs/HP_trend_GB.pdf>
+Package pdftex.def Info: ../../VAR_2_notempcovar/Output/Graphs/HP_trend_GB.pdf 
+ used on input line 377.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../../VAR_2_notrendcovar/Output/Graphs/Credit_cycle_US.pdf, id=105, 578.16pt x
+ 361.35pt>
+File: ../../VAR_2_notrendcovar/Output/Graphs/Credit_cycle_US.pdf Graphic file (
+type pdf)
+<use ../../VAR_2_notrendcovar/Output/Graphs/Credit_cycle_US.pdf>
+Package pdftex.def Info: ../../VAR_2_notrendcovar/Output/Graphs/Credit_cycle_US
+.pdf  used on input line 386.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../../VAR_2_notrendcovar/Output/Graphs/Credit_trend_US.pdf, id=106, 578.16pt x
+ 361.35pt>
+File: ../../VAR_2_notrendcovar/Output/Graphs/Credit_trend_US.pdf Graphic file (
+type pdf)
+<use ../../VAR_2_notrendcovar/Output/Graphs/Credit_trend_US.pdf>
+Package pdftex.def Info: ../../VAR_2_notrendcovar/Output/Graphs/Credit_trend_US
+.pdf  used on input line 387.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../../VAR_2_notrendcovar/Output/Graphs/HP_cycle_US.pdf, id=107, 578.16pt x 361
+.35pt>
+File: ../../VAR_2_notrendcovar/Output/Graphs/HP_cycle_US.pdf Graphic file (type
+ pdf)
+<use ../../VAR_2_notrendcovar/Output/Graphs/HP_cycle_US.pdf>
+Package pdftex.def Info: ../../VAR_2_notrendcovar/Output/Graphs/HP_cycle_US.pdf
+  used on input line 392.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../../VAR_2_notrendcovar/Output/Graphs/HP_trend_US.pdf, id=108, 578.16pt x 361
+.35pt>
+File: ../../VAR_2_notrendcovar/Output/Graphs/HP_trend_US.pdf Graphic file (type
+ pdf)
+<use ../../VAR_2_notrendcovar/Output/Graphs/HP_trend_US.pdf>
+Package pdftex.def Info: ../../VAR_2_notrendcovar/Output/Graphs/HP_trend_US.pdf
+  used on input line 393.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: ../Output/Graphs/Credit_cycle_GB.pdf Graphic file (type pdf)
+<use ../Output/Graphs/Credit_cycle_GB.pdf>
+Package pdftex.def Info: ../Output/Graphs/Credit_cycle_GB.pdf  used on input li
+ne 398.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+File: ../Output/Graphs/Credit_trend_GB.pdf Graphic file (type pdf)
+<use ../Output/Graphs/Credit_trend_GB.pdf>
+Package pdftex.def Info: ../Output/Graphs/Credit_trend_GB.pdf  used on input li
+ne 399.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../../VAR_2_notrendcovar/Output/Graphs/HP_cycle_GB.pdf, id=109, 578.16pt x 361
+.35pt>
+File: ../../VAR_2_notrendcovar/Output/Graphs/HP_cycle_GB.pdf Graphic file (type
+ pdf)
+<use ../../VAR_2_notrendcovar/Output/Graphs/HP_cycle_GB.pdf>
+Package pdftex.def Info: ../../VAR_2_notrendcovar/Output/Graphs/HP_cycle_GB.pdf
+  used on input line 404.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../../VAR_2_notrendcovar/Output/Graphs/HP_trend_GB.pdf, id=110, 578.16pt x 361
+.35pt>
+File: ../../VAR_2_notrendcovar/Output/Graphs/HP_trend_GB.pdf Graphic file (type
+ pdf)
+<use ../../VAR_2_notrendcovar/Output/Graphs/HP_trend_GB.pdf>
+Package pdftex.def Info: ../../VAR_2_notrendcovar/Output/Graphs/HP_trend_GB.pdf
+  used on input line 405.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11
+
+ <../../VAR_2_notempcovar/Output/Graphs/Credit_cycle_US.pdf> <../../VAR_2_notem
+pcovar/Output/Graphs/Credit_trend_US.pdf>]
+
+LaTeX Warning: Text page 12 contains only floats.
 
 
 Overfull \vbox (2.66429pt too high) has occurred while \output is active []
 
 
-[9 <../Output/Graphs/HP_cycle_GB.pdf> <../Output/Graphs/HP_trend_GB.pdf>]
-("Models and Matrices.aux") ) 
+[12 <../../VAR_2_notempcovar/Output/Graphs/HP_cycle_US.pdf> <../../VAR_2_notemp
+covar/Output/Graphs/HP_trend_US.pdf>]
+
+LaTeX Warning: Text page 13 contains only floats.
+
+
+Overfull \vbox (2.77542pt too high) has occurred while \output is active []
+
+
+[13 <../../VAR_2_notempcovar/Output/Graphs/Credit_cycle_GB.pdf> <../../VAR_2_no
+tempcovar/Output/Graphs/Credit_trend_GB.pdf>]
+
+LaTeX Warning: Text page 14 contains only floats.
+
+
+Overfull \vbox (2.66429pt too high) has occurred while \output is active []
+
+
+[14 <../../VAR_2_notempcovar/Output/Graphs/HP_cycle_GB.pdf> <../../VAR_2_notemp
+covar/Output/Graphs/HP_trend_GB.pdf>]
+
+LaTeX Warning: Text page 15 contains only floats.
+
+
+Overfull \vbox (2.77542pt too high) has occurred while \output is active []
+
+
+[15 <../../VAR_2_notrendcovar/Output/Graphs/Credit_cycle_US.pdf> <../../VAR_2_n
+otrendcovar/Output/Graphs/Credit_trend_US.pdf>]
+
+LaTeX Warning: Text page 16 contains only floats.
+
+
+Overfull \vbox (2.66429pt too high) has occurred while \output is active []
+
+
+[16 <../../VAR_2_notrendcovar/Output/Graphs/HP_cycle_US.pdf> <../../VAR_2_notre
+ndcovar/Output/Graphs/HP_trend_US.pdf>]
+
+LaTeX Warning: Text page 17 contains only floats.
+
+
+Overfull \vbox (2.77542pt too high) has occurred while \output is active []
+
+
+[17]
+
+LaTeX Warning: Text page 18 contains only floats.
+
+
+Overfull \vbox (2.66429pt too high) has occurred while \output is active []
+
+
+[18 <../../VAR_2_notrendcovar/Output/Graphs/HP_cycle_GB.pdf> <../../VAR_2_notre
+ndcovar/Output/Graphs/HP_trend_GB.pdf>] ("Models and Matrices.aux") ) 
 Here is how much of TeX's memory you used:
- 26899 strings out of 480790
- 704414 string characters out of 2904601
+ 26989 strings out of 480790
+ 707515 string characters out of 2904601
  1058105 words of memory out of 3000000
- 42478 multiletter control sequences out of 15000+200000
+ 42561 multiletter control sequences out of 15000+200000
  540940 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,14n,102p,742b,699s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
-y7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Models and Matrices.pdf" (9 pages, 218495 bytes).
+ 76i,14n,102p,742b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on "Models and Matrices.pdf" (18 pages, 302607 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
+ 247 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 

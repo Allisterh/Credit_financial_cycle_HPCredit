@@ -11,13 +11,14 @@
 	backgroundcolor=\color{black!5}, % set backgroundcolor
 	basicstyle=\footnotesize,% basic font setting
 }
-
+ 
 %Regression table preamp
 
 \usepackage{booktabs} % For \toprule, \midrule and \bottomrule
 \usepackage{siunitx} % Formats the units and values
 \usepackage{pgfplotstable} % Generates table from .csv
 \usepackage{booktabs}
+\usepackage{pdflscape}
 
 % Setup siunitx:
 \sisetup{
@@ -194,266 +195,22 @@ In this following section, I will apply the UC model to data from 6 countries: U
 
 The estimated parameters vary greatly as I uniformly randomized priors for the MLE process. The following estimates are selected in the manner that they would look the most stable. Perhaps a more optimal constraint on the autoregressive parameters would solve this issue.
 
+The regression table below shows Unobserved component VAR(2) regression results with and without cross-cycle parameters.
+
 \pagebreak
 
-\pgfplotstableset{% global config, for example in the preamble
-	every last row/.style={after row=\bottomrule}
-}
 
-%Regression table
-\begin{table*}
-	\begin{center}
-	\caption{Correlated UC model Estimates: US data}
-	\begin{tabular}{c}
-		\toprule
-		Description\\
-		\midrule
-		$\phi^1_{y}$ \\
-%		$\phi^2_{y}$ \\		
-%		$\phi^x_{y}$ \\
-		$\phi^1_{h}$ \\
-%		$\phi^2_{h}$ \\		
-%		$\phi^x_{h}$ \\
-		$\sigma_{ny}$\\
-		$\sigma_{ey}$\\
-		$\sigma_{nh}$\\
-		$\sigma_{eh}$\\
-		$\sigma_{eyeh}$\\
-		$\sigma_{nynh}$\\
-%		$\mu$\\
-		Log-likelihood value\\
-		\bottomrule
-	\end{tabular}%
-        \pgfplotstabletypeset[
-        multicolumn names, % allows to have multicolumn names
-        col sep= comma, % the seperator in our .csv file
-        display columns/0/.style={
-        	column name=Estimate, % name of first column
-        	column type={S},string type},  % use siunitx for formatting
-        display columns/1/.style={
-        	column name=Standard Error,
-        	column type={S},string type},
-        every head row/.style={
-        	before row={\toprule}, % have a rule at top
-        	after row={
-        		%\si{\ampere} & \si{\volt}\\ % %the units seperated by &
-        		\midrule} % rule under units
-        },
-        every last row/.style={after row=\bottomrule}, % rule at bottom
-        ]{../Output/Reg_US.csv} % filename/path to file
-	\end{center}
-\end{table*}
+\clearpage
 
-\begin{table*}
-	\begin{center}
-		\caption{Correlated UC model Estimates: UK data}
-		\begin{tabular}{c}
-		\toprule
-		Description\\
-		\midrule
-		$\phi^1_{y}$ \\
-%		$\phi^2_{y}$ \\		
-%		$\phi^x_{y}$ \\
-		$\phi^1_{h}$ \\
-%		$\phi^2_{h}$ \\		
-%		$\phi^x_{h}$ \\
-		$\sigma^2_{ny}$\\
-		$\sigma^2_{ey}$\\
-		$\sigma^2_{nh}$\\
-		$\sigma^2_{eh}$\\
-		$\sigma_{eyeh}$\\
-		$\sigma_{nynh}$\\
-%		$\mu$\\
-		Log-likelihood value\\
-		\bottomrule
-		\end{tabular}%
-		\pgfplotstabletypeset[
-		multicolumn names, % allows to have multicolumn names
-		col sep= comma, % the seperator in our .csv file
-		display columns/0/.style={
-			column name=Estimate, % name of first column
-			column type={S},string type},  % use siunitx for formatting
-		display columns/1/.style={
-			column name=Standard Error,
-			column type={S},string type},
-		every head row/.style={
-			before row={\toprule}, % have a rule at top
-			after row={
-				%\si{\ampere} & \si{\volt}\\ % %the units seperated by &
-				\midrule} % rule under units
-		},
-		every last row/.style={after row=\bottomrule}, % rule at bottom
-		]{../Output/Reg_GB.csv} % filename/path to file
-	\end{center}
-\end{table*}
-%
-%\begin{table*}
-%	\begin{center}
-%		\caption{Correlated UC model Estimates: Germany data}
-%		\begin{tabular}{c}
-%			\toprule
-%			Description\\
-%			\midrule
-%			$\phi^y_{1}$ \\
-%			$\phi^y_{x}$ \\		
-%			$\phi^h_{1}$ \\
-%			$\phi^h_{x}$ \\
-%			$\sigma^2_{ny}$\\
-%			$\sigma^2_{wy}$\\
-%			$\sigma^2_{ey}$\\
-%			$\sigma^2_{nh}$\\
-%			$\sigma^2_{wh}$\\
-%			$\sigma^2_{eh}$\\
-%			$\sigma_{nhnc}$\\
-%			$\sigma_{ehec}$\\
-%			Log-likelihood value\\
-%			\bottomrule
-%		\end{tabular}%
-%		\pgfplotstabletypeset[
-%		multicolumn names, % allows to have multicolumn names
-%		col sep= space, % the seperator in our .csv file
-%		display columns/0/.style={
-%			column name=Estimate, % name of first column
-%			column type={S},string type},  % use siunitx for formatting
-%		display columns/1/.style={
-%			column name=Standard Error,
-%			column type={S},string type},
-%		every head row/.style={
-%			before row={\toprule}, % have a rule at top
-%			after row={
-%				%\si{\ampere} & \si{\volt}\\ % %the units seperated by &
-%				\midrule} % rule under units
-%		},
-%		every last row/.style={after row=\bottomrule}, % rule at bottom
-%		]{../Output/Reg_DE.csv} % filename/path to file
-%	\end{center}
-%\end{table*}
-%
-%\begin{table*}
-%	\begin{center}
-%		\caption{Correlated UC model Estimates: France data}
-%		\begin{tabular}{c}
-%			\toprule
-%			Description\\
-%			\midrule
-%			$\phi^y_{1}$ \\
-%			$\phi^y_{x}$ \\		
-%			$\phi^h_{1}$ \\
-%			$\phi^h_{x}$ \\
-%			$\sigma^2_{ny}$\\
-%			$\sigma^2_{wy}$\\
-%			$\sigma^2_{ey}$\\
-%			$\sigma^2_{nh}$\\
-%			$\sigma^2_{wh}$\\
-%			$\sigma^2_{eh}$\\
-%			$\sigma_{nhnc}$\\
-%			$\sigma_{ehec}$\\
-%			Log-likelihood value\\
-%			\bottomrule
-%		\end{tabular}%
-%		\pgfplotstabletypeset[
-%		multicolumn names, % allows to have multicolumn names
-%		col sep= space, % the seperator in our .csv file
-%		display columns/0/.style={
-%			column name=Estimate, % name of first column
-%			column type={S},string type},  % use siunitx for formatting
-%		display columns/1/.style={
-%			column name=Standard Error,
-%			column type={S},string type},
-%		every head row/.style={
-%			before row={\toprule}, % have a rule at top
-%			after row={
-%				%\si{\ampere} & \si{\volt}\\ % %the units seperated by &
-%				\midrule} % rule under units
-%		},
-%		every last row/.style={after row=\bottomrule}, % rule at bottom
-%		]{../Output/Reg_FR.csv} % filename/path to file
-%	\end{center}
-%\end{table*}
-%
-%\begin{table*}
-%	\begin{center}
-%		\caption{Correlated UC model Estimates: Japan data}
-%		\begin{tabular}{c}
-%			\toprule
-%			Description\\
-%			\midrule
-%			$\phi^y_{1}$ \\
-%			$\phi^y_{x}$ \\		
-%			$\phi^h_{1}$ \\
-%			$\phi^h_{x}$ \\
-%			$\sigma^2_{ny}$\\
-%			$\sigma^2_{wy}$\\
-%			$\sigma^2_{ey}$\\
-%			$\sigma^2_{nh}$\\
-%			$\sigma^2_{wh}$\\
-%			$\sigma^2_{eh}$\\
-%			$\sigma_{nhnc}$\\
-%			$\sigma_{ehec}$\\
-%			Log-likelihood value\\
-%			\bottomrule
-%		\end{tabular}%
-%		\pgfplotstabletypeset[
-%		multicolumn names, % allows to have multicolumn names
-%		col sep= space, % the seperator in our .csv file
-%		display columns/0/.style={
-%			column name=Estimate, % name of first column
-%			column type={S},string type},  % use siunitx for formatting
-%		display columns/1/.style={
-%			column name=Standard Error,
-%			column type={S},string type},
-%		every head row/.style={
-%			before row={\toprule}, % have a rule at top
-%			after row={
-%				%\si{\ampere} & \si{\volt}\\ % %the units seperated by &
-%				\midrule} % rule under units
-%		},
-%		every last row/.style={after row=\bottomrule}, % rule at bottom
-%		]{../Output/Reg_JP.csv} % filename/path to file
-%	\end{center}
-%\end{table*}
-%
-%\begin{table*}
-%	\begin{center}
-%		\caption{Correlated UC model Estimates: Korea data}
-%		\begin{tabular}{c}
-%			\toprule
-%			Description\\
-%			\midrule
-%			$\phi^y_{1}$ \\
-%			$\phi^y_{x}$ \\		
-%			$\phi^h_{1}$ \\
-%			$\phi^h_{x}$ \\
-%			$\sigma^2_{ny}$\\
-%			$\sigma^2_{wy}$\\
-%			$\sigma^2_{ey}$\\
-%			$\sigma^2_{nh}$\\
-%			$\sigma^2_{wh}$\\
-%			$\sigma^2_{eh}$\\
-%			$\sigma_{nhnc}$\\
-%			$\sigma_{ehec}$\\
-%			Log-likelihood value\\
-%			\bottomrule
-%		\end{tabular}%
-%		\pgfplotstabletypeset[
-%		multicolumn names, % allows to have multicolumn names
-%		col sep= space, % the seperator in our .csv file
-%		display columns/0/.style={
-%			column name=Estimate, % name of first column
-%			column type={S},string type},  % use siunitx for formatting
-%		display columns/1/.style={
-%			column name=Standard Error,
-%			column type={S},string type},
-%		every head row/.style={
-%			before row={\toprule}, % have a rule at top
-%			after row={
-%				%\si{\ampere} & \si{\volt}\\ % %the units seperated by &
-%				\midrule} % rule under units
-%		},
-%		every last row/.style={after row=\bottomrule}, % rule at bottom
-%		]{../Output/Reg_KR.csv} % filename/path to file
-%	\end{center}
-%\end{table*}
+Given the regression results from the above table. To avoid the problem of perfect collinearity as shown in US data regression, and also to have a more significant estimate of the cross cycle component; I select the second model - VAR(2) with 1 cross lag in the cycle component as the one to focus on.
+
+The following graphs shows the UC forecast series against the actual data series.
+
+\begin{figure}[h!]
+	\caption{VAR(2) no cross-lag US Credit components}	
+	\centerline{\includegraphics[scale=0.7]{../Output/Graphs/Credit_cycle_US.pdf}}
+	\centerline{\includegraphics[scale=0.7]{../Output/Graphs/Credit_trend_US.pdf}}
+\end{figure}
 
 \clearpage
 \section{Conclusion}
@@ -465,26 +222,30 @@ Further development for this paper should include more optimal constraints on pa
 
 Additionally, comparison in term of fitness and prediction error with other model such as a conventional multivariate UC model, univariate UC model, AR(2) model could be done in order gauge the benefit of including extra variables in the transitory component.
 
+
+\section*{Appendix}
+\clearpage
+
 \begin{figure}[h!]
-\caption{Appendix: US Credit components}	
+\caption{VAR(2) no cross-lag US Credit components}	
 \centerline{\includegraphics[scale=0.7]{../Output/Graphs/Credit_cycle_US.pdf}}
 \centerline{\includegraphics[scale=0.7]{../Output/Graphs/Credit_trend_US.pdf}}
 \end{figure}
 
 \begin{figure}[h!]
-\caption{US Housing Price components}	
+\caption{VAR(2) no cross-lag US Housing Price components}	
 \centerline{\includegraphics[scale=0.7]{../Output/Graphs/HP_cycle_US.pdf}}
 \centerline{\includegraphics[scale=0.7]{../Output/Graphs/HP_trend_US.pdf}}
 \end{figure}
 
 \begin{figure}[h!]
-	\caption{UK Credit components}	
+	\caption{VAR(2) no cross-lag UK Credit components}	
 	\centerline{\includegraphics[scale=0.7]{../Output/Graphs/Credit_cycle_GB.pdf}}
 	\centerline{\includegraphics[scale=0.7]{../Output/Graphs/Credit_trend_GB.pdf}}
 \end{figure}
 
 \begin{figure}[h!]
-	\caption{UK Housing Price components}	
+	\caption{VAR(2) cross-lag UK Housing Price components}	
 	\centerline{\includegraphics[scale=0.7]{../Output/Graphs/HP_cycle_GB.pdf}}
 	\centerline{\includegraphics[scale=0.7]{../Output/Graphs/HP_trend_GB.pdf}}
 \end{figure}
@@ -585,6 +346,66 @@ Additionally, comparison in term of fitness and prediction error with other mode
 %	\caption{Korea IRF}	
 %	\centerline{\includegraphics[scale=0.7]{../Output/Graphs/IRF_KR.pdf}}
 %\end{figure}
+
+
+
+
+
+
+
+\begin{figure}[h!]
+	\caption{Appendix: US Credit components}	
+	\centerline{\includegraphics[scale=0.7]{../../VAR_2_notempcovar/Output/Graphs/Credit_cycle_US.pdf}}
+	\centerline{\includegraphics[scale=0.7]{../../VAR_2_notempcovar/Output/Graphs/Credit_trend_US.pdf}}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{US Housing Price components}	
+	\centerline{\includegraphics[scale=0.7]{../../VAR_2_notempcovar/Output/Graphs/HP_cycle_US.pdf}}
+	\centerline{\includegraphics[scale=0.7]{../../VAR_2_notempcovar/Output/Graphs/HP_trend_US.pdf}}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{UK Credit components}	
+	\centerline{\includegraphics[scale=0.7]{../../VAR_2_notempcovar/Output/Graphs/Credit_cycle_GB.pdf}}
+	\centerline{\includegraphics[scale=0.7]{../../VAR_2_notempcovar/Output/Graphs/Credit_trend_GB.pdf}}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{UK Housing Price components}	
+	\centerline{\includegraphics[scale=0.7]{../../VAR_2_notempcovar/Output/Graphs/HP_cycle_GB.pdf}}
+	\centerline{\includegraphics[scale=0.7]{../../VAR_2_notempcovar/Output/Graphs/HP_trend_GB.pdf}}
+\end{figure}
+
+
+
+
+
+\begin{figure}[h!]
+	\caption{Appendix: US Credit components}	
+	\centerline{\includegraphics[scale=0.7]{../../VAR_2_notrendcovar/Output/Graphs/Credit_cycle_US.pdf}}
+	\centerline{\includegraphics[scale=0.7]{../../VAR_2_notrendcovar/Output/Graphs/Credit_trend_US.pdf}}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{US Housing Price components}	
+	\centerline{\includegraphics[scale=0.7]{../../VAR_2_notrendcovar/Output/Graphs/HP_cycle_US.pdf}}
+	\centerline{\includegraphics[scale=0.7]{../../VAR_2_notrendcovar/Output/Graphs/HP_trend_US.pdf}}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{UK Credit components}	
+	\centerline{\includegraphics[scale=0.7]{../Output/Graphs/Credit_cycle_GB.pdf}}
+	\centerline{\includegraphics[scale=0.7]{../Output/Graphs/Credit_trend_GB.pdf}}
+\end{figure}
+
+\begin{figure}[h!]
+	\caption{UK Housing Price components}	
+	\centerline{\includegraphics[scale=0.7]{../../VAR_2_notrendcovar/Output/Graphs/HP_cycle_GB.pdf}}
+	\centerline{\includegraphics[scale=0.7]{../../VAR_2_notrendcovar/Output/Graphs/HP_trend_GB.pdf}}
+\end{figure}
+
+
 
 \end{outline}
 \end{document}

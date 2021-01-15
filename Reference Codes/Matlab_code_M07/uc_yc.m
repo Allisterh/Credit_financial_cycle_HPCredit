@@ -33,7 +33,7 @@ prmtr_in = [1,-4,0.74382,-5.07080,0.51159,-0.25900,0.41104,7.31927, ...
 trans(prmtr_in)        
         
 %Initial paramter values
-options=optimoptions('fminunc','MaxfunctionEvaluations',10000,'FiniteDifferenceType','central');
+options=optimoptions('fminunc','Display','iter','MaxfunctionEvaluations',10000,'FiniteDifferenceType','central');
 [xout,fout,cout,output,gout,hout] = ...
     fminunc(@(prmtr)lik_fcn(prmtr,y,T,START,prior),prmtr_in,options);
 %Returns paramter estimates, -LL value, code

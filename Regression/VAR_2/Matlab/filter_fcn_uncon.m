@@ -50,7 +50,7 @@ function [beta_mat,fcst_mat] = filter_fcn_uncon(prmtr,y,T,START,prior)
 
     A = [0;0];
 
-    beta_ll = [prior(1),0,0,prior(2),0,0]'; %Starting values
+    beta_ll = [prior(1),prior(7),prior(7),prior(2),prior(8),prior(8)]'; %Starting values
 
     vecQstar = reshape(Qstar,[numel(Qstar),1]);
     vecP_ll = inv(eye(16) - kron(Fstar,Fstar))*vecQstar;

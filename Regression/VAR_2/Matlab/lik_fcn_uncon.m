@@ -19,6 +19,7 @@ function val = lik_fcn_uncon(prmtr,y,T,START,prior)
   sig_eyeh = prmtr(9)*sqrt(sig_eyy*sig_ehh); % correlation of transitory components
   sig_nynh = prmtr(10)*sqrt(sig_nyy*sig_nhh); % correlation of permanent components
 
+  
   mu = 0;
   
     F = [1,0,0,0,0,0; %Transition matrix
@@ -42,6 +43,7 @@ function val = lik_fcn_uncon(prmtr,y,T,START,prior)
          sig_nynh, 0, 0, sig_nhh, 0, 0;
          0,sig_eyeh,0,0,sig_ehh,0;
          0, 0,0, 0, 0, 0];
+     
 
     Qstar = [sig_eyy,0,sig_eyeh,0; %Cov matrix of I(0) part
              0,0,0,0;        
@@ -50,7 +52,7 @@ function val = lik_fcn_uncon(prmtr,y,T,START,prior)
 
     A = [0;0];
 
-    beta_ll = [prior(1),0,0,prior(2),0,0]'; %Starting values
+    beta_ll = [prior(1),prior(7),prior(8),prior(2),prior(9),prior(10)]'; %Starting values
 
     vecQstar = reshape(Qstar,[numel(Qstar),1]);
     vecP_ll = inv(eye(16) - kron(Fstar,Fstar))*vecQstar;
@@ -82,7 +84,8 @@ function val = lik_fcn_uncon(prmtr,y,T,START,prior)
         beta_tt = beta_tl + P_tl*H'*inv(ft)*vt;
         P_tt = P_tl - P_tl*H'*inv(ft)*H*P_tl;
 
-        lik_mat(j_iter,1) = prior(5)*log(((2*pi)^2)*det(ft)) + prior(6)*vt'*inv(ft)*vt;
+    lik_mat(j_iter,1) = prior(5)*log(((2*pi)^2)*det(ft)) + prior(6)*vt'*inv(ft)*vt + ...
+             0.000*(beta_tl(2)^2)+0.003*(beta_tl(5)^2);
 
         beta_ll = beta_tt;
         P_ll = P_tt;

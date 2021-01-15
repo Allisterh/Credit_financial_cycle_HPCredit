@@ -1,0 +1,115 @@
+
+\begin{landscape}
+	
+	%Regression table
+	\begin{table*}
+		\begin{center}
+			\caption{VAR(2) cross-lag covariance UC model Estimates: US data}
+			\begin{tabular}{c}
+				\toprule
+				Description\\
+				\\
+				Parameters \\
+				\midrule
+				$\phi^1_{y}$ \\
+				$\phi^2_{y}$ \\	
+				$\phi^{x1}_{y}$ \\
+				$\phi^{x2}_{y}$ \\		
+				$\phi^1_{h}$ \\
+				$\phi^2_{h}$ \\
+				$\phi^{x1}_{h}$ \\
+				$\phi^{x2}_{h}$ \\							
+				$\sigma_{ny}$\\
+				$\sigma_{ey}$\\
+				$\sigma_{nh}$\\
+				$\sigma_{eh}$\\
+				$\sigma_{eyeh}$\\
+				$\sigma_{nynh}$\\
+				%		$\mu$\\
+				Log-likelihood value\\
+				\bottomrule
+			\end{tabular}%
+			\pgfplotstabletypeset[
+			col sep=comma,
+			string type,
+			every head row/.style={%
+				before row={\hline
+					\multicolumn{2}{c}{VAR(2)} & 
+					\multicolumn{2}{c}{VAR(2) 1st-cross-lag} &
+					\multicolumn{2}{c}{VAR(2) 2-cross-lags}&\\
+				},
+				after row=\hline
+			},
+			every last row/.style={after row=\hline},
+			display columns/0/.style={column name=1, column type={S},string type},
+			display columns/1/.style={column name=2, column type={S},string type},
+			display columns/2/.style={column name=3, column type={S},string type},
+			display columns/3/.style={column name=4, column type={S},string type},
+			display columns/4/.style={column name=5, column type={S},string type},
+			display columns/5/.style={column name=6, column type={S},string type},
+			]{../Regression/Table_US_trimmed.csv}
+			
+		\end{center}
+	\end{table*}
+	
+\end{landscape}
+
+\pagebreak
+
+
+\pagebreak
+
+\begin{landscape}
+	
+	%Regression table
+	\begin{table*}
+		\begin{center}
+			\caption{VAR(2) cross-lag covariance UC model Estimates: GB data}
+			\begin{tabular}{c}
+				\toprule
+				Description\\
+				\\
+				Parameters \\
+				\midrule
+				$\phi^1_{y}$ \\
+				$\phi^2_{y}$ \\	
+				$\phi^{x1}_{y}$ \\
+				$\phi^{x2}_{y}$ \\		
+				$\phi^1_{h}$ \\
+				$\phi^2_{h}$ \\
+				$\phi^{x1}_{h}$ \\
+				$\phi^{x2}_{h}$ \\							
+				$\sigma_{ny}$\\
+				$\sigma_{ey}$\\
+				$\sigma_{nh}$\\
+				$\sigma_{eh}$\\
+				$\sigma_{eyeh}$\\
+				$\sigma_{nynh}$\\
+				%		$\mu$\\
+				Log-likelihood value\\
+				\bottomrule
+			\end{tabular}%
+			\pgfplotstabletypeset[
+			col sep=comma,
+			string type,
+			every head row/.style={%
+				before row={\hline
+					\multicolumn{2}{c}{VAR(2)} & 
+					\multicolumn{2}{c}{VAR(2) 1st-cross-lag} &
+					\multicolumn{2}{c}{VAR(2) 2-cross-lags}&\\
+				},
+				after row=\hline
+			},
+			every last row/.style={after row=\hline},
+			display columns/0/.style={column name=1, column type={S},string type},
+			display columns/1/.style={column name=2, column type={S},string type},
+			display columns/2/.style={column name=3, column type={S},string type},
+			display columns/3/.style={column name=4, column type={S},string type},
+			display columns/4/.style={column name=5, column type={S},string type},
+			display columns/5/.style={column name=6, column type={S},string type},
+			]{../Regression/Table_GB_trimmed.csv}
+			
+		\end{center}
+	\end{table*}
+	
+\end{landscape}

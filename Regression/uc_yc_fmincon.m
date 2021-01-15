@@ -18,7 +18,7 @@ clear, clc
     %VAR_1_crosscycle_notrendcovar    
 
     %Version control:
-ver = 'VAR_2';
+ver = 'VAR_2_drift';
 country='US';
 
 working_dir = ['D:\GitHub\HPCredit\Regression\' ver '\Matlab'];
@@ -52,38 +52,69 @@ save(filepath, 'savedState');
 
 %% Process 
 
+%============
 %Setting initial values for optimization process
-par_num=10;
-prmtr_in = 20-40*rand(par_num,1);         
-% Start values for: 
-% % Coefficient Parameters:
-%      prmtr_in(1)=1.2;
-%      prmtr_in(2)=-0.4;
-%      prmtr_in(3)=1.2;
-%      prmtr_in(4)=-0.4;
+par_num=11;
 
-     prmtr_in(1)=2*rand;
-     prmtr_in(2)=1-2*rand;
-     prmtr_in(3)=2*rand;
-     prmtr_in(4)=1-2*rand;
+prmtr_in = rand(par_num,1);         
+% Start values for: 
+
+% % US AR(2) prior extracted from ARIMA of HP filter cycles:
+prmtr_in(1)=0.8764;
+prmtr_in(2)=-0.0194;
+prmtr_in(3)=1.54;
+prmtr_in(4)=-0.6144;
 % Standard deviation:
-    prmtr_in(5)=2*rand; 
-    prmtr_in(6)=2*rand;
-    prmtr_in(7)=2*rand;
-    prmtr_in(8)=2*rand;
+    prmtr_in(5)=0.4+0.6*rand; 
+    prmtr_in(6)=0.3693; %From HP filter cycle ARIMA estimate
+    prmtr_in(7)=0.4+0.6*rand;
+    prmtr_in(8)=0.8247;
 % Correlation:
-    prmtr_in(9)=1-2*rand;
-    prmtr_in(10)=1-2*rand;
+     prmtr_in(9)=0.08+0.04*rand;
+     prmtr_in(10)=0.08+0.04*rand;
 % %Drift Values:
-%     prmtr_in(11)=rand;
+     prmtr_in(11)=0.42; %OLS estimate
 %     prmtr_in(12)=rand;
+
+
+% %US cycle priors, unconditional mean of ARIMA(d=0) process
+%    c_y_prior = -0.1173;
+   c_y_prior = -2;
+   c_h_prior = 0.0216;
+
+
+% % GB AR(2) prior:
+% prmtr_in(1)=0.9061;
+% prmtr_in(2)=-0.0692;
+% prmtr_in(3)=1.3342;
+% prmtr_in(4)=-0.4441;
+
+% % Standard deviation:
+%     prmtr_in(5)=0.4+0.6*rand; 
+%     prmtr_in(6)=0.4922; %From HP filter cycle ARIMA estimate
+%     prmtr_in(7)=0.4+0.6*rand;
+%     prmtr_in(8)=1.3455;
+% % Correlation:
+%      prmtr_in(9)=0.9+0.1*rand;
+%      prmtr_in(10)=0.9+0.1*rand;
+% %Drift Values:
+%      prmtr_in(11)=0.66; %OLS estimate
+%     prmtr_in(12)=rand;
+
+
+% %GB cycle priors, unconditional mean of ARIMA(d=0) process
+%    c_y_prior = 0.1173;
+%    c_h_prior = 0.0580;
+    
 % Weight on likelihood function:
   w1 = 0.5;
   w2 = 0.5;
 
 
-    sig_ty_prior = 100+50*rand;
-    sig_th_prior = 100+50*rand; 
+sig_ty_prior = 200+50*rand;
+sig_th_prior = 150+50*rand; 
+    
+
 
 %     randomize cross trend covariance to be large positive or negative number.
 %     m = randi(2,1)-1;
@@ -91,7 +122,7 @@ prmtr_in = 20-40*rand(par_num,1);
 %     sig_tyth_prior = m*(50+50*rand);
 %     sig_tyth_prior=0;
 
-    prior = [t_y_prior, t_h_prior, sig_ty_prior, sig_th_prior,w1,w2];
+    prior = [t_y_prior, t_h_prior, sig_ty_prior, sig_th_prior,w1,w2, c_y_prior, c_h_prior];
 
 
 T = size(y,1); %Row dimension of y
@@ -103,52 +134,57 @@ clc
 %Regression 
 %Initial paramter values
 
-%fmincon setup
-% options=optimoptions('fmincon','MaxfunctionEvaluations',10000,'FiniteDifferenceType','central');
-    %  Able to use option transformation for converting the options  
-% options = optimoptions(@fmincon,'Algorithm','sqp','MaxIterations',10000, )
-options = optimoptions(@fmincon,'MaxIterations',10000);
-options2 = optimoptions(@fminunc,'MaxIterations',10000);
+% fmincon setup
+%      Able to use option transformation for converting the options  
+options = optimoptions(@fmincon,'Algorithm','sqp','MaxIterations',10000)
+% options = optimoptions(@fmincon,'MaxIterations',10000);
 ub = inf(par_num,1);
     ub(1) = 2;
     ub(2) = 1;
     ub(3) = 2;
     ub(4) = 1;
+    ub(5) = 5;
+    ub(6) = 5;
+    ub(7) = 5;
+    ub(8) = 5;
 %     ub(9) = 1;
 %     ub(10) = 1;
-    lb = -5;
+    lb = repmat(-1,par_num,1);
     lb(1) = 0;
     lb(2) = -1;
     lb(3) = 0;
     lb(4) = -1;
-%     lb(5) = 0;
-%     lb(6) = 0;
-%     lb(7) = 0;
-%     lb(8) = 0;
-%     lb(9) = -1;
-%     lb(10) = -1;
+    lb(5) = 0;
+    lb(6) = 0;
+    lb(7) = 0;
+    lb(8) = 0;
+    lb(9) = -1;
+    lb(10) = -1;
     %input A and b in here
     % Stationary region:
-        % -1*phi_1 - 1*phi_2 < 1
-        %  1*phi_1 - 1*phi_2 < 1
-    A = zeros(2,par_num)
-    A(1:2,1) = [-1; -1];
-    A(1:2,2) = [1; -1];
-    b = [1;1];
+        %  1*phi_y1 - 1*phi_y2 < 1
+        % -1*phi_y1 - 1*phi_y2 < 1
+        %  1*phi_h1 - 1*phi_h2 < 1
+        % -1*phi_h1 - 1*phi_h2 < 1
+    A = zeros(par_num,par_num)
+    A(1,1:2) = [1, -1];
+    A(2,1:2) = [-1, -1];
+    A(3,3:4) = [1, -1];
+    A(4,3:4) = [-1, -1]
+    A(5,5) = -1;
+    A(6,6) = -1;
+    A(7,7) = -1;
+    A(8,8) = -1;
+    A(9,9) = -1;
+    A(10,10) = 1;
+    b = [1;1;1;1;-0.01;-0.01;-0.01;-0.01;-0.01;-0.01;1];
     Aeq = [];
     beq = [];
     nonlcon=@(prmtr_in)nonlinearcon(prmtr_in);
 
-% % x = fmincon(@(prmtr)lik_fcn(prmtr,y,T,START,prior),prmtr_in_selected,A,b,Aeq,beq,lb,ub,nonlcon,options)
-%  [x,fval,exitflag,output,lambda,grad,hessian] = fmincon(@(prmtr)lik_fcn_con(prmtr,y,T,START,prior),prmtr_in,A,b,Aeq,beq,lb,ub,nonlcon,options)
-% 
-% [xout,fout,cout,output,gout,hout] = fminunc(@(prmtr)lik_fcn_uncon(prmtr,y,T,START,prior),x,options2);
-% xout% 
-% hessn0 = hout
-% cov0 = inv(hout)
 
-    % Global search
-    % fmincon
+% [x,fval,exitflag,output,lambda,grad,hessian] = fmincon(@(prmtr)lik_fcn_con(prmtr,y,T,START,prior),prmtr_in,A,b,Aeq,beq,lb,ub,nonlcon,options)
+% x
 
 clc
     
@@ -156,18 +192,19 @@ problem = createOptimProblem('fmincon','objective',...
     @(prmtr)lik_fcn_con(prmtr,y,T,START,prior),'x0',prmtr_in,...
     'Aineq',A,'bineq',b,'Aeq',Aeq,'beq',beq,'lb',lb,'ub',ub,...
     'nonlcon',nonlcon,'options',options);
-gs = GlobalSearch;
-[x,fval,eflag,output,solutions] =run(gs,problem)
+% gs = GlobalSearch;
+% [x,fval,eflag,output,solutions] =run(gs,problem)
 
 
 
 
 % % Global Search
-% % fmincon search
+% % fminunc search
+% options2=optimoptions('fminunc','MaxfunctionEvaluations',10000,'FiniteDifferenceType','central');
 % problem2 = createOptimProblem('fminunc','objective',...
 % @(prmtr)lik_fcn_uncon(prmtr,y,T,START,prior),'x0',prmtr_in,...
 % 'options',options2);
-% ms = MultiStart;
+% ms = MultiStart('Display','iter');
 % [x,fval,exitflag,output,solutions]=run(ms,problem2,50)
 
 
@@ -186,16 +223,18 @@ gs = GlobalSearch;
 % cov0 = inv(hout)
 % prm_fnl = xout;
 % cov  = cov0;
-
- prmtr_in_selected = x
+% 
+%  prmtr_in_selected = x
+prmtr_in_selected = prmtr_in;
 
 options2=optimoptions('fminunc','MaxfunctionEvaluations',10000,'FiniteDifferenceType','central');
 [xout,fout,cout,output,gout,hout] = ...
     fminunc(@(prmtr)lik_fcn_uncon(prmtr,y,T,START,prior),prmtr_in_selected,options2);
      %Function returns paramter estimates, -LL value, flag code
-%     
+%
+prmtr_in;
 trans_uncon(xout)
-hessn0 = hout
+hessn0 = hout;
 cov0 = inv(hout)
 prm_fnl = trans_uncon(xout);
 
@@ -259,4 +298,4 @@ writetable(Reg,writedata,'Delimiter',',','WriteVariableNames',0);
 % 
 % Creates output file to store filtered dataset
 csvwrite(['..\Output\OutputData\uc_yc_' country '.txt'],[data(:,1),data(:,2),data(:,4),data(:,5),forcst(:,1:2)]);
-lastline="out put done"
+lastline="out put saved"

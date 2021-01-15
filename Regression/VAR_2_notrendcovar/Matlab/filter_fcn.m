@@ -19,29 +19,29 @@ function [beta_mat,fcst_mat] = filter_fcn(prmtr,y,T,START,prior)
   sig_nhh = prmtr(7)^2; % s.e. of the HP AR component
   sig_ehh = prmtr(8)^2; % s.e. of the credit AR component
   sig_eyeh = prmtr(9)*sqrt(sig_eyy*sig_ehh);
-%   sig_nynh = prmtr(10)*sqrt(sig_nyy*sig_nhh);
+  sig_nynh = 0;
 
   mu = 0;
   
     F = [1,0,0,0,0,0; %Transition matrix
          0,phi_y1,phi_y2,0,phi_yx,0;
-         0,0,0,0,0,0;
+         0,1,0,0,0,0;
          0,0,0,1,0,0;
          0,phi_hx,0,0,phi_h1,phi_h2;
-         0,0,0,0,0,0];
+         0,0,0,0,1,0];
 
     Fstar = [phi_y1,phi_y2,phi_yx,0;
-             0,0,0,0;
+             1,0,0,0;
              phi_hx,0,phi_h1,phi_h2;
-             0,0,0,0]; %Transition matrix of I(0) part, no trends;
+             0,0,1,0]; %Transition matrix of I(0) part, no trends;
     
     H = [1,1,0,0,0,0; %Measurement equation
         0,0,0,1,1,0];
 
-    Q = [sig_nyy,0,0,0,0,0; %Cov matrix
+    Q = [sig_nyy,0,0,sig_nynh,0,0; %Cov matrix
          0,sig_eyy,0,0,sig_eyeh,0;
          0, 0, 0, 0, 0, 0;
-         0, 0, 0, sig_nhh, 0, 0;
+         sig_nynh, 0, 0, sig_nhh, 0, 0;
          0,sig_eyeh,0,0,sig_ehh,0;
          0, 0,0, 0, 0, 0];
 
