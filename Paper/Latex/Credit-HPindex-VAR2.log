@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.11)  5 FEB 2021 10:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.11)  18 FEB 2021 11:04
 entering extended mode
 **./Credit-HPindex-VAR2.tex
 (Credit-HPindex-VAR2.tex
@@ -899,109 +899,70 @@ Overfull \hbox (23.14403pt too wide) detected at line 196
 [3]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 232.
-
-[4]
-
-LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 267.
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 298--300
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 299--301
 
  []
 
-<../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_cycle_US.pdf
-, id=33, 578.16pt x 361.35pt>
-File: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_cycle_U
-S.pdf Graphic file (type pdf)
-<use ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_cycle_US
-.pdf>
-Package pdftex.def Info: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Gr
-aphs/Credit_cycle_US.pdf  used on input line 305.
-(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-<../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Cycle_US.pdf, id
-=34, 578.16pt x 361.35pt>
-File: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Cycle_US.pd
-f Graphic file (type pdf)
-<use ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Cycle_US.pdf
->
-Package pdftex.def Info: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Gr
-aphs/HP_Cycle_US.pdf  used on input line 306.
-(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_trend_US.pdf
-, id=35, 578.16pt x 361.35pt>
-File: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_trend_U
-S.pdf Graphic file (type pdf)
-<use ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_trend_US
-.pdf>
-Package pdftex.def Info: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Gr
-aphs/Credit_trend_US.pdf  used on input line 311.
-(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-<../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_trend_US.pdf, id
-=36, 578.16pt x 361.35pt>
-File: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_trend_US.pd
-f Graphic file (type pdf)
-<use ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_trend_US.pdf
->
-Package pdftex.def Info: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Gr
-aphs/HP_trend_US.pdf  used on input line 312.
-(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_cycle_GB.pdf
-, id=37, 578.16pt x 361.35pt>
+, id=30, 578.16pt x 361.35pt>
 File: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_cycle_G
 B.pdf Graphic file (type pdf)
 <use ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_cycle_GB
 .pdf>
 Package pdftex.def Info: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Gr
-aphs/Credit_cycle_GB.pdf  used on input line 317.
+aphs/Credit_cycle_GB.pdf  used on input line 318.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Cycle_GB.pdf, id
-=38, 578.16pt x 361.35pt>
+=31, 578.16pt x 361.35pt>
 File: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Cycle_GB.pd
 f Graphic file (type pdf)
 <use ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Cycle_GB.pdf
 >
 Package pdftex.def Info: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Gr
-aphs/HP_Cycle_GB.pdf  used on input line 318.
+aphs/HP_Cycle_GB.pdf  used on input line 319.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_trend_GB.pdf
-, id=39, 578.16pt x 361.35pt>
+, id=32, 578.16pt x 361.35pt>
 File: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_trend_G
 B.pdf Graphic file (type pdf)
 <use ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_trend_GB
 .pdf>
 Package pdftex.def Info: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Gr
-aphs/Credit_trend_GB.pdf  used on input line 323.
+aphs/Credit_trend_GB.pdf  used on input line 324.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_trend_GB.pdf, id
-=40, 578.16pt x 361.35pt>
+=33, 578.16pt x 361.35pt>
 File: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_trend_GB.pd
 f Graphic file (type pdf)
 <use ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_trend_GB.pdf
 >
 Package pdftex.def Info: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Gr
-aphs/HP_trend_GB.pdf  used on input line 324.
+aphs/HP_trend_GB.pdf  used on input line 325.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6
-
-
+[5
 
 
 
 ]
+
+LaTeX Warning: Text page 6 contains only floats.
+
+
+Overfull \vbox (3.88654pt too high) has occurred while \output is active []
+
+
+[6 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_cycle_GB.
+pdf> <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Cycle_GB.pd
+f>]
 
 LaTeX Warning: Text page 7 contains only floats.
 
@@ -1009,88 +970,35 @@ LaTeX Warning: Text page 7 contains only floats.
 Overfull \vbox (3.88654pt too high) has occurred while \output is active []
 
 
-[7 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_cycle_US.
-pdf> <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Cycle_US.pd
-f>]
-
-LaTeX Warning: Text page 8 contains only floats.
-
-
-Overfull \vbox (3.88654pt too high) has occurred while \output is active []
-
-
-[8 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_trend_US.
-pdf> <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_trend_US.pd
-f>]
-
-LaTeX Warning: Text page 9 contains only floats.
-
-
-Overfull \vbox (3.88654pt too high) has occurred while \output is active []
-
-
-[9 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_cycle_GB.
-pdf> <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Cycle_GB.pd
-f>]
-
-LaTeX Warning: Text page 10 contains only floats.
-
-
-Overfull \vbox (3.88654pt too high) has occurred while \output is active []
-
-
-[10 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_trend_GB
-.pdf> <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_trend_GB.p
-df>] [11
+[7 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_trend_GB.
+pdf> <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_trend_GB.pd
+f>] [8
 
 ]
-<../Graphs/Credit_cycle_US.pdf, id=100, 578.16pt x 361.35pt>
-File: ../Graphs/Credit_cycle_US.pdf Graphic file (type pdf)
-<use ../Graphs/Credit_cycle_US.pdf>
-Package pdftex.def Info: ../Graphs/Credit_cycle_US.pdf  used on input line 347.
-
-(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-<../Graphs/HP_cycle_US.pdf, id=101, 578.16pt x 361.35pt>
-File: ../Graphs/HP_cycle_US.pdf Graphic file (type pdf)
-<use ../Graphs/HP_cycle_US.pdf>
-Package pdftex.def Info: ../Graphs/HP_cycle_US.pdf  used on input line 348.
-(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-<../Graphs/Credit_cycle_GB.pdf, id=102, 578.16pt x 361.35pt>
+<../Graphs/Credit_cycle_GB.pdf, id=67, 578.16pt x 361.35pt>
 File: ../Graphs/Credit_cycle_GB.pdf Graphic file (type pdf)
 <use ../Graphs/Credit_cycle_GB.pdf>
-Package pdftex.def Info: ../Graphs/Credit_cycle_GB.pdf  used on input line 353.
+Package pdftex.def Info: ../Graphs/Credit_cycle_GB.pdf  used on input line 354.
 
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-<../Graphs/HP_cycle_GB.pdf, id=103, 578.16pt x 361.35pt>
+<../Graphs/HP_cycle_GB.pdf, id=68, 578.16pt x 361.35pt>
 File: ../Graphs/HP_cycle_GB.pdf Graphic file (type pdf)
 <use ../Graphs/HP_cycle_GB.pdf>
-Package pdftex.def Info: ../Graphs/HP_cycle_GB.pdf  used on input line 354.
+Package pdftex.def Info: ../Graphs/HP_cycle_GB.pdf  used on input line 355.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+ [9
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[12
-
- <../Graphs/Credit_cycle_US.pdf> <../Graphs/HP_cycle_US.pdf>]
-
-LaTeX Warning: Text page 13 contains only floats.
-
-
-Overfull \vbox (3.88654pt too high) has occurred while \output is active []
-
-
-[13 <../Graphs/Credit_cycle_GB.pdf> <../Graphs/HP_cycle_GB.pdf>]
+ <../Graphs/Credit_cycle_GB.pdf> <../Graphs/HP_cycle_GB.pdf>]
 (Credit-HPindex-VAR2.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 27492 strings out of 480790
- 713144 string characters out of 2904601
+ 27457 strings out of 480790
+ 711009 string characters out of 2904601
  1075798 words of memory out of 3000000
- 43041 multiletter control sequences out of 15000+200000
+ 43011 multiletter control sequences out of 15000+200000
  541253 words of font info for 57 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  76i,15n,102p,740b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1106,9 +1014,9 @@ ts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
 /Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Credit-HPindex-VAR2.pdf (13 pages, 248362 bytes).
+Output written on Credit-HPindex-VAR2.pdf (9 pages, 206423 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
+ 123 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
