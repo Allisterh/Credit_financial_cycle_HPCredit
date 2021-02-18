@@ -1,4 +1,4 @@
-function [outputArg1] = stationaritytest2(X,Y)
+function [outputArg1,outputArg2] = stationaritytest2(X,Y)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
     aaa = X./(1 + abs(X));
@@ -9,5 +9,9 @@ function [outputArg1] = stationaritytest2(X,Y)
 denom = LagOp([1 Z1 Z2]);
 [r1,r2] = isStable2(denom);
 outputArg1 = r1;
+outputArg2 = r1;
+     if isreal(r2) 
+         outputArg2 = false; 
+     end
 end
 

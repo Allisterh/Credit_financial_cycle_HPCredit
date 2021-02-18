@@ -1,12 +1,13 @@
 %=============%
 %stationary region
 %=============%
-
+working_dir = ['D:\GitHub\HPCredit\Regression'];
+cd(working_dir);
     clc; clear all ;
     x = -3:0.05:3;             % The range of x values.
     y = -3:0.05:3;             % The range of y values.
     [X,Y] = meshgrid (x,y); % This generates the actual grid of x and y values.
-    [A,B] = arrayfun(@(x1,x2) stationaritytest3(x1,x2), X, Y);
+    [A,B] = arrayfun(@(x1,x2) stationaritytest2(x1,x2), X, Y);
     A = double(A);
     B = double(B);
     % Generating the Z Data

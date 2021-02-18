@@ -21,8 +21,8 @@ clear, clc
     %VAR_2_nocorrelation; p=8
 
     %Version control:
-ver = 'VAR_2_notrendcovar';
-par_num=9;
+ver = 'VAR_2';
+par_num=10;
 
 country='US';
 
@@ -35,30 +35,37 @@ cd(working_dir);
 % input_filepath = ['..\..\..\Data\Input\data_' country '.txt'];
 % data_im = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['..\..\..\Data\Input\data_trimmed_' country '.txt'];
+input_filepath = ['..\..\..\Data Collection\1.Latest\MergedData_Matlab_' country '.txt'];
 data_im = dlmread(input_filepath,',',1,1);
+data_im(:,3:4)=[];
+data_im(1,:)=[]; %trimming data to fit >1990 time frame
 
-input_filepath = ['..\..\Priors\prior_VAR2x_' country '.txt'];
+
+input_filepath = ['..\..\..\Data Collection\1.2.Priors\prior_VAR2x_' country '.txt'];
 priors_VAR2x = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['..\..\Priors\prior_VAR2_' country '.txt'];
+input_filepath = ['..\..\..\Data Collection\1.2.Priors\prior_VAR2_' country '.txt'];
 priors_VAR2 = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['..\..\Priors\prior_trend_' country '.txt'];
+input_filepath = ['..\..\..\Data Collection\1.2.Priors\prior_trend_' country '.txt'];
 priors_trend_stddev = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['..\..\..\Data\Input\Cycles_trimmed_' country '.txt'];
-priors_cycle = readmatrix(input_filepath);
-c_y_prior1 = priors_cycle(2,2)
-c_y_prior2 = priors_cycle(1,2)
-c_h_prior1 = priors_cycle(2,3)
-c_h_prior2 = priors_cycle(1,3)
+input_filepath = ['..\..\..\Data Collection\1.Latest\MergedData_Matlab_' country '.txt'];
+priors_cycle = dlmread(input_filepath,',',1,1);
+priors_cycle(:,1:2)=[];
+c_y_prior1 = priors_cycle(2,1)-2; %for US
+c_y_prior2 = priors_cycle(1,1)-1;
+
+% c_y_prior1 = priors_cycle(2,1); 
+% c_y_prior2 = priors_cycle(1,1);
+c_h_prior1 = priors_cycle(2,2)
+c_h_prior2 = priors_cycle(1,2)
 
 %     % for US VAR only
 %     c_y_prior1 = -2+priors_cycle(2,2)
 %     c_y_prior2 = -1+priors_cycle(1,2)
 
-input_filepath = ['..\..\Priors\prior_corr_' country '.txt'];
+input_filepath = ['..\..\..\Data Collection\1.2.Priors\prior_corr_' country '.txt'];
 priors_corr = dlmread(input_filepath,',',1,1);
 
 %=========================================================================%
@@ -70,7 +77,7 @@ priors_corr = dlmread(input_filepath,',',1,1);
 
 prmtr_in = priors_VAR2;
 prmtr_in(9) = priors_corr(1);
-% prmtr_in(10) = priors_corr(2);
+prmtr_in(10) = priors_corr(2);
 % % US AR(2) prior extracted from ARIMA of HP filter cycles:
 % prmtr_in(1)=0.8764;
 % prmtr_in(2)=-0.0194;
@@ -310,7 +317,7 @@ prmtr_in_selected = prmtr_in;
 % prmtr_in_selected = solutions(1, 1).X0{1, 1}  ;
 % prmtr_in_selected = x ;
 
-%% Regression
+% Regression
 
 % Constrained regression
 % 
@@ -331,13 +338,14 @@ options2=optimoptions('fminunc','Display','iter','MaxfunctionEvaluations',50000,
 [xout,fout,cout,output,gout,hout] = ...
     fminunc(@(prmtr)lik_fcn_uncon(prmtr,y,T,START,prior),prmtr_in_selected,options2);
 
-%% Results
+% Results
 
 %Function returns paramter estimates, -LL value, flag code
 %
 prmtr_in_selected 
 prm_fnl = trans_uncon(xout)
-% x
+
+%% Export results
 % prmtr_in
 hessn0 = hout;
 cov0 = inv(hout);

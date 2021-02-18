@@ -5,7 +5,12 @@
 \usepackage{amsmath}
 \usepackage{outlines}
 \usepackage{listings}
-\usepackage{xcolor}
+%\usepackage{xcolor}
+\usepackage[table]{xcolor}
+
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{booktabs}
 \lstset { %
 	language=R,
 	backgroundcolor=\color{black!5}, % set backgroundcolor
@@ -18,6 +23,12 @@
 \usepackage{siunitx} % Formats the units and values
 \usepackage{pgfplotstable} % Generates table from .csv
 \usepackage{booktabs}
+
+%\documentclass[preprint,floatfix] {revtex4} 
+\newcommand{\rvec}{\mathrm {\mathbf {r}}} 
+\usepackage{subfigure}
+\usepackage{color, soul}
+
 
 % Setup siunitx:
 \sisetup{
@@ -215,55 +226,33 @@ Starting standard deviation and correlation values are randomized within reasona
 		\begin{landscape}
 			
 			%Regression table
-			\begin{table*}
-				\begin{center}
-					\caption{VAR(2) cross-lag covariance UC model Estimates: US data}
-					\begin{tabular}{c}
-						\toprule
-						Description\\
-						\\
-						Parameters \\
-						\midrule
-						$\phi^1_{y}$ \\
-						$\phi^2_{y}$ \\	
-						$\phi^{x1}_{y}$ \\
-						$\phi^{x2}_{y}$ \\		
-						$\phi^1_{h}$ \\
-						$\phi^2_{h}$ \\
-						$\phi^{x1}_{h}$ \\
-						$\phi^{x2}_{h}$ \\							
-						$\sigma_{ny}$\\
-						$\sigma_{ey}$\\
-						$\sigma_{nh}$\\
-						$\sigma_{eh}$\\
-						$\sigma_{eyeh}$\\
-						$\sigma_{nynh}$\\
-						%		$\mu$\\
-						Log-likelihood value\\
-						\bottomrule
-					\end{tabular}%
-					\pgfplotstabletypeset[
-					col sep=comma,
-					string type,
-					every head row/.style={%
-						before row={\hline
-							\multicolumn{2}{c}{VAR(2)} & 
-							\multicolumn{2}{c}{VAR(2) 1st-cross-lag} &
-							\multicolumn{2}{c}{VAR(2) 2-cross-lags}&\\
-						},
-						after row=\hline
-					},
-					every last row/.style={after row=\hline},
-					display columns/0/.style={column name=1, column type={S},string type},
-					display columns/1/.style={column name=2, column type={S},string type},
-					display columns/2/.style={column name=3, column type={S},string type},
-					display columns/3/.style={column name=4, column type={S},string type},
-					display columns/4/.style={column name=5, column type={S},string type},
-					display columns/5/.style={column name=6, column type={S},string type},
-					]{../Regression/Table_US_trimmed.csv}
-					
-				\end{center}
-			\end{table*}
+			% Please add the following required packages to your document preamble:
+			% \usepackage{booktabs}
+			% \usepackage{multirow}
+			\begin{table}[]
+				\caption {\label{tab:table1} United States regression results} 
+				\rowcolors{2}{gray!10}{white}
+				\begin{tabular}{@{}lSSSSSS@{}}
+					\toprule
+					\multirow{2}{*}{Parameters} & \multicolumn{2}{c}{VAR(2)} & \multicolumn{2}{c}{VAR(2) 1st-cross-lag} & \multicolumn{2}{c}{VAR(2) 2-cross-lags} \\
+					& \multicolumn{1}{l}{Estimate}     & \multicolumn{1}{l}{Std. Error}  & \multicolumn{1}{l}{Estimate}            & \multicolumn{1}{l}{Std. Error}         & \multicolumn{1}{c}{Estimate}            & \multicolumn{1}{c}{Std. Error}        \\ \midrule
+					$\phi^1_{y}$                & 1.521670374  & 0.323602024 & 1.890301193         & 0.036315042        & 1.886592178         & 0.00028419        \\
+					$\phi^2_{y}$                & -0.592177551 & 0.282758652 & -0.773199508        & 0.021652307        & -0.8941981          & 0.003233388       \\
+					$\phi^{x1}_{y}$             &              &             & -0.012689515        & 0.001245419        & 0.04280046          & 0.000520376       \\
+					$\phi^{x2}_{y}$             &              &             &                     &                    & -0.040322766        & 0.000876719       \\
+					$\phi^1_{h}$                & 1.803961772  & 0.039406338 & 1.465513594         & 0.064627659        & 1.864726867         & 0.038659834       \\
+					$\phi^2_{h}$                & -0.820986013 & 0.039263457 & -0.736886204        & 0.047825955        & -0.898033258        & 0.039051475       \\
+					$\phi^{x1}_{h}$             &              &             & 2.576890191         & 1.642027848        & 0.089729346         & 0.11453162        \\
+					$\phi^{x2}_{h}$             &              &             &                     &                    & -0.031982418        & 0.113620129       \\
+					$\sigma_{ny}$               & 0.968115538  & 0.064573932 & 0.975833563         & 0.066722551        & 0.858997834         & 0.055437867       \\
+					$\sigma_{ey}$               & 0.136584746  & 0.073940054 & 0.000413197         & 0.008728546        & 0.030583756         & 0.016664357       \\
+					$\sigma_{nh}$               & 0.964325946  & 0.107167236 & 1.271977495         & 0.127987617        & 1.135553581         & 0.106041662       \\
+					$\sigma_{eh}$               & 0.471089742  & 0.079046967 & 0.296047479         & 0.161613716        & 0.363776038         & 0.077466523       \\
+					$\sigma_{eyeh}$             & -0.999391959 & 0.03023235  & -0.881232755        & 0.311836698        & -1                  & 5.19E-07          \\
+					$\sigma_{nynh}$             & 0.464225409  & 0.094391207 &                     &                    &                     &                   \\
+					Log-likelihood value        & -369.9163016 &             & -384.7973521        &                    & -363.3991125        &                   \\ \bottomrule
+				\end{tabular}
+			\end{table}
 			
 		\end{landscape}
 		
@@ -275,55 +264,30 @@ Starting standard deviation and correlation values are randomized within reasona
 		\begin{landscape}
 			
 			%Regression table
-			\begin{table*}
-				\begin{center}
-					\caption{VAR(2) cross-lag covariance UC model Estimates: GB data}
-					\begin{tabular}{c}
-						\toprule
-						Description\\
-						\\
-						Parameters \\
-						\midrule
-						$\phi^1_{y}$ \\
-						$\phi^2_{y}$ \\	
-						$\phi^{x1}_{y}$ \\
-						$\phi^{x2}_{y}$ \\		
-						$\phi^1_{h}$ \\
-						$\phi^2_{h}$ \\
-						$\phi^{x1}_{h}$ \\
-						$\phi^{x2}_{h}$ \\							
-						$\sigma_{ny}$\\
-						$\sigma_{ey}$\\
-						$\sigma_{nh}$\\
-						$\sigma_{eh}$\\
-						$\sigma_{eyeh}$\\
-						$\sigma_{nynh}$\\
-						%		$\mu$\\
-						Log-likelihood value\\
-						\bottomrule
-					\end{tabular}%
-					\pgfplotstabletypeset[
-					col sep=comma,
-					string type,
-					every head row/.style={%
-						before row={\hline
-							\multicolumn{2}{c}{VAR(2)} & 
-							\multicolumn{2}{c}{VAR(2) 1st-cross-lag} &
-							\multicolumn{2}{c}{VAR(2) 2-cross-lags}&\\
-						},
-						after row=\hline
-					},
-					every last row/.style={after row=\hline},
-					display columns/0/.style={column name=1, column type={S},string type},
-					display columns/1/.style={column name=2, column type={S},string type},
-					display columns/2/.style={column name=3, column type={S},string type},
-					display columns/3/.style={column name=4, column type={S},string type},
-					display columns/4/.style={column name=5, column type={S},string type},
-					display columns/5/.style={column name=6, column type={S},string type},
-					]{../Regression/Table_GB_trimmed.csv}
-					
-				\end{center}
-			\end{table*}
+			\begin{table}[]
+				\caption {\label{tab:table1} Great Britain regression results} 
+				\begin{tabular}{@{}lSSSSSS@{}}
+					\toprule
+					\multirow{2}{*}{Parameters} & \multicolumn{2}{c}{VAR(2)} & \multicolumn{2}{c}{VAR(2) 1st-cross-lag} & \multicolumn{2}{c}{VAR(2) 2-cross-lags} \\
+					& \multicolumn{1}{l}{Estimate}     & \multicolumn{1}{l}{Std. Error}  & \multicolumn{1}{l}{Estimate}            & \multicolumn{1}{l}{Std. Error}         & \multicolumn{1}{c}{Estimate}            & \multicolumn{1}{l}{Std. Error}        \\ \midrule
+					$\phi^1_{y}$         & 1.254192973  & 0.190985842 & 1.25723532   & 0.060817683 & 1.150590314  & 0.176355128 \\
+					$\phi^2_{y}$         & -0.26306956  & 0.205161023 & -0.169780952 & 0.09490575  & -0.29219579  & 0.186002808 \\
+					$\phi^{x1}_{y}$      &              &             & -0.032263112 & 0.011998484 & -9.25E-05    & 0.040559508 \\
+					$\phi^{x2}_{y}$      &              &             &              &             & 0.001258809  & 0.049929897 \\
+					$\phi^1_{h}$         & 1.624898849  & 0.106882442 & 0.680349073  & 0.111110636 & 0.37903173   & 0.134445053 \\
+					$\phi^2_{h}$         & -0.735672409 & 0.11638218  & -0.058077279 & 0.119413569 & -0.513222468 & 0.172990361 \\
+					$\phi^{x1}_{h}$      &              &             & 1.095293496  & 0.644515947 & 1.042175029  & 0.959665092 \\
+					$\phi^{x2}_{h}$      &              &             &              &             & -0.24951917  & 1.444350906 \\
+					$\sigma_{ny}$        & 0.860787938  & 0.082136594 & 1.144314466  & 0.116163949 & 0.739935351  & 0.04023517  \\
+					$\sigma_{ey}$        & 0.289375924  & 0.120450619 & 0.192749525  & 0.076274126 & 0.475181328  & 0.106178287 \\
+					$\sigma_{nh}$        & 2.340082466  & 0.172292974 & 2.162565122  & 0.187483055 & 1.423757795  & 0.059105068 \\
+					$\sigma_{eh}$        & 0.75058414   & 0.220465076 & 1.898423971  & 0.342466946 & 2.079589016  & 0.470123296 \\
+					$\sigma_{eyeh}$      & 0.957116136  & 0.252780005 & 0.502139385  & 0.163311142 & 0.48533368   & 0.153929437 \\
+					$\sigma_{nynh}$      & 0.591929269  & 0.07200974  &              &             &              &             \\
+					Log-likelihood value & -410.01474   &             & -448.3113461 &             & -512.4696846 &                             \\ \bottomrule
+				\end{tabular}
+
+			\end{table}
 			
 		\end{landscape}
 		

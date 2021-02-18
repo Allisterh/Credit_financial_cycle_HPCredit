@@ -1,3 +1,5 @@
+rm(list=ls())
+
 #Merge Data
 library("DataCombine")
 library(dplyr)
@@ -7,7 +9,7 @@ library(ggplot2)
 
 #Version selections#####
 ver='VAR_2'
-country = 'US'
+country = 'GB'
 
 working_dir=sprintf("D:/GitHub/HPCredit/Regression/%s/R",ver)
 setwd(working_dir) 
@@ -17,12 +19,12 @@ setwd(working_dir)
 #Credit and HPI merge
 
 #Read raw data
-HP_filepath = sprintf("../../../Data/Input/HPindex_HPfilter_%s.txt",country)
+HP_filepath = sprintf("../../../Data Collection/1.Latest/HPindex_HPfilter_%s.txt",country)
 df1 <- read.table(HP_filepath, header=TRUE, sep=",")
 
 # df1 <- na.omit(df1[-c(2)]) Remove country column
 
-Credit_filepath = sprintf("../../../Data/Input/Credit_HPfilter_%s.txt",country)
+Credit_filepath = sprintf("../../../Data Collection/1.Latest/Credit_HPfilter_%s.txt",country)
 df2 <- read.table(Credit_filepath, header=TRUE, sep=",")
 df2 <- na.omit(df2[-c(2)]) #Remove country name column because redundancy
 
@@ -48,16 +50,11 @@ df <-subset(df, date>as.Date("1989-12-30"))
 #Merge data with UC model data
 
 df3 <- read.table(sprintf("../Output/OutputData/uc_yc_%s.txt",country), header=FALSE, sep=",")
-
-df = df[-nrow(df),]
-df = df[-1,]
-df3 = df3[-lengths(df3),] #only for GB, mismatch on data collection, TBD
 df = cbind(df,df3)
 df$date = as.Date(df$date) 
 
 #head(df8)
 #table(df8$variable)
-
 
 #Cycles var name list
 varlist2 = c("ID", "date", "Credit_HPcycle", "HPIndex_HPcycle", "V2", "V4")
@@ -69,10 +66,10 @@ df6 = df[varlist2]
 names(df6)[4]="UC_Credit_Cycle"
 names(df6)[3]="HP_Credit_Cycle"
 
-ggplot(melt(df6, c(1,2)), aes(date, value, color = variable)) +
+p1<-ggplot(melt(df6, c(1,2)), aes(date, value, color = variable)) +
   geom_hline(yintercept = 0, linetype = "dashed",
              color = "grey70", size = 0.02) +
-  geom_line(show.legend = TRUE) +
+  geom_line(show.legend = FALSE) +
   theme_light() +
   theme(panel.grid = element_blank()) +
   labs(x = NULL, y = NULL,
@@ -86,7 +83,7 @@ names(df7)[4]="UC_HPI_Cycle"
 names(df7)[3]="HP_HPI_Cycle"
 
 
-ggplot(melt(df7, c(1,2)), aes(date, value, color = variable)) +
+p2<- ggplot(melt(df7, c(1,2)), aes(date, value, color = variable)) +
   geom_hline(yintercept = 0, linetype = "dashed",
              color = "grey70", size = 0.02) +
   geom_line(show.legend = TRUE) +
@@ -106,10 +103,10 @@ names(df7)[3]="HP_Credit_Trend"
 names(df7)[5]="Series"
 df7[c(3:5)] = exp(df7[c(3:5)]/100)
 
-ggplot(melt(df7, c(1,2)), aes(date, value, color = variable)) +
+p3<-ggplot(melt(df7, c(1,2)), aes(date, value, color = variable)) +
   geom_hline(yintercept = 0, linetype = "dashed",
              color = "grey70", size = 0.02) +
-  geom_line(show.legend = TRUE) +
+  geom_line(show.legend = FALSE) +
   theme_light() +
   theme(panel.grid = element_blank()) +
   labs(x = NULL, y = NULL,
@@ -126,7 +123,7 @@ names(df7)[3]="HP_Credit_Trend"
 names(df7)[5]="Series"
 df7[c(3:5)] = exp(df7[c(3:5)]/100)
 
-ggplot(melt(df7, c(1,2)), aes(date, value, color = variable)) +
+p4<-ggplot(melt(df7, c(1,2)), aes(date, value, color = variable)) +
   geom_hline(yintercept = 0, linetype = "dashed",
              color = "grey70", size = 0.02) +
   geom_line(show.legend = TRUE) +
@@ -136,4 +133,6 @@ ggplot(melt(df7, c(1,2)), aes(date, value, color = variable)) +
     title = sprintf("Housing Price Index Trend: %s , Index 2010=100",country)  )
 ggsave( sprintf("../Output/graphs/HP_Trend_%s.pdf",country) , width=8, height=5)
 
-
+library(patchwork)
+(p1|p2)/(p3|p4)
+ggsave( sprintf("../Output/graphs/HP_Trend_%s.pdf",country) , width=8, height=5)
