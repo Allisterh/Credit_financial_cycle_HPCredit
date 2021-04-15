@@ -33,7 +33,7 @@ df2 <- read.table(Credit_filepath, header=TRUE, sep=",")
 df2 <- na.omit(df2[-c(2)]) #Remove country name column because redundancy
 
 df <- merge(df1, df2, by=c("ID","date"))
-df <-subset(df, date>as.Date("1989-12-30"))
+df <-subset(df, date>as.Date("1988-12-30"))
 
 #------------------------------------------
 #GRAPH 2 series Lamda = 1600

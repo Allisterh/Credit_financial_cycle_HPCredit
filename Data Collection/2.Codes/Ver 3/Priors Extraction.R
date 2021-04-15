@@ -5,7 +5,7 @@ library(stats)
 
 # VAR estimation ========
 
-country = 'GB'
+country = 'US'
 setwd("D:/GitHub/HPCredit/Data Collection/1.Latest")
 
 
@@ -92,7 +92,7 @@ write.csv(prior, prior_path)
 #### Part 3 Std Dev of trends ==============
 #Calculate StdDev of trends
 
-df1 = subset(df, date > as.Date("1989-12-31"))
+df1 = subset(df, date > as.Date("1988-12-31"))
 
 #Cycles var name list
 varlist2 = c("ID", "date", "Credit_HPtrend", "HPIndex_HPtrend")

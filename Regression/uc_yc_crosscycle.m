@@ -25,7 +25,7 @@ clear, clc
 ver = 'VAR_2_crosscycle';
 par_num=13;
 
-country='GB';
+country='US';
 
 working_dir = ['D:\GitHub\HPCredit\Regression\' ver '\Matlab'];
 cd(working_dir);
@@ -35,27 +35,45 @@ cd(working_dir);
 %=========================================================================%
 % input_filepath = ['..\..\..\Data\Input\data_' country '.txt'];
 % data_im = dlmread(input_filepath,',',1,1);
+%=========================================================================%
+%Input Data:
+%=========================================================================%
+% input_filepath = ['..\..\..\Data\Input\data_' country '.txt'];
+% data_im = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['..\..\..\Data\Input\data_trimmed_' country '.txt'];
+input_filepath = ['..\..\..\Data Collection\1.Latest\MergedData_Matlab_' country '.txt'];
 data_im = dlmread(input_filepath,',',1,1);
+data_im(:,3:4)=[];
+data_im(1,:)=[]; %trimming data to fit >1990 time frame
 
-input_filepath = ['..\..\Priors\prior_VAR2x_' country '.txt'];
+
+input_filepath = ['..\..\..\Data Collection\1.2.Priors\prior_VAR2x_' country '.txt'];
 priors_VAR2x = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['..\..\Priors\prior_VAR2_' country '.txt'];
+input_filepath = ['..\..\..\Data Collection\1.2.Priors\prior_VAR2_' country '.txt'];
 priors_VAR2 = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['..\..\Priors\prior_trend_' country '.txt'];
+input_filepath = ['..\..\..\Data Collection\1.2.Priors\prior_trend_' country '.txt'];
 priors_trend_stddev = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['..\..\..\Data\Input\Cycles_trimmed_' country '.txt'];
-priors_cycle = readmatrix(input_filepath);
-c_y_prior1 = priors_cycle(2,2)
-c_y_prior2 = priors_cycle(1,2)
-c_h_prior1 = priors_cycle(2,3)
-c_h_prior2 = priors_cycle(1,3)
+input_filepath = ['..\..\..\Data Collection\1.Latest\MergedData_Matlab_' country '.txt'];
+priors_cycle = dlmread(input_filepath,',',1,1);
+priors_cycle(:,1:2)=[];
+% c_y_prior1 = priors_cycle(2,1)-1.4; %for US
+% c_y_prior2 = priors_cycle(1,1)-0.7;
 
-input_filepath = ['..\..\Priors\prior_corr_' country '.txt'];
+c_y_prior1 = priors_cycle(2,1); 
+c_y_prior2 = priors_cycle(1,1);
+c_h_prior1 = priors_cycle(2,2);
+c_h_prior2 = priors_cycle(1,2);
+t_y_prior = priors_cycle(2,3);
+t_h_prior = priors_cycle(2,4);
+
+%     % for US VAR only
+%     c_y_prior1 = -2+priors_cycle(2,2)
+%     c_y_prior2 = -1+priors_cycle(1,2)
+
+input_filepath = ['..\..\..\Data Collection\1.2.Priors\prior_corr_' country '.txt'];
 priors_corr = dlmread(input_filepath,',',1,1);
 
 %=========================================================================%
@@ -126,10 +144,17 @@ prmtr_in(13) = priors_corr(1);
 % %================   
 
 % Weight on likelihood function:
-  w1 = 0.5;
-  w2 = 0.5;
 
+%   w1 = 0.6; %UK
+%   w2 = 0.4;
+%   w3 = 0.004;
+%   w4 = 0.003; 
 
+  w1 = 0.8; %US
+  w2 = 0.2;
+  w3 = 0.003;
+  w4 = 0.004;
+  
 sig_ty_prior = 100+100*rand;
 sig_th_prior = 100+100*rand; 
     
@@ -157,13 +182,13 @@ save(filepath, 'savedState');
 
 % Setting Prior
 %Setting prior for y and h
-    t_y_prior = y(1,1);
-    t_h_prior = y(1,2);    
+%     t_y_prior = y(1,1);
+%     t_h_prior = y(1,2);    
     y(1,:)=[]; %remove first row of data to allow for prior setting
 
     
     prior = [t_y_prior, t_h_prior, sig_ty_prior, sig_th_prior,w1,w2,...
-        c_y_prior1, c_y_prior2, c_h_prior1, c_h_prior2];
+        c_y_prior1, c_y_prior2, c_h_prior1, c_h_prior2, w3, w4];
 
     
 % Process 
@@ -419,4 +444,4 @@ writetable(Reg,writedata,'Delimiter',',','WriteVariableNames',0);
 % Creates output file to store filtered dataset
 csvwrite(['..\Output\OutputData\uc_yc_' country '.txt'],[data(:,1),data(:,2),data(:,4),data(:,5),forcst(:,1:2)]);
 
-% lastline="out put saved"
+country

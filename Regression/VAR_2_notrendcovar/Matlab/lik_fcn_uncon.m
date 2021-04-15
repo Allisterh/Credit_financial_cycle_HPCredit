@@ -83,8 +83,11 @@ function val = lik_fcn_uncon(prmtr,y,T,START,prior)
         beta_tt = beta_tl + P_tl*H'*inv(ft)*vt;
         P_tt = P_tl - P_tl*H'*inv(ft)*H*P_tl;
 
+%     lik_mat(j_iter,1) = prior(5)*log(((2*pi)^2)*det(ft)) + prior(6)*vt'*inv(ft)*vt + ...
+%              0.004*(beta_tl(2)^2)+0.003*(beta_tl(5)^2); %UK
+
     lik_mat(j_iter,1) = prior(5)*log(((2*pi)^2)*det(ft)) + prior(6)*vt'*inv(ft)*vt + ...
-             0.003*(beta_tl(2)^2)+0.004*(beta_tl(5)^2);
+             0.002*(beta_tl(2)^2)+0.004*(beta_tl(5)^2); %US
 
         beta_ll = beta_tt;
         P_ll = P_tt;

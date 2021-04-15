@@ -82,9 +82,12 @@ function val = lik_fcn_uncon(prmtr,y,T,START,prior)
 
         beta_tt = beta_tl + P_tl*H'*inv(ft)*vt;
         P_tt = P_tl - P_tl*H'*inv(ft)*H*P_tl;
-
-        lik_mat(j_iter,1) = prior(5)*log(((2*pi)^2)*det(ft)) + prior(6)*vt'*inv(ft)*vt + ...
-             0.00*(beta_tl(2)^2)+0.0045*(beta_tl(5)^2);
+        
+    lik_mat(j_iter,1) = prior(5)*log(((2*pi)^2)*det(ft)) + prior(6)*vt'*inv(ft)*vt + ...
+             prior(11)*(beta_tl(2)^2)+prior(12)*(beta_tl(5)^2);   %GB
+         
+%          lik_mat(j_iter,1) = prior(5)*log(((2*pi)^2)*det(ft)) + prior(6)*vt'*inv(ft)*vt + ...
+%              0.003*(beta_tl(2)^2)+0.004*(beta_tl(5)^2); %US
 %Penalty on cycle being further away from 
 %0.0001 is the lower limit , trend is almost linear
 %0.0005 Presentable lower limit

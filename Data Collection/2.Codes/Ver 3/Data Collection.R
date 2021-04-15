@@ -54,6 +54,9 @@ df <- rates_plot[myvars]
 names(df)[1]<-"ID"
 names(df)[4]<-"Credit"
 
+df <-subset(df, date>as.Date("1988-06-30"))
+df <-subset(df, date<as.Date("2020-01-01"))
+
 # write.table(df, "HHCredit.txt", sep=",")
 
 #US code
@@ -61,8 +64,8 @@ df_1 = df %>%
   filter(ID == "US")
 
 df_1$Credit_log = 100*log(df_1$Credit)
-df_1$Credit_HPtrend = mFilter::hpfilter(df_1$Credit_log, type = "lambda", freq = 1600)$trend
-df_1$Credit_HPcycle = mFilter::hpfilter(df_1$Credit_log, type = "lambda", freq = 1600)$cycle
+df_1$Credit_HPtrend = mFilter::hpfilter(df_1$Credit_log, type = "lambda", freq = 400000)$trend
+df_1$Credit_HPcycle = mFilter::hpfilter(df_1$Credit_log, type = "lambda", freq = 400000)$cycle
 
 df_1$date = as.Date(df_1$date)
 write.table(df_1, "Credit_HPfilter_US.txt", sep=',' )
@@ -72,8 +75,8 @@ df_1 = df %>%
   filter(ID == "GB")
 
 df_1$Credit_log = 100*log(df_1$Credit)
-df_1$Credit_HPtrend = mFilter::hpfilter(df_1$Credit_log, type = "lambda", freq = 1600)$trend
-df_1$Credit_HPcycle = mFilter::hpfilter(df_1$Credit_log, type = "lambda", freq = 1600)$cycle
+df_1$Credit_HPtrend = mFilter::hpfilter(df_1$Credit_log, type = "lambda", freq = 400000)$trend
+df_1$Credit_HPcycle = mFilter::hpfilter(df_1$Credit_log, type = "lambda", freq = 400000)$cycle
 
 df_1$date = as.Date(df_1$date)
 write.table(df_1, "Credit_HPfilter_GB.txt", sep=',' )
@@ -106,6 +109,9 @@ df <- rates_plot[,c("ref_area", "reference_area", "date", "obs_value")]
 names(df)[1]="ID"
 names(df)[4]="HPIndex"
 
+df <-subset(df, date>as.Date("1988-06-30"))
+df <-subset(df, date<as.Date("2020-01-01"))
+
 #771 vs 628
 #628 : 2010 index = 100
 #771 : Percentage change year on year
@@ -122,8 +128,8 @@ df_1 = df %>%
   filter(ID == "US")
 
 df_1$HPIndex_log = 100*log(df_1$HPIndex)
-df_1$HPIndex_HPtrend = mFilter::hpfilter(df_1$HPIndex_log, type = "lambda", freq = 1600)$trend
-df_1$HPIndex_HPcycle = mFilter::hpfilter(df_1$HPIndex_log, type = "lambda", freq = 1600)$cycle
+df_1$HPIndex_HPtrend = mFilter::hpfilter(df_1$HPIndex_log, type = "lambda", freq = 400000)$trend
+df_1$HPIndex_HPcycle = mFilter::hpfilter(df_1$HPIndex_log, type = "lambda", freq = 400000)$cycle
 
 df_1$date = as.Date(df_1$date)
 write.table(df_1, "HPindex_HPfilter_US.txt", sep=',' )
@@ -133,8 +139,8 @@ df_1 = df %>%
   filter(ID == "GB")
 
 df_1$HPIndex_log = 100*log(df_1$HPIndex)
-df_1$HPIndex_HPtrend = mFilter::hpfilter(df_1$HPIndex_log, type = "lambda", freq = 1600)$trend
-df_1$HPIndex_HPcycle = mFilter::hpfilter(df_1$HPIndex_log, type = "lambda", freq = 1600)$cycle
+df_1$HPIndex_HPtrend = mFilter::hpfilter(df_1$HPIndex_log, type = "lambda", freq = 400000)$trend
+df_1$HPIndex_HPcycle = mFilter::hpfilter(df_1$HPIndex_log, type = "lambda", freq = 400000)$cycle
 
 df_1$date = as.Date(df_1$date)
 write.table(df_1, "HPindex_HPfilter_GB.txt", sep=',' )

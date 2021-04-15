@@ -1,4 +1,4 @@
-rm(list=ls())
+ rm(list=ls())
 
 #Merge Data
 library("DataCombine")
@@ -8,8 +8,8 @@ library(ggplot2)
 #Merge Data
 
 #Version selections#####
-ver='VAR_2'
-country = 'GB'
+ver='VAR_2_crosscycle_1stlagonly'
+country = 'US'
 
 working_dir=sprintf("D:/GitHub/HPCredit/Regression/%s/R",ver)
 setwd(working_dir) 
@@ -29,7 +29,8 @@ df2 <- read.table(Credit_filepath, header=TRUE, sep=",")
 df2 <- na.omit(df2[-c(2)]) #Remove country name column because redundancy
 
 df <- merge(df1, df2, by=c("ID","date"))
-df <-subset(df, date>as.Date("1989-12-30"))
+df <-subset(df, date>as.Date("1988-12-30"))
+df <-subset(df, date<as.Date("2020-01-01"))
 
 #------------------------------------------
 #GRAPH 2 series Lamda = 1600
@@ -88,7 +89,7 @@ p2<- ggplot(melt(df7, c(1,2)), aes(date, value, color = variable)) +
              color = "grey70", size = 0.02) +
   geom_line(show.legend = TRUE) +
   theme_light() +
-  theme(panel.grid = element_blank()) +
+  theme(panel.grid = element_blank(), legend.position = "bottom") +
   labs(x = NULL, y = NULL,
        title = sprintf("Housing Price cycle: %s",country)  )
 ggsave( sprintf("../Output/graphs/HP_cycle_%s.pdf",country) , width=8, height=5)
@@ -127,12 +128,13 @@ p4<-ggplot(melt(df7, c(1,2)), aes(date, value, color = variable)) +
   geom_hline(yintercept = 0, linetype = "dashed",
              color = "grey70", size = 0.02) +
   geom_line(show.legend = TRUE) +
+  theme(legend.position = "bottom") +
   theme_light() +
-  theme(panel.grid = element_blank()) +
+  theme(panel.grid = element_blank(), legend.position = "bottom") +
   labs(x = NULL, y = NULL,
     title = sprintf("Housing Price Index Trend: %s , Index 2010=100",country)  )
 ggsave( sprintf("../Output/graphs/HP_Trend_%s.pdf",country) , width=8, height=5)
 
 library(patchwork)
-(p1|p2)/(p3|p4)
-ggsave( sprintf("../Output/graphs/HP_Trend_%s.pdf",country) , width=8, height=5)
+(p1|p3)/(p2|p4)
+ggsave( sprintf("../Output/graphs/HP_Credit_4graphs_%s.pdf",country) , width=8, height=5)
