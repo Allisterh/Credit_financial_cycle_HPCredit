@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 %\documentclass[12pt, fleqn]{article}
-\usepackage{mathptmx}
+\usepackage{mathptmx} %to use times new roman font
 \usepackage{fullpage}
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -52,13 +52,72 @@
 	
 	\begin{outline}[enumerate]
 		
-		\section{Motivation}
+		\section{INTRODUCTION}
 		
 		This paper uses a multivariate extension of the model proposed by Morley et al. (2003) and Huang and Kishor (2018)
 		
 		The novel contribution of this paper is the inclusion of cross transitory components effect as seen in eq(5) \& eq(6). I would like to take advantage of it to explore the dynamics of the relationship between housing prices and house hold credit in the short run.
 		
-		\section {Model Specification}
+		\section{LITERATURE REVIEW}		
+		
+		\section{DATA DESCRIPTION}
+		Our quarterly data sample periods include periods from January 1989 to January 2020. Table 1 shows the description of the data used in this paper. The sample periods were chosen based on the nature of the change in regulation of credit and housing markets beginning early 1990s. The main source of the data comes from the Bank of International Settlement (BIS). The housing price index is based on base index of 2010 as 100. The credit to household data is measured as percentage of GDP.
+		
+		\begin{table}[]
+			\begin{threeparttable}
+				\caption {\label{tab:table1} Descriptive statistics}
+				\rowcolors{2}{gray!10}{white} 
+				\begin{tabular}{@{}llSSSll@{}}
+					\toprule
+					Country & Index & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{Max} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Frequency} & Periods\\
+					\midrule
+					UK & $y_t$ & 432.0829 & 459.1071 & 406.7316 & Quarterly & 1989:Q1-2020:Q1\\[2pt] 
+					
+					& $h_t$ & 464.7302 & 503.8838 & 441.5308 & Quarterly & 1989:Q1-2020:Q1\\[2pt] 
+					
+					US & $y_t$ & 429.0831 & 456.8506 & 395.8907 & Quarterly & 1989:Q1-2020:Q1\\[2pt] 
+					
+					& $h_t$ & 434.0478 & 480.1792 & 378.2752 & Quarterly & 1989:Q1-2020:Q1\\[2pt] 
+					
+					\bottomrule
+				\end{tabular}
+				\begin{tablenotes}
+					\small
+					\item $y_t$ is credit to household series, $h_t$ is housing price index series. Both are log transformed. \\
+				\end{tablenotes}
+			\end{threeparttable}
+		\end{table}
+		
+		
+		\begin{table}[]
+			\centering
+			\begin{threeparttable}
+				\caption {\label{tab:table2} Correlation matrix}
+				%			\rowcolors{2}{gray!10}{white} 
+				\begin{tabular}{@{}llll@{}}
+					\toprule
+					Country & & $y_t$ & $h_t$ \\
+					\midrule
+					UK & $y_t$ & 1 &  \\[2pt] 
+					
+					& $h_t$ & 0.9359935 & 1 \\[2pt] 
+					\midrule
+					US & $y_t$ & 1 &  \\[2pt] 
+					
+					& $h_t$ & 0.7046029 & 1 \\[2pt] 
+					
+					\bottomrule
+				\end{tabular}
+				%			\begin{tablenotes}
+				%				\small
+				%				\item $y_t$ is credit to household series, $h_t$ is housing price index series. Both are log transformed. \\
+				%			\end{tablenotes}
+			\end{threeparttable}
+		\end{table}
+		
+		
+		\section {EMPIRICAL MODEL}
+		\subsection{Model specification}
 		
 		\textbf{\textit{Series:}} \\
 		-Credit : Credit to non financial sector\\
@@ -143,6 +202,7 @@
 		\end{bmatrix}
 		\end{align}
 		
+		\bigskip
 		\textit{The covariance matrix for $\tilde{v}_t$, denoted Q, is: }
 		\begin{align}
 		Q = 
@@ -157,6 +217,7 @@
 		\end{bmatrix}
 		\end{align}
 		
+		\bigskip
 		\textit{Measurement Equation:}
 		\begin{align}
 		\tilde{y}_t = A + H\beta_t
@@ -186,13 +247,13 @@
 		c_{ht-1}
 		\end{bmatrix}
 		\end{align*}
-		\pagebreak
-\section{Parameters constraints}
+		
+\subsection{Parameters constraints}
 
 The estimation of the unobserved component model uses a nonlinear log-likelihood function maximization. Estimating this function requires numerical optimization.
 
 
-I did not put stationary constraints directly on the autoregressive parameters. Since such constraints on a VAR(2) system is complex to setup. However, to achieve feasible stationary transitory measurement, I implement an additional term on the objective function:
+I did not put stationary constraints directly on the autoregressive parameters. Since such constraints on a VAR(2) system is complex to set up. However, to achieve feasible stationary transitory measurement, I implement an additional term on the objective function:
 
 \begin{align}
 l(\theta) = -w1\sum_{t=1}^{T}ln\lbrack(2\pi)^2|f_{t|t-1}|\rbrack
@@ -202,84 +263,63 @@ l(\theta) = -w1\sum_{t=1}^{T}ln\lbrack(2\pi)^2|f_{t|t-1}|\rbrack
 
 The last term in the objective function acts as a penalty against too much transitory deviation from zero. Without this penalty, the trend would be linear or all the movements in the measured series would be matched by transitory movements.
 
-\vspace{5mm} %5mm vertical space
+%\vspace{5mm} %5mm vertical space
 
-Regarding constraints on covariance matrix, I applied the same constraints as in Morley 2007 to imply for positive definite covariance matrix.
+Regarding constraints on covariance matrix, I applied the same constraints as in Morley 2007 to imply for positive-definite covariance matrix.
 
 
-\section{Priors selection}
+\subsection{Priors selection}
 
 The priors for autoregressive parameters in matrix F are taken from VAR regression of the HP filter cycle decomposition of the series.
 
-For $\beta_{0|0}$, I set $\tau_{0|0}$ as the value of the first available row of data and omit the first observation from the regression. $c_{0|0}$ are set to be equal to their HP filter counterpart. $var(\tau_{0|0}) =100+50*random$; while other measures of the starting covariance are set to be their unconditional values.
+For $\beta_{0|0}$, I set $\tau_{0|0}$ as the value HP filtered trend component and omit the first observation from the regression. $c_{0|0}$ cycle components are also set to be equal to their HP filter counterpart. Variance $var(\tau_{0|0}) =100+50*random$; while other measures of the starting covariance are set to be their unconditional values.
 
 Starting standard deviation and correlation values are randomized within reasonable range.
 
-\clearpage
-
-		\section{Data Description}
-		Our quarterly data sample periods include periods from January 1989 to January 2020. Table 1 shows the description of the data used in this paper. The sample periods was chosen based on the nature of the change in regulation of credit and housing market beginning early 1990s. The main source of the data comes from the Bank of International Settlement (BIS). The housing price index is based on base index of 2010 as 100. The credit to household data is measured as percentage of GDP.
 		
-		\begin{table}[]
-			\begin{threeparttable}
-				\caption {\label{tab:table1} Descriptive statistics}
-				\rowcolors{2}{gray!10}{white} 
-				\begin{tabular}{@{}llSSSll@{}}
-					\toprule
-					Country & Index & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{Max} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Frequency} & Periods\\
-					\midrule
-					UK & $y_t$ & 432.0829 & 459.1071 & 406.7316 & Quarterly & 1989:Q1-2020:Q1\\[2pt] 
-					
-					& $h_t$ & 464.7302 & 503.8838 & 441.5308 & Quarterly & 1989:Q1-2020:Q1\\[2pt] 
-					
-					US & $y_t$ & 429.0831 & 456.8506 & 395.8907 & Quarterly & 1989:Q1-2020:Q1\\[2pt] 
-					
-					& $h_t$ & 434.0478 & 480.1792 & 378.2752 & Quarterly & 1989:Q1-2020:Q1\\[2pt] 
-					
-					\bottomrule
-				\end{tabular}
-				\begin{tablenotes}
-					\small
-					\item $y_t$ is credit to household series, $h_t$ is housing price index series. Both are log transformed. \\
-				\end{tablenotes}
-			\end{threeparttable}
-		\end{table}
-	
-
-		\begin{table}[]
-			\centering
-		\begin{threeparttable}
-			\caption {\label{tab:table2} Correlation matrix}
-%			\rowcolors{2}{gray!10}{white} 
-			\begin{tabular}{@{}llll@{}}
-				\toprule
-				Country & & $y_t$ & $h_t$ \\
-				\midrule
-				UK & $y_t$ & 1 &  \\[2pt] 
-				
-				& $h_t$ & 0.9359935 & 1 \\[2pt] 
-				\midrule
-				US & $y_t$ & 1 &  \\[2pt] 
-				
-				& $h_t$ & 0.7046029 & 1 \\[2pt] 
-				
-				\bottomrule
-			\end{tabular}
-%			\begin{tablenotes}
-%				\small
-%				\item $y_t$ is credit to household series, $h_t$ is housing price index series. Both are log transformed. \\
-%			\end{tablenotes}
-		\end{threeparttable}
-	\end{table}
-
-		
-		\section{Regression results}
+\section{RESULTS AND INTERPRETATION}
 		
 		In this following section, I will apply the UC model to data from 2 countries: US and UK.
 		
-Choosing priors from an estimated VAR(2) regression on HP filtered cycle and trend series. The following likelihood function weights are selected in the manner that they make the series look the most stable. 
+Choosing priors from an estimated VAR(2) regression on HP filtered cycle and trend series. The following likelihood function weights are selected in the manner that they make the decomposed series most stable. 
 		
-		The regression tables below show Unobserved component VAR(2) regression results with and without cross-cycle parameters.
+		The tables below show the three Unobserved Component VAR(2) models regression results with and without cross-cycle parameters.
+		
+		\begin{table}[]
+			\begin{threeparttable}
+				\caption {\label{tab:table1} Parameters description}
+				\rowcolors{2}{gray!10}{white} 
+				\begin{tabular}{@{}ll@{}}
+					\toprule
+					Description & Parameter\\
+					\midrule
+					Log-likelihood value & $llv$ \\[2pt] 
+					Credit to household & \\
+					\quad Credit to household 1st AR parameter  & $\phi^1_{y}$ \\[2pt] 
+					\quad Credit to household 2nd AR parameter  & $\phi^2_{y}$ \\[2pt] 
+					\quad Credit to household 1st cross cycle AR parameter  & $\phi^{x1}_{y}$ \\[2pt] 
+					\quad Credit to household 2nd cross cycle AR parameter  & $\phi^{x2}_{y}$ \\[2pt] 
+					\quad S.D. of permanent shocks to Credit to household & $\sigma_{ny}$ \\[2pt] 
+					\quad S.D. of permanent shocks to Credit to household & $\sigma_{ey}$ \\[2pt]
+					Housing Price Index & \\
+					\quad Housing Price Index 1st AR parameter  & $\phi^1_{h}$ \\[2pt] 
+					\quad Housing Price Index 2nd AR parameter  & $\phi^2_{h}$ \\[2pt] 
+					\quad Housing Price Index 1st cross cycle AR parameter  & $\phi^{x1}_{h}$ \\[2pt] 
+					\quad Housing Price Index 2nd cross cycle AR parameter  & $\phi^{x2}_{h}$ \\[2pt] 
+					\quad S.D. of permanent shocks to Housing Price Index & $\sigma_{nh}$ \\[2pt] 
+					\quad S.D. of permanent shocks to Housing Price Index & $\sigma_{eh}$ \\[2pt]
+					Cross-series correlations & \\
+					\quad Correlation: Permanent credit to household/Permanent Housing Price Index  & $\sigma_{nynh}$ \\[2pt] 
+					\quad Correlation: Transitory credit to household/Transitory Housing Price Index  & $\sigma_{nynh}$ \\[2pt] 
+										
+					\bottomrule
+				\end{tabular}
+%				\begin{tablenotes}
+%					\small
+%					\item $y_t$ is credit to household series, $h_t$ is housing price index series. Both are log transformed. \\
+%				\end{tablenotes}
+			\end{threeparttable}
+		\end{table}
 		
 		\pagebreak
 		
@@ -443,32 +483,49 @@ Log-likelihood value & -454.645000317534 &  & -464.079327351476 &  & -456.568467
 		
 %		Given the regression results from the above table. To avoid the problem of perfect collinearity as shown in US data regression, and also to have a more significant estimate of the cross cycle component; I select the second model - VAR(2) with 1 cross lag in the cycle component as the one to focus on.
 		
-		Regarding results for the UK, the model selection criteria (likelihood function value) indicates that a simple VAR(2) fit the data the best. However, with the introduction of cross-cycle terms, at a slight cost of lower likelihood value I can better estimate the correlation value of short run credit and house price index ($\sigma_{eyeh}$) at a more significant value. Additionally, the cross-cycle results shows a better 
+		The tables 4 and 5 shows maximum-likelihood estimates of all three Unobserved Component VAR(2) models. The first model is a parsimony UC VAR(2) model with no cross-cycle terms ($\phi^x_y$ and $\phi^x_h$ are set to be zero). The next two models introduces 1 and 2 cross-cycle lags terms respectively. 
 		
-		Regression results for the US are less obvious. This could be attributed by the low correlation between the two series as shown in Table 2 and potentially a identification problem. All of the correlation value of short run credit and house price index ($\sigma_{eyeh}$) in all three models show a multicollinearity problem. The model selection criteria shows that VAR(2) with 2-cross-lag coefficients have the highest likelihood value. 
+		The model selection criteria is to choose models with highest log-likelihood value. The parsimony UC VAR(2) models with no cross-cycle terms and the VAR(2) with 2 cross-cycle terms model have the highest likehood values. Therefore, discussion regarding estimation results will focus mostly on these two. Additionally, because of identification problem, I will omit the cross-series correlation of trend component $\sigma_{nynh}$ in the estimation results for crosscycle models.
 		
-		The novel contribution of this paper is to introduce this parameter $\phi^{xt}_h$ in which it measure the effect of a change in last periods credit transitory component on the current housing price transitory component. In both cross-cycle regressions in the UK and US, I can observe that there is a significant positive effect ($\phi^{x1}_{h}$) of last period credit cycle deviation on current housing cycle component. While the coefficients of transitory housing index deviation on household credit ($\phi^{x1}_{y}$) are much smaller. 
-		\\
+		\subsection{Dynamic relationship between Credit to household and Housing Price}
+		
+		The results of VAR(2) model regression suggests that permanent shocks dominate transitory shocks in term of variation in both household credit and housing price variables. The standard deviation of the shocks in cycle of credit is 0.0004 in the UK and 0.0281 in the US, much smaller than standard deviation of the shocks to trend of credit in the UK of 0.7063 and in the US of 0.4793. The same applies for housing price, the standard deviation of the shocks in cycle of housing price is 0.6568 in the UK and 0.2566 in the US, smaller than standard deviation of the shocks to trend of housing price in the UK of 1.8676 and in the US of 0.4549. This result also indicates that variations in the trend components of the UK is bigger than the US, while variations in the cycle components of the UK is smaller than the US. In regard of the estimated parameters, the sum of AR parameters of the cyclical components in all 3 models are smaller although close to one. This implies that shocks to the cycle are persistent but will eventually dissipate.
+		
+		The correlation analysis of the shocks to the cyclical components among the two variables suggests that cyclical variation among housing price and credit household is strongly positively correlated. Although we ran into the problem of identification or perfect collinearity with a cross-series correlation of 1 in a few estimated models. The overall results suggest that transitory shock to housing credit is closely positively correlated to transitory shock in housing price. The estimated correlation result in VAR(2) 2-cross cycle lags model is 0.9998 for the UK at 95\% significant level. This implies that a transitory increase in household credit will lead to an appreciation in housing price above its long-run trend.
+		
+		The correlation analysis of the shocks to the trends among the two variables reveals that there is also a long-term underlying correlation between shocks to the trend components of household credit and housing price. However, this correlation is much smaller compared to the correlation of the transitory components. The long-term components correlation estimated value is 0.568 in the UK and 0.3974 in the US. Overall, the results from the above analyses suggest that the short-run and long-run dynamics of the two variables are very different. Therefore, there is a benefit in decomposing the series into trend and cyclical components.
+		
+		
+		\subsection{Trend-cycle decomposition}
+		
+		
+%		Regarding results for the UK, the model selection criteria (likelihood function value) indicates that a simple VAR(2) fit the data the best. However, with the introduction of cross-cycle terms, at a slight cost of lower likelihood value I can better estimate the correlation value of short run credit and house price index ($\sigma_{eyeh}$) at a more significant value. Additionally, the cross-cycle results shows a better 
+%		
+%		Regression results for the US are less obvious. This could be attributed by the low correlation between the two series as shown in Table 2 and potentially a identification problem. All of the correlation value of short run credit and house price index ($\sigma_{eyeh}$) in all three models show a multicollinearity problem. The model selection criteria shows that VAR(2) with 2-cross-lag coefficients have the highest likelihood value. 
+%		
+
+%		\\
 		
 		The following graphs shows the UC forecast series against the actual data series.
 		
 		\begin{figure}[h!]
 			\caption{VAR(2) UK: }	
 			\centerline{\includegraphics[scale=0.7]{../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB.pdf}}
-		\end{figure}
+%		\end{figure}
 		
-		\clearpage
-		
-		\begin{figure}[h!]
-			\caption{VAR(2) Crosscycle UK: }	
-			\centerline{\includegraphics[scale=0.7]{../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf}}
-		\end{figure}
-		
-		\clearpage
-		
-		\begin{figure}[h!]
+%		\clearpage
+%		
+%		
+%		\begin{figure}[h!]
 			\caption{VAR(2) Crosscycle 1st lag only UK: }	
 			\centerline{\includegraphics[scale=0.7]{../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_GB.pdf}}
+		\end{figure}
+		
+		\clearpage
+		
+		\begin{figure}[h!]
+			\caption{VAR(2) Crosscycle 2 lags UK: }	
+			\centerline{\includegraphics[scale=0.7]{../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf}}
 		\end{figure}
 		
 		\clearpage
@@ -477,23 +534,35 @@ Log-likelihood value & -454.645000317534 &  & -464.079327351476 &  & -456.568467
 		\begin{figure}[h!]
 			\caption{VAR(2) US: }	
 			\centerline{\includegraphics[scale=0.7]{../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US.pdf}}
-		\end{figure}
-		
-		\clearpage
-		
-		\begin{figure}[h!]
-			\caption{VAR(2) Crosscycle US: }	
-			\centerline{\includegraphics[scale=0.7]{../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf}}
-		\end{figure}
-		
-		\clearpage
-		
-		\begin{figure}[h!]
+%		\end{figure}
+%		
+%		\clearpage
+%		
+%
+%		\begin{figure}[h!]
 			\caption{VAR(2) Crosscycle 1st lag only US: }	
 			\centerline{\includegraphics[scale=0.7]{../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_US.pdf}}
 		\end{figure}
 		
 		\clearpage
+		
+		\begin{figure}[h!]
+			\caption{VAR(2) Crosscycle 2 lags US: }	
+			\centerline{\includegraphics[scale=0.7]{../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf}}
+		\end{figure}
+		
+		
+		In this subsection, we decompose trend and cycle of household credit and housing price using the correlated unobserved component model. The stochastic trend in the multivariate UC model captures the long-run evolution in household credit, housing price, and the effect of the recent global financial crisis. In the long run, there is an increasing trend in the housing price index. The household credit trend is also increasing but since the series is credit to household as a ratio to GDP, the rate at which household credit trend increases is smaller than that of the housing price index. There is a downward movement of the trend components in both credit and housing price after the financial crisis. However, the housing price index trends made a quicker recovery than household credit did. 
+		
+		The cyclical components of the model capture the evolution of household credit, housing price, and their dynamic relationship. In figure 1-6, we can see that there is an increase in credit transitory component before the financial crisis of 2008-2009 happened, and there is a negative shock to the transitory component of housing price after the recession is captured in the model as well.
+		
+		It is also important to point out that our models capture a significant bigger gap in transitory shock in both credit and house price than a Hodrick-Prescott (HP) filter would. This implies that when dealing with a time series of low frequency and long-term assets such as housing price, it is worthwhile to consider using the unobserved component model rather than simply applying an HP filter since it reveals more lower frequency information. The graphs indicate that the magnitude of transitory shocks the models capture is higher and the frequency of the movement of the cycles is lower than that of other methods (HP filter). The graphs also imply that the models detect a bigger credit gap in the UK (Figure 3), and also bigger gaps in household credit and house price in the US (Figure 4-6).		
+		
+		
+		\subsection{Co-movement amongn the cyclical components}
+		A novel contribution of this paper is to introduce the cross-cycle parameter $\phi^{xt}_h$ and $\phi^{xt}_{y}$ in which it measures the effect of a change in last periods credit transitory component on the current housing price transitory component and vice versa. From Table 5 and 6, in both cross-cycle regressions in the UK and US, I can observe that there is a significant positive effect of last period credit cycle deviation on current housing cycle component ($\phi^{x1}_{h}$). While the coefficients of transitory housing index deviation on household credit ($\phi^{x1}_{y}$) are much smaller. This holds true for 2-crosscycle lags model also. This confirms that transitory shocks to household credit will cause a positive deviation in transitory housing price. However, transitory shocks to housing price have significantly smaller impact on household credit.
+		
+
 		
 %		\begin{figure}[h!]
 %			\caption{VAR(2) cross-cycle 1st lag US: Cycle components}	
@@ -518,14 +587,30 @@ Log-likelihood value & -454.645000317534 &  & -464.079327351476 &  & -456.568467
 %			\centerline{\includegraphics[scale=0.7]{../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/Credit_trend_GB.pdf}}
 %			\centerline{\includegraphics[scale=0.7]{../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_trend_GB.pdf}}
 %		\end{figure}
+		\pagebreak
+		\section{Robustness Check}
+		\subsection{Comparison with univariate trend-cycle decomposition models}
 		
-		\clearpage
-		\section{Conclusion}
-		Employing cross effects on the transitory components of the two series allows me to measure the effect of past short term shock from house hold credit on current housing price and vice versa.
-				
-		In this paper, the models for US and GB data shows that there is a positive relationship between a one period lag in short term house hold credit and current house price. 
+		\begin{figure}[h!]
+			\caption{Comparing Multivariate UC cycles with alternate decompositions: UK }	
+			\centerline{\includegraphics[scale=0.7]{../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_GB.pdf}}
+		\end{figure}
+	
+		\begin{figure}[h!]
+			\caption{Comparing Multivariate UC cycles with alternate decompositions: US}	
+			\centerline{\includegraphics[scale=0.7]{../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_US.pdf}}
+		\end{figure}
+	
+		The use of multivariate model in theory should provide a superior measurement of trend and cycle components as compared to the univariate models. As we allow for dynamic interaction between cycles and trends components. This provide a visual comparison between the three method of decomposition: HP filter, Multivariate Unobserved components and Univariate Unobserved components.
+	
+		\pagebreak
+		\section{CONCLUSION}
+		Employing cross effects on the transitory components of the two series allows me to decompose the two variables of credit and housing price into short and long-term components. The models measure the causal effect of past short-term shock from household credit on current housing price and vice versa.
 		
-		Further development for this paper should include more robust optimal constraints on parameters to ensure stability rather than an adhod approach to selecting. Additional examination of the multicolliearity / identification issue also needs to be addressed.
+		In this paper, the models for US and GB data show that there is a positive relationship between lags of short-term household credit to current house price. 
+		
+		Further development for this paper should include studying on policy implication of credit and house price gaps with higher magnitude, more robust optimal constraints on parameters to ensure stability rather than an ad-hoc approach to selecting weights. Additional examination of the multicollinearity / identification issue also needs to be addressed.
+		
 		
 				
 %		\section*{Appendix}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.11)  14 APR 2021 23:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.11)  13 MAY 2021 11:29
 entering extended mode
 **./Credit-HPindex-VAR2.tex
 (Credit-HPindex-VAR2.tex
@@ -883,6 +883,9 @@ LaTeX Warning: Label `tab:table1' multiply defined.
 
 LaTeX Warning: Label `tab:table1' multiply defined.
 
+
+LaTeX Warning: Label `tab:table1' multiply defined.
+
 )
 \openout1 = `Credit-HPindex-VAR2.aux'.
 
@@ -980,142 +983,160 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--96
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 66.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 86.
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 92.
 
 [1
 
-{C:/Users/nam400/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-[3]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 223.
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 243.
-
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+{C:/Users/nam400/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
 
  []
 
+[2] [3]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 249.
+               Default added (so using `tbp') on input line 288.
 
-[4
-
-]
+[4] [5]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 328.
+               Default added (so using `tbp') on input line 368.
 
-[5]
+[6]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 389.
+               Default added (so using `tbp') on input line 429.
 
 
-Overfull \hbox (26.62775pt too wide) in paragraph at lines 391--438
+Overfull \hbox (26.62775pt too wide) in paragraph at lines 431--478
 [] 
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 450--452
-
- []
-
-<../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB.pdf, id=33, 578.16pt
+[7]
+<../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB.pdf, id=37, 578.16pt
  x 361.35pt>
 File: ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB.pdf Graphic fil
 e (type pdf)
 <use ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs
-_GB.pdf  used on input line 457.
+_GB.pdf  used on input line 513.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-[7
-
-
-
-
-
-
- <../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB.pdf>]
-<../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf, id=4
-3, 578.16pt x 361.35pt>
-File: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf 
-Graphic file (type pdf)
-<use ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf>
-Package pdftex.def Info: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Cre
-dit_4graphs_GB.pdf  used on input line 464.
-(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
- [8
-
- <../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf>]
 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_G
-B.pdf, id=52, 578.16pt x 361.35pt>
+B.pdf, id=38, 578.16pt x 361.35pt>
 File: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4gra
 phs_GB.pdf Graphic file (type pdf)
 <use ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4grap
 hs_GB.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Gr
-aphs/HP_Credit_4graphs_GB.pdf  used on input line 471.
+aphs/HP_Credit_4graphs_GB.pdf  used on input line 521.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
- [9
 
- <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_
-GB.pdf>]
-<../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US.pdf, id=61, 578.16pt
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8
+
+
+
+
+
+
+] [9 <../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB.pdf> <../../Reg
+ression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_GB.pdf>]
+<../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf, id=6
+1, 578.16pt x 361.35pt>
+File: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf 
+Graphic file (type pdf)
+<use ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf>
+Package pdftex.def Info: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Cre
+dit_4graphs_GB.pdf  used on input line 528.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+
+[10
+
+ <../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf>]
+<../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US.pdf, id=73, 578.16pt
  x 361.35pt>
 File: ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US.pdf Graphic fil
 e (type pdf)
 <use ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs
-_US.pdf  used on input line 479.
+_US.pdf  used on input line 536.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
-
-[10
-
- <../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US.pdf>]
-<../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf, id=7
-0, 578.16pt x 361.35pt>
-File: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf 
-Graphic file (type pdf)
-<use ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf>
-Package pdftex.def Info: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Cre
-dit_4graphs_US.pdf  used on input line 486.
-(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
- [11
-
- <../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf>]
 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_U
-S.pdf, id=79, 578.16pt x 361.35pt>
+S.pdf, id=74, 578.16pt x 361.35pt>
 File: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4gra
 phs_US.pdf Graphic file (type pdf)
 <use ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4grap
 hs_US.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Gr
-aphs/HP_Credit_4graphs_US.pdf  used on input line 493.
+aphs/HP_Credit_4graphs_US.pdf  used on input line 544.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
- [12
+[11
 
- <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_
-US.pdf>] [13
+ <../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US.pdf> <../../Regress
+ion/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_US.pdf>]
+<../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf, id=9
+4, 578.16pt x 361.35pt>
+File: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf 
+Graphic file (type pdf)
+<use ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf>
+Package pdftex.def Info: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Cre
+dit_4graphs_US.pdf  used on input line 551.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+
+[12
+
+ <../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf>] [1
+3]
+<../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_GB.pdf, id=110, 578.16pt
+ x 578.16pt>
+File: ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_GB.pdf Graphic file
+ (type pdf)
+<use ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_GB.pdf>
+Package pdftex.def Info: ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_
+GB.pdf  used on input line 596.
+(pdftex.def)             Requested size: 404.70924pt x 404.70924pt.
+<../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_US.pdf, id=111, 578.16pt
+ x 578.16pt>
+File: ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_US.pdf Graphic file
+ (type pdf)
+<use ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_US.pdf>
+Package pdftex.def Info: ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_
+US.pdf  used on input line 601.
+(pdftex.def)             Requested size: 404.70924pt x 404.70924pt.
 
 
-] (Credit-HPindex-VAR2.aux)
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14 <../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_GB.pdf>] [15 <../../
+Regression/AR_2/Output/graphs/HP_Credit_2graphs_US.pdf>]
+(Credit-HPindex-VAR2.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 28909 strings out of 480790
- 738883 string characters out of 2904601
+ 28923 strings out of 480790
+ 739659 string characters out of 2904601
  1100616 words of memory out of 3000000
- 44397 multiletter control sequences out of 15000+200000
- 582313 words of font info for 133 fonts, out of 3000000 for 9000
+ 44407 multiletter control sequences out of 15000+200000
+ 583420 words of font info for 134 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,16n,102p,740b,732s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 76i,16n,102p,1074b,730s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
@@ -1127,9 +1148,9 @@ urw/symbol/usyr.pfb><C:/Users/nam400/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw
 imes/utmbi8a.pfb><C:/Users/nam400/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/ti
 mes/utmr8a.pfb><C:/Users/nam400/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/time
 s/utmri8a.pfb>
-Output written on Credit-HPindex-VAR2.pdf (13 pages, 187219 bytes).
+Output written on Credit-HPindex-VAR2.pdf (15 pages, 216976 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
+ 167 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
