@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.11)  24 JUN 2021 12:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.7.11)  1 JUL 2021 11:12
 entering extended mode
 **./Credit-HPindex-VAR2.tex
 (Credit-HPindex-VAR2.tex
@@ -987,14 +987,14 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 
 {C:/Users/nam400/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 94.
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 159--161
+Underfull \hbox (badness 10000) in paragraph at lines 161--163
 
  []
 
@@ -1003,20 +1003,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--161
 ] [4]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 294.
+               Default added (so using `tbp') on input line 296.
 
 [5]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 374.
+               Default added (so using `tbp') on input line 376.
 
 [6]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 435.
+               Default added (so using `tbp') on input line 437.
 
 
-Overfull \hbox (26.62775pt too wide) in paragraph at lines 437--484
+Overfull \hbox (26.62775pt too wide) in paragraph at lines 439--486
 [] 
  []
 
@@ -1027,7 +1027,7 @@ File: ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB.pdf Graphic fil
 e (type pdf)
 <use ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs
-_GB.pdf  used on input line 519.
+_GB.pdf  used on input line 521.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_G
 B.pdf, id=38, 578.16pt x 361.35pt>
@@ -1036,7 +1036,7 @@ phs_GB.pdf Graphic file (type pdf)
 <use ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4grap
 hs_GB.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Gr
-aphs/HP_Credit_4graphs_GB.pdf  used on input line 527.
+aphs/HP_Credit_4graphs_GB.pdf  used on input line 529.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 
@@ -1057,7 +1057,7 @@ File: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf
 Graphic file (type pdf)
 <use ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Cre
-dit_4graphs_GB.pdf  used on input line 534.
+dit_4graphs_GB.pdf  used on input line 536.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 [10
@@ -1069,7 +1069,7 @@ File: ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US.pdf Graphic fil
 e (type pdf)
 <use ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs
-_US.pdf  used on input line 542.
+_US.pdf  used on input line 544.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_U
 S.pdf, id=74, 578.16pt x 361.35pt>
@@ -1078,7 +1078,7 @@ phs_US.pdf Graphic file (type pdf)
 <use ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4grap
 hs_US.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Gr
-aphs/HP_Credit_4graphs_US.pdf  used on input line 550.
+aphs/HP_Credit_4graphs_US.pdf  used on input line 552.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 [11
 
@@ -1090,7 +1090,7 @@ File: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf
 Graphic file (type pdf)
 <use ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Cre
-dit_4graphs_US.pdf  used on input line 557.
+dit_4graphs_US.pdf  used on input line 559.
 (pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
 
 [12
@@ -1103,7 +1103,7 @@ File: ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_GB.pdf Graphic file
  (type pdf)
 <use ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_GB.pdf>
 Package pdftex.def Info: ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_
-GB.pdf  used on input line 602.
+GB.pdf  used on input line 604.
 (pdftex.def)             Requested size: 404.70924pt x 404.70924pt.
 <../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_US.pdf, id=111, 578.16pt
  x 578.16pt>
@@ -1111,7 +1111,7 @@ File: ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_US.pdf Graphic file
  (type pdf)
 <use ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_US.pdf>
 Package pdftex.def Info: ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_
-US.pdf  used on input line 607.
+US.pdf  used on input line 609.
 (pdftex.def)             Requested size: 404.70924pt x 404.70924pt.
 
 
@@ -1143,7 +1143,7 @@ urw/symbol/usyr.pfb><C:/Users/nam400/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw
 imes/utmbi8a.pfb><C:/Users/nam400/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/ti
 mes/utmr8a.pfb><C:/Users/nam400/AppData/Roaming/MiKTeX/2.9/fonts/type1/urw/time
 s/utmri8a.pfb>
-Output written on Credit-HPindex-VAR2.pdf (15 pages, 218620 bytes).
+Output written on Credit-HPindex-VAR2.pdf (15 pages, 218875 bytes).
 PDF statistics:
  167 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
