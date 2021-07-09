@@ -1,0 +1,15 @@
+# Introduction
+The Great Recession caused researchers to shift their focus on the narrative of credit, housing market and financial stability.There has been an increasing interest in the study of the interaction between credit, speculation and house prices (Mian & Sufi 2011, 2018).  Motivated by findings in the emerging literature, this paper will study the short term transitory interaction between household credit and house prices.
+
+[@kishor_forecasting_2020] and [@mian_credit_2018] had detailed literature reviews on the dynamics between housing market and credit conditions. In this paper, we focus on the short term transitory cycles of the credit condition and housing market. [@kiyotaki_credit_1997] modeled the fluctuation of credit condition due to credit limit and asset prices. The model showed how exogenous shocks can create cyclical fluctuation in credit, asset prices and real output. As for classifying periods of booms and bursts in credit condition, [@alessi_identifying_2018] used a random forest model to identify unsustainable credit growth.
+
+Regarding house prices cycle, [@kishor_time_2015] studied the U.S. housing market by using a combination of Unobserved Component model and GARCH model to study the time-varying importance of permanent and transitory housing components in the U.S. housing prices. [@agnello_booms_2011;  @agnello_economic_2018] examined different variables that are likely to create a bubble in housing markets.
+
+The dynamics of houses price and household credit can be viewed through the lens of the borrower balance sheet. An increase in home equity due to increase in house prices will allow borrower to borrow more to finance either personal consumption or more speculation housing investment. [@mian_credit_2018] showed that speculation  is a critical channel through which credit supply expansion affects the housing cycle. The crash in the housing market and following credit crunch showed the importance of housing prices for household balance sheet as well as banking sector balance sheet.
+> Elaborate (financial accelerator model)
+		
+The findings in the literature motivate further examination in the structure of the relation between household credit and house prices. This study will look into the interaction between short term transitory and long term permanent components of household credit and house prices. The decomposition methodology that I use in this paper to extract transitory and permanent information from a non-stationary time series is called Unobserved Components model pioneered by [@beveridge_new_1981]. The detail of the methodology is inspired by [@morley_slow_2007] and [@huang_rise_2019].  This method allows the permanent component to be shown as a random walk and the transitory component to be a stationary process with mean zero. 
+> Elaborate
+
+This stationary transitory component configuration is important to infer meaningful structural linkage between the two variables of interest, household credit and house prices. 
+> Elaborate (causal)
