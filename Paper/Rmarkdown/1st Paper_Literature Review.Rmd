@@ -1,0 +1,191 @@
+Link: [[101 1st Paper Credit Housing transitory link]]
+
+- Dates: [[2021-05-03 08.34.18]] - [[2021-06-16]]
+	- [[Hours log- 101 Lit review]]
+		- Sum hours: 
+		- Total:
+
+
+
+
+## Writing
+The Great Recession caused researchers to shift their focus on the narrative of credit, housing market and financial stability.There has been an increasing interest in the study of the interaction between credit, speculation and house prices (Mian & Sufi 2011, 2018).  Motivated by findings in the emerging literature, this paper will study the short term transitory interaction between household credit and house prices.
+
+[[@kishor_forecasting_2020]] and [[@mian_credit_2018]] had detailed literature reviews on the dynamics between housing market and credit conditions. In this paper, we focus on the short term transitory cycles of the credit condition and housing market. [[@kiyotaki_credit_1997]] modeled the fluctuation of credit condition due to credit limit and asset prices. The model showed how exogenous shocks can create cyclical fluctuation in credit, asset prices and real output. As for classifying periods of booms and bursts in credit condition, [[@alessi_identifying_2018]] used a random forest model to identify unsustainable credit growth.
+
+Regarding house prices cycle, [[@kishor_time_2015]] studied the U.S. housing market by using a combination of Unobserved Component model and GARCH model to study the time-varying importance of permanent and transitory housing components in the U.S. housing prices. [[@agnello_booms_2011]],  [[@agnello_economic_2018]] examined different variables that are likely to create a bubble in housing markets.
+
+The dynamics of houses price and household credit can be viewed through the lens of the borrower balance sheet. An increase in home equity due to increase in house prices will allow borrower to borrow more to finance either personal consumption or more speculation housing investment. Mian & Sufi (2018) showed that speculation  is a critical channel through which credit supply expansion affects the housing cycle. The crash in the housing market and following credit crunch showed the importance of housing prices for household balance sheet as well as banking sector balance sheet.
+> Elaborate (financial accelerator model)
+		
+The findings in the literature motivate further examination in the structure of the relation between household credit and house prices. This study will look into the interaction between short term transitory and long term permanent components of household credit and house prices. The decomposition methodology that I use in this paper to extract transitory and permanent information from a non-stationary time series is called Unobserved Components model pioneered by [[@beveridge_new_1981]]. The detail of the methodology is inspired by [[@morley_slow_2007]] and [[@huang_rise_2019]].  This method allows the permanent component to be shown as a random walk and the transitory component to be a stationary process with mean zero. 
+> Elaborate
+
+This stationary transitory component configuration is important to infer meaningful structural linkage between the two variables of interest, household credit and house prices. 
+> Elaborate (causal)
+
+## Summary
+ Kishor (2020) [[@kishor_forecasting_2020]] included a section on literature review of the interlinkages between the housing market and credit conditions. 
+>  Overall, there is a consensus in the literature on mutually reinforcing roles of housing market and credit conditions. 
+>  
+The literature on the relationship between net worth of households and credit conditions originates from the financial accelerator of Bernanke and Gertler (1989),  Bernanke and Gertler (1989) and Gilchrist (1999) and the credit cycle model of Kiyotaki and Moore 1997
+>
+The financial accelerator model shows that link between borrower balance sheets and the external finance premium leads to mutual feedback between the financial sector and real activity.
+>
+Adelino 2015 showed the importance of collateral lending channel for small business empoloyment by showing that small businesses in areas with greater increases in house prices experienced stronger growth in employment than larger firms.
+
+>Mian and Sufi (2011, 2013)showed that impact of house prices on household balance sheet and its impact on the real economy.
+>Mian and Sufi  2011, show that borrowing against the increase in home equity by existing homeowners was responsible for significant fraction of the rise in US household leverage.
+>The crash in the housing market and resultant credit crunch showed the importance of housing prices for household balance sheet as well as the balance sheet of the banking sector in terms of its impact on mortgages as well as collateral.  
+ >
+ 
+ Kishor (2020) examined the inclusion of house prices in the forecast model of real economic activity and found that the extra information from the housing prices series helped boosting efficiency of the forecast models of real economic activity.
+ 
+- Atif Mian, Amir Sufi (2018), "Credit Supply and Housing Speculation." . [[@mian_credit_2018]], NBER working paper
+>Speculation is a critical channel through which credit supply expansion affects the housing cycle
+>
+>The surge in private label mortgage securitization in 2003 fueled a large expansion in mortgage  credit supply by lenders financed with non-core deposits. Areas more  exposed to these lenders  experienced a large relative rise in transaction volume driven by a small group of speculators, and  these areas simultaneously witnessed an amplified housing boom and bust. Consistent with the  importance  of  belief  heterogeneity, house  price  growth  expectations  of  marginal  buyers  rose  during the boom, while housing market pessimism among the general population increased.
+- Motivated by the finding in the literature on linkages between housing prices and credit condition, especially household balance sheet / household credit, I will implement an unobserved component VAR model to decompose the trend and cycle components of house prices and household credit. 
+	- The model used in this paper is motivated by the application in [[@morley_slow_2007]]
+- The model will take advantage of covariance matrices analysis and structural regression features of the Unobserved Component model that allows me to
+
+- Amir 2018:
+- There are also prior work on credit expansion and house price growth, e.g. Adelino et al. (2014), Favara and Imbs (2015), and Di Maggio and Kermani (2017)
+
+To be included: 
+	- [ ] Credit / House hold credit dynamics:
+		- Alessi 2018, Identifying excessive credit growth and leverage
+		- Avdjiev et al. (2012) Rapid credit growth and international credit
+		- Borio 2011, Global credit and domestic credit booms
+		- Kiyotaki and Moore 1997 : credit cycle model
+		- Caballero, Ricardo and Alp Simsek, \A Risk-centric Model of Demand Recessions and MacroprudentialPolicy," Working Paper 23614, National Bureau of Economic Research January 2018.
+- [ ] Housing Market dynamics:
+		- Cerutti 2017, Housing Finance and Real-Estate Booms: A Cross-Country Perspective
+		- Ambrose 2013, House Prices and Fundamentals: 355 years of evidence
+		- D Andrews, AC Sánchez, Å Johansson - 2011, Housing markets and structural policies in OECD countries
+		- Agnello 2011,  Booms and Busts in Housing Markets: Determinants and Implications
+		- Burnside, Craig, Martin Eichenbaum, and Sergio Rebelo, \Understanding booms and busts in housing markets," Journal of Political Economy, 2016, 124 (4), 1088{1147.
+		- Adelino, Manuel, Antoinette Schoar, and Felipe Severino, \Credit supply and house prices: Evidence from mortgage market segmentation," Available at SSRN 1787252, 2014
+			- , , and , \Dynamics of Housing Debt in the Recent Boom and Great Recession," Technical Report, National Bureau of Economic Research 2017. , , and , \Perception of house price risk and homeownership," 2018
+		- Burnside, Craig, Martin Eichenbaum, and Sergio Rebelo, \Understanding booms and busts in housing markets," Journal of Political Economy, 2016, 124 (4), 1088{1147
+		- Chernenko, Sergey, Samuel G. Hanson, and Adi Sunderam, \Who Neglects Risk? Investor Experience and the Credit Boom," Journal of Financial Economics, 2018
+		- Chinco, Alex and Christopher Mayer, \Misinformed speculators and mispricing in the housing market," The Review of Financial Studies, 2015, 29 (2), 486{522.
+		- Favara, Giovanni and Jean Imbs, \Credit supply and the price of housing," The American Economic Review, 2015, 105 (3), 958{992
+		- Iacoviello, Matteo. 2005. “House Prices, Borrowing Constraints, and Monetary Policy in the Business Cycle.” American Economic Review, 95(3): 739–64
+		- Iacoviello, Matteo, and Raoul Minetti. 2008. “The Credit Channel of Monetary Policy: Evidence from the Housing Market.” Journal of Macroeconomics, 30(1): 69–96.
+		- Ortalo-Magné, François, and Sven Rady. 2006. «Housing Market Dynamics: On the Contribution of Income Shocks and Credit Constraints.» Review of Economic Studies, 73(2): 459–85.
+		- James Cloyne, Kilian Huber, Ethan Ilzetzki, Henrik Kleven. 2019. The Effect of House Prices on Household Borrowing: A New Approach. American Economic Review 109:6, 2104-2136. [Abstract] [View PDF article] [PDF with links]
+		- David Aikman, Jonathan Bridges, Anil Kashyap, Caspar Siegert. 2019. Would Macroprudential Regulation Have Prevented the Last Crisis?. Journal of Economic Perspectives 33:1, 107-130. [Abstract] [View PDF article] [PDF with links]
+		- Saiz : the geographic determinants of housing supply
+		- 
+- [x] UC decomposition: 
+		- Beveridge & Nelson 1981 
+ 		- Clark 1987			
+		- Stock & Watson (1988a), stochastic trends representation 
+		- Stock and Watson (1988b), variable trends in economics time series - economic theory does not rule out the presence of correlation between permanent and transitory movements in a given time series
+		- Quah 1990 - Permanent and Transitory Movements in Labor
+		- Kim & Nelson 1999
+		- [[@morley_slow_2007]] The Slow Adjustment of Aggregate Consumption to Permanent Income
+		- Durbin & Koopman 2011
+		- Geanakoplos The leverage cycle 2010
+
+## Literature Review
+- 4 Branches:
+	- [x] UC decomposition: 
+		- Beveridge & Nelson 1981
+ 		- Clark 1987			
+		- Stock & Watson (1988a), stochastic trends representation 
+		- Stock and Watson (1988b), variable trends in economics time series - economic theory does not rule out the presence of correlation between permanent and transitory movements in a given time series
+		- Quah 1990 - Permanent and Transitory Movements in Labor
+		- Kim & Nelson 1999
+		- [[@morley_slow_2007]] The Slow Adjustment of Aggregate Consumption to Permanent Income
+		- Durbin & Koopman 2011
+	- [ ] Credit / House hold credit dynamics:
+		- Alessi 2018, Identifying excessive credit growth and leverage
+		- Avdjiev et al. (2012) Rapid credit growth and international credit
+		- Borio 2011, Global credit and domestic credit booms
+		- Kiyotaki and Moore 1997 : credit cycle model
+	- [ ] Housing Market dynamics:
+		- Cerutti 2017, Housing Finance and Real-Estate Booms: A Cross-Country Perspective
+		- Ambrose 2013, House Prices and Fundamentals: 355 years of evidence
+		- D Andrews, AC Sánchez, Å Johansson - 2011, Housing markets and structural policies in OECD countries
+		- Agnello 2011,  Booms and Busts in Housing Markets: Determinants and Implications
+	- [ ] Interaction between 2 variables Housing - Credit:
+		- Kishor 2020, Forecasting real‐time economic activity using house prices and credit conditions
+		- A Mian, A Sufi, E Verner 2020 How does credit supply expansion affect the real economy? the productive capacity and household demand channels
+		- L Agnello, V Castro, RM Sousa 2019, The housing cycle: what role for mortgage market development and housing finance?
+		- A Mian, A Sufi 2018 - Credit supply and housing speculation 
+		- Agnello 2017, Economic Activity, Credit Market Conditions, and housing market 
+		- Giovanni Favara, Jean Imbs 2015, Credit supply and the price of housing, AER
+		- M Adelino, A Schoar, F Severino 2012,  Credit supply and house prices: evidence from mortgage market segmentation
+		- A Mian, A Sufi 2011, replicated in 2019 - House prices, home equity-based borrowing, and the US household leverage crisis
+		- Brunnermeir 2008, Money Illusion and Housing Frenzies
+
+
+## Specific paper references:
+- From Huang & Kishor 2017:
+	- pg2, narrative on using the model, Morley, Nelson & Zivot 2003
+	- pg4, Avdjiev et al. (2012)
+		- regressed the cross-sectional change in credit-to-GDP ratio on the change in international credit during the credit boom phase (2002–08) and regressed the credit growth in the EMEs on the change in international credit during the credit bust phase (2008–11).
+		- For instance, the long-term trend of international credit could be explained by the integration of international financial market, but the long-term trend of the overall credit condition may respond more to the **domestic economic fundamentals.** Thus without isolating the long-term trend from these two credit series, it is very difficult to perform a clean analysis about the cyclical co-movement between the international credit and the overall credit condition.
+	- He and McCauley (2013) surveyed a number of studies on the transmission of monetary policy
+		-  of the major advanced economies to East Asia and concluded that policy rates, bond yields and exchange rates are three price channels in the transmission process.
+	- Credit:
+		- Borio 2011, Global credit and domestic credit booms
+
+- From Morley 2007
+	- UC Decomposition
+		Stock & Watson stochastic trends representation (1988a)
+		Stock and Watson (1988b), variable trends in economics time series - economic theory does not rule out the presence of correlation between permanent and transitory movements in a given time series
+		Kim & Nelson 1999
+		Quah 1990 - Permanent and Transitory Movements in Labor
+		Durbin & Koopman 2011
+		Beveridge & Nelson
+
+- From Kishor papers:
+	- 2015 Housing Market UC trend cycles
+		-  UC: 
+				- Clark 1987, 89
+				- Beveridge & Nelson 1981
+				- Watson 1986
+				- Ambrose et at(2013): deviation of house prices from its fundamentals are long-lasting and persistent and it takes 50-60 years for the housi prices to revert back to its trend value
+				- Kishor , Morley 2014 : price-rent ratio deviates from its present-value persistently
+				- pg7: host of papers that have similar finding regarding persistence 
+			- Other mention: 
+				- Miles 2008 : heteroskedasticity
+				- Engle 82, 83: disturbance variances in time series data were less stable than usually assumed
+				- pg6:  **Convert** HPI to real variable using inflation rate
+	-2020 Link between credit and housing price
+		- Bernanke 1995, 1999: The underlying idea is that **variation in credit spreads captures changes in default risk** and also reflects changes in the external finance premium, which is a key indicator of credit conditions and an important influence on real activity
+		-** Kiyotaki and Moore 1997 : credit cycle model**
+		- Bernanke 89, 99: financial accelerator model
+		- pg2 footnote1: wealth effect channel , balance sheet effect
+		- footnote 2: predictive ability of credit supply measures (spread) for real economic activity
+		- Adelino 2015 : importance of collateral lending channel for small business employment over the past decade
+		- Gertler and Gilchrist (2018) analyzed the contribution of the house price decline vs the banking distress indicator to the overall decline in employment
+		
+	
+Other notable paper:
+	Cochrane (1994)
+	Morley, Nelson, and Zivor (2003u)
+	Blanchard & Quah (1989) show that this implication of long-run neutrality can be used to identify nominal shocks in bivariate structural VAR system
+	Kishor 2021- Housing price synchronization 
+
+From / To Kim & Nelson
+Identification references:
+	Morley, Nelson, Zivot 2003
+	Schleicher 2003
+	Sinclair 2007
+	Harvey 1993,
+		I cast the correlated UC model given by (1)–(8) into state–space 				form and apply the Kalman filter and maximum likelihood based upon the prediction error decomposition 
+	
+
+
+To read:
+	- A Mian, A Sufi 2018 - Credit supply and housing speculation 
+	- A Mian, A Sufi 2011, replicated in 2019 - House prices, home equity-based borrowing, and the US household leverage crisis
+	-A Mian, A Sufi, E Verner 2020 How does credit supply expansion affect the real economy? the productive capacity and household demand channels
+	
+	
+	
+- Housing Price dynamic
