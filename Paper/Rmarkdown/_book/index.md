@@ -6,10 +6,11 @@ output:
     includes:
       in_header: "preamble.tex"
     toc: no
+indent: true
 fontsize: 12pt
 bibliography: "D:/OnlineDrive/Syncthing/Obsidian/ExtendedBrain/03-Source Note/ZoteroLib/My Library.bib"
 csl: "D:/OnlineDrive/Syncthing/Obsidian/ExtendedBrain/03-Source Note/ZoteroLib/apa-no-doi-no-issue.csl"
 link-citations: yes
 author: "Nam Nguyen"
-date: 'July 09, 2021'
+date: 'September 20, 2021'
 ---

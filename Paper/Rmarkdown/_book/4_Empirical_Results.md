@@ -1,12 +1,12 @@
-# Empirical Results
+# EMPIRICAL RESULTS
+
+\newpage
 
 ```{=latex}
 
-		In this following section, I will apply the UC model to data from 2 countries: US and UK.
+		In this following section, I will apply the unobserved components model to data from 2 countries: US and UK.
 		
-Choosing priors from an estimated VAR(2) regression on HP filtered cycle and trend series. The following likelihood function weights are selected in the manner that they make the decomposed series most stable. 
-		
-		The tables below show the three Unobserved Component VAR(2) models regression results with and without cross-cycle parameters.
+Choosing priors from an estimated VAR(2) regression on HP filtered cycle and trend series. The following likelihood function weights are selected in a manner that they make the decomposed series most stable. 
 		
 		\begin{table}[]
 			\begin{threeparttable}
@@ -204,11 +204,11 @@ Log-likelihood value & -454.645000317534 &  & -464.079327351476 &  & -456.568467
 		
 		\clearpage
 		
-%		Given the regression results from the above table. To avoid the problem of perfect collinearity as shown in US data regression, and also to have a more significant estimate of the cross cycle component; I select the second model - VAR(2) with 1 cross lag in the cycle component as the one to focus on.
+%		Given the regression results from the above table. To avoid the problem of perfect collinearity as shown in US data regression, and also to have a more significant estimate of the cross cycle correlation component; I select the second model - VAR(2) with 1 cross lag in the cycle component as the one to focus on.
+			
+		The tables 4 and 5 shows maximum-likelihood estimates of all three Unobserved Component VAR(2) models. The first model is a parsimony UC VAR(2) model with no cross-cycle correlation terms ($\phi^x_y$ and $\phi^x_h$ are set to be zero). The next two models introduces one and two cross-cycle correlation lags terms respectively. 
 		
-		The tables 4 and 5 shows maximum-likelihood estimates of all three Unobserved Component VAR(2) models. The first model is a parsimony UC VAR(2) model with no cross-cycle terms ($\phi^x_y$ and $\phi^x_h$ are set to be zero). The next two models introduces 1 and 2 cross-cycle lags terms respectively. 
-		
-		The model selection criteria is to choose models with highest log-likelihood value. The parsimony UC VAR(2) models with no cross-cycle terms and the VAR(2) with 2 cross-cycle terms model have the highest likehood values. Therefore, discussion regarding estimation results will focus mostly on these two. Additionally, because of identification problem, I will omit the cross-series correlation of trend component $\sigma_{nynh}$ in the estimation results for crosscycle models.
+		The model selection criteria is to choose models with highest log-likelihood value. The parsimony UC VAR(2) models with no cross-cycle terms and the one with 2 cross-cycle terms model have the highest likehood values. Therefore, discussion regarding estimation results will focus mostly on these two. Additionally, because of identification problem, I will omit the cross correlation of trend component $\sigma_{nynh}$ in the estimation results for cross-cycle correlation models.
 		
 		\subsection{Dynamic relationship between Credit to household and Housing Price}
 		
@@ -231,9 +231,64 @@ Log-likelihood value & -454.645000317534 &  & -464.079327351476 &  & -456.568467
 		
 		The following graphs shows the UC forecast series against the actual data series.
 		
-		---
-		
-		
+```
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.85\linewidth]{../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB} 
+
+}
+
+\caption{VAR(2) UK}(\#fig:unnamed-chunk-1)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.85\linewidth]{../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_GB} 
+
+}
+
+\caption{VAR(2) Cross-cycle 1st lag only UK}(\#fig:unnamed-chunk-2)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.85\linewidth]{../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB} 
+
+}
+
+\caption{VAR(2) Cross-cycle 2 lags UK}(\#fig:unnamed-chunk-3)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.85\linewidth]{../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US} 
+
+}
+
+\caption{VAR(2) US}(\#fig:unnamed-chunk-4)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.85\linewidth]{../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_US} 
+
+}
+
+\caption{VAR(2) Cross-cycle 1st lag only US}(\#fig:unnamed-chunk-5)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.85\linewidth]{../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US} 
+
+}
+
+\caption{VAR(2) Cross-cycle 2 lags}(\#fig:unnamed-chunk-6)
+\end{figure}
+
+```{=latex}
+		\pagebreak
 		In this subsection, we decompose trend and cycle of household credit and housing price using the correlated unobserved component model. The stochastic trend in the multivariate UC model captures the long-run evolution in household credit, housing price, and the effect of the recent global financial crisis. In the long run, there is an increasing trend in the housing price index. The household credit trend is also increasing but since the series is credit to household as a ratio to GDP, the rate at which household credit trend increases is smaller than that of the housing price index. There is a downward movement of the trend components in both credit and housing price after the financial crisis. However, the housing price index trends made a quicker recovery than household credit did. 
 		
 		The cyclical components of the model capture the evolution of household credit, housing price, and their dynamic relationship. In figure 1-6, we can see that there is an increase in credit transitory component before the financial crisis of 2008-2009 happened, and there is a negative shock to the transitory component of housing price after the recession is captured in the model as well.
@@ -241,26 +296,8 @@ Log-likelihood value & -454.645000317534 &  & -464.079327351476 &  & -456.568467
 		It is also important to point out that our models capture a significant bigger gap in transitory shock in both credit and house price than a Hodrick-Prescott (HP) filter would. This implies that when dealing with a time series of low frequency and long-term assets such as housing price, it is worthwhile to consider using the unobserved component model rather than simply applying an HP filter since it reveals more lower frequency information. The graphs indicate that the magnitude of transitory shocks the models capture is higher and the frequency of the movement of the cycles is lower than that of other methods (HP filter). The graphs also imply that the models detect a bigger credit gap in the UK (Figure 3), and also bigger gaps in household credit and house price in the US (Figure 4-6).		
 		
 		
-		\subsection{Co-movement amongn the cyclical components}
-		A novel contribution of this paper is to introduce the cross-cycle parameter $\phi^{xt}_h$ and $\phi^{xt}_{y}$ in which it measures the effect of a change in last periods credit transitory component on the current housing price transitory component and vice versa. From Table 5 and 6, in both cross-cycle regressions in the UK and US, I can observe that there is a significant positive effect of last period credit cycle deviation on current housing cycle component ($\phi^{x1}_{h}$). While the coefficients of transitory housing index deviation on household credit ($\phi^{x1}_{y}$) are much smaller. This holds true for 2-crosscycle lags model also. This confirms that transitory shocks to household credit will cause a positive deviation in transitory housing price. However, transitory shocks to housing price have significantly smaller impact on household credit.
+		\subsection{Predictive ability cyclical components}
+		A novel contribution of this paper is to introduce the cross-cycle parameter $\phi^{xt}_h$ and $\phi^{xt}_{y}$ in which it measures the effect of a change in last periods credit transitory component on the current housing price transitory component and vice versa. From Table 4 and 5, in both cross-cycle regressions in the UK and US, we can observe that there is a significant positive effect of last period credit cycle deviation on current housing cycle component ($\phi^{x1}_{h}$). While the coefficients of transitory housing index deviation on household credit ($\phi^{x1}_{y}$) are much smaller. This holds true for 2-crosscycle lags model also. This confirms that transitory shocks to household credit will cause a positive deviation in transitory housing price. However, transitory shocks to housing price have significantly smaller impact on household credit.
 		
-		---
-		
-		\pagebreak
-		\section{Robustness Check}
-		\subsection{Comparison with univariate trend-cycle decomposition models}
-		
-		\begin{figure}[h!]
-			\caption{Comparing Multivariate UC cycles with alternate decompositions: UK }	
-			\centerline{\includegraphics[scale=0.7]{../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_GB.pdf}}
-		\end{figure}
-	
-		\begin{figure}[h!]
-			\caption{Comparing Multivariate UC cycles with alternate decompositions: US}	
-			\centerline{\includegraphics[scale=0.7]{../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_US.pdf}}
-		\end{figure}
-	
-		The use of multivariate model in theory should provide a superior measurement of trend and cycle components as compared to the univariate models. As we allow for dynamic interaction between cycles and trends components. This provide a visual comparison between the three method of decomposition: HP filter, Multivariate Unobserved components and Univariate Unobserved components.
-	
-		\pagebreak
+
 ```
