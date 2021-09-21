@@ -164,3 +164,41 @@ l(\theta) = -w1\sum_{t=1}^{T}ln\lbrack(2\pi)^2|f_{t|t-1}|\rbrack
 The last term in the objective function acts as a penalty against too much transitory deviation from zero. Without this penalty, the trend would be linear or all the movements in the measured series would be matched by transitory movements.
 
 Regarding constraints on covariance matrix, I applied the same constraints as in Morley 2007 to imply for positive-definite covariance matrix.
+
+```{=latex}
+		\begin{table}[H]
+			\begin{threeparttable}
+				\caption {\label{tab:table1} Parameters description}
+				%\rowcolors{2}{gray!10}{white} 
+				\begin{tabular}{@{}ll@{}}
+					\toprule
+					Description & Parameter\\
+					\midrule
+					Log-likelihood value & $llv$ \\[2pt] 
+					Credit to household & \\
+					\quad Credit to household 1st AR parameter  & $\phi^1_{y}$ \\[2pt] 
+					\quad Credit to household 2nd AR parameter  & $\phi^2_{y}$ \\[2pt] 
+					\quad Credit to household 1st cross cycle AR parameter  & $\phi^{x1}_{y}$ \\[2pt] 
+					\quad Credit to household 2nd cross cycle AR parameter  & $\phi^{x2}_{y}$ \\[2pt] 
+					\quad S.D. of permanent shocks to Credit to household & $\sigma_{ny}$ \\[2pt] 
+					\quad S.D. of permanent shocks to Credit to household & $\sigma_{ey}$ \\[2pt]
+					Housing Price Index & \\
+					\quad Housing Price Index 1st AR parameter  & $\phi^1_{h}$ \\[2pt] 
+					\quad Housing Price Index 2nd AR parameter  & $\phi^2_{h}$ \\[2pt] 
+					\quad Housing Price Index 1st cross cycle AR parameter  & $\phi^{x1}_{h}$ \\[2pt] 
+					\quad Housing Price Index 2nd cross cycle AR parameter  & $\phi^{x2}_{h}$ \\[2pt] 
+					\quad S.D. of permanent shocks to Housing Price Index & $\sigma_{nh}$ \\[2pt] 
+					\quad S.D. of permanent shocks to Housing Price Index & $\sigma_{eh}$ \\[2pt]
+					Cross-series correlations & \\
+					\quad Correlation: Permanent credit to household/Permanent Housing Price Index  & $\sigma_{nynh}$ \\[2pt] 
+					\quad Correlation: Transitory credit to household/Transitory Housing Price Index  & $\sigma_{nynh}$ \\[2pt] 
+										
+					\bottomrule
+				\end{tabular}
+%				\begin{tablenotes}
+%					\small
+%					\item $y_t$ is credit to household series, $h_t$ is housing price index series. Both are log transformed. \\
+%				\end{tablenotes}
+			\end{threeparttable}
+		\end{table}
+```

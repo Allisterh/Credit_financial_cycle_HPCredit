@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.9.16)  20 SEP 2021 19:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.9.16)  20 SEP 2021 19:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -643,9 +643,16 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 (c:/Users/nam40/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/indentfirst.
 sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+) (c:/Users/nam40/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count317
+\float@exts=\toks27
+\float@box=\box115
+\@float@everytoks=\toks28
+\@floatcapt=\box116
 )
 LaTeX Font Info:    Trying to load font information for T1+ptm on input line 10
-4.
+5.
 (c:/Users/nam40/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (./_main.aux
@@ -658,24 +665,24 @@ LaTeX Warning: Label `tab:table1' multiply defined.
 )
 \openout1 = `_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
 
 (c:/Users/nam40/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epsto
 pdf-base.sty
@@ -688,7 +695,7 @@ df-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 104.
+Package hyperref Info: Link coloring OFF on input line 105.
 
 (c:/Users/nam40/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.s
 ty
@@ -702,11 +709,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count317
+\c@section@level=\count318
 )
-LaTeX Info: Redefining \ref on input line 104.
-LaTeX Info: Redefining \pageref on input line 104.
-LaTeX Info: Redefining \nameref on input line 104.
+LaTeX Info: Redefining \ref on input line 105.
+LaTeX Info: Redefining \pageref on input line 105.
+LaTeX Info: Redefining \nameref on input line 105.
 (./_main.out) (./_main.out)
 \@outlinefile=\write3
 \openout3 = `_main.out'.
@@ -746,182 +753,178 @@ LaTeX Info: Redefining \nameref on input line 104.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 106.
+ 107.
 
 (c:/Users/nam40/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 106.
+ 107.
 
 (c:/Users/nam40/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 106.
+ 107.
 
 (c:/Users/nam40/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 106.
+ 107.
 
 (c:/Users/nam40/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
-06.
+07.
 (c:/Users/nam40/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 106.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 107.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 106.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 107.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 106.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 107.
 [1
 
 {c:/Users/nam40/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdfte
 x.map}] [2] [3] [4] [5] [6]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 151.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 152.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 151.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 152.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 151.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 152.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 151.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 152.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 151.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 152.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 151.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 152.
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
 
  []
 
 [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 249--251
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
 
  []
 
 [9] [10] [11]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 383.
+               Default added (so using `tbp') on input line 458.
 
 [12]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 463.
+               Default added (so using `tbp') on input line 519.
 
 [13]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 524.
-
-[14]
-<../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB.pdf, id=298, 578.16p
+<../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB.pdf, id=294, 578.16p
 t x 361.35pt>
 File: ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB.pdf Graphic fil
 e (type pdf)
 <use ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs
-_GB.pdf  used on input line 609.
+_GB.pdf  used on input line 604.
 (pdftex.def)             Requested size: 399.29253pt x 249.55783pt.
 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_G
-B.pdf, id=299, 578.16pt x 361.35pt>
+B.pdf, id=295, 578.16pt x 361.35pt>
 File: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4gra
 phs_GB.pdf Graphic file (type pdf)
 <use ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4grap
 hs_GB.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Gr
-aphs/HP_Credit_4graphs_GB.pdf  used on input line 618.
+aphs/HP_Credit_4graphs_GB.pdf  used on input line 613.
 (pdftex.def)             Requested size: 399.29253pt x 249.55783pt.
-<../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf, id=3
-00, 578.16pt x 361.35pt>
+<../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf, id=2
+96, 578.16pt x 361.35pt>
 File: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf 
 Graphic file (type pdf)
 <use ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Cre
-dit_4graphs_GB.pdf  used on input line 627.
+dit_4graphs_GB.pdf  used on input line 622.
 (pdftex.def)             Requested size: 399.29253pt x 249.55783pt.
-<../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US.pdf, id=301, 578.16p
+<../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US.pdf, id=297, 578.16p
 t x 361.35pt>
 File: ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US.pdf Graphic fil
 e (type pdf)
 <use ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs
-_US.pdf  used on input line 636.
+_US.pdf  used on input line 631.
 (pdftex.def)             Requested size: 399.29253pt x 249.55783pt.
 <../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_U
-S.pdf, id=302, 578.16pt x 361.35pt>
+S.pdf, id=298, 578.16pt x 361.35pt>
 File: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4gra
 phs_US.pdf Graphic file (type pdf)
 <use ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4grap
 hs_US.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2_crosscycle_1stlagonly/Output/Gr
-aphs/HP_Credit_4graphs_US.pdf  used on input line 645.
+aphs/HP_Credit_4graphs_US.pdf  used on input line 640.
 (pdftex.def)             Requested size: 399.29253pt x 249.55783pt.
-<../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf, id=3
-03, 578.16pt x 361.35pt>
+<../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf, id=2
+99, 578.16pt x 361.35pt>
 File: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf 
 Graphic file (type pdf)
 <use ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf>
 Package pdftex.def Info: ../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Cre
-dit_4graphs_US.pdf  used on input line 654.
+dit_4graphs_US.pdf  used on input line 649.
 (pdftex.def)             Requested size: 399.29253pt x 249.55783pt.
-[15
+[14
 
 
 
 
 
 
-] [16 <../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB.pdf> <../../Re
+] [15 <../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_GB.pdf> <../../Re
 gression/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_GB.pdf>] [
-17 <../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf> <
-../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US.pdf>] [18 <../../Regr
+16 <../../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_GB.pdf> <
+../../Regression/VAR_2/Output/Graphs/HP_Credit_4graphs_US.pdf>] [17 <../../Regr
 ession/VAR_2_crosscycle_1stlagonly/Output/Graphs/HP_Credit_4graphs_US.pdf> <../
-../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf>] [19]
-<../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_GB.pdf, id=385, 578.16pt
+../Regression/VAR_2_crosscycle/Output/Graphs/HP_Credit_4graphs_US.pdf>] [18]
+<../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_GB.pdf, id=380, 578.16pt
  x 578.16pt>
 File: ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_GB.pdf Graphic file
  (type pdf)
 <use ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_GB.pdf>
 Package pdftex.def Info: ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_
-GB.pdf  used on input line 680.
+GB.pdf  used on input line 675.
 (pdftex.def)             Requested size: 399.29253pt x 399.29253pt.
-<../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_US.pdf, id=386, 578.16pt
+<../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_US.pdf, id=381, 578.16pt
  x 578.16pt>
 File: ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_US.pdf Graphic file
  (type pdf)
 <use ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_US.pdf>
 Package pdftex.def Info: ../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_
-US.pdf  used on input line 689.
+US.pdf  used on input line 684.
 (pdftex.def)             Requested size: 399.29253pt x 399.29253pt.
-[20 <../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_GB.pdf>] [21 <../../
-Regression/AR_2/Output/graphs/HP_Credit_2graphs_US.pdf>] [22] [23] [24] [25] (.
+[19 <../../Regression/AR_2/Output/graphs/HP_Credit_2graphs_GB.pdf>] [20 <../../
+Regression/AR_2/Output/graphs/HP_Credit_2graphs_US.pdf>] [21] [22] [23] [24] (.
 /_main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 7C06008C212092684A7A793D12AE0AA4;2305.
+(rerunfilecheck)             Checksum: 0F55E96597ADD3F6BE1D480945E86154;2323.
  ) 
 Here is how much of TeX's memory you used:
- 14947 strings out of 480559
- 267059 string characters out of 5901780
- 563064 words of memory out of 5000000
- 32178 multiletter control sequences out of 15000+600000
+ 15001 strings out of 480559
+ 267869 string characters out of 5901780
+ 564406 words of memory out of 5000000
+ 32229 multiletter control sequences out of 15000+600000
  484318 words of font info for 161 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  70i,14n,81p,4296b,819s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -938,10 +941,10 @@ pData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/Users/nam4
 /Users/nam40/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pf
 b><c:/Users/nam40/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr
 i8a.pfb>
-Output written on _main.pdf (25 pages, 257289 bytes).
+Output written on _main.pdf (24 pages, 256924 bytes).
 PDF statistics:
- 511 PDF objects out of 1000 (max. 8388607)
- 443 compressed objects within 5 object streams
- 133 named destinations out of 1000 (max. 500000)
+ 505 PDF objects out of 1000 (max. 8388607)
+ 438 compressed objects within 5 object streams
+ 132 named destinations out of 1000 (max. 500000)
  153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

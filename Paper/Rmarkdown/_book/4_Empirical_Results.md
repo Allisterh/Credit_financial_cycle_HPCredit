@@ -1,50 +1,10 @@
 # EMPIRICAL RESULTS
 
-\newpage
-
 ```{=latex}
 
 		In this following section, I will apply the unobserved components model to data from 2 countries: US and UK.
 		
 Choosing priors from an estimated VAR(2) regression on HP filtered cycle and trend series. The following likelihood function weights are selected in a manner that they make the decomposed series most stable. 
-		
-		\begin{table}[]
-			\begin{threeparttable}
-				\caption {\label{tab:table1} Parameters description}
-				%\rowcolors{2}{gray!10}{white} 
-				\begin{tabular}{@{}ll@{}}
-					\toprule
-					Description & Parameter\\
-					\midrule
-					Log-likelihood value & $llv$ \\[2pt] 
-					Credit to household & \\
-					\quad Credit to household 1st AR parameter  & $\phi^1_{y}$ \\[2pt] 
-					\quad Credit to household 2nd AR parameter  & $\phi^2_{y}$ \\[2pt] 
-					\quad Credit to household 1st cross cycle AR parameter  & $\phi^{x1}_{y}$ \\[2pt] 
-					\quad Credit to household 2nd cross cycle AR parameter  & $\phi^{x2}_{y}$ \\[2pt] 
-					\quad S.D. of permanent shocks to Credit to household & $\sigma_{ny}$ \\[2pt] 
-					\quad S.D. of permanent shocks to Credit to household & $\sigma_{ey}$ \\[2pt]
-					Housing Price Index & \\
-					\quad Housing Price Index 1st AR parameter  & $\phi^1_{h}$ \\[2pt] 
-					\quad Housing Price Index 2nd AR parameter  & $\phi^2_{h}$ \\[2pt] 
-					\quad Housing Price Index 1st cross cycle AR parameter  & $\phi^{x1}_{h}$ \\[2pt] 
-					\quad Housing Price Index 2nd cross cycle AR parameter  & $\phi^{x2}_{h}$ \\[2pt] 
-					\quad S.D. of permanent shocks to Housing Price Index & $\sigma_{nh}$ \\[2pt] 
-					\quad S.D. of permanent shocks to Housing Price Index & $\sigma_{eh}$ \\[2pt]
-					Cross-series correlations & \\
-					\quad Correlation: Permanent credit to household/Permanent Housing Price Index  & $\sigma_{nynh}$ \\[2pt] 
-					\quad Correlation: Transitory credit to household/Transitory Housing Price Index  & $\sigma_{nynh}$ \\[2pt] 
-										
-					\bottomrule
-				\end{tabular}
-%				\begin{tablenotes}
-%					\small
-%					\item $y_t$ is credit to household series, $h_t$ is housing price index series. Both are log transformed. \\
-%				\end{tablenotes}
-			\end{threeparttable}
-		\end{table}
-		
-		\pagebreak
 		
 %		
 %		\begin{landscape}
@@ -82,8 +42,6 @@ Choosing priors from an estimated VAR(2) regression on HP filtered cycle and tre
 %		
 %		\pagebreak
 		
-		
-		\pagebreak
 		
 		\begin{landscape}
 			
@@ -296,7 +254,7 @@ Log-likelihood value & -454.645000317534 &  & -464.079327351476 &  & -456.568467
 		It is also important to point out that our models capture a significant bigger gap in transitory shock in both credit and house price than a Hodrick-Prescott (HP) filter would. This implies that when dealing with a time series of low frequency and long-term assets such as housing price, it is worthwhile to consider using the unobserved component model rather than simply applying an HP filter since it reveals more lower frequency information. The graphs indicate that the magnitude of transitory shocks the models capture is higher and the frequency of the movement of the cycles is lower than that of other methods (HP filter). The graphs also imply that the models detect a bigger credit gap in the UK (Figure 3), and also bigger gaps in household credit and house price in the US (Figure 4-6).		
 		
 		
-		\subsection{Predictive ability cyclical components}
+		\subsection{Predictive ability of cyclical components}
 		A novel contribution of this paper is to introduce the cross-cycle parameter $\phi^{xt}_h$ and $\phi^{xt}_{y}$ in which it measures the effect of a change in last periods credit transitory component on the current housing price transitory component and vice versa. From Table 4 and 5, in both cross-cycle regressions in the UK and US, we can observe that there is a significant positive effect of last period credit cycle deviation on current housing cycle component ($\phi^{x1}_{h}$). While the coefficients of transitory housing index deviation on household credit ($\phi^{x1}_{y}$) are much smaller. This holds true for 2-crosscycle lags model also. This confirms that transitory shocks to household credit will cause a positive deviation in transitory housing price. However, transitory shocks to housing price have significantly smaller impact on household credit.
 		
 
