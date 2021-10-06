@@ -6,7 +6,7 @@ Despite their importance, comparable cross-country data on residential property 
 
 Even though there are other sources with the data regarding credit to household such as the International Financial Statistics from IMF or the Federal Reserve Economic Data. We decide to use the credit to household data from the BIS for better compatibility and adjustments in breaks of data collecting methodological frameworks.^[The BIS has constructed long series on credit to the private non-financial sector for 44 economies, both advanced and emerging. Credit is provided by domestic banks, all other sectors of the economy and nonresidents. https://www.bis.org/statistics/totcredit/credpriv_doc.pdf] To achieve as long a period as possible for time series data on credit, the construction of the series combined data from institutional sector financial accounts, balance sheets of domestic banks and international banking institution. 
 
-In this study, We selected the US and UK as two representative countries to use  because of the longevity and continuity of the time series data available.
+In this study, we selected the US and UK as two representative countries to use  because of the longevity and continuity of the time series data available.
 
 
 
