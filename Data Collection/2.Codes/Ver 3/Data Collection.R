@@ -5,8 +5,8 @@ library(zoo)
 library(BIS)
 library(reshape2)
 
-setwd("D:/GitHub/HPCredit/Data Collection/1.Latest")
-
+setwd(dirname(getActiveDocumentContext()$path))
+setwd("../../1.Latest/Paper2")
 #---------------------
 #1. Data Collection
 #1.a. Credit 

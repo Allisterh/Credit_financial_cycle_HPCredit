@@ -10,7 +10,9 @@ library("tidyr")
 
 ##1. Merge Data
 country = 'US'
-setwd("D:/GitHub/HPCredit/Data Collection/1.Latest")
+
+setwd(dirname(getActiveDocumentContext()$path))
+setwd("../../1.Latest/")
 
 Credit_filepath = sprintf("Credit_HPfilter_%s.txt",country)
 df2 <- read.table(Credit_filepath, header=TRUE, sep=",")
@@ -22,7 +24,7 @@ df1 <- read.table(HP_filepath, header=TRUE, sep=",")
 
 
 df <- merge(df2, df1, by=c("ID","date"))
-df <-subset(df, date>as.Date("1988-06-30"))
+df <-subset(df, date>as.Date("1985-06-30"))
 df <-subset(df, date<as.Date("2020-01-01"))
 
 filepath = sprintf("MergedData_%s.txt",country)

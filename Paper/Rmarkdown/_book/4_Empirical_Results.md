@@ -4,7 +4,7 @@
 
 		In this following section, I will apply the unobserved components model to data from 2 countries: US and UK.
 		
-Choosing priors from an estimated VAR(2) regression on HP filtered cycle and trend series. The following likelihood function weights are selected in a manner that they make the decomposed series most stable. 
+Choosing **the initial values** from an estimated VAR(2) regression on HP filtered cycle and trend series. The following likelihood function weights are selected in a manner that they make the decomposed series most stable. 
 		
 %		
 %		\begin{landscape}
@@ -164,7 +164,7 @@ Log-likelihood value & -454.645000317534 &  & -464.079327351476 &  & -456.568467
 		
 %		Given the regression results from the above table. To avoid the problem of perfect collinearity as shown in US data regression, and also to have a more significant estimate of the cross cycle correlation component; I select the second model - VAR(2) with 1 cross lag in the cycle component as the one to focus on.
 			
-		The tables 4 and 5 shows maximum-likelihood estimates of all three Unobserved Component VAR(2) models. The first model is a parsimony UC VAR(2) model with no cross-cycle correlation terms ($\phi^x_y$ and $\phi^x_h$ are set to be zero). The next two models introduces one and two cross-cycle coefficients on the lags of cyclical component respectively. 
+		The tables 4 and 5 shows maximum-likelihood estimates of all three Unobserved Component VAR(2) models. The first model is a parsimonious UC VAR(2) model with no cross-cycle correlation terms ($\phi^x_y$ and $\phi^x_h$ are set to be zero). The next two models introduces one and two cross-cycle coefficients on the lags of cyclical component respectively. 
 		
 		The model selection criteria is to choose models with highest log-likelihood value. The parsimony UC VAR(2) models with no cross-cycle terms and the one with 2 cross-cycle terms model have the highest likehood values. Therefore, discussion regarding estimation results will focus mostly on these two. Additionally, because of identification problem, I will omit the cross correlation of trend component $\sigma_{nynh}$ in the estimation results for cross-cycle correlation models.
 		
@@ -251,7 +251,7 @@ Log-likelihood value & -454.645000317534 &  & -464.079327351476 &  & -456.568467
 		
 		The cyclical components of the model capture the evolution of household credit, housing price, and their dynamic relationship. In Figures 1-6, we can see that there is an increase in credit transitory component before the financial crisis of 2008-2009 happened, and there is a negative shock to the transitory component of housing price after the recession is captured in the model as well.
 		
-		It is also important to point out that our models capture a significant bigger gap in transitory shock in both credit and house price than a Hodrick-Prescott (HP) filter would. This implies that when dealing with a time series of low frequency and long-term assets such as housing price, it is worthwhile to consider using the unobserved component model rather than simply applying an HP filter since it reveals more lower frequency information. The graphs indicate that the magnitude of transitory shocks the models capture is higher and the frequency of the movement of the cycles is lower than that of other methods (HP filter). The graphs also imply that the models detect a bigger credit gap in the UK (Figure 3), and also bigger gaps in household credit and house price in the US (Figure 4-6).		
+		It is also important to point out that our models capture a significant bigger gap in transitory shock in both credit and house price than a Hodrick-Prescott (HP) filter would. Our model utilizes additional information from decomposed long-run and short-run variables, which were extracted from a nonstochastic time series. Another approach in dealing with nonstochastic time series is to first-differencing the series, which loses a lot of important information from a limited sample. Thus when dealing with a time series of low frequency and long-term assets such as housing price, it is worthwhile to consider using the unobserved component model rather than simply applying an HP filter since it reveals more lower frequency information. The graphs indicate that the magnitude of transitory shocks the models capture is higher and the frequency of the movement of the cycles is lower than that of other decomposition methods (HP filter). The graphs also imply that the models detect a bigger credit gap in the UK (Figure 3), and also bigger gaps in household credit and house price in the US (Figure 4-6).		
 		
 		
 		\subsection{Predictive ability of cyclical components}

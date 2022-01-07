@@ -1,0 +1,20 @@
+function val = gradient_theta(X, y, th) 
+  d = length(th)
+  e = .0001
+  diffs = numeric(d)
+  
+  for k = 1:d
+    th_hi = th
+    th_lo = th
+    th_hi[k] = th[k] + e
+    th_lo[k] = th[k] - e
+    diffs[k] = (log_posterior(X, y, th_hi) - log_posterior(X, y, th_lo)) / (2 * e)
+  }
+  diffs
+
+
+  
+  for j=2:T
+    b(j,:)=MU+b(j-1,:)*F'+e(j,:)*chol(Q);
+    y(j,:)=x(j,:)*b(j,:)'+v(j,:)*sqrt(R);
+end

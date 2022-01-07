@@ -24,40 +24,39 @@ clear, clc
 ver = 'AR_2';
 par_num=4;
 
-country='US';
-variable='hpi';
+country='XM';
+variable='credit';
 
-working_dir = ['D:\GitHub\HPCredit\Regression\' ver '\Matlab'];
+working_dir = ['/Users/namnguyen/Documents/GitHub/HPCredit/Regression/' ver '/Matlab'];
 cd(working_dir);
 
 %=========================================================================%
 %Input Data:
 %=========================================================================%
-% input_filepath = ['..\..\..\Data\Input\data_' country '.txt'];
+% input_filepath = ['../../../Data/Input/data_' country '.txt'];
 % data_im = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['..\..\..\Data Collection\1.Latest\MergedData_Matlab_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.Latest/Paper2/MergedData_Matlab_' country '.txt'];
 data_im = dlmread(input_filepath,',',1,1);
-data_im(:,3:6)=[];
+% 
+% data_im(1,:)=[]; %trimming data to fit >1990 time frame
 
-data_im(1,:)=[]; %trimming data to fit >1990 time frame
-
-input_filepath = ['..\..\..\Data Collection\1.2.Priors\prior_VAR2x_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2x_' country '.txt'];
 priors_VAR2x = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['..\..\..\Data Collection\1.2.Priors\prior_VAR2_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2_' country '.txt'];
 priors_VAR2 = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['..\..\..\Data Collection\1.2.Priors\prior_VAR2_credit_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2_credit_' country '.txt'];
 priors_VAR2_credit = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['..\..\..\Data Collection\1.2.Priors\prior_VAR2_hpi_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2_hpi_' country '.txt'];
 priors_VAR2_hpi = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['..\..\..\Data Collection\1.2.Priors\prior_trend_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.2.Priors/prior_trend_' country '.txt'];
 priors_trend_stddev = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['..\..\..\Data Collection\1.Latest\MergedData_Matlab_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.Latest/Paper2/MergedData_Matlab_' country '.txt'];
 priors_cycle = dlmread(input_filepath,',',1,1);
 priors_cycle(:,1:2)=[];
 % c_y_prior1 = priors_cycle(2,1)-1.4; %for US
@@ -70,7 +69,7 @@ c_h_prior2 = priors_cycle(1,2);
 t_y_prior = priors_cycle(2,3);
 t_h_prior = priors_cycle(2,4);
 
-input_filepath = ['..\..\..\Data Collection\1.2.Priors\prior_corr_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.2.Priors/prior_corr_' country '.txt'];
 priors_corr = dlmread(input_filepath,',',1,1);
 
 %=========================================================================%
@@ -81,12 +80,15 @@ priors_corr = dlmread(input_filepath,',',1,1);
 %==============US====================
 
 %Credit
-% prmtr_in = priors_VAR2_credit;
-
+prmtr_in = [0,0,0,0]';
+prmtr_in(1:2)=priors_VAR2_credit(1:2);
+prmtr_in(3) = priors_trend_stddev(1);
+prmtr_in(4) = priors_VAR2_credit(3);
 
 %HPI
-prmtr_in = priors_VAR2_hpi;
-data_im(:,1)=[];
+% prmtr_in = priors_VAR2_hpi;
+
+% data_im(:,1)=[];
 
 % % US AR(2) prior extracted from ARIMA of HP filter cycles:
 % prmtr_in(1)=0.8764;
@@ -146,14 +148,14 @@ data_im(:,1)=[];
 
 %UK  
 %     %Credit 
-%   w1 = 0.6; 
-%   w2 = 0.4;
-%   w3 = 0.004;
+  w1 = 0.6; 
+  w2 = 0.4;
+  w3 = 0.002;
 %     %HPI
 %   w1 = 0.6;
 %   w2 = 0.4;
 %   w3 = 0.002;
-x   
+
 
 %US
 %   %Credit
@@ -162,9 +164,13 @@ x
 %   w3 = 0.005;
 
 %   %HPI
-  w1 = 0.8;
-  w2 = 0.2;
-  w3 = 0.005;
+%   w1 = 0.8;
+%   w2 = 0.2;
+%   w3 = 0.005;
+
+%XM
+% %Credit
+% %w1 = 0.
 
 sig_ty_prior = 100+100*rand;
 sig_th_prior = 100+100*rand; 
@@ -181,7 +187,8 @@ sig_th_prior = 100+100*rand;
 
 % Data Transformation
 %=========================================================================%
-y = 100*log(data_im);
+y = data_im(:,1);
+% y = 100*log(data_im);
 
 stream = RandStream.getGlobalStream; %Record random seed
 savedState = stream.State;
@@ -394,7 +401,7 @@ cov0 = inv(hout);
 % cov0 = inv(hout)
 
 par = sym('p',[par_num 1]);
-grdn_fnl = jacobian(trans_uncon(par),par); 
+grdn_fnl = jacobian(trans_uncon(par),par);
 grdn_fnl = eval(subs(grdn_fnl,par,xout));
 cov = grdn_fnl*cov0*grdn_fnl';
 
@@ -402,37 +409,37 @@ sd_fnl = sqrt(abs(diag(cov))); %Standard errors of the estimated coefficients
 sd_out = sqrt(abs(diag(cov0)));
 
 %Creates output file to store results
-results_filename = ['..\Output\results_' country '.txt'];
+results_filename = ['../Output/results_' country '.txt'];
 results = fopen(results_filename,'w');
 
-fprintf(results, "Starting values:\n");
-fprintf(results,"%f \n",prmtr_in);
+fprintf(results, "Starting values:/n");
+fprintf(results,"%f /n",prmtr_in);
 
-fprintf(results, "Starting priors:\n");
-fprintf(results,"%f \n",prior);
+fprintf(results, "Starting priors:/n");
+fprintf(results,"%f /n",prior);
 
 %Final Output
-fprintf(results,"\n Likelihood value is %f \n",-fout);
-fprintf(results,"code %f \n",cout);
-fprintf(results,"\n Estimated parameters are:\n");
-fprintf(results,"%f\n",[prm_fnl;sd_fnl]);
-fprintf(results,"Pre-transformed estimate are:\n");
-fprintf(results,"%f\n",xout);
+fprintf(results,"/n Likelihood value is %f /n",-fout);
+fprintf(results,"code %f /n",cout);
+fprintf(results,"/n Estimated parameters are:/n");
+fprintf(results,"%f/n",[prm_fnl;sd_fnl]);
+fprintf(results,"Pre-transformed estimate are:/n");
+fprintf(results,"%f/n",xout);
 fclose(results);
 
 %Write data to csv file
 Reg = table(prm_fnl, sd_fnl);
 lik_value = {-fout,0};
-Reg = [Reg;lik_value]
+Reg = [Reg;lik_value];
 
 %Write file for parameter in
 prmtr_in_table = table(vertcat(prmtr_in,prior'));
 Filedate = sprintf('%s.xlsx', datestr(now,'mm-dd-yyyy HH-MM'));
-prmtr_in_filename = ['..\Output\prmtr_in_' country '_' Filedate '.txt'];
+prmtr_in_filename = ['../Output/prmtr_in_' country '_' Filedate '.txt'];
 writetable(prmtr_in_table, prmtr_in_filename,'WriteVariableNames',0);
-%type '..\Output\prmtr_in_US.txt'
+%type '../Output/prmtr_in_US.txt'
 %Write file to a specific folder
-my_directory = '..\Output';  
+my_directory = '../Output';  
 writedata = [my_directory filesep 'Reg_' country '.csv'];
 writetable(Reg,writedata,'Delimiter',',','WriteVariableNames',0);
 
@@ -451,6 +458,8 @@ writetable(Reg,writedata,'Delimiter',',','WriteVariableNames',0);
 [data,forcst] = filter_fcn_uncon(xout,y,T,START,prior);
 % 
 % Creates output file to store filtered dataset
-csvwrite(['..\Output\OutputData\uc_yc_' variable '_' country '.txt'],[data(:,1),data(:,2),forcst(:,1:2)]);
+csvwrite(['../Output/OutputData/uc_yc_' variable '_' country '.txt'],[data(:,1),data(:,2),forcst(:,1:2)]);
 
 country
+
+plot(data(:,2))

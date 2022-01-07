@@ -1,9 +1,7 @@
-
+## 1. Load data ----
 rm(list=ls())
 library(vars)
 library(stats)
-
-# VAR estimation ========
 
 country = 'US'
 setwd("D:/GitHub/HPCredit/Data Collection/1.Latest")

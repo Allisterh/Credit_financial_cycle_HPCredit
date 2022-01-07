@@ -10,7 +10,7 @@ library(extrafont)
 #Merge Data
 
 #Version selections#####
-ver='VAR_2_crosscycle'
+ver='VAR_2'
 country = 'US'
 
 working_dir=sprintf("D:/GitHub/HPCredit/Regression/%s/R",ver)
@@ -21,14 +21,8 @@ setwd(working_dir)
 #Credit and HPI merge
 
 #Read raw data
-HP_filepath = sprintf("../../../Data Collection/1.Latest/HPindex_HPfilter_%s.txt",country)
+HP_filepath = sprintf("../../../Data Collection/1.Latest/Paper2/MergedData_Matlab_%s.txt",country)
 df1 <- read.table(HP_filepath, header=TRUE, sep=",")
-
-# df1 <- na.omit(df1[-c(2)]) Remove country column
-
-Credit_filepath = sprintf("../../../Data Collection/1.Latest/Credit_HPfilter_%s.txt",country)
-df2 <- read.table(Credit_filepath, header=TRUE, sep=",")
-df2 <- na.omit(df2[-c(2)]) #Remove country name column because redundancy
 
 df <- merge(df1, df2, by=c("ID","date"))
 df <-subset(df, date>as.Date("1988-12-30"))
