@@ -11,7 +11,7 @@ library(rstudioapi)
 
 
 ##1. Merge Data
-country = 'AU'
+country = 'JP'
 
 setwd(dirname(getActiveDocumentContext()$path))
 setwd("../../1.Latest/Paper2")
@@ -33,8 +33,9 @@ df1 <- read.table(HP_filepath, header=TRUE, sep=",")
 
 df <- merge(df2, df1, by=c("ID","date"))
 df <-subset(df, date>as.Date(startdate))
-df <-subset(df, date<as.Date(enddate))
+# df <-subset(df, date<as.Date(enddate))
 df <- na.omit(df)
+names(df)[which(names(df)=="obs_value")]="credit"
 
 filepath = sprintf("MergedData_%s.txt",country)
 write.table(df, filepath, sep=",")

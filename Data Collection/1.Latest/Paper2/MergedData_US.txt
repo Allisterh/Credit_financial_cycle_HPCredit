@@ -1,139 +1,145 @@
-"ID","date","credit","reference_area","HPIndex"
-"63","US","1985-07-01",110.3,"United States",77.9601
-"64","US","1985-10-01",113,"United States",78.7503
-"65","US","1986-01-01",113.1,"United States",80.0794
-"66","US","1986-04-01",114.8,"United States",81.8735
-"67","US","1986-07-01",116.7,"United States",83.1403
-"68","US","1986-10-01",119.2,"United States",84.4355
-"69","US","1987-01-01",119.2,"United States",85.689
-"70","US","1987-04-01",120.8,"United States",86.576
-"71","US","1987-07-01",121.7,"United States",87.4278
-"72","US","1987-10-01",122.2,"United States",88.433
-"73","US","1988-01-01",122.4,"United States",89.3962
-"74","US","1988-04-01",123.4,"United States",90.4057
-"75","US","1988-07-01",123.7,"United States",91.7448
-"76","US","1988-10-01",124.4,"United States",93.0711
-"77","US","1989-01-01",123.9,"United States",94.0585
-"78","US","1989-04-01",124.5,"United States",93.8727
-"79","US","1989-07-01",124.2,"United States",94.3693
-"80","US","1989-10-01",124.7,"United States",94.7967
-"81","US","1990-01-01",125,"United States",94.1952
-"82","US","1990-04-01",125,"United States",93.4542
-"83","US","1990-07-01",124.7,"United States",91.586
-"84","US","1990-10-01",124.6,"United States",89.6244
-"85","US","1991-01-01",123.9,"United States",88.4051
-"86","US","1991-04-01",124.2,"United States",88.1535
-"87","US","1991-07-01",123.2,"United States",87.4006
-"88","US","1991-10-01",122.6,"United States",86.5018
-"89","US","1992-01-01",121.5,"United States",86.0497
-"90","US","1992-04-01",120.5,"United States",85.1957
-"91","US","1992-07-01",119.7,"United States",84.4226
-"92","US","1992-10-01",118.7,"United States",84.0912
-"93","US","1993-01-01",117.7,"United States",83.6175
-"94","US","1993-04-01",117.8,"United States",83.3214
-"95","US","1993-07-01",118,"United States",83.5865
-"96","US","1993-10-01",118.4,"United States",83.7284
-"97","US","1994-01-01",118.2,"United States",83.5393
-"98","US","1994-04-01",118.3,"United States",83.447
-"99","US","1994-07-01",118.2,"United States",83.1304
-"100","US","1994-10-01",118.8,"United States",83.0773
-"101","US","1995-01-01",118.6,"United States",82.7774
-"102","US","1995-04-01",119.5,"United States",82.5395
-"103","US","1995-07-01",120.1,"United States",82.786
-"104","US","1995-10-01",120.8,"United States",82.8861
-"105","US","1996-01-01",121.1,"United States",82.7836
-"106","US","1996-04-01",121.6,"United States",82.5458
-"107","US","1996-07-01",121.8,"United States",82.5417
-"108","US","1996-10-01",121.6,"United States",82.4964
-"109","US","1997-01-01",121.3,"United States",82.6174
-"110","US","1997-04-01",121.8,"United States",83.0911
-"111","US","1997-07-01",122.5,"United States",83.7808
-"112","US","1997-10-01",122.9,"United States",84.7291
-"113","US","1998-01-01",123.6,"United States",86.0324
-"114","US","1998-04-01",125.5,"United States",86.8966
-"115","US","1998-07-01",126.5,"United States",88.065
-"116","US","1998-10-01",127.7,"United States",89.4067
-"117","US","1999-01-01",128.7,"United States",90.4675
-"118","US","1999-04-01",129.7,"United States",91.334
-"119","US","1999-07-01",131.4,"United States",92.5636
-"120","US","1999-10-01",132.3,"United States",93.9429
-"121","US","2000-01-01",133.4,"United States",95.3914
-"122","US","2000-04-01",134.3,"United States",96.7891
-"123","US","2000-07-01",134.9,"United States",98.1115
-"124","US","2000-10-01",135.4,"United States",99.8137
-"125","US","2001-01-01",134.9,"United States",101.1823
-"126","US","2001-04-01",137,"United States",101.988
-"127","US","2001-07-01",139.1,"United States",103.7272
-"128","US","2001-10-01",140,"United States",105.7498
-"129","US","2002-01-01",140.6,"United States",107.3011
-"130","US","2002-04-01",141.7,"United States",108.883
-"131","US","2002-07-01",142.6,"United States",111.1122
-"132","US","2002-10-01",144,"United States",113.0706
-"133","US","2003-01-01",144.5,"United States",114.2251
-"134","US","2003-04-01",146.9,"United States",116.312
-"135","US","2003-07-01",147.7,"United States",119.0696
-"136","US","2003-10-01",147.8,"United States",122.89
-"137","US","2004-01-01",148.1,"United States",126.008
-"138","US","2004-04-01",149,"United States",129.0855
-"139","US","2004-07-01",149.8,"United States",133.188
-"140","US","2004-10-01",151.6,"United States",137.1877
-"141","US","2005-01-01",151.6,"United States",141.9217
-"142","US","2005-04-01",153.1,"United States",145.6891
-"143","US","2005-07-01",154.3,"United States",148.9498
-"144","US","2005-10-01",155.7,"United States",152.3556
-"145","US","2006-01-01",157.3,"United States",153.8714
-"146","US","2006-04-01",159.1,"United States",150.9597
-"147","US","2006-07-01",160.5,"United States",149.1075
-"148","US","2006-10-01",162.3,"United States",149.9284
-"149","US","2007-01-01",163.3,"United States",146.6688
-"150","US","2007-04-01",165.9,"United States",140.0494
-"151","US","2007-07-01",167.7,"United States",135.6182
-"152","US","2007-10-01",169.2,"United States",130.2487
-"153","US","2008-01-01",169.9,"United States",123.5475
-"154","US","2008-04-01",169.5,"United States",115.5004
-"155","US","2008-07-01",170.3,"United States",108.9774
-"156","US","2008-10-01",168.8,"United States",106.4551
-"157","US","2009-01-01",168.2,"United States",103.9264
-"158","US","2009-04-01",168.9,"United States",102.714
-"159","US","2009-07-01",169.1,"United States",102.4165
-"160","US","2009-10-01",167.5,"United States",102.5928
-"161","US","2010-01-01",165.6,"United States",102.1944
-"162","US","2010-04-01",163,"United States",101.017
-"163","US","2010-07-01",161,"United States",99.0066
-"164","US","2010-10-01",159,"United States",97.8018
-"165","US","2011-01-01",157.3,"United States",95.7209
-"166","US","2011-04-01",155.9,"United States",93.7385
-"167","US","2011-07-01",154.8,"United States",93.74
-"168","US","2011-10-01",154,"United States",93.985
-"169","US","2012-01-01",152.5,"United States",94.2494
-"170","US","2012-04-01",151.3,"United States",95.6442
-"171","US","2012-07-01",151,"United States",97.3508
-"172","US","2012-10-01",150.8,"United States",99.4145
-"173","US","2013-01-01",149.6,"United States",101.3553
-"174","US","2013-04-01",149.5,"United States",103.4988
-"175","US","2013-07-01",149.8,"United States",105.5764
-"176","US","2013-10-01",149.9,"United States",107.9098
-"177","US","2014-01-01",149.7,"United States",108.4292
-"178","US","2014-04-01",149.6,"United States",108.0096
-"179","US","2014-07-01",148.8,"United States",109.2966
-"180","US","2014-10-01",148.9,"United States",111.8067
-"181","US","2015-01-01",148.2,"United States",113.7987
-"182","US","2015-04-01",148.9,"United States",113.8334
-"183","US","2015-07-01",148.9,"United States",115.1159
-"184","US","2015-10-01",149,"United States",117.2441
-"185","US","2016-01-01",149.5,"United States",118.6498
-"186","US","2016-04-01",150.2,"United States",118.6264
-"187","US","2016-07-01",151.3,"United States",119.8674
-"188","US","2016-10-01",150.8,"United States",121.4498
-"189","US","2017-01-01",151,"United States",122.1391
-"190","US","2017-04-01",151.6,"United States",123.1521
-"191","US","2017-07-01",151.6,"United States",124.5658
-"192","US","2017-10-01",152.4,"United States",126.0877
-"193","US","2018-01-01",151.5,"United States",126.9103
-"194","US","2018-04-01",152.2,"United States",127.1604
-"195","US","2018-07-01",151.7,"United States",127.8635
-"196","US","2018-10-01",151.6,"United States",129.0613
-"197","US","2019-01-01",151.3,"United States",129.8962
-"198","US","2019-04-01",151.6,"United States",129.5393
-"199","US","2019-07-01",151.8,"United States",130.3548
-"200","US","2019-10-01",151.4,"United States",131.7718
+"ID","date","cg_dtype","credit_gap_data_type","credit","reference_area","HPIndex"
+"63","US","1985-07-01","A","Credit-to-GDP ratios (actual data)",110.3,"United States",77.9601
+"64","US","1985-10-01","A","Credit-to-GDP ratios (actual data)",113,"United States",78.7503
+"65","US","1986-01-01","A","Credit-to-GDP ratios (actual data)",113.1,"United States",80.0794
+"66","US","1986-04-01","A","Credit-to-GDP ratios (actual data)",114.8,"United States",81.8735
+"67","US","1986-07-01","A","Credit-to-GDP ratios (actual data)",116.7,"United States",83.1403
+"68","US","1986-10-01","A","Credit-to-GDP ratios (actual data)",119.2,"United States",84.4355
+"69","US","1987-01-01","A","Credit-to-GDP ratios (actual data)",119.2,"United States",85.689
+"70","US","1987-04-01","A","Credit-to-GDP ratios (actual data)",120.8,"United States",86.576
+"71","US","1987-07-01","A","Credit-to-GDP ratios (actual data)",121.7,"United States",87.4278
+"72","US","1987-10-01","A","Credit-to-GDP ratios (actual data)",122.2,"United States",88.433
+"73","US","1988-01-01","A","Credit-to-GDP ratios (actual data)",122.4,"United States",89.3962
+"74","US","1988-04-01","A","Credit-to-GDP ratios (actual data)",123.4,"United States",90.4057
+"75","US","1988-07-01","A","Credit-to-GDP ratios (actual data)",123.7,"United States",91.7448
+"76","US","1988-10-01","A","Credit-to-GDP ratios (actual data)",124.4,"United States",93.0711
+"77","US","1989-01-01","A","Credit-to-GDP ratios (actual data)",123.9,"United States",94.0585
+"78","US","1989-04-01","A","Credit-to-GDP ratios (actual data)",124.5,"United States",93.8727
+"79","US","1989-07-01","A","Credit-to-GDP ratios (actual data)",124.2,"United States",94.3693
+"80","US","1989-10-01","A","Credit-to-GDP ratios (actual data)",124.7,"United States",94.7967
+"81","US","1990-01-01","A","Credit-to-GDP ratios (actual data)",125,"United States",94.1952
+"82","US","1990-04-01","A","Credit-to-GDP ratios (actual data)",125,"United States",93.4542
+"83","US","1990-07-01","A","Credit-to-GDP ratios (actual data)",124.7,"United States",91.586
+"84","US","1990-10-01","A","Credit-to-GDP ratios (actual data)",124.6,"United States",89.6244
+"85","US","1991-01-01","A","Credit-to-GDP ratios (actual data)",123.9,"United States",88.4051
+"86","US","1991-04-01","A","Credit-to-GDP ratios (actual data)",124.2,"United States",88.1535
+"87","US","1991-07-01","A","Credit-to-GDP ratios (actual data)",123.2,"United States",87.4006
+"88","US","1991-10-01","A","Credit-to-GDP ratios (actual data)",122.6,"United States",86.5018
+"89","US","1992-01-01","A","Credit-to-GDP ratios (actual data)",121.5,"United States",86.0497
+"90","US","1992-04-01","A","Credit-to-GDP ratios (actual data)",120.5,"United States",85.1957
+"91","US","1992-07-01","A","Credit-to-GDP ratios (actual data)",119.7,"United States",84.4226
+"92","US","1992-10-01","A","Credit-to-GDP ratios (actual data)",118.7,"United States",84.0912
+"93","US","1993-01-01","A","Credit-to-GDP ratios (actual data)",117.7,"United States",83.6175
+"94","US","1993-04-01","A","Credit-to-GDP ratios (actual data)",117.8,"United States",83.3214
+"95","US","1993-07-01","A","Credit-to-GDP ratios (actual data)",118,"United States",83.5865
+"96","US","1993-10-01","A","Credit-to-GDP ratios (actual data)",118.4,"United States",83.7284
+"97","US","1994-01-01","A","Credit-to-GDP ratios (actual data)",118.2,"United States",83.5393
+"98","US","1994-04-01","A","Credit-to-GDP ratios (actual data)",118.3,"United States",83.447
+"99","US","1994-07-01","A","Credit-to-GDP ratios (actual data)",118.2,"United States",83.1304
+"100","US","1994-10-01","A","Credit-to-GDP ratios (actual data)",118.8,"United States",83.0773
+"101","US","1995-01-01","A","Credit-to-GDP ratios (actual data)",118.6,"United States",82.7774
+"102","US","1995-04-01","A","Credit-to-GDP ratios (actual data)",119.5,"United States",82.5395
+"103","US","1995-07-01","A","Credit-to-GDP ratios (actual data)",120.1,"United States",82.786
+"104","US","1995-10-01","A","Credit-to-GDP ratios (actual data)",120.8,"United States",82.8861
+"105","US","1996-01-01","A","Credit-to-GDP ratios (actual data)",121.1,"United States",82.7836
+"106","US","1996-04-01","A","Credit-to-GDP ratios (actual data)",121.6,"United States",82.5458
+"107","US","1996-07-01","A","Credit-to-GDP ratios (actual data)",121.8,"United States",82.5417
+"108","US","1996-10-01","A","Credit-to-GDP ratios (actual data)",121.6,"United States",82.4964
+"109","US","1997-01-01","A","Credit-to-GDP ratios (actual data)",121.3,"United States",82.6174
+"110","US","1997-04-01","A","Credit-to-GDP ratios (actual data)",121.8,"United States",83.0911
+"111","US","1997-07-01","A","Credit-to-GDP ratios (actual data)",122.5,"United States",83.7808
+"112","US","1997-10-01","A","Credit-to-GDP ratios (actual data)",122.9,"United States",84.7291
+"113","US","1998-01-01","A","Credit-to-GDP ratios (actual data)",123.6,"United States",86.0324
+"114","US","1998-04-01","A","Credit-to-GDP ratios (actual data)",125.5,"United States",86.8966
+"115","US","1998-07-01","A","Credit-to-GDP ratios (actual data)",126.5,"United States",88.065
+"116","US","1998-10-01","A","Credit-to-GDP ratios (actual data)",127.7,"United States",89.4067
+"117","US","1999-01-01","A","Credit-to-GDP ratios (actual data)",128.7,"United States",90.4675
+"118","US","1999-04-01","A","Credit-to-GDP ratios (actual data)",129.7,"United States",91.334
+"119","US","1999-07-01","A","Credit-to-GDP ratios (actual data)",131.4,"United States",92.5636
+"120","US","1999-10-01","A","Credit-to-GDP ratios (actual data)",132.3,"United States",93.9429
+"121","US","2000-01-01","A","Credit-to-GDP ratios (actual data)",133.4,"United States",95.3914
+"122","US","2000-04-01","A","Credit-to-GDP ratios (actual data)",134.3,"United States",96.7891
+"123","US","2000-07-01","A","Credit-to-GDP ratios (actual data)",134.9,"United States",98.1115
+"124","US","2000-10-01","A","Credit-to-GDP ratios (actual data)",135.4,"United States",99.8137
+"125","US","2001-01-01","A","Credit-to-GDP ratios (actual data)",134.9,"United States",101.1823
+"126","US","2001-04-01","A","Credit-to-GDP ratios (actual data)",137,"United States",101.988
+"127","US","2001-07-01","A","Credit-to-GDP ratios (actual data)",139.1,"United States",103.7272
+"128","US","2001-10-01","A","Credit-to-GDP ratios (actual data)",140,"United States",105.7498
+"129","US","2002-01-01","A","Credit-to-GDP ratios (actual data)",140.6,"United States",107.3011
+"130","US","2002-04-01","A","Credit-to-GDP ratios (actual data)",141.7,"United States",108.883
+"131","US","2002-07-01","A","Credit-to-GDP ratios (actual data)",142.6,"United States",111.1122
+"132","US","2002-10-01","A","Credit-to-GDP ratios (actual data)",144,"United States",113.0706
+"133","US","2003-01-01","A","Credit-to-GDP ratios (actual data)",144.5,"United States",114.2251
+"134","US","2003-04-01","A","Credit-to-GDP ratios (actual data)",146.9,"United States",116.312
+"135","US","2003-07-01","A","Credit-to-GDP ratios (actual data)",147.7,"United States",119.0696
+"136","US","2003-10-01","A","Credit-to-GDP ratios (actual data)",147.8,"United States",122.89
+"137","US","2004-01-01","A","Credit-to-GDP ratios (actual data)",148.1,"United States",126.008
+"138","US","2004-04-01","A","Credit-to-GDP ratios (actual data)",149,"United States",129.0855
+"139","US","2004-07-01","A","Credit-to-GDP ratios (actual data)",149.8,"United States",133.188
+"140","US","2004-10-01","A","Credit-to-GDP ratios (actual data)",151.6,"United States",137.1877
+"141","US","2005-01-01","A","Credit-to-GDP ratios (actual data)",151.6,"United States",141.9217
+"142","US","2005-04-01","A","Credit-to-GDP ratios (actual data)",153.1,"United States",145.6891
+"143","US","2005-07-01","A","Credit-to-GDP ratios (actual data)",154.3,"United States",148.9498
+"144","US","2005-10-01","A","Credit-to-GDP ratios (actual data)",155.7,"United States",152.3556
+"145","US","2006-01-01","A","Credit-to-GDP ratios (actual data)",157.3,"United States",153.8714
+"146","US","2006-04-01","A","Credit-to-GDP ratios (actual data)",159.1,"United States",150.9597
+"147","US","2006-07-01","A","Credit-to-GDP ratios (actual data)",160.5,"United States",149.1075
+"148","US","2006-10-01","A","Credit-to-GDP ratios (actual data)",162.3,"United States",149.9284
+"149","US","2007-01-01","A","Credit-to-GDP ratios (actual data)",163.3,"United States",146.6688
+"150","US","2007-04-01","A","Credit-to-GDP ratios (actual data)",165.9,"United States",140.0494
+"151","US","2007-07-01","A","Credit-to-GDP ratios (actual data)",167.7,"United States",135.6182
+"152","US","2007-10-01","A","Credit-to-GDP ratios (actual data)",169.2,"United States",130.2487
+"153","US","2008-01-01","A","Credit-to-GDP ratios (actual data)",169.9,"United States",123.5475
+"154","US","2008-04-01","A","Credit-to-GDP ratios (actual data)",169.5,"United States",115.5004
+"155","US","2008-07-01","A","Credit-to-GDP ratios (actual data)",170.3,"United States",108.9774
+"156","US","2008-10-01","A","Credit-to-GDP ratios (actual data)",168.8,"United States",106.4551
+"157","US","2009-01-01","A","Credit-to-GDP ratios (actual data)",168.2,"United States",103.9264
+"158","US","2009-04-01","A","Credit-to-GDP ratios (actual data)",168.9,"United States",102.714
+"159","US","2009-07-01","A","Credit-to-GDP ratios (actual data)",169.1,"United States",102.4165
+"160","US","2009-10-01","A","Credit-to-GDP ratios (actual data)",167.5,"United States",102.5928
+"161","US","2010-01-01","A","Credit-to-GDP ratios (actual data)",165.6,"United States",102.1944
+"162","US","2010-04-01","A","Credit-to-GDP ratios (actual data)",163,"United States",101.017
+"163","US","2010-07-01","A","Credit-to-GDP ratios (actual data)",161,"United States",99.0066
+"164","US","2010-10-01","A","Credit-to-GDP ratios (actual data)",159,"United States",97.8018
+"165","US","2011-01-01","A","Credit-to-GDP ratios (actual data)",157.3,"United States",95.7209
+"166","US","2011-04-01","A","Credit-to-GDP ratios (actual data)",155.9,"United States",93.7385
+"167","US","2011-07-01","A","Credit-to-GDP ratios (actual data)",154.8,"United States",93.74
+"168","US","2011-10-01","A","Credit-to-GDP ratios (actual data)",154,"United States",93.985
+"169","US","2012-01-01","A","Credit-to-GDP ratios (actual data)",152.5,"United States",94.2494
+"170","US","2012-04-01","A","Credit-to-GDP ratios (actual data)",151.3,"United States",95.6442
+"171","US","2012-07-01","A","Credit-to-GDP ratios (actual data)",151,"United States",97.3508
+"172","US","2012-10-01","A","Credit-to-GDP ratios (actual data)",150.8,"United States",99.4145
+"173","US","2013-01-01","A","Credit-to-GDP ratios (actual data)",149.6,"United States",101.3553
+"174","US","2013-04-01","A","Credit-to-GDP ratios (actual data)",149.5,"United States",103.4988
+"175","US","2013-07-01","A","Credit-to-GDP ratios (actual data)",149.8,"United States",105.5764
+"176","US","2013-10-01","A","Credit-to-GDP ratios (actual data)",149.9,"United States",107.9098
+"177","US","2014-01-01","A","Credit-to-GDP ratios (actual data)",149.7,"United States",108.4292
+"178","US","2014-04-01","A","Credit-to-GDP ratios (actual data)",149.6,"United States",108.0096
+"179","US","2014-07-01","A","Credit-to-GDP ratios (actual data)",148.8,"United States",109.2966
+"180","US","2014-10-01","A","Credit-to-GDP ratios (actual data)",148.9,"United States",111.8067
+"181","US","2015-01-01","A","Credit-to-GDP ratios (actual data)",148.2,"United States",113.7987
+"182","US","2015-04-01","A","Credit-to-GDP ratios (actual data)",148.9,"United States",113.8334
+"183","US","2015-07-01","A","Credit-to-GDP ratios (actual data)",148.9,"United States",115.1159
+"184","US","2015-10-01","A","Credit-to-GDP ratios (actual data)",149,"United States",117.2441
+"185","US","2016-01-01","A","Credit-to-GDP ratios (actual data)",149.5,"United States",118.6498
+"186","US","2016-04-01","A","Credit-to-GDP ratios (actual data)",150.2,"United States",118.6264
+"187","US","2016-07-01","A","Credit-to-GDP ratios (actual data)",151.3,"United States",119.8674
+"188","US","2016-10-01","A","Credit-to-GDP ratios (actual data)",150.8,"United States",121.4498
+"189","US","2017-01-01","A","Credit-to-GDP ratios (actual data)",151,"United States",122.1391
+"190","US","2017-04-01","A","Credit-to-GDP ratios (actual data)",151.6,"United States",123.1521
+"191","US","2017-07-01","A","Credit-to-GDP ratios (actual data)",151.6,"United States",124.5658
+"192","US","2017-10-01","A","Credit-to-GDP ratios (actual data)",152.4,"United States",126.0877
+"193","US","2018-01-01","A","Credit-to-GDP ratios (actual data)",151.5,"United States",126.9103
+"194","US","2018-04-01","A","Credit-to-GDP ratios (actual data)",152.2,"United States",127.1604
+"195","US","2018-07-01","A","Credit-to-GDP ratios (actual data)",151.7,"United States",127.8635
+"196","US","2018-10-01","A","Credit-to-GDP ratios (actual data)",151.6,"United States",129.0613
+"197","US","2019-01-01","A","Credit-to-GDP ratios (actual data)",151.3,"United States",129.8962
+"198","US","2019-04-01","A","Credit-to-GDP ratios (actual data)",151.6,"United States",129.5393
+"199","US","2019-07-01","A","Credit-to-GDP ratios (actual data)",151.8,"United States",130.3548
+"200","US","2019-10-01","A","Credit-to-GDP ratios (actual data)",151.4,"United States",131.7718
+"201","US","2020-01-01","A","Credit-to-GDP ratios (actual data)",154.7,"United States",133.0888
+"202","US","2020-04-01","A","Credit-to-GDP ratios (actual data)",161.1,"United States",135.3841
+"203","US","2020-07-01","A","Credit-to-GDP ratios (actual data)",162.8,"United States",137.1438
+"204","US","2020-10-01","A","Credit-to-GDP ratios (actual data)",164.8,"United States",141.3415
+"205","US","2021-01-01","A","Credit-to-GDP ratios (actual data)",165.8,"United States",145.7133
+"206","US","2021-04-01","A","Credit-to-GDP ratios (actual data)",161.3,"United States",150.4503

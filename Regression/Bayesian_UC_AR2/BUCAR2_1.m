@@ -6,7 +6,7 @@ addpath('functions');
 
 
 %*********** Data input
-country='US';
+country='AU';
 input_filepath = ['../../Data Collection/1.Latest/Paper2/MergedData_Matlab_' country '.txt'];
 data_im = dlmread(input_filepath,',',1,1);
 y = data_im(:,1);
@@ -66,15 +66,19 @@ theta0
 Theta1
 AA
 
-
+% converged (tested) prior value for AA
+AA = [1;-0.02;19.6;6.4]; % for UK
+% AA = [1;-.02;21;6.9]; %for US
 %**************step 2 set scale factor for the metropolis hastings
 K=0.4;  %scaling factor
 P=(chol(hess*K)); %compute variance of the random walk
 
-
+%*** Do not run when testing
 Gammaold=AA;
-REPS=200000;
-BURN=10000;
+%***
+
+REPS=150000;
+BURN=50000;
 naccept=0;
 out1=zeros(REPS-BURN,4);
 out2=zeros(REPS-BURN,1);
@@ -101,9 +105,10 @@ out2=zeros(REPS-BURN,1);
 for j=1:REPS   
     if 0 == mod(j, 10000)
       disp(j)
+      disp(Gammaold)
     end
     %step 1 draw new Gamma
-    Gammanew=Gammaold+(randn(1,4)*P)';
+    Gammanew=Gammaold+(normrnd(0, 1, [1,4])*P)';
     
     %step 2 check elements of D are positive, variances positive and
     %elements of F sum to less than 1
@@ -171,3 +176,19 @@ subplot(3,3,4);
 plot(out1(:,4));
 title('Q_{2}');
 legend('MH draws');
+
+
+mean(out1(:,1))
+mean(out1(:,2))
+mean(out1(:,3))
+mean(out1(:,4))
+
+% Manual save results: 
+% US: 1.0025; -0.0434; 21.5355; 6.7442
+% UK: 1.0038; -0.0412; 19.548; 6.4258
+
+
+mean(out1(50000:end,1))
+mean(out1(50000:end,2))
+mean(out1(50000:end,3))
+mean(out1(50000:end,4))

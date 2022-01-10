@@ -34,7 +34,10 @@ nLeap = 10;
 vars  = repmat(1, 1, 5);
 mass_vector = 1./vars; 
 
-
+mvnpdf(y, mu, eye(size(y,1)))
+mvnpdf(y, X*theta_start(1,1:4)', eye(size(y,1))*(theta_start(1,5)^2))
+lnmvnpdf(y, X*theta_start(1,1:4)', eye(size(y,1))*(theta_start(1,5)^2))
+lpdfgam(1,0.001,0.001)
 %%---- 7th part
 % Run the model
 fit_hmc = hmc_run(  theta_start, nsim, wu,  stepsize,  nLeap,  mass_vector,  X,  y);

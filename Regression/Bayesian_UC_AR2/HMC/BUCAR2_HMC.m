@@ -43,3 +43,5 @@ subplot(3,3,4);
 plot(out1(:,4));
 title('Q_{2}');
 legend('MH draws');
+
+

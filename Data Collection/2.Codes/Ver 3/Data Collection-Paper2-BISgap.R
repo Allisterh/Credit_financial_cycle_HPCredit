@@ -1,10 +1,7 @@
 rm(list=ls())
 #----
 #1. Parameter Setup
-country = "US"
-
-#Example
-# country = "US"
+country = "JP"
 
 
 # Libraries
@@ -39,7 +36,7 @@ rates <- get_bis(datasets$url[datasets$name == "Credit-to-GDP gaps"], quiet = TR
 rates_plot <- rates %>%
   mutate(date = as.Date(as.yearqtr(date, "%Y-q%q"))) %>%
   filter(grepl(clist, borrowers_cty))%>%
-  filter(grepl("^(C|A)", cg_dtype))
+  filter(grepl("^(A)", cg_dtype))
 
 
 #filter(grepl("^(C|A)", cg_dtype)) 
@@ -79,3 +76,7 @@ df_1$date = as.Date(df_1$date)
 filepath = sprintf("credit_%s.txt",country)
 write.table(df_1, filepath, sep=',' )
 
+
+plot(df_1$obs_value)
+summary(df_1$obs_value)
+summary(df_1$date)

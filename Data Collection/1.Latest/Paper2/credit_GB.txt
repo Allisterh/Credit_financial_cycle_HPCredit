@@ -1,235 +1,235 @@
-"ID","borrowers_country","date","credit"
-"1","GB","United Kingdom",1963-01-01,55.4
-"2","GB","United Kingdom",1963-04-01,54.7
-"3","GB","United Kingdom",1963-07-01,53.9
-"4","GB","United Kingdom",1963-10-01,52.7
-"5","GB","United Kingdom",1964-01-01,60
-"6","GB","United Kingdom",1964-04-01,58.7
-"7","GB","United Kingdom",1964-07-01,57.5
-"8","GB","United Kingdom",1964-10-01,56.2
-"9","GB","United Kingdom",1965-01-01,62.8
-"10","GB","United Kingdom",1965-04-01,61.7
-"11","GB","United Kingdom",1965-07-01,60.4
-"12","GB","United Kingdom",1965-10-01,59.4
-"13","GB","United Kingdom",1966-01-01,58.5
-"14","GB","United Kingdom",1966-04-01,57.4
-"15","GB","United Kingdom",1966-07-01,63.5
-"16","GB","United Kingdom",1966-10-01,62.4
-"17","GB","United Kingdom",1967-01-01,61.3
-"18","GB","United Kingdom",1967-04-01,60.4
-"19","GB","United Kingdom",1967-07-01,63.4
-"20","GB","United Kingdom",1967-10-01,62.8
-"21","GB","United Kingdom",1968-01-01,61.6
-"22","GB","United Kingdom",1968-04-01,64.2
-"23","GB","United Kingdom",1968-07-01,62.6
-"24","GB","United Kingdom",1968-10-01,60.7
-"25","GB","United Kingdom",1969-01-01,59.5
-"26","GB","United Kingdom",1969-04-01,61.7
-"27","GB","United Kingdom",1969-07-01,60.5
-"28","GB","United Kingdom",1969-10-01,59.4
-"29","GB","United Kingdom",1970-01-01,58
-"30","GB","United Kingdom",1970-04-01,59.4
-"31","GB","United Kingdom",1970-07-01,57.6
-"32","GB","United Kingdom",1970-10-01,58.6
-"33","GB","United Kingdom",1971-01-01,56.9
-"34","GB","United Kingdom",1971-04-01,55.3
-"35","GB","United Kingdom",1971-07-01,56.2
-"36","GB","United Kingdom",1971-10-01,57.2
-"37","GB","United Kingdom",1972-01-01,60.6
-"38","GB","United Kingdom",1972-04-01,61.3
-"39","GB","United Kingdom",1972-07-01,64.8
-"40","GB","United Kingdom",1972-10-01,65.1
-"41","GB","United Kingdom",1973-01-01,64.3
-"42","GB","United Kingdom",1973-04-01,66.4
-"43","GB","United Kingdom",1973-07-01,66
-"44","GB","United Kingdom",1973-10-01,64
-"45","GB","United Kingdom",1974-01-01,65.1
-"46","GB","United Kingdom",1974-04-01,65
-"47","GB","United Kingdom",1974-07-01,64.2
-"48","GB","United Kingdom",1974-10-01,61.4
-"49","GB","United Kingdom",1975-01-01,59.6
-"50","GB","United Kingdom",1975-04-01,59.4
-"51","GB","United Kingdom",1975-07-01,56.6
-"52","GB","United Kingdom",1975-10-01,58
-"53","GB","United Kingdom",1976-01-01,57.8
-"54","GB","United Kingdom",1976-04-01,57.3
-"55","GB","United Kingdom",1976-07-01,57.5
-"56","GB","United Kingdom",1976-10-01,58.4
-"57","GB","United Kingdom",1977-01-01,56.4
-"58","GB","United Kingdom",1977-04-01,56.5
-"59","GB","United Kingdom",1977-07-01,56
-"60","GB","United Kingdom",1977-10-01,56.1
-"61","GB","United Kingdom",1978-01-01,56
-"62","GB","United Kingdom",1978-04-01,56.5
-"63","GB","United Kingdom",1978-07-01,55.7
-"64","GB","United Kingdom",1978-10-01,55.5
-"65","GB","United Kingdom",1979-01-01,56.2
-"66","GB","United Kingdom",1979-04-01,56.8
-"67","GB","United Kingdom",1979-07-01,56.3
-"68","GB","United Kingdom",1979-10-01,55.7
-"69","GB","United Kingdom",1980-01-01,56.9
-"70","GB","United Kingdom",1980-04-01,57.2
-"71","GB","United Kingdom",1980-07-01,56.9
-"72","GB","United Kingdom",1980-10-01,56.8
-"73","GB","United Kingdom",1981-01-01,56.6
-"74","GB","United Kingdom",1981-04-01,56.6
-"75","GB","United Kingdom",1981-07-01,58.2
-"76","GB","United Kingdom",1981-10-01,60.8
-"77","GB","United Kingdom",1982-01-01,61.2
-"78","GB","United Kingdom",1982-04-01,63.3
-"79","GB","United Kingdom",1982-07-01,64.1
-"80","GB","United Kingdom",1982-10-01,65.7
-"81","GB","United Kingdom",1983-01-01,66.6
-"82","GB","United Kingdom",1983-04-01,67.6
-"83","GB","United Kingdom",1983-07-01,68
-"84","GB","United Kingdom",1983-10-01,68.6
-"85","GB","United Kingdom",1984-01-01,70.7
-"86","GB","United Kingdom",1984-04-01,72.5
-"87","GB","United Kingdom",1984-07-01,73.5
-"88","GB","United Kingdom",1984-10-01,76.1
-"89","GB","United Kingdom",1985-01-01,77.7
-"90","GB","United Kingdom",1985-04-01,76.7
-"91","GB","United Kingdom",1985-07-01,78.2
-"92","GB","United Kingdom",1985-10-01,77.4
-"93","GB","United Kingdom",1986-01-01,79.9
-"94","GB","United Kingdom",1986-04-01,81.2
-"95","GB","United Kingdom",1986-07-01,81.8
-"96","GB","United Kingdom",1986-10-01,84.7
-"97","GB","United Kingdom",1987-01-01,86.5
-"98","GB","United Kingdom",1987-04-01,87.3
-"99","GB","United Kingdom",1987-07-01,88.7
-"100","GB","United Kingdom",1987-10-01,88.6
-"101","GB","United Kingdom",1988-01-01,90.9
-"102","GB","United Kingdom",1988-04-01,94.6
-"103","GB","United Kingdom",1988-07-01,97.3
-"104","GB","United Kingdom",1988-10-01,98.3
-"105","GB","United Kingdom",1989-01-01,101.6
-"106","GB","United Kingdom",1989-04-01,104.1
-"107","GB","United Kingdom",1989-07-01,106.4
-"108","GB","United Kingdom",1989-10-01,107.3
-"109","GB","United Kingdom",1990-01-01,113
-"110","GB","United Kingdom",1990-04-01,114.5
-"111","GB","United Kingdom",1990-07-01,114.3
-"112","GB","United Kingdom",1990-10-01,115.3
-"113","GB","United Kingdom",1991-01-01,116.5
-"114","GB","United Kingdom",1991-04-01,118.8
-"115","GB","United Kingdom",1991-07-01,118.6
-"116","GB","United Kingdom",1991-10-01,115.8
-"117","GB","United Kingdom",1992-01-01,116.4
-"118","GB","United Kingdom",1992-04-01,115.4
-"119","GB","United Kingdom",1992-07-01,115.4
-"120","GB","United Kingdom",1992-10-01,117.8
-"121","GB","United Kingdom",1993-01-01,116.8
-"122","GB","United Kingdom",1993-04-01,117
-"123","GB","United Kingdom",1993-07-01,117.4
-"124","GB","United Kingdom",1993-10-01,118.9
-"125","GB","United Kingdom",1994-01-01,117.4
-"126","GB","United Kingdom",1994-04-01,114.2
-"127","GB","United Kingdom",1994-07-01,113.7
-"128","GB","United Kingdom",1994-10-01,113.6
-"129","GB","United Kingdom",1995-01-01,113.3
-"130","GB","United Kingdom",1995-04-01,113.3
-"131","GB","United Kingdom",1995-07-01,113.3
-"132","GB","United Kingdom",1995-10-01,115.9
-"133","GB","United Kingdom",1996-01-01,114.6
-"134","GB","United Kingdom",1996-04-01,116
-"135","GB","United Kingdom",1996-07-01,115.2
-"136","GB","United Kingdom",1996-10-01,114.8
-"137","GB","United Kingdom",1997-01-01,107.9
-"138","GB","United Kingdom",1997-04-01,109.7
-"139","GB","United Kingdom",1997-07-01,111.9
-"140","GB","United Kingdom",1997-10-01,112.1
-"141","GB","United Kingdom",1998-01-01,114
-"142","GB","United Kingdom",1998-04-01,115.7
-"143","GB","United Kingdom",1998-07-01,119.4
-"144","GB","United Kingdom",1998-10-01,120
-"145","GB","United Kingdom",1999-01-01,122.1
-"146","GB","United Kingdom",1999-04-01,124.8
-"147","GB","United Kingdom",1999-07-01,125.8
-"148","GB","United Kingdom",1999-10-01,128.2
-"149","GB","United Kingdom",2000-01-01,130.1
-"150","GB","United Kingdom",2000-04-01,133.5
-"151","GB","United Kingdom",2000-07-01,135.1
-"152","GB","United Kingdom",2000-10-01,135.6
-"153","GB","United Kingdom",2001-01-01,139.2
-"154","GB","United Kingdom",2001-04-01,140.1
-"155","GB","United Kingdom",2001-07-01,141.7
-"156","GB","United Kingdom",2001-10-01,144.2
-"157","GB","United Kingdom",2002-01-01,146.1
-"158","GB","United Kingdom",2002-04-01,148.7
-"159","GB","United Kingdom",2002-07-01,153.8
-"160","GB","United Kingdom",2002-10-01,153.8
-"161","GB","United Kingdom",2003-01-01,151.3
-"162","GB","United Kingdom",2003-04-01,153.7
-"163","GB","United Kingdom",2003-07-01,154.2
-"164","GB","United Kingdom",2003-10-01,154
-"165","GB","United Kingdom",2004-01-01,153.8
-"166","GB","United Kingdom",2004-04-01,154.1
-"167","GB","United Kingdom",2004-07-01,156.6
-"168","GB","United Kingdom",2004-10-01,157.9
-"169","GB","United Kingdom",2005-01-01,158.7
-"170","GB","United Kingdom",2005-04-01,162.4
-"171","GB","United Kingdom",2005-07-01,164.5
-"172","GB","United Kingdom",2005-10-01,165.5
-"173","GB","United Kingdom",2006-01-01,166.3
-"174","GB","United Kingdom",2006-04-01,168.7
-"175","GB","United Kingdom",2006-07-01,172
-"176","GB","United Kingdom",2006-10-01,171.9
-"177","GB","United Kingdom",2007-01-01,170.1
-"178","GB","United Kingdom",2007-04-01,171
-"179","GB","United Kingdom",2007-07-01,174.1
-"180","GB","United Kingdom",2007-10-01,175.6
-"181","GB","United Kingdom",2008-01-01,178.6
-"182","GB","United Kingdom",2008-04-01,178.1
-"183","GB","United Kingdom",2008-07-01,179.1
-"184","GB","United Kingdom",2008-10-01,185.7
-"185","GB","United Kingdom",2009-01-01,186
-"186","GB","United Kingdom",2009-04-01,182.4
-"187","GB","United Kingdom",2009-07-01,185.7
-"188","GB","United Kingdom",2009-10-01,185.4
-"189","GB","United Kingdom",2010-01-01,186.6
-"190","GB","United Kingdom",2010-04-01,182.6
-"191","GB","United Kingdom",2010-07-01,182.3
-"192","GB","United Kingdom",2010-10-01,177.7
-"193","GB","United Kingdom",2011-01-01,176.2
-"194","GB","United Kingdom",2011-04-01,175.7
-"195","GB","United Kingdom",2011-07-01,174.6
-"196","GB","United Kingdom",2011-10-01,172.9
-"197","GB","United Kingdom",2012-01-01,175.2
-"198","GB","United Kingdom",2012-04-01,176.3
-"199","GB","United Kingdom",2012-07-01,176.1
-"200","GB","United Kingdom",2012-10-01,173.7
-"201","GB","United Kingdom",2013-01-01,171.2
-"202","GB","United Kingdom",2013-04-01,172.2
-"203","GB","United Kingdom",2013-07-01,169.6
-"204","GB","United Kingdom",2013-10-01,166.8
-"205","GB","United Kingdom",2014-01-01,163.6
-"206","GB","United Kingdom",2014-04-01,161.2
-"207","GB","United Kingdom",2014-07-01,160
-"208","GB","United Kingdom",2014-10-01,158.6
-"209","GB","United Kingdom",2015-01-01,160.1
-"210","GB","United Kingdom",2015-04-01,155.7
-"211","GB","United Kingdom",2015-07-01,156
-"212","GB","United Kingdom",2015-10-01,156
-"213","GB","United Kingdom",2016-01-01,156.4
-"214","GB","United Kingdom",2016-04-01,159.2
-"215","GB","United Kingdom",2016-07-01,161.4
-"216","GB","United Kingdom",2016-10-01,159.4
-"217","GB","United Kingdom",2017-01-01,160.1
-"218","GB","United Kingdom",2017-04-01,159.7
-"219","GB","United Kingdom",2017-07-01,160.9
-"220","GB","United Kingdom",2017-10-01,161.6
-"221","GB","United Kingdom",2018-01-01,159.6
-"222","GB","United Kingdom",2018-04-01,159.1
-"223","GB","United Kingdom",2018-07-01,157
-"224","GB","United Kingdom",2018-10-01,156.3
-"225","GB","United Kingdom",2019-01-01,154.1
-"226","GB","United Kingdom",2019-04-01,155.2
-"227","GB","United Kingdom",2019-07-01,156.8
-"228","GB","United Kingdom",2019-10-01,154.8
-"229","GB","United Kingdom",2020-01-01,156.2
-"230","GB","United Kingdom",2020-04-01,164.4
-"231","GB","United Kingdom",2020-07-01,164.7
-"232","GB","United Kingdom",2020-10-01,166.6
-"233","GB","United Kingdom",2021-01-01,164.9
-"234","GB","United Kingdom",2021-04-01,160.3
+"ID","borrowers_country","cg_dtype","credit_gap_data_type","date","obs_value"
+"1","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1963-01-01,55.4
+"2","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1963-04-01,54.7
+"3","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1963-07-01,53.9
+"4","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1963-10-01,52.7
+"5","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1964-01-01,60
+"6","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1964-04-01,58.7
+"7","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1964-07-01,57.5
+"8","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1964-10-01,56.2
+"9","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1965-01-01,62.8
+"10","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1965-04-01,61.7
+"11","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1965-07-01,60.4
+"12","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1965-10-01,59.4
+"13","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1966-01-01,58.5
+"14","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1966-04-01,57.4
+"15","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1966-07-01,63.5
+"16","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1966-10-01,62.4
+"17","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1967-01-01,61.3
+"18","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1967-04-01,60.4
+"19","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1967-07-01,63.4
+"20","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1967-10-01,62.8
+"21","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1968-01-01,61.6
+"22","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1968-04-01,64.2
+"23","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1968-07-01,62.6
+"24","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1968-10-01,60.7
+"25","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1969-01-01,59.5
+"26","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1969-04-01,61.7
+"27","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1969-07-01,60.5
+"28","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1969-10-01,59.4
+"29","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1970-01-01,58
+"30","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1970-04-01,59.4
+"31","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1970-07-01,57.6
+"32","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1970-10-01,58.6
+"33","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1971-01-01,56.9
+"34","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1971-04-01,55.3
+"35","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1971-07-01,56.2
+"36","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1971-10-01,57.2
+"37","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1972-01-01,60.6
+"38","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1972-04-01,61.3
+"39","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1972-07-01,64.8
+"40","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1972-10-01,65.1
+"41","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1973-01-01,64.3
+"42","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1973-04-01,66.4
+"43","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1973-07-01,66
+"44","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1973-10-01,64
+"45","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1974-01-01,65.1
+"46","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1974-04-01,65
+"47","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1974-07-01,64.2
+"48","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1974-10-01,61.4
+"49","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1975-01-01,59.6
+"50","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1975-04-01,59.4
+"51","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1975-07-01,56.6
+"52","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1975-10-01,58
+"53","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1976-01-01,57.8
+"54","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1976-04-01,57.3
+"55","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1976-07-01,57.5
+"56","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1976-10-01,58.4
+"57","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1977-01-01,56.4
+"58","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1977-04-01,56.5
+"59","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1977-07-01,56
+"60","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1977-10-01,56.1
+"61","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1978-01-01,56
+"62","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1978-04-01,56.5
+"63","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1978-07-01,55.7
+"64","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1978-10-01,55.5
+"65","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1979-01-01,56.2
+"66","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1979-04-01,56.8
+"67","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1979-07-01,56.3
+"68","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1979-10-01,55.7
+"69","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1980-01-01,56.9
+"70","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1980-04-01,57.2
+"71","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1980-07-01,56.9
+"72","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1980-10-01,56.8
+"73","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1981-01-01,56.6
+"74","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1981-04-01,56.6
+"75","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1981-07-01,58.2
+"76","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1981-10-01,60.8
+"77","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1982-01-01,61.2
+"78","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1982-04-01,63.3
+"79","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1982-07-01,64.1
+"80","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1982-10-01,65.7
+"81","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1983-01-01,66.6
+"82","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1983-04-01,67.6
+"83","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1983-07-01,68
+"84","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1983-10-01,68.6
+"85","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1984-01-01,70.7
+"86","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1984-04-01,72.5
+"87","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1984-07-01,73.5
+"88","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1984-10-01,76.1
+"89","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1985-01-01,77.7
+"90","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1985-04-01,76.7
+"91","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1985-07-01,78.2
+"92","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1985-10-01,77.4
+"93","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1986-01-01,79.9
+"94","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1986-04-01,81.2
+"95","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1986-07-01,81.8
+"96","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1986-10-01,84.7
+"97","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1987-01-01,86.5
+"98","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1987-04-01,87.3
+"99","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1987-07-01,88.7
+"100","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1987-10-01,88.6
+"101","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1988-01-01,90.9
+"102","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1988-04-01,94.6
+"103","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1988-07-01,97.3
+"104","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1988-10-01,98.3
+"105","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1989-01-01,101.6
+"106","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1989-04-01,104.1
+"107","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1989-07-01,106.4
+"108","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1989-10-01,107.3
+"109","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1990-01-01,113
+"110","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1990-04-01,114.5
+"111","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1990-07-01,114.3
+"112","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1990-10-01,115.3
+"113","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1991-01-01,116.5
+"114","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1991-04-01,118.8
+"115","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1991-07-01,118.6
+"116","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1991-10-01,115.8
+"117","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1992-01-01,116.4
+"118","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1992-04-01,115.4
+"119","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1992-07-01,115.4
+"120","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1992-10-01,117.8
+"121","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1993-01-01,116.8
+"122","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1993-04-01,117
+"123","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1993-07-01,117.4
+"124","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1993-10-01,118.9
+"125","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1994-01-01,117.4
+"126","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1994-04-01,114.2
+"127","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1994-07-01,113.7
+"128","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1994-10-01,113.6
+"129","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1995-01-01,113.3
+"130","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1995-04-01,113.3
+"131","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1995-07-01,113.3
+"132","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1995-10-01,115.9
+"133","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1996-01-01,114.6
+"134","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1996-04-01,116
+"135","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1996-07-01,115.2
+"136","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1996-10-01,114.8
+"137","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1997-01-01,107.9
+"138","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1997-04-01,109.7
+"139","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1997-07-01,111.9
+"140","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1997-10-01,112.1
+"141","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1998-01-01,114
+"142","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1998-04-01,115.7
+"143","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1998-07-01,119.4
+"144","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1998-10-01,120
+"145","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1999-01-01,122.1
+"146","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1999-04-01,124.8
+"147","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1999-07-01,125.8
+"148","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",1999-10-01,128.2
+"149","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2000-01-01,130.1
+"150","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2000-04-01,133.5
+"151","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2000-07-01,135.1
+"152","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2000-10-01,135.6
+"153","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2001-01-01,139.2
+"154","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2001-04-01,140.1
+"155","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2001-07-01,141.7
+"156","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2001-10-01,144.2
+"157","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2002-01-01,146.1
+"158","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2002-04-01,148.7
+"159","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2002-07-01,153.8
+"160","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2002-10-01,153.8
+"161","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2003-01-01,151.3
+"162","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2003-04-01,153.7
+"163","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2003-07-01,154.2
+"164","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2003-10-01,154
+"165","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2004-01-01,153.8
+"166","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2004-04-01,154.1
+"167","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2004-07-01,156.6
+"168","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2004-10-01,157.9
+"169","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2005-01-01,158.7
+"170","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2005-04-01,162.4
+"171","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2005-07-01,164.5
+"172","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2005-10-01,165.5
+"173","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2006-01-01,166.3
+"174","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2006-04-01,168.7
+"175","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2006-07-01,172
+"176","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2006-10-01,171.9
+"177","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2007-01-01,170.1
+"178","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2007-04-01,171
+"179","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2007-07-01,174.1
+"180","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2007-10-01,175.6
+"181","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2008-01-01,178.6
+"182","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2008-04-01,178.1
+"183","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2008-07-01,179.1
+"184","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2008-10-01,185.7
+"185","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2009-01-01,186
+"186","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2009-04-01,182.4
+"187","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2009-07-01,185.7
+"188","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2009-10-01,185.4
+"189","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2010-01-01,186.6
+"190","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2010-04-01,182.6
+"191","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2010-07-01,182.3
+"192","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2010-10-01,177.7
+"193","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2011-01-01,176.2
+"194","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2011-04-01,175.7
+"195","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2011-07-01,174.6
+"196","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2011-10-01,172.9
+"197","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2012-01-01,175.2
+"198","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2012-04-01,176.3
+"199","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2012-07-01,176.1
+"200","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2012-10-01,173.7
+"201","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2013-01-01,171.2
+"202","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2013-04-01,172.2
+"203","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2013-07-01,169.6
+"204","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2013-10-01,166.8
+"205","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2014-01-01,163.6
+"206","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2014-04-01,161.2
+"207","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2014-07-01,160
+"208","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2014-10-01,158.6
+"209","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2015-01-01,160.1
+"210","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2015-04-01,155.7
+"211","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2015-07-01,156
+"212","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2015-10-01,156
+"213","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2016-01-01,156.4
+"214","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2016-04-01,159.2
+"215","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2016-07-01,161.4
+"216","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2016-10-01,159.4
+"217","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2017-01-01,160.1
+"218","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2017-04-01,159.7
+"219","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2017-07-01,160.9
+"220","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2017-10-01,161.6
+"221","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2018-01-01,159.6
+"222","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2018-04-01,159.1
+"223","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2018-07-01,157
+"224","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2018-10-01,156.3
+"225","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2019-01-01,154.1
+"226","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2019-04-01,155.2
+"227","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2019-07-01,156.8
+"228","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2019-10-01,154.8
+"229","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2020-01-01,156.2
+"230","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2020-04-01,164.4
+"231","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2020-07-01,164.7
+"232","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2020-10-01,166.6
+"233","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2021-01-01,164.9
+"234","GB","United Kingdom","A","Credit-to-GDP ratios (actual data)",2021-04-01,160.3

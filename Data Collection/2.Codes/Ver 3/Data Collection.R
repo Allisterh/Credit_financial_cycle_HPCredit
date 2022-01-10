@@ -102,7 +102,7 @@ rates <- get_bis(datasets$url[datasets$name == "Property prices: selected series
 rates_plot <- rates %>%
   mutate(date = as.Date(as.yearqtr(date, "%Y-q%q"))) %>%
   filter(grepl(clist, ref_area))%>%
-  filter(grepl("^(R)", value))%>%
+  filter(grepl("^(R)", value))%>% #real values (vs nominal N)
   filter(grepl("^(628)", unit_measure)) 
 
 df <- rates_plot[,c("ref_area", "reference_area", "date", "obs_value")]

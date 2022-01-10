@@ -2,7 +2,7 @@ function [out,beta_tt]=likelihoodTVP(theta,y,x)
 
 %extract parameters of the state space
 out=1000000000;
-if sum(theta(3:end)<0)==0 && sum(abs(theta(1:2))>2)==0 && sum(abs(sum(theta(1:2)))>
+if sum(theta(3:end)<0)==0 && sum(abs(theta(1:2))>2)==0 && abs(sum(theta(1:2)))<=1 
 F=zeros(2,2);
 F(1,1)=theta(1);
 F(2,2)=theta(2);

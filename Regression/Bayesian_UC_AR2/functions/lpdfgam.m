@@ -5,3 +5,4 @@ function  ldens = lpdfgam(x,a,b);
 % 10/11/03  MJ adapted from an earlier GAUSS version by F. Schorfeide,
 %              translated to MATLAB by R. Wouters  
 %              use MATLAB gammaln rather than lngam
+end

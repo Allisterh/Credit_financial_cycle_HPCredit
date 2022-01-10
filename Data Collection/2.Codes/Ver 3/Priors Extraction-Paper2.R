@@ -3,7 +3,13 @@ rm(list=ls())
 library(vars)
 library(stats)
 
-country = 'AU'
+country = 'JP'
+
+# Start date is 1989-01-01
+startdate_uc = '1988-07-01' #push back 2 periods to extract priors for VAR(2) process
+startdate_var = '1989-01-01'
+# End date is pre-covid 2020-01-01
+enddate = '2021-04-01'
 
 setwd(dirname(getActiveDocumentContext()$path))
 setwd("../../1.Latest/Paper2")
@@ -20,13 +26,17 @@ df$HPIndex_HPcycle = mFilter::hpfilter(df$HPIndex, type = "lambda", freq = 1600)
 df$Credit_HPtrend = mFilter::hpfilter(df$credit, type = "lambda", freq = 1600)$trend
 df$Credit_HPcycle = mFilter::hpfilter(df$credit, type = "lambda", freq = 1600)$cycle
 
-varlist = c("credit", "HPIndex", "Credit_HPcycle", "HPIndex_HPcycle", "Credit_HPtrend", "HPIndex_HPtrend","date")
-df_matlab <-df[varlist]
+
+df$date=as.Date(df$date)
+df_matlab = subset(df, date >= as.Date(startdate_uc))
+df_matlab = subset(df, date <= as.Date(enddate))
+varlist = c("credit", "HPIndex", "Credit_HPcycle", "HPIndex_HPcycle", "Credit_HPtrend", "HPIndex_HPtrend")
+df_matlab <-df_matlab[varlist]
 filepath = sprintf("MergedData_Matlab_%s.txt",country)
 write.table(df_matlab, filepath, sep=",")
 
 # Limit series data to after 1990 ---------
-df1 = subset(df, date > as.Date("1988-12-31"))
+df1 = subset(df, date >= as.Date(startdate_var))
 
 #Cycles var name list
 varlist = c("ID", "date", "Credit_HPcycle", "HPIndex_HPcycle")
@@ -117,7 +127,7 @@ write.csv(prior, prior_path)
 #### Part 3 Std Dev of trends ==============
 #Calculate StdDev of trends
 
-df1 = subset(df, date > as.Date("1988-12-31"))
+df1 = subset(df, date >= as.Date(startdate_var))
 
 #Cycles var name list
 varlist2 = c("ID", "date", "Credit_HPtrend", "HPIndex_HPtrend")

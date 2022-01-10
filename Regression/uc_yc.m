@@ -24,7 +24,7 @@ clear, clc
 ver = 'VAR_2';
 par_num=10;
 
-country='US';
+country='JP';
 
 working_dir = ['/Users/namnguyen/Documents/GitHub/HPCredit/Regression/' ver '/Matlab'];
 cd(working_dir);
@@ -35,13 +35,13 @@ cd(working_dir);
 % input_filepath = ['../../../Data/Input/data_' country '.txt'];
 % data_im = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['../../../Data Collection/1.Latest/MergedData_Matlab_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.Latest/Paper2/MergedData_Matlab_' country '.txt'];
 data_im = dlmread(input_filepath,',',1,1);
 data_im(:,3:4)=[];
 data_im(1,:)=[]; %trimming data to fit >1990 time frame
 
 input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2x_' country '.txt'];
-priors_VAR2x = dlmread(input_filepath,',',1,1);
+% priors_VAR2x = dlmread(input_filepath,',',1,1);
 
 input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2_' country '.txt'];
 priors_VAR2 = dlmread(input_filepath,',',1,1);
@@ -49,7 +49,7 @@ priors_VAR2 = dlmread(input_filepath,',',1,1);
 input_filepath = ['../../../Data Collection/1.2.Priors/prior_trend_' country '.txt'];
 priors_trend_stddev = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['../../../Data Collection/1.Latest/MergedData_Matlab_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.Latest/Paper2/MergedData_Matlab_' country '.txt'];
 priors_cycle = dlmread(input_filepath,',',1,1);
 priors_cycle(:,1:2)=[];
 % c_y_prior1 = priors_cycle(2,1)-1.4; %for US
@@ -131,16 +131,20 @@ prmtr_in(10) = priors_corr(2);
 %   w1 = 0.8; %US
 %   w2 = 0.2;
 
-  
-%   w1 = 0.6; %UK
-%   w2 = 0.4;
-%   w3 = 0.004;
-%   w4 = 0.003; 
-
-  w1 = 0.8; %US
-  w2 = 0.2;
+  w1 = 0.5; 
+  w2 = 0.5;
   w3 = 0.003;
-  w4 = 0.004;
+  w4 = 0.003;
+
+% w1 = 0.6; %UK
+% w2 = 0.4;
+% w3 = 0.004;
+% w4 = 0.003;
+
+%   w1 = 0.8; %US
+%   w2 = 0.2;
+%   w3 = 0.003;
+%   w4 = 0.004;
 
 sig_ty_prior = 100+100*rand;
 sig_th_prior = 100+100*rand; 
@@ -157,7 +161,9 @@ sig_th_prior = 100+100*rand;
 
 % Data Transformation
 %=========================================================================%
-y = 100*log(data_im);
+% y = 100*log(data_im);
+
+y = data_im;
 
 stream = RandStream.getGlobalStream; %Record random seed
 savedState = stream.State;
@@ -425,8 +431,37 @@ writetable(Reg,writedata,'Delimiter',',','WriteVariableNames',0);
 
 
 [data,forcst] = filter_fcn_uncon(xout,y,T,START,prior);
+
 % 
 % Creates output file to store filtered dataset
 csvwrite(['../Output/OutputData/uc_yc_' country '.txt'],[data(:,1),data(:,2),data(:,4),data(:,5),forcst(:,1:2)]);
 
 country
+
+% subplot(2,2,1);
+% plot(data(:,2));
+% subplot(2,2,3);
+% plot(exp(data(:,1)/100))
+% hold on
+% plot(exp(y(:,1)/100))
+% hold off
+
+
+subplot(2,2,1);
+plot(data(:,2));
+subplot(2,2,3);
+plot(exp(data(:,1)/100))
+hold on
+plot(exp(y(:,1)/100))
+hold off
+
+subplot(2,2,2);
+plot(data(:,5));
+subplot(2,2,4);
+plot(data(:,4))
+hold on
+plot(y(:,2))
+hold off
+
+
+% data(:,2) = exp(y(:,1)/100)-exp(data(:,1)/100) 

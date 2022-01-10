@@ -24,7 +24,7 @@ clear, clc
 ver = 'AR_2';
 par_num=4;
 
-country='AU';
+country='GB';
 variable='credit';
 
 working_dir = ['/Users/namnguyen/Documents/GitHub/HPCredit/Regression/' ver '/Matlab'];
@@ -147,10 +147,10 @@ prmtr_in(4) = priors_VAR2_credit(3);
 %   w2 = 0.2;
 
 %UK  
-%     %Credit 
-%   w1 = 0.6; 
-%   w2 = 0.4;
-%   w3 = 0.002;
+    %Credit 
+  w1 = 0.5; 
+  w2 = 0.5;
+  w3 = 0.000;
 %     %HPI
 %   w1 = 0.6;
 %   w2 = 0.4;
@@ -170,9 +170,9 @@ prmtr_in(4) = priors_VAR2_credit(3);
 
 %XM
 % %Credit
-w1 = 0.5;
-w2 = 0.5;
-w3 = 0.005;
+% w1 = 0.5;
+% w2 = 0.5;
+% w3 = 0.005;
 
 sig_ty_prior = 100+100*rand;
 sig_th_prior = 100+100*rand; 
@@ -459,9 +459,22 @@ writetable(Reg,writedata,'Delimiter',',','WriteVariableNames',0);
 
 [data,forcst] = filter_fcn_uncon(xout,y,T,START,prior);
 % 
+% xout=[1.2;-.4;sqrt(21);sqrt(6.9)]; %US Bayesian MH UC estimate 
+xout=[1.003;-.04;sqrt(20);sqrt(6.5)]; %UK Bayesian MH UC estimate 
+
+[data,forcst]=filter_fcn_uncon(xout,y,T,START,prior);
+
+
+% 
 % Creates output file to store filtered dataset
 csvwrite(['../Output/OutputData/uc_yc_' variable '_' country '.txt'],[data(:,1),data(:,2),forcst(:,1:2)]);
 
 country
 
-plot(data(:,3))
+subplot(2,1,1);
+plot(data(:,2));
+subplot(2,1,2);
+plot(data(:,1))
+hold on
+plot(y)
+hold off

@@ -1,7 +1,7 @@
 rm(list=ls())
 #----
 # Set parameter
-country = "AU"
+country = "JP"
 # output = "credit_country.txt"
 #----
 
@@ -120,4 +120,7 @@ df_1 = df %>%
 df_1$date = as.Date(df_1$date)
 filepath = sprintf("HPI_%s.txt",country)
 write.table(df_1, filepath, sep=',' )
+
+summary(df_1$HPIndex)
+summary(df_1$date)
 

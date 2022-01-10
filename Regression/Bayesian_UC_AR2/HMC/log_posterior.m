@@ -29,13 +29,14 @@ function val = log_posterior(X, y, th)
   % }
   else
     sigma2i = eye(size(y,1))*sigma2;
-    ll = log(mvnpdf(y, mu, sigma2i))
+    ll = lnmvnpdf(y, mu, sigma2i)
+    %mvnpdf(y, X*theta_start(1,1:4)', eye(size(y,1)).*(theta_start(1,5).^2))
     %log(mvnpdf(y, X*theta_start(1,1:4)', eye(size(y,1)).*(theta_start(1,5).^2)))
     priorb = log(mvnpdf(beta, zeros(1,size(beta,2)), eye(size(beta,2))*100))
-    priors2= log(gampdf(1/sigma2,prioralpha,priorbeta))
+    priors2= lpdfgam(1/sigma2,prioralpha,priorbeta)
     logposterior = ll + priorb + priors2
     % Restriction impose
-    if isreal(logposterior) || (~isinf(logposterior)) || (~isnan(logposterior))
+    if isreal(logposterior) && (~isinf(logposterior)) && (~isnan(logposterior))
     val=logposterior;
     else
     val=-inf;

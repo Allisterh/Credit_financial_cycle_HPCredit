@@ -17,8 +17,17 @@ x=[ones(T,1) ones(T,1)];
 N = 250
 K = 3
 
-covariates = normrnd(0,1)
+covariates = normrnd(0,1, [N,K])
 
+%** Create the model matrix with intercept
+X=[ones(K,1) covariates];
+
+
+% create a normally distributed variable that is a function of the covariates
+coefs = [5, .2, -1.5, .9];
+sigma = 2;
+mu = X * coefs;
+y  = normrnd(mu, sigma, [N,1]);
 
 
 subplot(3,3,1);
@@ -34,3 +43,5 @@ subplot(3,3,4);
 plot(out1(:,4));
 title('Q_{2}');
 legend('MH draws');
+
+
