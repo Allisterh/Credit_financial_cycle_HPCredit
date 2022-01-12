@@ -37,8 +37,8 @@ cd(working_dir);
 
 input_filepath = ['../../../Data Collection/1.Latest/Paper2/MergedData_Matlab_' country '.txt'];
 data_im = dlmread(input_filepath,',',1,1);
-data_im(:,3:4)=[];
-data_im(1,:)=[]; %trimming data to fit >1990 time frame
+data_im(:,3:6)=[];
+data_im(1:2,:)=[]; %trimming data to fit >1990 time frame
 
 input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2x_' country '.txt'];
 % priors_VAR2x = dlmread(input_filepath,',',1,1);
@@ -177,7 +177,6 @@ save(filepath, 'savedState');
 %Setting prior for y and h
 %     t_y_prior = y(1,1);
 %     t_h_prior = y(1,2);    
-    y(1,:)=[]; %remove first row of data to allow for prior setting
 
     
     prior = [t_y_prior, t_h_prior, sig_ty_prior, sig_th_prior,w1,w2,...
@@ -450,9 +449,9 @@ country
 subplot(2,2,1);
 plot(data(:,2));
 subplot(2,2,3);
-plot(exp(data(:,1)/100))
+plot(data(:,1))
 hold on
-plot(exp(y(:,1)/100))
+plot(y(:,1))
 hold off
 
 subplot(2,2,2);

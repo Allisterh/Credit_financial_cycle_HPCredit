@@ -29,7 +29,7 @@ df$Credit_HPcycle = mFilter::hpfilter(df$credit, type = "lambda", freq = 1600)$c
 
 df$date=as.Date(df$date)
 df_matlab = subset(df, date >= as.Date(startdate_uc))
-df_matlab = subset(df, date <= as.Date(enddate))
+df_matlab = subset(df_matlab, date <= as.Date(enddate))
 varlist = c("credit", "HPIndex", "Credit_HPcycle", "HPIndex_HPcycle", "Credit_HPtrend", "HPIndex_HPtrend")
 df_matlab <-df_matlab[varlist]
 filepath = sprintf("MergedData_Matlab_%s.txt",country)
