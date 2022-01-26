@@ -24,7 +24,7 @@ clear, clc
 ver = 'VAR_2';
 par_num=10;
 
-country='JP';
+country='GB';
 
 working_dir = ['/Users/namnguyen/Documents/GitHub/HPCredit/Regression/' ver '/Matlab'];
 cd(working_dir);
@@ -130,12 +130,12 @@ prmtr_in(10) = priors_corr(2);
 % Weight on likelihood function:
 %   w1 = 0.8; %US
 %   w2 = 0.2;
-
+% 
   w1 = 0.5; 
   w2 = 0.5;
   w3 = 0.003;
   w4 = 0.003;
-
+% 
 % w1 = 0.6; %UK
 % w2 = 0.4;
 % w3 = 0.004;
@@ -161,9 +161,11 @@ sig_th_prior = 100+100*rand;
 
 % Data Transformation
 %=========================================================================%
-% y = 100*log(data_im);
+y = 100*log(data_im);
+% t_y_prior=100*log(t_y_prior);
+% t_h_prior=100*log(t_h_prior);
 
-y = data_im;
+% y = data_im;
 
 stream = RandStream.getGlobalStream; %Record random seed
 savedState = stream.State;
@@ -431,9 +433,21 @@ writetable(Reg,writedata,'Delimiter',',','WriteVariableNames',0);
 
 [data,forcst] = filter_fcn_uncon(xout,y,T,START,prior);
 
+% data(:,2) = 100*log(y(:,1))-100*log(data(:,1));
+
+% data(:,2) = exp(y(:,1)/100)-exp(data(:,1)/100) 
 % 
 % Creates output file to store filtered dataset
-csvwrite(['../Output/OutputData/uc_yc_' country '.txt'],[data(:,1),data(:,2),data(:,4),data(:,5),forcst(:,1:2)]);
+% csvwrite(['../Output/OutputData/uc_yc_' country '.txt'],[data(:,1),data(:,2),data(:,4),data(:,5),forcst(:,1:2)]);
+
+data1=[priors_cycle(1,3),priors_cycle(1,1),0,0,0,0];
+data2=[priors_cycle(2,3),priors_cycle(2,1),0,0,0,0];
+data=[data1;
+      data2;
+      data];
+
+csvwrite(['../Output/OutputData/uc_yc_' country '.txt'],[data(:,1),data(:,2),data(:,4),data(:,5)]);
+
 
 country
 
@@ -444,6 +458,7 @@ country
 % hold on
 % plot(exp(y(:,1)/100))
 % hold off
+
 
 
 subplot(2,2,1);
@@ -462,5 +477,3 @@ hold on
 plot(y(:,2))
 hold off
 
-
-% data(:,2) = exp(y(:,1)/100)-exp(data(:,1)/100) 

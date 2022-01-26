@@ -11,12 +11,11 @@ library(rstudioapi)
 
 
 ##1. Merge Data
-country = 'JP'
+country = 'GB'
 
 setwd(dirname(getActiveDocumentContext()$path))
 setwd("../../1.Latest/Paper2")
 
-startdate="1985-06-30"
 enddate ="2020-01-01"
 
 # Credit_filepath = sprintf("Credit_HPfilter_%s.txt",country)
@@ -32,7 +31,7 @@ df1 <- read.table(HP_filepath, header=TRUE, sep=",")
 
 
 df <- merge(df2, df1, by=c("ID","date"))
-df <-subset(df, date>as.Date(startdate))
+# df <-subset(df, date>as.Date(startdate))
 # df <-subset(df, date<as.Date(enddate))
 df <- na.omit(df)
 names(df)[which(names(df)=="obs_value")]="credit"

@@ -6,8 +6,8 @@ library(stats)
 country = 'JP'
 
 # Start date is 1989-01-01
-startdate_uc = '1988-07-01' #push back 2 periods to extract priors for VAR(2) process
-startdate_var = '1989-01-01'
+startdate_uc = '1983-01-01' #push back 2 periods to extract priors for VAR(2) process
+startdate_var = '1983-07-01'
 # End date is pre-covid 2020-01-01
 enddate = '2021-04-01'
 
@@ -20,11 +20,17 @@ setwd("../../1.Latest/Paper2")
 filepath = sprintf("MergedData_%s.txt",country)
 df <- read.table(filepath, header=TRUE, sep=",")
 
+
+# Log transformation
+df$HPIndexlog <- 100*log(df$HPIndex)
+df$creditlog <- 100*log(df$credit)
+
+
 # HP filter
-df$HPIndex_HPtrend = mFilter::hpfilter(df$HPIndex, type = "lambda", freq = 1600)$trend
-df$HPIndex_HPcycle = mFilter::hpfilter(df$HPIndex, type = "lambda", freq = 1600)$cycle
-df$Credit_HPtrend = mFilter::hpfilter(df$credit, type = "lambda", freq = 1600)$trend
-df$Credit_HPcycle = mFilter::hpfilter(df$credit, type = "lambda", freq = 1600)$cycle
+df$HPIndex_HPtrend = mFilter::hpfilter(df$HPIndexlog, type = "lambda", freq = 1600)$trend
+df$HPIndex_HPcycle = mFilter::hpfilter(df$HPIndexlog, type = "lambda", freq = 1600)$cycle
+df$Credit_HPtrend = mFilter::hpfilter(df$creditlog, type = "lambda", freq = 1600)$trend
+df$Credit_HPcycle = mFilter::hpfilter(df$creditlog, type = "lambda", freq = 1600)$cycle
 
 
 df$date=as.Date(df$date)
