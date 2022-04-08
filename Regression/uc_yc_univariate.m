@@ -24,11 +24,30 @@ clear, clc
 ver = 'AR_2';
 par_num=4;
 
-country='GB';
+working_dir = ['D:/GitHub/HPCredit/Regression/' ver '/Matlab'];
+cd(working_dir);
+
+%input_filepath = "../../../../3rdPaper/Data/Processed/countrylist.txt";
+%opts=detectImportOptions(input_filepath);
+%countrylist = readtable(input_filepath,opts);
+
+
+%size(countrylist,1)
+%for i = 1:size(countrylist,1)
+    %country = char(table2cell(countrylist(i,:)))
+
+
+
+country='US';
 variable='credit';
 
-working_dir = ['/Users/namnguyen/Documents/GitHub/HPCredit/Regression/' ver '/Matlab'];
-cd(working_dir);
+%   w1 = 0.5; 
+%   w2 = 0.5;
+%   w3 = 0.0001;
+
+  w1 = 0.2; 
+  w2 = 0.8;
+  w3 = 0.0001;
 
 %=========================================================================%
 %Input Data:
@@ -36,41 +55,42 @@ cd(working_dir);
 % input_filepath = ['../../../Data/Input/data_' country '.txt'];
 % data_im = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['../../../Data Collection/1.Latest/Paper2/MergedData_Matlab_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.Latest/Paper3/MergedData_Matlab_' country '.txt'];
 data_im = dlmread(input_filepath,',',1,1);
 % 
 % data_im(1,:)=[]; %trimming data to fit >1990 time frame
 
-input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2x_' country '.txt'];
-priors_VAR2x = dlmread(input_filepath,',',1,1);
+%input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2x_' country '.txt'];
+%priors_VAR2x = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2_' country '.txt'];
-priors_VAR2 = dlmread(input_filepath,',',1,1);
+%input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2_' country '.txt'];
+%priors_VAR2 = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2_credit_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.Latest/Paper3/Priors/prior_VAR2_credit_' country '.txt'];
 priors_VAR2_credit = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2_hpi_' country '.txt'];
-priors_VAR2_hpi = dlmread(input_filepath,',',1,1);
+%input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2_hpi_' country '.txt'];
+%priors_VAR2_hpi = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['../../../Data Collection/1.2.Priors/prior_trend_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.Latest/Paper3/Priors/prior_trend_' country '.txt'];
 priors_trend_stddev = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['../../../Data Collection/1.Latest/Paper2/MergedData_Matlab_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.Latest/Paper3/MergedData_Matlab_' country '.txt'];
 priors_cycle = dlmread(input_filepath,',',1,1);
-priors_cycle(:,1:2)=[];
+
+% priors_cycle
+
+priors_cycle(:,1)=[];
+
 % c_y_prior1 = priors_cycle(2,1)-1.4; %for US
 % c_y_prior2 = priors_cycle(1,1)-0.7;
 
 c_y_prior1 = priors_cycle(2,1); 
 c_y_prior2 = priors_cycle(1,1);
-c_h_prior1 = priors_cycle(2,2);
-c_h_prior2 = priors_cycle(1,2);
-t_y_prior = priors_cycle(2,3);
-t_h_prior = priors_cycle(2,4);
+t_y_prior = priors_cycle(2,2);
 
-input_filepath = ['../../../Data Collection/1.2.Priors/prior_corr_' country '.txt'];
-priors_corr = dlmread(input_filepath,',',1,1);
+%input_filepath = ['../../../Data Collection/1.2.Priors/prior_corr_' country '.txt'];
+%priors_corr = dlmread(input_filepath,',',1,1);
 
 %=========================================================================%
 
@@ -148,9 +168,7 @@ prmtr_in(4) = priors_VAR2_credit(3);
 
 %UK  
     %Credit 
-  w1 = 0.5; 
-  w2 = 0.5;
-  w3 = 0.000;
+
 %     %HPI
 %   w1 = 0.6;
 %   w2 = 0.4;
@@ -175,7 +193,7 @@ prmtr_in(4) = priors_VAR2_credit(3);
 % w3 = 0.005;
 
 sig_ty_prior = 100+100*rand;
-sig_th_prior = 100+100*rand; 
+%sig_th_prior = 100+100*rand; 
     
 
 
@@ -204,7 +222,7 @@ save(filepath, 'savedState');
 %Setting prior for y and h
 %     t_y_prior = y(1,1);
 %     t_h_prior = y(1,2);    
-    y(1,:)=[]; %remove first row of data to allow for prior setting
+    y(1:2,:)=[]; %remove first row of data to allow for prior setting
 
     
     prior = [t_y_prior, sig_ty_prior, w1,w2,...
@@ -460,14 +478,21 @@ writetable(Reg,writedata,'Delimiter',',','WriteVariableNames',0);
 [data,forcst] = filter_fcn_uncon(xout,y,T,START,prior);
 % 
 % xout=[1.2;-.4;sqrt(21);sqrt(6.9)]; %US Bayesian MH UC estimate 
-xout=[1.003;-.04;sqrt(20);sqrt(6.5)]; %UK Bayesian MH UC estimate 
+% xout=[1.003;-.04;sqrt(20);sqrt(6.5)]; %UK Bayesian MH UC estimate 
 
-[data,forcst]=filter_fcn_uncon(xout,y,T,START,prior);
+% [data,forcst]=filter_fcn_uncon(xout,y,T,START,prior);
 
+
+data1=[priors_cycle(1,2),priors_cycle(1,1),0];
+data2=[priors_cycle(2,2),priors_cycle(2,1),0];
+data=[data1;
+      data2;
+      data];
 
 % 
 % Creates output file to store filtered dataset
-csvwrite(['../Output/OutputData/uc_yc_' variable '_' country '.txt'],[data(:,1),data(:,2),forcst(:,1:2)]);
+csvwrite(['../Output/OutputData/uc_yc_' variable '_' country '.txt'],[data(:,1),data(:,2)]);
+%csvwrite(['../Output/OutputData/uc_yc_' variable '_' country '.txt'],[data(:,1),data(:,2),forcst(:,1:2)]);
 
 country
 
@@ -478,3 +503,5 @@ plot(data(:,1))
 hold on
 plot(y)
 hold off
+
+
