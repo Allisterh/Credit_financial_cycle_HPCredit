@@ -1,86 +1,86 @@
-clear, clc
-working_dir = '/Users/namnguyen/Documents/GitHub/HPCredit/Regression/Bayesian_UC_AR2'
+clear
+working_dir = '/Users/namnguyen/Documents/GitHub/Applied-Bayesian-in-R/MatlabCode2017/CHAPTER5'
 cd(working_dir)
 addpath('sims_Optimization');
 addpath('functions');
 
 
-%*********** Data input
-country='AU';
-input_filepath = ['../../Data Collection/1.Latest/Paper2/MergedData_Matlab_' country '.txt'];
-data_im = dlmread(input_filepath,',',1,1);
-y = data_im(:,1);
-T=size(y,1);
-x=[ones(T,1) ones(T,1)];
+%create artificial data for time-varying paramteer model
+T=300;
+%generate artificial data on a time-varying parameter model
+N=2;
+Q=eye(N,N)*0.1;
+R=2;
+F(1,1)=0.95;
+F(2,2)=0.95;
+e=randn(T,2);
+v=randn(T,1);
+x=[randn(T,1) ones(T,1)];
+y=zeros(T,1);
+b=zeros(T,2);
+MU=[0.1 -0.1];
 
+for j=2:T
+    b(j,:)=MU+b(j-1,:)*F'+e(j,:)*chol(Q);
+    y(j,:)=x(j,:)*b(j,:)'+v(j,:)*sqrt(R);
+end
+  
+TRUE=[diag(F);MU';R;diag(Q)];
 %***********step 1 set priors for each parameter
 % F~N(F0,VF0)
 F0=ones(2,1);
 VF0=eye(2)*0.2;
+%MU~N(MU0,VMU0);
+MU0=zeros(2,1);
+VMU0=eye(2);
+%1/R~Gamma(R0,VR0)
+R0=1;
+VR0=1;
 %1/Q(i,i)~Gamma(Q0,VQ0)
 Q0=0.1;
 VQ0=1;
 
 
 %***************step 2 estimate model via maximum likelihood
-theta0 = [0,0,0,0]';
+theta0=ones(7,1).*0.1;
+theta0(1)=0.5;
+theta0(2)=0.5;
 
-input_filepath = ['../../Data Collection/1.2.Priors/prior_VAR2_credit_' country '.txt'];
-priors_VAR2_credit = dlmread(input_filepath,',',1,1);
-
-input_filepath = ['../../Data Collection/1.2.Priors/prior_trend_' country '.txt'];
-priors_trend_stddev = dlmread(input_filepath,',',1,1);
-
-theta0(1:2)=priors_VAR2_credit(1:2);
-theta0(3) = priors_trend_stddev(1)^2;
-theta0(4) = priors_VAR2_credit(3)^2;
 
 %**********
 %set bounds for each parameter
  bounds0=zeros(length(theta0),2);
  bounds0(1,:)=[0.01 2];  %beta1
- bounds0(2,:)=[-0.8 2];  %beta2
- bounds0(3,:)=[0.01 15]; %ny
- bounds0(4,:)=[0.01 15];  %ey
+ bounds0(2,:)=[0.01 2];  %beta2
+ bounds0(3,:)=[-0.5 0.5];  %mu1
+ bounds0(4,:)=[-0.5 0.5];  %mu2
+ bounds0(5,:)=[0.01 5]; %r
+ bounds0(6,:)=[0.01 5];  %q1
+ bounds0(7,:)=[0.01 5];  %q2
 options = optimset('Disp','iter','Diagnostics','on','LargeScale','off',...
     'MaxFunEvals',100000,'MaxIter',5000,'TolFun',1e-05,'TolX',1e-05);
 
-
-
-
 likelihoodTVP(theta0,y,x)
-logprior(theta0,F0,VF0,Q0,VQ0)
-posterior(theta0,y,x,F0,VF0,Q0,VQ0,bounds0,1)
+logprior(theta0,F0,VF0,MU0,VMU0,R0,VR0,Q0,VQ0)
+posterior(theta0,y,x,F0,VF0,MU0,VMU0,R0,VR0,Q0,VQ0,bounds0,1)
 
 % % %simplex
- [Theta1,fval] = fminsearch(@posterior, theta0,options,y,x,F0,VF0,Q0,VQ0,bounds0,1);
+ [Theta1,fval] = fminsearch(@posterior, theta0,options,y,x,F0,VF0,MU0,VMU0,R0,VR0,Q0,VQ0,bounds0,1);
  %****************************
  
 
-[FF,AA,gh,hess,itct,fcount,retcodeh] = csminwel('posterior',Theta1,eye(length(theta0))*.1,[],1e-15,1000,y,x,F0,VF0,Q0,VQ0,bounds0,1);
+[FF,AA,gh,hess,itct,fcount,retcodeh] = csminwel('posterior',Theta1,eye(length(theta0))*.1,[],1e-15,1000,y,x,F0,VF0,MU0,VMU0,R0,VR0,Q0,VQ0,bounds0,1);
 
-
-% use specified theta0
-% [FF,AA,gh,hess,itct,fcount,retcodeh] = csminwel('posterior',theta0,eye(length(theta0))*.1,[],1e-15,1000,y,x,F0,VF0,Q0,VQ0,bounds0,1);
-theta0
-Theta1
-AA
-
-% converged (tested) prior value for AA
-AA = [1;-0.02;19.6;6.4]; % for UK
-% AA = [1;-.02;21;6.9]; %for US
 %**************step 2 set scale factor for the metropolis hastings
 K=0.4;  %scaling factor
 P=(chol(hess*K)); %compute variance of the random walk
 
-%*** Do not run when testing
-Gammaold=AA;
-%***
 
-REPS=150000;
-BURN=50000;
+Gammaold=AA;
+REPS=100000;
+BURN=60000;
 naccept=0;
-out1=zeros(REPS-BURN,4);
+out1=zeros(REPS-BURN,7);
 out2=zeros(REPS-BURN,1);
 
 %compute posterior at old draw
@@ -88,42 +88,47 @@ out2=zeros(REPS-BURN,1);
         lik=likelihoodTVP(Gammaold,y,x);
         %evaluate prior for each set of parameters
         F=Gammaold(1:2);
-        Q=Gammaold(3:4);
+        MU=Gammaold(3:4);
+        R=Gammaold(5);
+        Q=Gammaold(6:7);
         
         Fprior=log(mvnpdf(F,F0,VF0));
         %prior for MU
+        MUprior=log(mvnpdf(MU,MU0,VMU0));
         %prior for 1/R
+        Rprior=gampdf1(VR0,R0,1/R);
         %prior for 1/Q
          Qprior=0;
         for i=1:2
          Qprior=Qprior+(gampdf1(VQ0,Q0,1/Q(i))); 
         end
         %joint prior is the sum of these
-        priorold=Fprior+Qprior;
+        priorold=Fprior+MUprior+Rprior+Qprior;
         posteriorOLD=-lik+priorold;
         jj=1;
-for j=1:REPS   
-    if 0 == mod(j, 10000)
-      disp(j)
-      disp(Gammaold)
-    end
+for j=1:REPS
+
     %step 1 draw new Gamma
-    Gammanew=Gammaold+(normrnd(0, 1, [1,4])*P)';
+    Gammanew=Gammaold+(randn(1,7)*P)';
     
     %step 2 check elements of D are positive, variances positive and
     %elements of F sum to less than 1
-    check=sum(Gammanew(3:end)<0) && sum(Gammanew(1:2)>1);
+    check=sum(Gammanew(5:end)<0) && sum(Gammanew(1:2)>1);
     if check
          posteriorNEW=-1000000;
     else
         %compute -1*likelihood at new draw
         lik=likelihoodTVP(Gammanew,y,x);
        F=Gammanew(1:2);
-        Q=Gammanew(3:4);
+        MU=Gammanew(3:4);
+        R=Gammanew(5);
+        Q=Gammanew(6:7);
         
         Fprior=log(mvnpdf(F,F0,VF0));
         %prior for MU
+        MUprior=log(mvnpdf(MU,MU0,VMU0));
         %prior for 1/R
+        Rprior=gampdf1(VR0,R0,1/R);
         %prior for 1/Q
          Qprior=0;
         for i=1:2
@@ -131,7 +136,7 @@ for j=1:REPS
         end
         %joint prior is the sum of these
         
-        priornew=Fprior+Qprior;
+        priornew=Fprior+MUprior+Rprior+Qprior;
         posteriorNEW=-lik+priornew;
     end
         
@@ -164,33 +169,24 @@ end
 
 
 subplot(3,3,1);
-plot(out1(:,1));
+plot([out1(:,1) repmat(TRUE(1),size(out1,1),1)]);
 title('F_{1}');
 subplot(3,3,2);
-plot(out1(:,2));
+plot([out1(:,2) repmat(TRUE(2),size(out1,1),1)]);
 title('F_{2}');
 subplot(3,3,3);
-plot(out1(:,3));
-title('Q_{1}');
+plot([out1(:,3) repmat(TRUE(3),size(out1,1),1)]);
+title('\mu_{1}');
 subplot(3,3,4);
-plot(out1(:,4));
+plot([out1(:,4) repmat(TRUE(4),size(out1,1),1)]);
+title('\mu_{2}');
+subplot(3,3,5);
+plot([out1(:,5) repmat(TRUE(5),size(out1,1),1)]);
+title('R');
+subplot(3,3,6);
+plot([out1(:,6) repmat(TRUE(6),size(out1,1),1)]);
+title('Q_{1}');
+subplot(3,3,7);
+plot([out1(:,7) repmat(TRUE(7),size(out1,1),1)]);
 title('Q_{2}');
-legend('MH draws');
-
-
-mean(out1(:,1))
-mean(out1(:,2))
-mean(out1(:,3))
-mean(out1(:,4))
-
-% Manual save results: 
-% US: 1.0025; -0.0434; 21.5355; 6.7442
-% UK: 1.0038; -0.0412; 19.548; 6.4258
-
-
-mean(out1(50000:end,1))
-mean(out1(50000:end,2))
-mean(out1(50000:end,3))
-mean(out1(50000:end,4))
-
-% Call the filter function here to graph estimated cycles
+legend('MH draws','True value');

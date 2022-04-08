@@ -24,6 +24,7 @@ clear, clc
 ver = 'AR_2';
 par_num=4;
 
+<<<<<<< Updated upstream
 working_dir = ['D:/GitHub/HPCredit/Regression/' ver '/Matlab'];
 cd(working_dir);
 
@@ -39,6 +40,9 @@ cd(working_dir);
 
 
 country='US';
+=======
+country='AR';
+>>>>>>> Stashed changes
 variable='credit';
 
 %   w1 = 0.5; 
@@ -87,7 +91,11 @@ priors_cycle(:,1)=[];
 
 c_y_prior1 = priors_cycle(2,1); 
 c_y_prior2 = priors_cycle(1,1);
+<<<<<<< Updated upstream
 t_y_prior = priors_cycle(2,2);
+=======
+t_y_prior = priors_cycle(2,3);
+>>>>>>> Stashed changes
 
 %input_filepath = ['../../../Data Collection/1.2.Priors/prior_corr_' country '.txt'];
 %priors_corr = dlmread(input_filepath,',',1,1);
