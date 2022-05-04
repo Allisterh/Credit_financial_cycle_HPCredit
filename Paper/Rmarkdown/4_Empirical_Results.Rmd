@@ -93,7 +93,7 @@ Log-likelihood value & -454.645000317534 &  & -464.079327351476 &  & -456.568467
 				\item Weights of likelihood function: w1 = 0.6, w2 = 0.4, w3 = 0.004, w4 = 0.003\\
 				$l(\theta) = -w1\sum_{t=1}^{T}ln\lbrack(2\pi)^2|f_{t|t-1}|\rbrack
 				-w2\sum_{t=1}^{T}\eta'_{t|t-1}f^{-1}_{t|t-1}\eta_{t|t-1}
-				- w3*\sum_{t=1}^{T}(c_{yt}^2) + w4*\sum_{t=1}^{T}(c_{ht}^2)$
+				- w3*\sum_{t=1}^{T}(c_{yt}^2) - w4*\sum_{t=1}^{T}(c_{ht}^2)$
 			\end{tablenotes}
 			\end{threeparttable}
 			\end{table}

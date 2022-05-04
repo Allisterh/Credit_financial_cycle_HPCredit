@@ -12,12 +12,12 @@ function val = lik_fcn_uncon(prmtr,y,T,START,prior)
   phi_h2 = prmtr(4);
   phi_hx = 0;
   
-  sig_nyy = prmtr(5)^2; % s.e. of HP permanent component
-  sig_eyy = prmtr(6)^2; % s.e. of credit permanent component
-  sig_nhh = prmtr(7)^2; % s.e. of the HP AR component
-  sig_ehh = prmtr(8)^2; % s.e. of the credit AR component
-  sig_eyeh = prmtr(9)*sqrt(sig_eyy*sig_ehh); % correlation of transitory components
-  sig_nynh = prmtr(10)*sqrt(sig_nyy*sig_nhh); % correlation of permanent components
+  sig_nyy = prmtr(5)^2; % s.e. of HP permanent component ^2
+  sig_eyy = prmtr(6)^2; % s.e. of credit permanent component ^2
+  sig_nhh = prmtr(7)^2; % s.e. of the HP AR component ^2
+  sig_ehh = prmtr(8)^2; % s.e. of the credit AR component ^2
+  sig_eyeh = prmtr(9)*sqrt(sig_eyy*sig_ehh); % covariance of transitory components
+  sig_nynh = prmtr(10)*sqrt(sig_nyy*sig_nhh); % covariance of permanent components
 
   
   mu = 0;
@@ -85,8 +85,7 @@ function val = lik_fcn_uncon(prmtr,y,T,START,prior)
         P_tt = P_tl - P_tl*H'*inv(ft)*H*P_tl;
 
     lik_mat(j_iter,1) = prior(5)*log(((2*pi)^2)*det(ft)) + prior(6)*vt'*inv(ft)*vt + ...
-             prior(11)*(beta_tl(2)^2)+prior(12)*(beta_tl(5)^2);   %GB
-
+             prior(11)*(beta_tl(2)^2)+prior(12)*(beta_tl(5)^2);   
         beta_ll = beta_tt;
         P_ll = P_tt;
     end

@@ -3,10 +3,10 @@ function c1 = trans_uncon(c0)
     c1 = c0;
 
   % variance para
-  c11 = c0(5);
-  c22 = c0(6);
-  c44 = c0(7);
-  c55 = c0(8);
+  c11 = sqrt(c0(5));
+  c22 = sqrt(c0(6));
+  c44 = sqrt(c0(7));
+  c55 = sqrt(c0(8));
   
   %covar para
   c52 = c0(9);

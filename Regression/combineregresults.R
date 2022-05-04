@@ -1,43 +1,135 @@
- rm(list=ls())
-
+rm(list=ls())
 
 #Import data
 country = 'GB'
-setwd("D:/GitHub/HPCredit/Paper/Regression")
 
-VAR2_filepath = "D:/GitHub/HPCredit/Regression/VAR_2/Output/Reg_GB.csv"
-VAR2x2_filepath = "D:/GitHub/HPCredit/Regression/VAR_2_crosscycle/Output/Reg_GB.csv"
-VAR2x1_filepath = "D:/GitHub/HPCredit/Regression/VAR_2_crosscycle_1stlagonly/Output/Reg_GB.csv"
+library(rstudioapi)
+setwd(dirname(getActiveDocumentContext()$path))
+
+VAR2_filepath = sprintf("Bayesian_UC_VAR2_nodrift/OutputData/Reg_%s.csv",country)
+VAR2x1_filepath = sprintf("Bayesian_UC_VAR2_nodrift_Crosscycle1lag/OutputData/Reg_%s.csv",country)
+VAR2x2_filepath = sprintf("Bayesian_UC_VAR2_nodrift_Crosscycle2lags/OutputData/Reg_%s.csv",country)
 
 df1 <- read.table(VAR2_filepath, header=FALSE, sep=",")
 df2 <- read.table(VAR2x1_filepath, header=FALSE, sep=",")
 df3 <- read.table(VAR2x2_filepath, header=FALSE, sep=",")
 
-
+df1 <- t(df1)
+df2 <- t(df2)
+df3 <- t(df3)
 #Combine data
-
+## SD table
 df = data.frame(matrix(ncol = 6, nrow = 15))
-df[1:13,5:6] = df3[1:13,]
-df[15,5] = df3[14,1]
-df[1:3,3:4] = df2[1:3,]
-df[5:7,3:4] = df2[4:6,]
-df[9:13,3:4] = df2[7:11,]
-df[15,3] = df2[12,1]
-df[1:2,1:2] = df1[1:2,]
-df[5:6,1:2] = df1[3:4,]
-df[9:15,1:2] = df1[5:11,]
-df[15,2] = NA
+
+df[1:2,1:2] = df1[1:2,1:2]
+df[5:6,1:2] = df1[3:4,1:2]
+df[9:15,1:2] = df1[5:11,1:2]
+
+
+df[1:3,3:4] = df2[1:3,1:2]
+
+df[7,3:4] = df2[4,1:2]
+df[5:6,3:4] = df2[5:6,1:2]
+
+df[9:15,3:4] = df2[7:13,1:2]
+
+
+df[1:4,5:6] = df3[1:4,1:2]
+df[5:6,5:6] = df3[7:8,1:2]
+df[7:8,5:6] = df3[5:6,1:2]
+df[9:15,5:6] = df3[9:15,1:2]
 
 #Export csv
 df4 <- read.table("symbols.csv", header=FALSE, sep=",")
 df=cbind(df4,df)
 
-write.table(df, "RegComb_GB.csv",  
+filepath=sprintf('RegComb_%s.csv',country)
+write.table(df, filepath,  
             na = "",
             row.names = FALSE,
             col.names = FALSE,
             append = FALSE,
-            sep = " & ",
-            eol=" \\\\[2pt] \r\n",
-            quote = FALSE)
+            sep = " , ")
+#            eol=" \\\\[2pt] \r\n",
+#            quote = FALSE)
 
+
+#install.packages("kableExtra")
+library('kableExtra')
+library(dplyr)
+library(knitr)
+rownames(df) <- df[,1]
+df<-df[,-1]
+colnames(df) <- c("Est", "SD", "Est", "SD", "Est", "SD")
+
+options(knitr.kable.NA = '')
+
+#df = df %>% mutate_if(is.numeric, format, digits=4)
+
+#kbl(data.frame(x=rnorm(10), y=rnorm(10), x= rnorm(10)), digits = c(1, 4, 4))
+
+kbl(df, digits = c(4, 4, 4, 4, 4, 4)) %>%
+  kable_classic("striped") %>%
+  add_header_above(c("Parameters" = 1, "VAR2" = 2, "VAR2 1-cross lag" = 2, "VAR2 2-cross lags" = 2)) %>%
+  footnote(general="UK Bayesian regression results") %>%
+  kable_styling(latex_options="scale_down")
+
+
+## 10-90 percentile
+
+#Combine data
+## percentile
+df = data.frame(matrix(ncol = 9, nrow = 15))
+
+df[1:2,1:3] = df1[1:2,c(1,3:4)]
+df[5:6,1:3] = df1[3:4,c(1,3:4)]
+df[9:15,1:3] = df1[5:11,c(1,3:4)]
+
+
+df[1:3,4:6] = df2[1:3,c(1,3:4)]
+
+df[7,4:6] = df2[4,c(1,3:4)]
+df[5:6,4:6] = df2[5:6,c(1,3:4)]
+
+df[9:15,4:6] = df2[7:13,c(1,3:4)]
+
+
+df[1:4,7:9] = df3[1:4,c(1,3:4)]
+df[5:6,7:9] = df3[7:8,c(1,3:4)]
+df[7:8,7:9] = df3[5:6,c(1,3:4)]
+df[9:15,7:9] = df3[9:15,c(1,3:4)]
+
+#Export csv
+df4 <- read.table("symbols.csv", header=FALSE, sep=",")
+df=cbind(df4,df)
+
+filepath=sprintf('RegCombPercentile_%s.csv',country)
+write.table(df, filepath,  
+            na = "",
+            row.names = FALSE,
+            col.names = FALSE,
+            append = FALSE,
+            sep = " , ")
+#            eol=" \\\\[2pt] \r\n",
+#            quote = FALSE)
+
+#install.packages("kableExtra")
+library('kableExtra')
+library(dplyr)
+library(knitr)
+rownames(df) <- df[,1]
+df<-df[,-1]
+colnames(df) <- c("Median", "10%", "90%", "Median", "10%", "90%", "Median", "10%", "90%")
+
+options(knitr.kable.NA = '')
+
+#df = df %>% mutate_if(is.numeric, format, digits=4)
+
+#kbl(data.frame(x=rnorm(10), y=rnorm(10), x= rnorm(10)), digits = c(1, 4, 4))
+
+kbl(df, digits = c(4, 4, 4, 4, 4, 4, 4, 4, 4)) %>%
+  kable_paper("striped") %>%
+  add_header_above(c("Parameters" = 1, "VAR2" = 3, "VAR2 1-cross lag" = 3, "VAR2 2-cross lags" = 3)) %>%
+  footnote(general="UK Bayesian regression results") %>%
+  kable_styling(latex_options="scale_down") %>%
+  column_spec(5:7, bold = c(0,0,1,0,0,0,1,0,0,0,0,0,0,0,0))

@@ -43,7 +43,7 @@ function val = lik_fcn_uncon(prmtr,y,T,START,prior)
             0,vecP_ll(1,1),0;
             0,0,0];
     
-    muvec = [0,mu,0]'; %Drift vector
+    muvec = [mu,0,0]'; %Drift vector
     
 %========================================================================%
                 

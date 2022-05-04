@@ -24,7 +24,7 @@ clear, clc
 ver = 'VAR_2';
 par_num=10;
 
-country='GB';
+country='US';
 
 working_dir = ['/Users/namnguyen/Documents/GitHub/HPCredit/Regression/' ver '/Matlab'];
 cd(working_dir);
@@ -40,13 +40,13 @@ data_im = dlmread(input_filepath,',',1,1);
 data_im(:,3:6)=[];
 data_im(1:2,:)=[]; %trimming data to fit >1990 time frame
 
-input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2x_' country '.txt'];
-% priors_VAR2x = dlmread(input_filepath,',',1,1);
+input_filepath = ['../../Bayesian_UC_VAR2/Priors/prior_VAR2x_' country '.txt'];
+priors_VAR2x = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2_' country '.txt'];
+input_filepath = ['../../Bayesian_UC_VAR2/Priors/prior_VAR2_' country '.txt'];
 priors_VAR2 = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['../../../Data Collection/1.2.Priors/prior_trend_' country '.txt'];
+input_filepath = ['../../Bayesian_UC_VAR2/Priors/prior_trend_' country '.txt'];
 priors_trend_stddev = dlmread(input_filepath,',',1,1);
 
 input_filepath = ['../../../Data Collection/1.Latest/Paper2/MergedData_Matlab_' country '.txt'];
@@ -62,7 +62,7 @@ c_h_prior2 = priors_cycle(1,2);
 t_y_prior = priors_cycle(2,3);
 t_h_prior = priors_cycle(2,4);
 
-input_filepath = ['../../../Data Collection/1.2.Priors/prior_corr_' country '.txt'];
+input_filepath = ['../../Bayesian_UC_VAR2/Priors/prior_corr_' country '.txt'];
 priors_corr = dlmread(input_filepath,',',1,1);
 
 %=========================================================================%
@@ -71,8 +71,12 @@ priors_corr = dlmread(input_filepath,',',1,1);
 
 
 %==============US====================
-
-prmtr_in = priors_VAR2;
+% VAR2
+prmtr_in(1:4) = priors_VAR2(1:4);
+prmtr_in(5) = priors_trend_stddev(1);
+prmtr_in(6) = priors_VAR2(5);
+prmtr_in(7) = priors_trend_stddev(2);
+prmtr_in(8) = priors_VAR2(6);
 prmtr_in(9) = priors_corr(1);
 prmtr_in(10) = priors_corr(2);
 % % US AR(2) prior extracted from ARIMA of HP filter cycles:
@@ -472,8 +476,8 @@ hold off
 subplot(2,2,2);
 plot(data(:,5));
 subplot(2,2,4);
-plot(data(:,4))
+plot(data(:,4));
 hold on
-plot(y(:,2))
+plot(y(:,2));
 hold off
 
