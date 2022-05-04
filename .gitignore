@@ -1,4 +1,13 @@
+Regression/Bayesian_UC_VAR2_drift_Crosscycle1lag/OutputData/uc_yc_US.csv
+Regression/Bayesian_UC_VAR2_drift_Crosscycle2lags/OutputData/uc_yc_GB.csv
+Regression/Bayesian_UC_VAR2_drift_Crosscycle2lags/OutputData/uc_yc_US.csv
+Regression/Bayesian_UC_VAR2_nodrift_Crosscycle1lag/OutputData/uc_yc_US.csv
+Regression/Bayesian_UC_VAR2_nodrift_Crosscycle2lags/OutputData/uc_yc_GB.csv
+Regression/Bayesian_UC_VAR2_nodrift_Crosscycle2lags/OutputData/uc_yc_US.csv
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+Regression/Bayesian_UC_VAR2_drift_Crosscycle2lags/.DS_Store
+Regression/.DS_Store
+.DS_Store
