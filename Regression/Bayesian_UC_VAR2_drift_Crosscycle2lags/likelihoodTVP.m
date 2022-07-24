@@ -1,65 +1,78 @@
 function [out,beta_tt]=likelihoodTVP(theta,y,x,startvalues)
 
 %extract parameters of the state space
-out=1000000000;
+out=-1000000000;
 if sum(theta(9:12)<0)==0 && sum(abs(theta(1:8))>2.5)==0 ...
         && (sum(theta(1:4))>=2)==0 ...
         && (sum(theta(1:2))>=1.8)==0  && (sum(theta(3:4))<=-0.8)==0 ...
         && (sum(theta(5:8))>=2)==0 ...
         && (sum(theta(7:8))>=1.8)==0 && (sum(theta(5:6))<=-0.8)==0 ...
-        && (theta(1)<0.1)==0 && (theta(7)<0.1)==0 ...
-        && sum(theta(9:12)>4.5)==0 ...
-        && (theta(14)/sqrt(theta(10)*theta(12))>=1)==0
+        && (theta(1)<0)==0 && (theta(7)<0)==0 ...
+        && sum(theta(10)/theta(9)<6)==0 && sum(theta(12)/theta(11)<6)==0
+        %&& (theta(14)/sqrt(theta(10)*theta(12))>=1)==0
+        %&& sum(theta(9:12)>4.5)==0 ...
 
-F=zeros(6,6);
+F=zeros(8,8);
 F(1,1)=1;
+F(1,7)=1;
 F(2,2)=theta(1);
 F(2,3)=theta(2);
 F(2,5)=theta(3);
 F(2,6)=theta(4);
 F(3,2)=1;
 F(4,4)=1;
+F(4,8)=1;
 F(5,2)=theta(5);
 F(5,3)=theta(6);
 F(5,5)=theta(7);
 F(5,6)=theta(8);
 F(6,5)=1;
+F(7,7)=1;
+F(8,8)=1;
    
-mu=zeros(1,6);
+mu=zeros(1,8);
 mu=mu';
 %mu(1,1)=theta(3);
 
-Q=zeros(6,6);
-Q(1,1)=(theta(9));
-Q(2,2)=(theta(10));
-Q(4,4)=theta(11);
-Q(5,5)=theta(12);
-Q(4,1)=theta(13);
+Q=zeros(8,8);
+Q(1,1)=theta(9)^2;
+Q(2,2)=theta(10)^2;
+Q(4,4)=theta(11)^2;
+Q(5,5)=theta(12)^2;
+Q(4,1)=theta(13)*sqrt(theta(9)^2*theta(11)^2);
 Q(1,4)=Q(4,1);
-Q(5,2)=theta(14);
+Q(5,2)=theta(14)*sqrt(theta(10)^2*theta(12)^2);
 Q(2,5)=Q(5,2);
+Q(7,7)=0.1^2;
+Q(8,8)=0.1^2;
 
 t=rows(y);
 lik=0;
 %filter
-beta0=zeros(1,6);
+beta0=zeros(1,8);
 beta0(1,1)=startvalues(1); %US values 100*log(credit)
 beta0(1,2)=startvalues(2);
 beta0(1,3)=startvalues(3);
 beta0(1,4)=startvalues(4);
 beta0(1,5)=startvalues(5);
 beta0(1,6)=startvalues(6);
+beta0(1,7)=startvalues(7);
+beta0(1,8)=startvalues(8);
 beta0=beta0';
 
-p00=eye(6)*100;
+p00=eye(8)*100;
+p00(1,1)=1;
 p00(3,3)=0;
+p00(4,4)=1;
 p00(6,6)=0;
+p00(7,7)=1;
+p00(8,8)=1;
 
 beta11=beta0;
 p11=p00;
 %beta_tt=[];
- H = [1,1,0,0,0,0; %Measurement equation
-        0,0,0,1,1,0];
+H = [1,1,0,0,0,0,0,0; %Measurement equation
+    0,0,0,1,1,0,0,0];
 
     for i=1:t
             %H=x(i,:);
@@ -86,9 +99,9 @@ p11=p00;
         end
 
     end
-    out=-lik;
+    out=lik;
     if isnan(out)|| 1-isreal(out) || isinf(out)
-        out=1000000000;
+        out=-1000000000;
     end
 end
 

@@ -1,31 +1,33 @@
 rm(list=ls())
 
 #Merge Data
-library("DataCombine")
+#library("DataCombine")
+#library(quantmod)
+#library(stats)
+#library("tidyr")
 library(dplyr)
 library(reshape2)
-library(quantmod)
-library(stats)
-library("tidyr")
+
 
 ##1. Merge Data
 country = 'US'
 
+library(rstudioapi)
 setwd(dirname(getActiveDocumentContext()$path))
-setwd("../../1.Latest/")
+setwd("../../1.Latest/Paper1")
 
 Credit_filepath = sprintf("Credit_HPfilter_%s.txt",country)
 df2 <- read.table(Credit_filepath, header=TRUE, sep=",")
 df2 <- na.omit(df2[-c(2)]) #Remove country name column because redundancy
-
+ 
 
 HP_filepath = sprintf("HPindex_HPfilter_%s.txt",country)
 df1 <- read.table(HP_filepath, header=TRUE, sep=",")
 
 
 df <- merge(df2, df1, by=c("ID","date"))
-df <-subset(df, date>as.Date("1985-06-30"))
-df <-subset(df, date<as.Date("2020-01-01"))
+df <- subset(df, date>as.Date("1985-06-30"))
+df <- subset(df, date<as.Date("2020-01-01"))
 
 filepath = sprintf("MergedData_%s.txt",country)
 write.table(df, filepath, sep=",")
@@ -101,6 +103,3 @@ cor(df_xts$HPIndex_log,df_xts$HPIndex_log_1)
 cor(df_xts$HPIndex_log,df_xts$HPIndex_log_2)
 
 cor(df_xts$HPIndex_log,df_xts$Credit_log)
-
-
-

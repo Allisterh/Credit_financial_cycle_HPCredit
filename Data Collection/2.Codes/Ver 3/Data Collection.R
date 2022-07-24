@@ -1,20 +1,20 @@
-rm(list=ls())
+rm(list = ls())
 library(dplyr)
 library(ggplot2)
 library(zoo)
-library(BIS)
 library(reshape2)
+#library(BIS)
 
+library(rstudioapi)
 setwd(dirname(getActiveDocumentContext()$path))
-setwd("../../1.Latest/Paper2")
+setwd("../../1.Latest/Paper1")
 #---------------------
 #1. Data Collection
-#1.a. Credit 
+#1.a. Credit
 #-------------------------
 
-
 #Set up definition for get dataset function
-datasets <- BIS::get_datasets()
+#datasets <- BIS::get_datasets()
 
 #All avaiable country list (with HP available) 
 #clist = "^(AT|AU|BE|BR|CA|CH|CL|CN|CO|CR|CZ|DE|DK|ES|EE|FI|FR|GB|GR|HU|ID|IN|IE|IS|IL|IT|JP|KR|LT|LU|LV|MX|NL|NO|NZ|PL|PT|RO|RU|SA|RS|SK|SI|SE|TR|US|ZA)"

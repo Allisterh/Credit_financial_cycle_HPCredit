@@ -1,0 +1,269 @@
+# Description
+
+The following Baysian regression implementation is based on Metropolis-Hasting random walk algorithm from Chapter 5 - Applied Bayesian econometrics for Central Bankers. The posterior results are summarized from 1,500,000 iterations with the first 500,000 iterations discarded for each model.
+
+
+# REGRESSION RESULTS
+
+
+```{=latex}
+		\begin{table}[H]
+			\begin{threeparttable}
+				\caption {\label{tab:table1} Parameters description}
+				%\rowcolors{2}{gray!10}{white} 
+				\begin{tabular}{@{}ll@{}}
+					\toprule
+					Description & Parameter\\
+					\midrule
+					Log-likelihood value & $llv$ \\[2pt] 
+					Credit to household & \\
+					\quad Credit to household 1st AR parameter  & $\phi^1_{y}$ \\[2pt] 
+					\quad Credit to household 2nd AR parameter  & $\phi^2_{y}$ \\[2pt] 
+					\quad Credit to household 1st cross cycle AR parameter  & $\phi^{x1}_{y}$ \\[2pt] 
+					\quad Credit to household 2nd cross cycle AR parameter  & $\phi^{x2}_{y}$ \\[2pt] 
+					\quad S.D. of permanent shocks to Credit to household & $\sigma_{ny}$ \\[2pt] 
+					\quad S.D. of transitory shocks to Credit to household & $\sigma_{ey}$ \\[2pt]
+					Housing Price Index & \\
+					\quad Housing Price Index 1st AR parameter  & $\phi^1_{h}$ \\[2pt] 
+					\quad Housing Price Index 2nd AR parameter  & $\phi^2_{h}$ \\[2pt] 
+					\quad Housing Price Index 1st cross cycle AR parameter  & $\phi^{x1}_{h}$ \\[2pt] 
+					\quad Housing Price Index 2nd cross cycle AR parameter  & $\phi^{x2}_{h}$ \\[2pt] 
+					\quad S.D. of permanent shocks to Housing Price Index & $\sigma_{nh}$ \\[2pt] 
+					\quad S.D. of transitory shocks to Housing Price Index & $\sigma_{eh}$ \\[2pt]
+					Cross-series correlations & \\
+					\quad Correlation: Permanent credit to household/Permanent Housing Price Index  & $\rho_{nynh}$ \\[2pt] 
+					\quad Correlation: Transitory credit to household/Transitory Housing Price Index  & $\rho_{eyeh}$ \\[2pt] 
+										
+					\bottomrule
+				\end{tabular}
+%				\begin{tablenotes}
+%					\small
+%					\item $y_t$ is credit to household series, $h_t$ is housing price index series. Both are log transformed. \\
+%				\end{tablenotes}
+			\end{threeparttable}
+		\end{table}
+```
+
+\begin{landscape}
+
+```{r, echo=FALSE, message=FALSE}
+options(kableExtra.latex.load_packages = FALSE)
+options(knitr.table.format = "pandoc")
+library('kableExtra')
+library(dplyr)
+library(knitr)
+
+country='UK'
+# filepath=sprintf('../../Regression/RegComb_%s.csv',country)
+# df<-read.csv(filepath, sep = ",", header=FALSE)		
+# 
+# rownames(df) <- df[,1]
+# df<-df[,-1]
+# colnames(df) <- c("Median", "SD", "Median", "SD", "Median", "SD")
+# colnamedf<-c("Median", "SD", "Median", "SD", "Median", "SD")
+# options(knitr.kable.NA = '')
+# 
+# 
+# kbl(df, "latex", booktabs = T, digits = c(4, 4, 4, 4, 4, 4), caption ='UK Regression Results', escape=FALSE, linesep=c("", "", "", "\\addlinespace")) %>%
+#   kable_classic("striped") %>%
+#   add_header_above(c("Parameters" = 1, "VAR2" = 2, "VAR2 1-cross lag" = 2, "VAR2 2-cross lags" = 2)) #%>%
+#   #footnote(general="UK Bayesian regression results") %>%
+#   #kable_styling(latex_options="scale_down")
+
+
+
+filepath=sprintf('../../Regression/RegCombPercentile_%s.csv',country)
+df<-read.csv(filepath, sep = ",", header=FALSE)
+
+#rownames(df) <- df[,1]
+#df<-df[,-1]
+
+colnames(df) <- c("Description","Parameters","Median", "[10$\\%$, 90$\\%$]", "Median", "[10$\\%$, 90$\\%$]", "Median", "[10$\\%$, 90$\\%$]")
+options(knitr.kable.NA = '')
+
+#df = df %>% mutate_if(is.numeric, format, digits=4)
+
+#kbl(data.frame(x=rnorm(10), y=rnorm(10), x= rnorm(10)), digits = c(1, 4, 4))
+#https://stackoverflow.com/questions/72388965/aesthetics-of-kable-extra-and-rmardown
+kbl(df, "latex", booktabs = T, digits = c(4, 4, 4, 4, 4, 4, 4), caption ='UK Regression Results', escape=FALSE, linesep=c("", "", "", "\\addlinespace"), row.names=FALSE) %>%
+  add_header_above(c(" " = 2, "VAR2" = 2, "VAR2 1-cross lag" = 2, "VAR2 2-cross lags" = 2)) %>%
+  footnote(general="UK Bayesian regression results") %>%
+  kable_styling(latex_options=c("striped","scale_down")) %>%
+  kable_paper(c("striped")) %>%
+  column_spec(c(1:2,5:6), bold = c(0,0,1,0,0,0,1,0,0,0,0,0,0,0,0))
+```		
+\end{landscape}
+
+
+\clearpage
+
+\begin{landscape}
+
+```{r, echo=FALSE, message=FALSE}
+options(kableExtra.latex.load_packages = FALSE)
+options(knitr.table.format = "pandoc")
+library('kableExtra')
+library(dplyr)
+library(knitr)
+
+country='US'
+# filepath=sprintf('../../Regression/RegComb_%s.csv',country)
+# df<-read.csv(filepath, sep = ",", header=FALSE)		
+# 
+# rownames(df) <- df[,1]
+# df<-df[,-1]
+# colnames(df) <- c("Median", "SD", "Median", "SD", "Median", "SD")
+# colnamedf<-c("Median", "SD", "Median", "SD", "Median", "SD")
+# options(knitr.kable.NA = '')
+# 
+# #df = df %>% mutate_if(is.numeric, format, digits=4)
+# 
+# #kbl(data.frame(x=rnorm(10), y=rnorm(10), x= rnorm(10)), digits = c(1, 4, 4))
+# 
+# kbl(df, "latex", booktabs = T, digits = c(4, 4, 4, 4, 4, 4), caption ='US Regression Results', escape=FALSE, linesep=c("", "", "", "\\addlinespace")) %>%
+#   kable_classic("striped") %>%
+#   add_header_above(c("Parameters" = 1, "VAR2" = 2, "VAR2 1-cross lag" = 2, "VAR2 2-cross lags" = 2)) #%>%
+#   #footnote(general="US Bayesian regression results") %>%
+#   #kable_styling(latex_options="scale_down")
+
+
+filepath=sprintf('../../Regression/RegCombPercentile_%s.csv',country)
+df<-read.csv(filepath, sep = ",", header=FALSE)
+
+#rownames(df) <- df[,1]
+#df<-df[,-1]
+colnames(df) <- c("Description","Parameters","Median", "[10$\\%$, 90$\\%$]", "Median", "[10$\\%$, 90$\\%$]", "Median", "[10$\\%$, 90$\\%$]")
+
+options(knitr.kable.NA = '')
+
+#df = df %>% mutate_if(is.numeric, format, digits=4)
+
+#kbl(data.frame(x=rnorm(10), y=rnorm(10), x= rnorm(10)), digits = c(1, 4, 4))
+
+kbl(df, "latex", digits = c(4, 4, 4, 4, 4, 4, 4), booktabs = T, caption ='US Regression Results', escape=FALSE, linesep=c("", "", "", "\\addlinespace"), row.names=FALSE) %>%
+  add_header_above(c(" " = 2, "VAR2" = 2, "VAR2 1-cross lag" = 2, "VAR2 2-cross lags" = 2)) %>%
+  footnote(general="UK Bayesian regression results") %>%
+  kable_styling(latex_options=c("striped","scale_down")) %>%
+  kable_paper(c("striped")) %>%
+  column_spec(c(1:2,5:6), bold = c(0,0,1,0,0,0,1,0,0,0,0,0,0,0,0))
+```		
+\end{landscape}
+
+
+\clearpage
+
+# Trend-Cycle Decompositon Graphs
+## UK graphs
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'UK VAR(2)'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift/OutputData/cycles_UK.pdf')
+```
+
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'UK VAR(2) 1 cross-lag'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift_Crosscycle1lag/OutputData/cycles_UK.pdf')
+```
+
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'UK VAR(2) 2 cross-lags'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift_Crosscycle2lags/OutputData/cycles_UK.pdf')
+```
+
+\clearpage
+
+
+## US graphs
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'US VAR(2)'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift/OutputData/cycles_US.pdf')
+```
+
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'US VAR(2) 1 cross-lag'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift_Crosscycle1lag/OutputData/cycles_US.pdf')
+```
+
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'US VAR(2) 2 cross-lags'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift_Crosscycle2lags/OutputData/cycles_US.pdf')
+```
+
+\clearpage
+
+
+
+# Posterior and Prior Distribution
+## UK Posterior and Prior Distribution
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'UK VAR(2)'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift/OutputData/posteriorpriordistribution_UK.pdf')
+```
+
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'UK VAR(2) 1 cross-lag'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift_Crosscycle1lag/OutputData/posteriorpriordistribution_UK.pdf')
+```
+
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'UK VAR(2) 2 cross-lags'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift_Crosscycle2lags/OutputData/posteriorpriordistribution_UK.pdf')
+```
+
+\clearpage
+
+
+## US Posterior and Prior Distribution
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'US VAR(2)'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift/OutputData/posteriorpriordistribution_US.pdf')
+```
+
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'US VAR(2) 1 cross-lag'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift_Crosscycle1lag/OutputData/posteriorpriordistribution_US.pdf')
+```
+
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'US VAR(2) 2 cross-lags'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift_Crosscycle2lags/OutputData/posteriorpriordistribution_US.pdf')
+```
+
+
+\clearpage
+
+# Posterior chain
+
+## UK Posterior chain
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'UK VAR(2)'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift/OutputData/posteriorchain_UK.pdf')
+```
+
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'UK VAR(2) 1 cross-lag'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift_Crosscycle1lag/OutputData/posteriorchain_UK.pdf')
+```
+
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'UK VAR(2) 2 cross-lags'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift_Crosscycle2lags/OutputData/posteriorchain_UK.pdf')
+```
+
+\clearpage
+
+## US Posterior chain
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'US VAR(2)'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift/OutputData/posteriorchain_US.pdf')
+```
+
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'US VAR(2) 1 cross-lag'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift_Crosscycle1lag/OutputData/posteriorchain_US.pdf')
+```
+
+```{r, echo=FALSE, out.width='85%',  fig.align='center', fig.cap = 'US VAR(2) 2 cross-lags'}
+knitr::include_graphics('../../Regression/Bayesian_UC_VAR2_drift_Crosscycle2lags/OutputData/posteriorchain_US.pdf')
+```
+
+# Cross-countries evidence
+
+```{r, echo=FALSE, message=FALSE}
+
+filepath <- "../Data Collection/1.Latest/Paper1/shortlistofCountries_full.csv"
+name1 <- read.table(filepath, header = TRUE, sep = ",")
+
+df = data.frame(matrix(ncol = 5, nrow = nrow(name1)))
+
+for (i in seq_len(nrow(name1))) {
+country <- name1[i, 1]
+
+filepath <- sprintf("../Regression/Bayesian_UC_VAR2_drift_Crosscycle1lag/OutputData/Reg_%s.csv", country)
+df1 <- read.table(filepath, header = TRUE, sep = ",")
+df1 <- df1[c(1,3:4),3:4]
+df <- rbind(df,df1)
+}
+```

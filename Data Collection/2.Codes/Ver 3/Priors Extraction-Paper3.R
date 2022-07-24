@@ -17,8 +17,8 @@ countrylist <- read.table(filepath, header=TRUE, sep=",")
 
 
 # Start date is 1989-01-01
-startdate_uc = '1985-07-01' #push back 2 periods to extract priors for VAR(2) process
-startdate_var = '1985-01-01'
+startdate_uc = '1990-07-01' #push back 2 periods to extract priors for VAR(2) process
+startdate_var = '1991-04-01'
 # End date is pre-covid 2020-01-01
 enddate = '2018-10-01'
 

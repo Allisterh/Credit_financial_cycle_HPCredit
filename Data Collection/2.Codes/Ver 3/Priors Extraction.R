@@ -4,8 +4,10 @@ library(vars)
 library(stats)
 
 country = 'US'
-setwd("D:/GitHub/HPCredit/Data Collection/1.Latest")
 
+library(rstudioapi)
+setwd(dirname(getActiveDocumentContext()$path))
+setwd("../../1.Latest/Paper1")
 
 #-------------
 

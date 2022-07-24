@@ -1,4 +1,4 @@
-function out=logprior(theta,F0,VF0,Q0,VQ0)
+function out=logprior(theta,F0,VF0,Q0,VQ0, rho0, Vrho0)
 
 
 % % F~N(F0,VF0)
@@ -53,7 +53,7 @@ out=0;
         %b = v/mu;
         %a = mu/b;
         for i=9:14
-         outi=(gampdf1(VQ0,Q0,1/theta(i))); 
+         outi=(gampdf2(VQ0,Q0,1/theta(i))); 
          out=out+outi;
         end
         

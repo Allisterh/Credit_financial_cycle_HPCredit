@@ -24,8 +24,7 @@ clear, clc
 ver = 'AR_2';
 par_num=4;
 
-<<<<<<< Updated upstream
-working_dir = ['D:/GitHub/HPCredit/Regression/' ver '/Matlab'];
+working_dir = ['/Users/namnguyen/Documents/GitHub/HPCredit/Regression/' ver '/Matlab'];
 cd(working_dir);
 
 %input_filepath = "../../../../3rdPaper/Data/Processed/countrylist.txt";
@@ -39,19 +38,16 @@ cd(working_dir);
 
 
 
-country='US';
-=======
-country='AR';
->>>>>>> Stashed changes
+country='UK';
 variable='credit';
 
 %   w1 = 0.5; 
 %   w2 = 0.5;
 %   w3 = 0.0001;
 
-  w1 = 0.2; 
-  w2 = 0.8;
-  w3 = 0.0001;
+  w1 = 0.5; 
+  w2 = 0.5;
+  w3 = 0.0002;
 
 %=========================================================================%
 %Input Data:
@@ -59,8 +55,8 @@ variable='credit';
 % input_filepath = ['../../../Data/Input/data_' country '.txt'];
 % data_im = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['../../../Data Collection/1.Latest/Paper3/MergedData_Matlab_' country '.txt'];
-data_im = dlmread(input_filepath,',',1,1);
+input_filepath = ['../../../Data Collection/1.Latest/Paper1/creditHPI_Matlab_' country '.csv'];
+data_im = dlmread(input_filepath);
 % 
 % data_im(1,:)=[]; %trimming data to fit >1990 time frame
 
@@ -70,32 +66,35 @@ data_im = dlmread(input_filepath,',',1,1);
 %input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2_' country '.txt'];
 %priors_VAR2 = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['../../../Data Collection/1.Latest/Paper3/Priors/prior_VAR2_credit_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.Latest/Paper1/Priors/prior_VAR2_' country '.csv'];
 priors_VAR2_credit = dlmread(input_filepath,',',1,1);
 
 %input_filepath = ['../../../Data Collection/1.2.Priors/prior_VAR2_hpi_' country '.txt'];
 %priors_VAR2_hpi = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['../../../Data Collection/1.Latest/Paper3/Priors/prior_trend_' country '.txt'];
+input_filepath = ['../../../Data Collection/1.Latest/Paper1/Priors/prior_trend_' country '.csv'];
 priors_trend_stddev = dlmread(input_filepath,',',1,1);
 
-input_filepath = ['../../../Data Collection/1.Latest/Paper3/MergedData_Matlab_' country '.txt'];
-priors_cycle = dlmread(input_filepath,',',1,1);
+input_filepath = ['../../../Data Collection/1.Latest/Paper1/creditHPI_Matlab_' country '.csv'];
+priors_cycle = dlmread(input_filepath);
 
 % priors_cycle
 
-priors_cycle(:,1)=[];
+% priors_cycle(:,1)=[];
 
 % c_y_prior1 = priors_cycle(2,1)-1.4; %for US
 % c_y_prior2 = priors_cycle(1,1)-0.7;
 
-c_y_prior1 = priors_cycle(2,1); 
-c_y_prior2 = priors_cycle(1,1);
-<<<<<<< Updated upstream
-t_y_prior = priors_cycle(2,2);
-=======
-t_y_prior = priors_cycle(2,3);
->>>>>>> Stashed changes
+% For Credit
+c_y_prior1 = priors_cycle(2,6); 
+c_y_prior2 = priors_cycle(1,6);
+t_y_prior = priors_cycle(2,5)+0.3;
+t_y_prior2 = priors_cycle(1,5);
+
+%% For HPI
+% c_y_prior1 = priors_cycle(2,8); 
+% c_y_prior2 = priors_cycle(1,8);
+% t_y_prior = priors_cycle(2,6);
 
 %input_filepath = ['../../../Data Collection/1.2.Priors/prior_corr_' country '.txt'];
 %priors_corr = dlmread(input_filepath,',',1,1);
@@ -111,7 +110,7 @@ t_y_prior = priors_cycle(2,3);
 prmtr_in = [0,0,0,0]';
 prmtr_in(1:2)=priors_VAR2_credit(1:2);
 prmtr_in(3) = priors_trend_stddev(1);
-prmtr_in(4) = priors_VAR2_credit(3);
+prmtr_in(4) = priors_VAR2_credit(9);
 
 %HPI
 % prmtr_in = priors_VAR2_hpi;
@@ -215,8 +214,8 @@ sig_ty_prior = 100+100*rand;
 
 % Data Transformation
 %=========================================================================%
-y = data_im(:,1);
-% y = 100*log(data_im);
+%y = data_im(:,1);
+y = 100*log(data_im(:,1));
 
 stream = RandStream.getGlobalStream; %Record random seed
 savedState = stream.State;
@@ -407,6 +406,16 @@ options2=optimoptions('fminunc','Display','iter','MaxfunctionEvaluations',50000,
 [xout,fout,cout,output,gout,hout] = ...
     fminunc(@(prmtr)lik_fcn_uncon(prmtr,y,T,START,prior),prmtr_in_selected,options2);
 
+
+[FF,AA,gh,hess,itct,fcount,retcodeh] = csminwel('lik_fcn_uncon',prmtr_in_selected,eye(length(prmtr_in_selected))*.1,[],1e-15,1000,y,T,START,prior);
+
+
+options = optimset('Disp','iter','Diagnostics','on','LargeScale','off',...
+    'MaxFunEvals',100000,'MaxIter',5000,'TolFun',1e-05,'TolX',1e-05);
+[theta1,fval] = fminsearch(@lik_fcn_uncon,prmtr_in_selected,options,y,T,START,prior);
+
+lik_fcn_uncon(prmtr_in_selected,y,T,START,prior)
+
 % Results
 
 %Function returns paramter estimates, -LL value, flag code
@@ -491,8 +500,8 @@ writetable(Reg,writedata,'Delimiter',',','WriteVariableNames',0);
 % [data,forcst]=filter_fcn_uncon(xout,y,T,START,prior);
 
 
-data1=[priors_cycle(1,2),priors_cycle(1,1),0];
-data2=[priors_cycle(2,2),priors_cycle(2,1),0];
+data1=[t_y_prior2,c_y_prior2,0];
+data2=[t_y_prior,c_y_prior1,0];
 data=[data1;
       data2;
       data];

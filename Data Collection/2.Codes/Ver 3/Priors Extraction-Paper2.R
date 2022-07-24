@@ -3,16 +3,15 @@ rm(list=ls())
 library(vars)
 library(stats)
 
-country = 'JP'
+country = 'US'
 
-# Start date is 1989-01-01
-startdate_uc = '1983-01-01' #push back 2 periods to extract priors for VAR(2) process
-startdate_var = '1983-07-01'
+startdate_uc = '1990-10-01' #push back 2 periods to extract priors for VAR(2) process
+startdate_var = '1991-04-01'
 # End date is pre-covid 2020-01-01
 enddate = '2021-04-01'
 
 setwd(dirname(getActiveDocumentContext()$path))
-setwd("../../1.Latest/Paper2")
+setwd("../../1.Latest/Paper1")
 
 
 #-------------

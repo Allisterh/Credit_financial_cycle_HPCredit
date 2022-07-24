@@ -1,15 +1,16 @@
 function [out,beta_tt]=likelihoodTVP(theta,y,x,startvalues)
 
 %extract parameters of the state space
-out=1000000000;
+out=-1000000000;
 if sum(theta(5:8)<0)==0 && sum(abs(theta(1:2))>2)==0 && sum(abs(theta(3:4))>2)==0 ...
-        && (sum(theta(1:2))>=1)==0 && (sum(theta(3:4))>=1)==0 ...
-        && (theta(1)<0.6)==0 && (theta(3)<0.1)==0 ...
-        && sum(theta(6)/theta(5)<10)==0 && sum(theta(8)/theta(7)<10)==0
-        %&& sum(theta(5:8)>4.5)==0  ...
-        %&& sum(theta(11)/theta(5)~=0.01)==0 ...
-        %&& sum(theta(12)/theta(7)~=0.01)==0
-        %&& (theta(3)<=0)==0 && (theta(3)>0.65)==0
+    && (abs(sum(theta(1:2)))>=1)==0 && (abs(sum(theta(3:4)))>=1)==0 ...
+    && sum(theta(6)/theta(5)<6)==0 && sum(theta(8)/theta(7)<6)==0 ...
+    && (sum(abs(theta(9:10)))>=1)==0 ...
+    && (theta(1)<(0))==0 && (theta(3)<(0))==0
+    %&& sum(theta(5:8)>4.5)==0  ...
+    %&& sum(theta(11)/theta(5)~=0.01)==0 ...
+    %&& sum(theta(12)/theta(7)~=0.01)==0
+    %&& (theta(3)<=0)==0 && (theta(3)>0.65)==0
 F=zeros(8,8);
 F(1,1)=1;
 F(1,7)=1;
@@ -29,16 +30,16 @@ mu=mu';
 %mu(1,1)=theta(3);
 
 Q=zeros(8,8);
-Q(1,1)=(theta(5));
-Q(2,2)=(theta(6));
-Q(4,4)=theta(7);
-Q(5,5)=theta(8);
-Q(4,1)=theta(9);
+Q(1,1)=theta(5)^2;
+Q(2,2)=theta(6)^2;
+Q(4,4)=theta(7)^2;
+Q(5,5)=theta(8)^2;
+Q(4,1)=theta(9)*sqrt(theta(5)^2*theta(7)^2);
 Q(1,4)=Q(4,1);
-Q(5,2)=theta(10);
+Q(5,2)=theta(10)*sqrt(theta(6)^2*theta(8)^2);
 Q(2,5)=Q(5,2);
-Q(7,7)=0.003;
-Q(8,8)=0.003;
+Q(7,7)=0.06^2;
+Q(8,8)=0.06^2;
 
 t=rows(y);
 lik=0;
@@ -55,10 +56,12 @@ beta0(1,8)=startvalues(8);
 beta0=beta0';
 
 p00=eye(8)*100;
+p00(1,1)=1;
 p00(3,3)=0;
+p00(4,4)=1;
 p00(6,6)=0;
-p00(7,7)=1;
-p00(8,8)=1;
+p00(7,7)=0.1;
+p00(8,8)=0.1;
 
 %beta_tt=[];
 beta11=beta0;
@@ -82,8 +85,8 @@ p11=p00;
         %beta_tt=[beta_tt;beta11'];
         %ptt(i,:,:)=p11;
 
-        liki=-0.5*log(2*pi)-0.5*log(det(feta))+(-0.5*(eta)'*inv(feta)*(eta)); %...
-            %-0.0005*(beta11(2)^2+beta11(5)^2);
+        liki=-0.5*log(2*pi)-0.5*log(det(feta))+(-0.5*(eta)'*inv(feta)*(eta)) ...
+            -0.0005*(beta11(2)^2+beta11(5)^2);
 
         if isreal(liki) && (1-isinf(liki))
             lik=lik+liki;
@@ -92,9 +95,9 @@ p11=p00;
         end
 
     end
-    out=-lik;
+    out=lik;
     if isnan(out)|| 1-isreal(out) || isinf(out)
-        out=1000000000;
+        out=-1000000000;
     end
 end
 
