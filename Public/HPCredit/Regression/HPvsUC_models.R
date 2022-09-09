@@ -1,0 +1,165 @@
+#Merge Data
+library("DataCombine")
+library(dplyr)
+library(reshape2)
+library(ggplot2)
+#Merge Data
+
+#Version selections#####
+country = 'GB'
+
+ver1='VAR_2'
+ver2='VAR_2_crosscycle'
+ver3='VAR_2_crosscycle_1stlagonly'
+
+working_dir="D:/GitHub/HPCredit"
+
+# working_dir=sprintf("D:/GitHub/HPCredit/Regression/%s/R",ver)
+
+setwd(working_dir) 
+
+#automate file name  paste(x, ".mean", sep="")
+
+#Credit and HPI merge
+
+#Read raw data
+HP_filepath = sprintf("Data/Input/HPindex_HPfilter_%s.txt",country)
+df1 <- read.table(HP_filepath, header=TRUE, sep=",")
+
+# df1 <- na.omit(df1[-c(2)]) Remove country column
+
+Credit_filepath = sprintf("Data/Input/Credit_HPfilter_%s.txt",country)
+df2 <- read.table(Credit_filepath, header=TRUE, sep=",")
+df2 <- na.omit(df2[-c(2)]) #Remove country name column because redundancy
+
+df <- merge(df1, df2, by=c("ID","date"))
+df <-subset(df, date>as.Date("1988-12-30"))
+
+#------------------------------------------
+#GRAPH 2 series Lamda = 1600
+
+#This part of code is to shape series into one graphs
+# df1$date = as.Date(df1$date)
+# 
+# varlist1 = c("ID", "date", "borrowers_country", "HHCredit_GDP_cycle_1600", "HPIndex_GDP_cycle_1600", "HHCredit_GDP_trend_1600", "HPIndex_GDP_trend_1600")
+# df2= df1[varlist1]
+# df2$date = as.Date(df2$date)
+# names(df2)[5]="HPIndex_cycle_1600"
+# names(df2)[7]="HPIndex_trend_1600"
+# 
+# df3 <- df2 %>%
+#   filter(ID=="US")
+# df3 <-na.omit(df3)
+
+#Merge data with UC model data
+
+ver1='VAR_2'
+ver2='VAR_2_crosscycle'
+ver3='VAR_2_crosscycle_1stlagonly'
+
+path1 = sprintf("Output/OutputData/uc_yc_%s.txt",country)
+path2 = sprintf("Regression/%s/",ver1)
+path <-paste(path2,path1,sep="")
+df3 = read.table(path, header=TRUE, sep=",")
+
+path1 = sprintf("Output/OutputData/uc_yc_%s.txt",country)
+path2 = sprintf("Regression/%s/",ver2)
+path <-paste(path2,path1,sep="")
+df4 = read.table(path, header=TRUE, sep=",")
+
+path1 = sprintf("Output/OutputData/uc_yc_%s.txt",country)
+path2 = sprintf("Regression/%s/",ver3)
+path <-paste(path2,path1,sep="")
+df5 = read.table(path, header=TRUE, sep=",")
+
+df = df[-nrow(df),]
+df = df[-1,]
+# df3 = df3[-lengths(df3),] #only for GB, mismatch on data collection, TBD
+df = cbind(df,df3,df4,df5)
+df$date = as.Date(df$date) 
+
+df=df[,c(2,5,6,7,9,10,11,12:15,18:21,24:27)]
+
+
+#Credit Cycle var name list
+varlist2 = c(1, 7, 9, 13, 17)
+
+df6 = df[varlist2]
+names(df6)[2]="HP_Credit_Cycle"
+names(df6)[3]="UC_Credit_Cycle_VAR2"
+names(df6)[4]="UC_Credit_Cycle_VAR2_Crosscycle"
+names(df6)[5]="UC_Credit_Cycle_VAR2_Crosscycle_1lag"
+
+
+ggplot(melt(df6, 1), aes(date, value, color = variable)) +
+  geom_hline(yintercept = 0, linetype = "dashed",
+             color = "grey70", size = 0.02) +
+  geom_line(show.legend = TRUE) +
+  theme_light() +
+  theme(panel.grid = element_blank()) +
+  labs(x = NULL, y = NULL,
+       title = sprintf("Credit cycle: %s",country)  )
+ggsave( sprintf("Paper/Graphs/Credit_cycle_%s.pdf",country) , width=8, height=5)
+
+#HP Cycle
+varlist = c(1, 4, 11, 15, 19)
+
+df7 = df[varlist]
+names(df7)[2]="HP_HPindex_Cycle"
+names(df7)[3]="UC_HPindex_Cycle_VAR2"
+names(df7)[4]="UC_HPindex_Cycle_VAR2_Crosscycle"
+names(df7)[5]="UC_HPindex_Cycle_VAR2_Crosscycle_1lag"
+
+
+
+ggplot(melt(df7, 1), aes(date, value, color = variable)) +
+  geom_hline(yintercept = 0, linetype = "dashed",
+             color = "grey70", size = 0.02) +
+  geom_line(show.legend = TRUE) +
+  theme_light() +
+  theme(panel.grid = element_blank()) +
+  labs(x = NULL, y = NULL,
+       title = sprintf("Housing Price cycle: %s",country)  )
+ggsave( sprintf("Paper/Graphs//HP_cycle_%s.pdf",country) , width=8, height=5)
+
+#Trends 
+#Credit Trends
+
+varlist4 = c("ID", "date", "Credit_HPtrend", "V1", "Credit_log")
+df7 = df[varlist4]
+names(df7)[4]="UC_Credit_Trend"
+names(df7)[3]="HP_Credit_Trend"
+names(df7)[5]="Series"
+df7[c(3:5)] = exp(df7[c(3:5)]/100)
+
+ggplot(melt(df7, c(1,2)), aes(date, value, color = variable)) +
+  geom_hline(yintercept = 0, linetype = "dashed",
+             color = "grey70", size = 0.02) +
+  geom_line(show.legend = TRUE) +
+  theme_light() +
+  theme(panel.grid = element_blank()) +
+  labs(x = NULL, y = NULL,
+       title = sprintf("Credit Trend: %s , as percentage of GDP",country)  )
+ggsave( sprintf("../Output/graphs/Credit_Trend_%s.pdf",country) , width=8, height=5)
+
+
+#Housing Price Index Trends
+
+varlist5 = c("ID", "date", "HPIndex_HPtrend", "V3", "HPIndex_log")
+df7 = df[varlist5]
+names(df7)[4]="UC_Credit_Trend"
+names(df7)[3]="HP_Credit_Trend"
+names(df7)[5]="Series"
+df7[c(3:5)] = exp(df7[c(3:5)]/100)
+
+ggplot(melt(df7, c(1,2)), aes(date, value, color = variable)) +
+  geom_hline(yintercept = 0, linetype = "dashed",
+             color = "grey70", size = 0.02) +
+  geom_line(show.legend = TRUE) +
+  theme_light() +
+  theme(panel.grid = element_blank()) +
+  labs(x = NULL, y = NULL,
+    title = sprintf("Housing Price Index Trend: %s , Index 2010=100",country)  )
+ggsave( sprintf("../Output/graphs/HP_Trend_%s.pdf",country) , width=8, height=5)
+
+
