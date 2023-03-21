@@ -26,6 +26,7 @@ Bayesian regression folders:
 - Bayesian_UC_VAR2_drift
 - Bayesian_UC_VAR2_drift_Crosscycle1lag
 - Bayesian_UC_VAR2_drift_Crosscycle2lags
+
 contain Matlab codes for the Bayesian Random walk Metropolis Hasting process
 to estimate the VAR parameters using information from the data and priors extracted from step I
 
